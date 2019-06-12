@@ -1,6 +1,6 @@
 //
-//  iOSArchitectureKKSampleTests.swift
-//  iOSArchitectureKKSampleTests
+//  ArchitectureKKSampleTests.swift
+//  ArchitectureKKSampleTests
 //
 //  Created by Kota Kawanishi on 2019/06/10.
 //  Copyright © 2019 Kota Kawanishi. All rights reserved.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import iOSArchitectureKKSample
 
-class iOSArchitectureKKSampleTests: XCTestCase {
+class ArchitectureKKSampleTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

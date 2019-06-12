@@ -12,8 +12,8 @@
 		E592298122AE65E8003EC30C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E592297F22AE65E8003EC30C /* Main.storyboard */; };
 		E592298322AE65E9003EC30C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E592298222AE65E9003EC30C /* Assets.xcassets */; };
 		E592298622AE65E9003EC30C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E592298422AE65E9003EC30C /* LaunchScreen.storyboard */; };
-		E592299122AE65E9003EC30C /* iOSArchitectureKKSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592299022AE65E9003EC30C /* iOSArchitectureKKSampleTests.swift */; };
-		E592299C22AE65E9003EC30C /* iOSArchitectureKKSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592299B22AE65E9003EC30C /* iOSArchitectureKKSampleUITests.swift */; };
+		E592299122AE65E9003EC30C /* ArchitectureKKSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592299022AE65E9003EC30C /* ArchitectureKKSampleTests.swift */; };
+		E592299C22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592299B22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +42,10 @@
 		E592298522AE65E9003EC30C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E592298722AE65E9003EC30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E592298C22AE65E9003EC30C /* iOSArchitectureKKSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSArchitectureKKSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E592299022AE65E9003EC30C /* iOSArchitectureKKSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSArchitectureKKSampleTests.swift; sourceTree = "<group>"; };
+		E592299022AE65E9003EC30C /* ArchitectureKKSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureKKSampleTests.swift; sourceTree = "<group>"; };
 		E592299222AE65E9003EC30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E592299722AE65E9003EC30C /* iOSArchitectureKKSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSArchitectureKKSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E592299B22AE65E9003EC30C /* iOSArchitectureKKSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSArchitectureKKSampleUITests.swift; sourceTree = "<group>"; };
+		E592299B22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureKKSampleUITests.swift; sourceTree = "<group>"; };
 		E592299D22AE65E9003EC30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,7 +110,7 @@
 		E592298F22AE65E9003EC30C /* iOSArchitectureKKSampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				E592299022AE65E9003EC30C /* iOSArchitectureKKSampleTests.swift */,
+				E592299022AE65E9003EC30C /* ArchitectureKKSampleTests.swift */,
 				E592299222AE65E9003EC30C /* Info.plist */,
 			);
 			path = iOSArchitectureKKSampleTests;
@@ -119,7 +119,7 @@
 		E592299A22AE65E9003EC30C /* iOSArchitectureKKSampleUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E592299B22AE65E9003EC30C /* iOSArchitectureKKSampleUITests.swift */,
+				E592299B22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift */,
 				E592299D22AE65E9003EC30C /* Info.plist */,
 			);
 			path = iOSArchitectureKKSampleUITests;
@@ -135,6 +135,7 @@
 				E592297422AE65E8003EC30C /* Sources */,
 				E592297522AE65E8003EC30C /* Frameworks */,
 				E592297622AE65E8003EC30C /* Resources */,
+				E5F1FC0722AFD70A003432E1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -251,6 +252,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E5F1FC0722AFD70A003432E1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E592297422AE65E8003EC30C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -265,7 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E592299122AE65E9003EC30C /* iOSArchitectureKKSampleTests.swift in Sources */,
+				E592299122AE65E9003EC30C /* ArchitectureKKSampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E592299C22AE65E9003EC30C /* iOSArchitectureKKSampleUITests.swift in Sources */,
+				E592299C22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +431,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
