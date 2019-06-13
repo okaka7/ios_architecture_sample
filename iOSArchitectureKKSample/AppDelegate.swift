@@ -12,10 +12,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private(set) lazy var viewController = ViewController()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // アプリウィンドウを設定します。
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        // ウィンドウをヴィジブルにします。
+        self.window?.makeKeyAndVisible()
+        
+        // ウィンドウの rootViewController を viewController に設定します。
+        self.window?.rootViewController = viewController
+
         return true
     }
 
