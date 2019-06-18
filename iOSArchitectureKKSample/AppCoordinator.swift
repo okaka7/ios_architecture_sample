@@ -9,6 +9,11 @@
 import UIKit
 
 final class AppCoordinator: Coordinator {
+    
+    enum LaunchType {
+        
+    }
+    
     private let window: UIWindow
     private let rootViewController: ViewController
     

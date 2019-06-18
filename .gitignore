@@ -83,3 +83,6 @@ iOSInjectionProject/
 
 # not to ignore schema
 !*.xcodeproj/xcshareddata
+
+#rSwift
+*.generated.swift
