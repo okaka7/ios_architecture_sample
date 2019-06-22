@@ -159,12 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E59229A022AE65E9003EC30C /* Build configuration list for PBXNativeTarget "iOSArchitectureKKSample" */;
 			buildPhases = (
-				E571E6FA22B833370032A748 /* ShellScript */,
+				E571E6FA22B833370032A748 /* R.swift Script */,
 				E592297422AE65E8003EC30C /* Sources */,
 				E592297522AE65E8003EC30C /* Frameworks */,
 				E592297622AE65E8003EC30C /* Resources */,
-				E5F1FC0722AFD70A003432E1 /* ShellScript */,
-				E571E6F922B8328A0032A748 /* Run Script */,
+				E5F1FC0722AFD70A003432E1 /* Swift lint Script */,
+				E571E6F922B8328A0032A748 /* Carthage Script */,
 			);
 			buildRules = (
 			);
@@ -280,7 +280,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E571E6F922B8328A0032A748 /* Run Script */ = {
+		E571E6F922B8328A0032A748 /* Carthage Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -291,7 +291,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyBeaver.framework",
 			);
-			name = "Run Script";
+			name = "Carthage Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -300,7 +300,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
 		};
-		E571E6FA22B833370032A748 /* ShellScript */ = {
+		E571E6FA22B833370032A748 /* R.swift Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -310,6 +310,7 @@
 			inputPaths = (
 				"$TEMP_DIR/rswift-lastrun",
 			);
+			name = "R.swift Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -319,7 +320,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nrswift generate \"$SRCROOT/R.generated.swift\"\n";
 		};
-		E5F1FC0722AFD70A003432E1 /* ShellScript */ = {
+		E5F1FC0722AFD70A003432E1 /* Swift lint Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -328,6 +329,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Swift lint Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
