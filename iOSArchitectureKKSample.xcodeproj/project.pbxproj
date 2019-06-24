@@ -12,7 +12,6 @@
 		E571E6F622B8324B0032A748 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E571E6F522B8324B0032A748 /* Rswift.framework */; };
 		E571E6F822B8325B0032A748 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */; };
 		E571E6FC22B837000032A748 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571E6FB22B837000032A748 /* R.generated.swift */; };
-		E573924422C07AB800C0EC59 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573924322C07AB800C0EC59 /* MainTabController.swift */; };
 		E592297C22AE65E8003EC30C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592297B22AE65E8003EC30C /* AppDelegate.swift */; };
 		E592297E22AE65E8003EC30C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592297D22AE65E8003EC30C /* ViewController.swift */; };
 		E592298322AE65E9003EC30C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E592298222AE65E9003EC30C /* Assets.xcassets */; };
@@ -43,7 +42,6 @@
 		E571E6F522B8324B0032A748 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		E571E6FB22B837000032A748 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
-		E573924322C07AB800C0EC59 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		E592297822AE65E8003EC30C /* DebugiOSArchitectureKKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebugiOSArchitectureKKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E592297B22AE65E8003EC30C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E592297D22AE65E8003EC30C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 			children = (
 				E592297B22AE65E8003EC30C /* AppDelegate.swift */,
 				E592297D22AE65E8003EC30C /* ViewController.swift */,
-				E573924322C07AB800C0EC59 /* MainTabController.swift */,
 				E56FD68222B28B2A00AE6940 /* Coordinator */,
 				E592298222AE65E9003EC30C /* Assets.xcassets */,
 				E571E6FB22B837000032A748 /* R.generated.swift */,
@@ -350,7 +347,6 @@
 			files = (
 				E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */,
 				E592297E22AE65E8003EC30C /* ViewController.swift in Sources */,
-				E573924422C07AB800C0EC59 /* MainTabController.swift in Sources */,
 				E571E6FC22B837000032A748 /* R.generated.swift in Sources */,
 				E592297C22AE65E8003EC30C /* AppDelegate.swift in Sources */,
 				E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */,
