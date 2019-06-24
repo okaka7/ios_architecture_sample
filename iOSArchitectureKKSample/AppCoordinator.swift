@@ -15,7 +15,7 @@ final class AppCoordinator: Coordinator {
     }
     
     private let window: UIWindow
-    private let rootViewController: ViewController
+    private let rootViewController: SplashViewController
     
     init(window: UIWindow) {
         self.window = window

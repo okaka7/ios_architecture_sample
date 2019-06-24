@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SplashViewController: UIViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
