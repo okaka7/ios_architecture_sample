@@ -8,6 +8,7 @@ opt_in_rules:
   - empty_count
   - operator_usage_whitespace
 disabled_rules:
+  - trailing_whitespace #since has no option to treat empty line,,,
   - force_cast
   - force_try
 line_length: 300

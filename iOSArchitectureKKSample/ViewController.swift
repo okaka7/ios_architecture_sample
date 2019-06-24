@@ -27,7 +27,4 @@ class ViewController: UIViewController {
         label.frame = self.view.bounds
         self.view.addSubview(label)
     }
-
-
 }
-
