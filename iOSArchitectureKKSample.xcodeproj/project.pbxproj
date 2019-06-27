@@ -265,6 +265,7 @@
 				E592299322AE65E9003EC30C /* Sources */,
 				E592299422AE65E9003EC30C /* Frameworks */,
 				E592299522AE65E9003EC30C /* Resources */,
+				BF0F00AFA7EE4978A62D992C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -426,6 +427,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOSArchitectureKKSample/Pods-iOSArchitectureKKSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF0F00AFA7EE4978A62D992C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSArchitectureKKSampleUITests/Pods-iOSArchitectureKKSampleUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSArchitectureKKSampleUITests/Pods-iOSArchitectureKKSampleUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOSArchitectureKKSampleUITests/Pods-iOSArchitectureKKSampleUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E571E6F922B8328A0032A748 /* Carthage Script */ = {
