@@ -6,6 +6,7 @@ target 'iOSArchitectureKKSample' do
   use_frameworks!
 
   # Pods for iOSArchitectureKKSample
+  pod 'R.swift'
 
   target 'iOSArchitectureKKSampleTests' do
     inherit! :search_paths

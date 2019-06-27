@@ -1,0 +1,6 @@
+framework module Pods_iOSArchitectureKKSampleTests {
+  umbrella header "Pods-iOSArchitectureKKSampleTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
