@@ -74,7 +74,7 @@
 		E57BD50622C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourWorkDetailCoordinator.swift; sourceTree = "<group>"; };
 		E57DEECD22C48CB300B0AAA1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E5867C0322C4831E009E9EF8 /* ColourWorkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourWorkDetailViewController.swift; sourceTree = "<group>"; };
-		E592297822AE65E8003EC30C /* DebugiOSArchitectureKKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebugiOSArchitectureKKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E592297822AE65E8003EC30C /* iOSArchitectureKKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSArchitectureKKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E592297B22AE65E8003EC30C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E592297D22AE65E8003EC30C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		E592298222AE65E9003EC30C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		E592297922AE65E8003EC30C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E592297822AE65E8003EC30C /* DebugiOSArchitectureKKSample.app */,
+				E592297822AE65E8003EC30C /* iOSArchitectureKKSample.app */,
 				E592298C22AE65E9003EC30C /* iOSArchitectureKKSampleTests.xctest */,
 				E592299722AE65E9003EC30C /* iOSArchitectureKKSampleUITests.xctest */,
 			);
@@ -235,7 +235,7 @@
 			);
 			name = iOSArchitectureKKSample;
 			productName = iOSArchitectureKKSample;
-			productReference = E592297822AE65E8003EC30C /* DebugiOSArchitectureKKSample.app */;
+			productReference = E592297822AE65E8003EC30C /* iOSArchitectureKKSample.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E592298B22AE65E9003EC30C /* iOSArchitectureKKSampleTests */ = {
@@ -688,7 +688,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Kota.iOSArchitectureKKSample${BUNDLE_ID_SUFFIX}";
-				PRODUCT_NAME = "$(PRODUCT_NAME_PREFIX)$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -739,7 +739,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DebugiOSArchitectureKKSample.app/DebugiOSArchitectureKKSample";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSArchitectureKKSample.app/iOSArchitectureKKSample";
 			};
 			name = Debug;
 		};
@@ -761,7 +761,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DebugiOSArchitectureKKSample.app/DebugiOSArchitectureKKSample";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSArchitectureKKSample.app/iOSArchitectureKKSample";
 			};
 			name = Release;
 		};
