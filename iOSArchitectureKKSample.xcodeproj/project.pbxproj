@@ -265,6 +265,7 @@
 				E592299322AE65E9003EC30C /* Sources */,
 				E592299422AE65E9003EC30C /* Frameworks */,
 				E592299522AE65E9003EC30C /* Resources */,
+				E5A16BB622C583CA00A3B7D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -462,11 +463,29 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		E5A16BB622C583CA00A3B7D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/Target Support Files/Pods-iOSArchitectureKKSampleUITests/Pods-iOSArchitectureKKSampleUITests-frameworks.sh\"\n";
 		};
 		E5F1FC0722AFD70A003432E1 /* Swift lint Script */ = {
 			isa = PBXShellScriptBuildPhase;
