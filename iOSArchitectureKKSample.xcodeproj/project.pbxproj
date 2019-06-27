@@ -480,7 +480,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -787,7 +787,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C52D9CC4468A60A6CB4B1D28 /* Pods-iOSArchitectureKKSampleUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FBNFNU46TG;
 				INFOPLIST_FILE = iOSArchitectureKKSampleUITests/Info.plist;
@@ -808,7 +808,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E41D721FC13AB0982756A8E /* Pods-iOSArchitectureKKSampleUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FBNFNU46TG;
 				INFOPLIST_FILE = iOSArchitectureKKSampleUITests/Info.plist;
