@@ -16,10 +16,12 @@ final class AppCoordinator: Coordinator {
     
     private let window: UIWindow
     private let rootViewController: SplashViewController
+    private var mainTabCoordinator: MainTabCoordinator
     
-    init(window: UIWindow) {
+    init(window: UIWindow, mainTabCoordinator mainTab: MainTabCoordinator = MainTabCoordinator()) {
         self.window = window
         rootViewController = .init()
+        mainTabCoordinator = mainTab
         
     }
     

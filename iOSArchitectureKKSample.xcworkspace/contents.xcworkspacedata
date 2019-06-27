@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/kotakawanishi/mobileApp/ios/iOSArchitectureKKSample/iOSArchitectureKKSample/MainTabCoordinator.swift">
+   </FileRef>
+   <FileRef
       location = "group:iOSArchitectureKKSample.xcodeproj">
    </FileRef>
    <FileRef
