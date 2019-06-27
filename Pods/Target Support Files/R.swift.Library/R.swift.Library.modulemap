@@ -1,4 +1,4 @@
-module Rswift {
+framework module Rswift {
   umbrella header "R.swift.Library-umbrella.h"
 
   export *

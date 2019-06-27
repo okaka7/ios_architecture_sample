@@ -1,4 +1,4 @@
-module Pods_iOSArchitectureKKSample {
+framework module Pods_iOSArchitectureKKSample {
   umbrella header "Pods-iOSArchitectureKKSample-umbrella.h"
 
   export *
