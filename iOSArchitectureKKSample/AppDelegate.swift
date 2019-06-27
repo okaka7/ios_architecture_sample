@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftyBeaver
-import Rswift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
