@@ -11,7 +11,7 @@ import Foundation
 final class ColourSearchCoordinator: Coordinator {
     let searchVC: ColourSearchViewController = {
         let searchVC: ColourSearchViewController = .init()
-        searchVC.tabBarItem.badgeValue = R.string.localizable.search()
+        searchVC.tabBarItem.title = R.string.localizable.search()
         return searchVC
     }()
     func start() {

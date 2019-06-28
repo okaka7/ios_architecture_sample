@@ -11,7 +11,7 @@ import Foundation
 final class ColourCategoryCoordinator: Coordinator {
     let categoryVC: ColourCategoryViewController = {
         let categoryVC: ColourCategoryViewController = .init()
-        categoryVC.tabBarItem.badgeValue = R.string.localizable.category()
+        categoryVC.tabBarItem.title = R.string.localizable.category()
         return categoryVC
     }()
     

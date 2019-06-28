@@ -11,7 +11,7 @@ import Foundation
 final class ColourSettingCoordinator: Coordinator {
     let settingVC: ColourSettingViewController = {
         let settingVC: ColourSettingViewController = .init()
-        settingVC.tabBarItem.badgeValue = R.string.localizable.setting()
+        settingVC.tabBarItem.title = R.string.localizable.setting()
         return settingVC
     }()
     
