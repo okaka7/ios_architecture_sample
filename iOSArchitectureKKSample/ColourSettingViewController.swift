@@ -12,7 +12,8 @@ class ColourSettingViewController: UIViewController {
     
     lazy private var label: UILabel = {
         let label: UILabel = .init(frame: .zero)
-        label.text = "category"
+        label.text = "setting"
+        label.sizeToFit()
         label.center = self.view.center
         return label
     }()

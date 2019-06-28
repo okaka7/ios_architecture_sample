@@ -12,7 +12,8 @@ class ColourFavoritesViewController: UIViewController {
     
     lazy private var label: UILabel = {
         let label: UILabel = .init(frame: .zero)
-        label.text = "category"
+        label.text = "favorites"
+        label.sizeToFit()
         label.center = self.view.center
         return label
     }()

@@ -13,6 +13,7 @@ class SplashViewController: UIViewController {
     lazy private var label: UILabel = {
         let label: UILabel = .init(frame: .zero)
         label.text = "colour"
+        label.sizeToFit()
         label.center = self.view.center
         return label
     }()
