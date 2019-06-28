@@ -16,7 +16,20 @@ final class MainTabCoordinator: Coordinator {
     let settingCoordinator: ColourSettingCoordinator = .init()
     
     init() {
-        
+        let tabBarControllers: [UIViewController] = {
+            let categoryVC: ColourCategoryViewController = .init()
+            categoryVC.tabBarItem.badgeValue = "category"
+            
+            let searchVC: ColourSearchViewController = .init()
+            searchVC.tabBarItem.badgeValue = "search"
+            
+            let favoritesVC: ColourFavoritesViewController = .init()
+            favoritesVC.tabBarItem.badgeValue = "favorites"
+            
+            let settingVC: ColourSettingViewController = .init()
+            settingVC.tabBarItem.badgeValue = "setting"
+            return []
+        }()
     }
     
     func start() {

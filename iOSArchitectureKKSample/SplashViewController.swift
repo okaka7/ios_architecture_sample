@@ -9,6 +9,13 @@
 import UIKit
 
 class SplashViewController: UIViewController {
+    
+    lazy private var label: UILabel = {
+        let label: UILabel = .init(frame: .zero)
+        label.text = "colour"
+        label.center = self.view.center
+        return label
+    }()
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -22,9 +29,6 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let label = UILabel()
-        label.text = "Dribbble"
-        label.frame = self.view.bounds
         self.view.addSubview(label)
     }
 }

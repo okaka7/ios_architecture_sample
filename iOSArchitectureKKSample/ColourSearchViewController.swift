@@ -9,11 +9,18 @@
 import UIKit
 
 class ColourSearchViewController: UIViewController {
+    
+    lazy private var label: UILabel = {
+        let label: UILabel = .init(frame: .zero)
+        label.text = "category"
+        label.center = self.view.center
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.view.addSubview(label)
     }
 
     /*
