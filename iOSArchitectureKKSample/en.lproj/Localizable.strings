@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  iOSArchitectureKKSample
+
+  Created by Kota Kawanishi on 2019/06/28.
+  Copyright © 2019 Kota Kawanishi. All rights reserved.
+*/
+
+"appName" = "Colour";
