@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appCoordinator.start()
         self.appCoordinator = appCoordinator
 
+        log.debug("App Start!!!")
         return true
     }
 
