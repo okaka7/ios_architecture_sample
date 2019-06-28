@@ -23,8 +23,7 @@ final class MainTabCoordinator: Coordinator {
         let tabBarControllers: [UIViewController] = [ categoryCoordinator.categoryVC,
                                                       searchCoordinator.searchVC,
                                                       favoritesCoordinator.favoritesVC,
-                                                      settingCoordinator.settingVC
-        ]
+                                                      settingCoordinator.settingVC]
         mainTabBarController.setViewControllers( tabBarControllers, animated: false)
         
         return
