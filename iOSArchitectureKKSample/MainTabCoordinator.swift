@@ -10,29 +10,23 @@ import UIKit
 
 final class MainTabCoordinator: Coordinator {
     let mainTabBarController: UITabBarController = .init()
-    let categoryCoordinator: ColourCategoryCoordinator = .init()
-    let searchCoordinator: ColourSearchCoordinator = .init()
-    let favoritesCoordinator: ColourFavoritesCoordinator = .init()
-    let settingCoordinator: ColourSettingCoordinator = .init()
+    private let categoryCoordinator: ColourCategoryCoordinator = .init()
+    private let searchCoordinator: ColourSearchCoordinator = .init()
+    private let favoritesCoordinator: ColourFavoritesCoordinator = .init()
+    private let settingCoordinator: ColourSettingCoordinator = .init()
     
     init() {
-        let tabBarControllers: [UIViewController] = {
-            let categoryVC: ColourCategoryViewController = .init()
-            categoryVC.tabBarItem.badgeValue = "category"
-            
-            let searchVC: ColourSearchViewController = .init()
-            searchVC.tabBarItem.badgeValue = "search"
-            
-            let favoritesVC: ColourFavoritesViewController = .init()
-            favoritesVC.tabBarItem.badgeValue = "favorites"
-            
-            let settingVC: ColourSettingViewController = .init()
-            settingVC.tabBarItem.badgeValue = "setting"
-            return []
-        }()
+        
     }
     
     func start() {
+        let tabBarControllers: [UIViewController] = [ categoryCoordinator.categoryVC,
+                                                      searchCoordinator.searchVC,
+                                                      favoritesCoordinator.favoritesVC,
+                                                      settingCoordinator.settingVC
+        ]
+        mainTabBarController.setViewControllers( tabBarControllers, animated: false)
+        
         return
     }
 }

@@ -9,6 +9,11 @@
 import Foundation
 
 final class ColourFavoritesCoordinator: Coordinator {
+    let favoritesVC: ColourFavoritesViewController = {
+        let favoritesVC: ColourFavoritesViewController = .init()
+        favoritesVC.tabBarItem.badgeValue = R.string.localizable.favorites()
+        return favoritesVC
+    }()
     func start() {
         return
     }    

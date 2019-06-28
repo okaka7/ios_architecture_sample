@@ -7,3 +7,8 @@
 */
 
 "appName" = "Colour";
+
+"category" = "category";
+"search" = "search";
+"favorites" = "favorites";
+"setting" = "setting";

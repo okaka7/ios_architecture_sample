@@ -28,5 +28,13 @@ final class AppCoordinator: Coordinator {
     func start() {
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: { [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.mainTabCoordinator.start()
+            self.rootViewController.present(self.mainTabCoordinator.mainTabBarController, animated: false)
+        })
     }
 }

@@ -17,7 +17,17 @@ class ColourFavoritesViewController: UIViewController {
         label.center = self.view.center
         return label
     }()
-
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        log.debug("ColourFavoritesViewController.init()!!!")
+        self.view.backgroundColor = .white
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
