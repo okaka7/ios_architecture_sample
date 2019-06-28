@@ -872,7 +872,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6C7BFA7A86474CE8840677A48646B457 /* Pods-iOSArchitectureKKSampleTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -949,7 +949,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 381879E8AF9667A1E64ACE8481613C1D /* Pods-iOSArchitectureKKSample.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1079,7 +1079,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 20E1034485C0161BA7595369B067A126 /* Pods-iOSArchitectureKKSampleUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1197,6 +1197,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8696F35F15EB25B15F89D8B722DE715D /* R.swift.Library.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
