@@ -20,7 +20,9 @@ class ColourSettingViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
+        #if DEBUG
         log.debug("ColourSettingViewController.init()!!!")
+        #endif
         self.view.backgroundColor = .white
     }
     

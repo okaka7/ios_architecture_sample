@@ -20,7 +20,9 @@ class ColourFavoritesViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
+        #if DEBUG
         log.debug("ColourFavoritesViewController.init()!!!")
+        #endif
         self.view.backgroundColor = .white
     }
     

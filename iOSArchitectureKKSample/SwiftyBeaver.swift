@@ -9,9 +9,11 @@
 import Foundation
 import SwiftyBeaver
 
+#if DEBUG
 let log: SwiftyBeaver.Type = {
     let log = SwiftyBeaver.self
     let console = ConsoleDestination()
+    console.asynchronously = false
     let platform = SBPlatformDestination(
         appID: "dGP9zN",
         appSecret: "llk2d5Ykblm7256bcnixmq7wxtp3hs2y",
@@ -21,3 +23,4 @@ let log: SwiftyBeaver.Type = {
     log.addDestination(platform)
     return log
 }()
+#endif

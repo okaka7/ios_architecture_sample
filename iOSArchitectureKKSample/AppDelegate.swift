@@ -23,8 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appCoordinator = AppCoordinator(window: window)
         appCoordinator.start()
         self.appCoordinator = appCoordinator
-
+        #if DEBUG
         log.debug("App Start!!!")
+        #endif
+
         return true
     }
 

@@ -20,7 +20,9 @@ class ColourSearchViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
+        #if DEBUG
         log.debug("ColourSearchViewController.init()!!!")
+        #endif
         self.view.backgroundColor = .white
     }
     
