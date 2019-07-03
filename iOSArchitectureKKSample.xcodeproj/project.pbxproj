@@ -154,6 +154,19 @@
 			name = Logger;
 			sourceTree = "<group>";
 		};
+		E577B6D122C8B48C00AB2399 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E592297D22AE65E8003EC30C /* SplashViewController.swift */,
+				E53F1DF922C0B60300F81CAA /* ColourCategoryViewController.swift */,
+				E53F1DFB22C0B63000F81CAA /* ColourSearchViewController.swift */,
+				E53F1DFD22C0B66700F81CAA /* ColourFavoritesViewController.swift */,
+				E53F1DFF22C0B6BB00F81CAA /* ColourSettingViewController.swift */,
+				E5867C0322C4831E009E9EF8 /* ColourWorkDetailViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		E592296F22AE65E8003EC30C = {
 			isa = PBXGroup;
 			children = (
@@ -180,16 +193,11 @@
 			isa = PBXGroup;
 			children = (
 				E592297B22AE65E8003EC30C /* AppDelegate.swift */,
-				E592297D22AE65E8003EC30C /* SplashViewController.swift */,
-				E53F1DF922C0B60300F81CAA /* ColourCategoryViewController.swift */,
-				E53F1DFB22C0B63000F81CAA /* ColourSearchViewController.swift */,
-				E53F1DFD22C0B66700F81CAA /* ColourFavoritesViewController.swift */,
-				E53F1DFF22C0B6BB00F81CAA /* ColourSettingViewController.swift */,
-				E5867C0322C4831E009E9EF8 /* ColourWorkDetailViewController.swift */,
-				E57DEECD22C48CB300B0AAA1 /* R.generated.swift */,
+				E577B6D122C8B48C00AB2399 /* Controller */,
 				E574CF5722C642B7009CF8CD /* Logger */,
 				E56FD68222B28B2A00AE6940 /* Coordinator */,
 				E592298222AE65E9003EC30C /* Assets.xcassets */,
+				E57DEECD22C48CB300B0AAA1 /* R.generated.swift */,
 				E592298722AE65E9003EC30C /* Info.plist */,
 				E574CF6D22C64D5B009CF8CD /* Localizable.strings */,
 			);
