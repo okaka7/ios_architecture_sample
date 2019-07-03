@@ -279,11 +279,11 @@
 			buildPhases = (
 				2F1A61AC904BCAE2FFFE1339 /* [CP] Check Pods Manifest.lock */,
 				E571E6FA22B833370032A748 /* R.swift Script */,
+				E571E6F922B8328A0032A748 /* Carthage Script */,
 				E592297422AE65E8003EC30C /* Sources */,
 				E592297522AE65E8003EC30C /* Frameworks */,
 				E592297622AE65E8003EC30C /* Resources */,
 				E5F1FC0722AFD70A003432E1 /* Swift lint Script */,
-				E571E6F922B8328A0032A748 /* Carthage Script */,
 				8CE482475AE3984B892EE298 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
