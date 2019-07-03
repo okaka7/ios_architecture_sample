@@ -12,3 +12,4 @@
 "search" = "search";
 "favorites" = "favorites";
 "setting" = "setting";
+"colourAPIBaseURL" = "https://api.dribbble.com/v2";
