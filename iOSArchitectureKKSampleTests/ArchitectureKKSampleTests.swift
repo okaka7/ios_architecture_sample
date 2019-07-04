@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Moya
 
 @testable import iOSArchitectureKKSample
 
