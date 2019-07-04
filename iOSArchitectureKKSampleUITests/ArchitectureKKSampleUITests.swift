@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Moya
 
 class ArchitectureKKSampleUITests: XCTestCase {
 
