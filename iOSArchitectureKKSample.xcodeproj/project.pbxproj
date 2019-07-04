@@ -27,15 +27,6 @@
 		E574CF5922C642DD009CF8CD /* SwiftyBeaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574CF5822C642DD009CF8CD /* SwiftyBeaver.swift */; };
 		E574CF6B22C64D5B009CF8CD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E574CF6D22C64D5B009CF8CD /* Localizable.strings */; };
 		E577D5C022C56B0000588A38 /* MainTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E577D5BF22C56B0000588A38 /* MainTabCoordinator.swift */; };
-		E578B49522CE045700729054 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51648FB22CCDB5600D3D2D7 /* Moya.framework */; };
-		E578B49722CE046800729054 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E578B49622CE046700729054 /* RxTest.framework */; };
-		E578B49822CE047600729054 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490122CCDC6500D3D2D7 /* RxMoya.framework */; };
-		E578B49922CE048700729054 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490522CCDCFE00D3D2D7 /* Result.framework */; };
-		E578B49A22CE049600729054 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51648FF22CCDC5300D3D2D7 /* RxSwift.framework */; };
-		E578B49B22CE051F00729054 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490322CCDC9B00D3D2D7 /* Alamofire.framework */; };
-		E578B49C22CE052D00729054 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51648FB22CCDB5600D3D2D7 /* Moya.framework */; };
-		E578B49D22CE053A00729054 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490522CCDCFE00D3D2D7 /* Result.framework */; };
-		E578B49E22CE055500729054 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490322CCDC9B00D3D2D7 /* Alamofire.framework */; };
 		E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */; };
 		E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */; };
 		E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */; };
@@ -135,12 +126,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E578B49E22CE055500729054 /* Alamofire.framework in Frameworks */,
-				E578B49A22CE049600729054 /* RxSwift.framework in Frameworks */,
-				E578B49922CE048700729054 /* Result.framework in Frameworks */,
-				E578B49822CE047600729054 /* RxMoya.framework in Frameworks */,
-				E578B49722CE046800729054 /* RxTest.framework in Frameworks */,
-				E578B49522CE045700729054 /* Moya.framework in Frameworks */,
 				98DB59B2D0F2E30AD7073B3E /* Pods_iOSArchitectureKKSampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,9 +134,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E578B49D22CE053A00729054 /* Result.framework in Frameworks */,
-				E578B49C22CE052D00729054 /* Moya.framework in Frameworks */,
-				E578B49B22CE051F00729054 /* Alamofire.framework in Frameworks */,
 				A47FFB047C2B3969D94C6C27 /* Pods_iOSArchitectureKKSampleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
