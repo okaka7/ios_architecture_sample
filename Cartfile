@@ -1,2 +1,3 @@
 github "SwiftyBeaver/SwiftyBeaver"
 github "Moya/Moya"
+github "kishikawakatsumi/KeychainAccess"

@@ -33,6 +33,7 @@
 		E57BD50522C4B58B00FE44D4 /* ColourSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50422C4B58B00FE44D4 /* ColourSettingCoordinator.swift */; };
 		E57BD50722C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50622C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift */; };
 		E57DEECE22C48CB300B0AAA1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DEECD22C48CB300B0AAA1 /* R.generated.swift */; };
+		E581FBA522D346B400754098 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E581FBA422D346B400754098 /* KeychainAccess.framework */; };
 		E5867C0422C4831E009E9EF8 /* ColourWorkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5867C0322C4831E009E9EF8 /* ColourWorkDetailViewController.swift */; };
 		E592297C22AE65E8003EC30C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592297B22AE65E8003EC30C /* AppDelegate.swift */; };
 		E592297E22AE65E8003EC30C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592297D22AE65E8003EC30C /* SplashViewController.swift */; };
@@ -92,6 +93,7 @@
 		E57BD50422C4B58B00FE44D4 /* ColourSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSettingCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50622C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourWorkDetailCoordinator.swift; sourceTree = "<group>"; };
 		E57DEECD22C48CB300B0AAA1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		E581FBA422D346B400754098 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		E5867C0322C4831E009E9EF8 /* ColourWorkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourWorkDetailViewController.swift; sourceTree = "<group>"; };
 		E592297822AE65E8003EC30C /* iOSArchitectureKKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSArchitectureKKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E592297B22AE65E8003EC30C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E581FBA522D346B400754098 /* KeychainAccess.framework in Frameworks */,
 				E516490622CCDCFE00D3D2D7 /* Result.framework in Frameworks */,
 				E516490422CCDC9B00D3D2D7 /* Alamofire.framework in Frameworks */,
 				E516490222CCDC6500D3D2D7 /* RxMoya.framework in Frameworks */,
@@ -167,6 +170,7 @@
 		E571E6F422B8324B0032A748 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E581FBA422D346B400754098 /* KeychainAccess.framework */,
 				E578B49622CE046700729054 /* RxTest.framework */,
 				E516490522CCDCFE00D3D2D7 /* Result.framework */,
 				E516490322CCDC9B00D3D2D7 /* Alamofire.framework */,
@@ -521,6 +525,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxAtomic.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
 			);
 			name = "Carthage Script";
 			outputFileListPaths = (
