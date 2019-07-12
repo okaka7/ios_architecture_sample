@@ -37,10 +37,16 @@ class SplashViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: { [weak self] in
             guard let self = self else {
                 return
             }
+            
+            guard let dribbbleOauthURL = DribbbleOauth().authenticationURL else {
+                return
+            }
+            UIApplication.shared.openURLIfPossible(dribbbleOauthURL, options: [:])
         })
 
     }
