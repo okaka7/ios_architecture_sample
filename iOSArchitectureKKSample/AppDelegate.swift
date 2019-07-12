@@ -56,8 +56,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
             return false
         }
-        log.debug("openURL")
-        log.debug(components.queryItems)
+        
+        if let scheme = components.scheme,
+            let host = components.host,
+            let state = LocalCache.shared[.dribbbleState],
+            let stateQuery = components.queryItems?.first(where: { item in
+                    return item.name == "state"
+                }),
+            let newState = stateQuery.value,
+            state == newState,
+        scheme == R.string.localizable.appScheme() && host == R.string.localizable.callBackHost() {
+            let codeQuery = components.queryItems?.first(where: { item in
+                return item.name == "code"
+            })
+            let code = stateQuery.value!
+            
+            Repository.DribbbleOauth.tokenRequest(code: code).subscribe(onSuccess: {token in log.debug("tokenGet\(token)")},
+                                                        
+                                                                        onError: {error in log.error("tokenFail\(error)")})
+            
+            
+        }
+        LocalCache.shared[.dribbbleState] = nil
         
         return true
     }
