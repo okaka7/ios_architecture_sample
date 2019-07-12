@@ -19,7 +19,7 @@ extension ColourAPITargetType {
         return URL(string: R.string.localizable.colourAPIBaseURL())!
     }
     
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         return ["Accept": "application/vnd.dribbble.v2.param+json"]
     }
     

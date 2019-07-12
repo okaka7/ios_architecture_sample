@@ -30,7 +30,9 @@ final class AppCoordinator: Coordinator {
         window.makeKeyAndVisible()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: { [weak self] in
-            guard let self = self else { return }
+            guard let self = self else{
+                return
+            }
             self.mainTabCoordinator.start()
             self.rootViewController.present(self.mainTabCoordinator.mainTabBarController, animated: false)
         })
