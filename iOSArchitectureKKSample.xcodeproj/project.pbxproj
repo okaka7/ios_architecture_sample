@@ -16,7 +16,7 @@
 		E516490222CCDC6500D3D2D7 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490122CCDC6500D3D2D7 /* RxMoya.framework */; };
 		E516490422CCDC9B00D3D2D7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490322CCDC9B00D3D2D7 /* Alamofire.framework */; };
 		E516490622CCDCFE00D3D2D7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490522CCDCFE00D3D2D7 /* Result.framework */; };
-		E516490922CD0F0000D3D2D7 /* ColourAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E516490822CD0F0000D3D2D7 /* ColourAPI.swift */; };
+		E516490922CD0F0000D3D2D7 /* DribbbleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E516490822CD0F0000D3D2D7 /* DribbbleAPI.swift */; };
 		E53F1DFA22C0B60300F81CAA /* ColourCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DF922C0B60300F81CAA /* ColourCategoryViewController.swift */; };
 		E53F1DFC22C0B63000F81CAA /* ColourSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DFB22C0B63000F81CAA /* ColourSearchViewController.swift */; };
 		E53F1DFE22C0B66700F81CAA /* ColourFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DFD22C0B66700F81CAA /* ColourFavoritesViewController.swift */; };
@@ -29,6 +29,8 @@
 		E577D5C022C56B0000588A38 /* MainTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E577D5BF22C56B0000588A38 /* MainTabCoordinator.swift */; };
 		E57826BC22D85506002499A9 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57826BB22D85505002499A9 /* RealmSwift.framework */; };
 		E57826BE22D855D2002499A9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57826BD22D855D2002499A9 /* Realm.framework */; };
+		E57826C122D86444002499A9 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826C022D86444002499A9 /* Authentication.swift */; };
+		E57826C322D865F4002499A9 /* DribbbleOauthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826C222D865F4002499A9 /* DribbbleOauthAPI.swift */; };
 		E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */; };
 		E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */; };
 		E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */; };
@@ -76,7 +78,7 @@
 		E516490122CCDC6500D3D2D7 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
 		E516490322CCDC9B00D3D2D7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		E516490522CCDCFE00D3D2D7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		E516490822CD0F0000D3D2D7 /* ColourAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourAPI.swift; sourceTree = "<group>"; };
+		E516490822CD0F0000D3D2D7 /* DribbbleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleAPI.swift; sourceTree = "<group>"; };
 		E53F1DF922C0B60300F81CAA /* ColourCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourCategoryViewController.swift; sourceTree = "<group>"; };
 		E53F1DFB22C0B63000F81CAA /* ColourSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSearchViewController.swift; sourceTree = "<group>"; };
 		E53F1DFD22C0B66700F81CAA /* ColourFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourFavoritesViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,8 @@
 		E577D5BF22C56B0000588A38 /* MainTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabCoordinator.swift; sourceTree = "<group>"; };
 		E57826BB22D85505002499A9 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		E57826BD22D855D2002499A9 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		E57826C022D86444002499A9 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		E57826C222D865F4002499A9 /* DribbbleOauthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleOauthAPI.swift; sourceTree = "<group>"; };
 		E578B49622CE046700729054 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourCategoryCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSearchCoordinator.swift; sourceTree = "<group>"; };
@@ -153,7 +157,9 @@
 		E516490722CD0E6200D3D2D7 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				E516490822CD0F0000D3D2D7 /* ColourAPI.swift */,
+				E516490822CD0F0000D3D2D7 /* DribbbleAPI.swift */,
+				E57826C222D865F4002499A9 /* DribbbleOauthAPI.swift */,
+				E57826BF22D85A76002499A9 /* DribbbleEndPoint */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -213,6 +219,14 @@
 				E5867C0322C4831E009E9EF8 /* ColourWorkDetailViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		E57826BF22D85A76002499A9 /* DribbbleEndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				E57826C022D86444002499A9 /* Authentication.swift */,
+			);
+			name = DribbbleEndPoint;
 			sourceTree = "<group>";
 		};
 		E592296F22AE65E8003EC30C = {
@@ -592,19 +606,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E57826C122D86444002499A9 /* Authentication.swift in Sources */,
 				E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */,
 				E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */,
 				E592297E22AE65E8003EC30C /* SplashViewController.swift in Sources */,
 				E577D5C022C56B0000588A38 /* MainTabCoordinator.swift in Sources */,
 				E53F1DFA22C0B60300F81CAA /* ColourCategoryViewController.swift in Sources */,
 				E53F1DFC22C0B63000F81CAA /* ColourSearchViewController.swift in Sources */,
-				E516490922CD0F0000D3D2D7 /* ColourAPI.swift in Sources */,
+				E516490922CD0F0000D3D2D7 /* DribbbleAPI.swift in Sources */,
 				E53F1DFE22C0B66700F81CAA /* ColourFavoritesViewController.swift in Sources */,
 				E5867C0422C4831E009E9EF8 /* ColourWorkDetailViewController.swift in Sources */,
 				E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */,
 				E57BD50522C4B58B00FE44D4 /* ColourSettingCoordinator.swift in Sources */,
 				E592297C22AE65E8003EC30C /* AppDelegate.swift in Sources */,
 				E57DEECE22C48CB300B0AAA1 /* R.generated.swift in Sources */,
+				E57826C322D865F4002499A9 /* DribbbleOauthAPI.swift in Sources */,
 				E53F1E0022C0B6BB00F81CAA /* ColourSettingViewController.swift in Sources */,
 				E574CF5922C642DD009CF8CD /* SwiftyBeaver.swift in Sources */,
 				E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */,
