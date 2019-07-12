@@ -13,9 +13,6 @@ protocol DribbbleAPITargetType: TargetType {
     associatedtype Response: Codable
 }
 
-struct DribbbleAPIResponse<T: Codable>: Codable {
-    let data: T
-}
 
 extension DribbbleAPITargetType {
     

@@ -31,6 +31,8 @@
 		E57826BE22D855D2002499A9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57826BD22D855D2002499A9 /* Realm.framework */; };
 		E57826C122D86444002499A9 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826C022D86444002499A9 /* Authentication.swift */; };
 		E57826C322D865F4002499A9 /* DribbbleOauthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826C222D865F4002499A9 /* DribbbleOauthAPI.swift */; };
+		E57826C622D89F6A002499A9 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826C522D89F6A002499A9 /* Token.swift */; };
+		E57826CA22D8A1B8002499A9 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826C922D8A1B8002499A9 /* TokenResponse.swift */; };
 		E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */; };
 		E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */; };
 		E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */; };
@@ -94,6 +96,8 @@
 		E57826BD22D855D2002499A9 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		E57826C022D86444002499A9 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		E57826C222D865F4002499A9 /* DribbbleOauthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleOauthAPI.swift; sourceTree = "<group>"; };
+		E57826C522D89F6A002499A9 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		E57826C922D8A1B8002499A9 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		E578B49622CE046700729054 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourCategoryCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSearchCoordinator.swift; sourceTree = "<group>"; };
@@ -159,7 +163,8 @@
 			children = (
 				E516490822CD0F0000D3D2D7 /* DribbbleAPI.swift */,
 				E57826C222D865F4002499A9 /* DribbbleOauthAPI.swift */,
-				E57826BF22D85A76002499A9 /* DribbbleEndPoint */,
+				E57826C722D8A176002499A9 /* EndPoint */,
+				E57826C822D8A192002499A9 /* Response Entity */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -221,12 +226,53 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		E57826BF22D85A76002499A9 /* DribbbleEndPoint */ = {
+		E57826BF22D85A76002499A9 /* DribbbleAPIEndPoint */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DribbbleAPIEndPoint;
+			sourceTree = "<group>";
+		};
+		E57826C422D868FA002499A9 /* DribbbleOauthEndPoint */ = {
 			isa = PBXGroup;
 			children = (
 				E57826C022D86444002499A9 /* Authentication.swift */,
+				E57826C522D89F6A002499A9 /* Token.swift */,
 			);
-			name = DribbbleEndPoint;
+			name = DribbbleOauthEndPoint;
+			sourceTree = "<group>";
+		};
+		E57826C722D8A176002499A9 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				E57826BF22D85A76002499A9 /* DribbbleAPIEndPoint */,
+				E57826C422D868FA002499A9 /* DribbbleOauthEndPoint */,
+			);
+			name = EndPoint;
+			sourceTree = "<group>";
+		};
+		E57826C822D8A192002499A9 /* Response Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E57826CC22D8A275002499A9 /* DribbbleAPIResponse */,
+				E57826CB22D8A261002499A9 /* DribbbleOauthResponse */,
+			);
+			name = "Response Entity";
+			sourceTree = "<group>";
+		};
+		E57826CB22D8A261002499A9 /* DribbbleOauthResponse */ = {
+			isa = PBXGroup;
+			children = (
+				E57826C922D8A1B8002499A9 /* TokenResponse.swift */,
+			);
+			name = DribbbleOauthResponse;
+			sourceTree = "<group>";
+		};
+		E57826CC22D8A275002499A9 /* DribbbleAPIResponse */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DribbbleAPIResponse;
 			sourceTree = "<group>";
 		};
 		E592296F22AE65E8003EC30C = {
@@ -621,6 +667,8 @@
 				E592297C22AE65E8003EC30C /* AppDelegate.swift in Sources */,
 				E57DEECE22C48CB300B0AAA1 /* R.generated.swift in Sources */,
 				E57826C322D865F4002499A9 /* DribbbleOauthAPI.swift in Sources */,
+				E57826C622D89F6A002499A9 /* Token.swift in Sources */,
+				E57826CA22D8A1B8002499A9 /* TokenResponse.swift in Sources */,
 				E53F1E0022C0B6BB00F81CAA /* ColourSettingViewController.swift in Sources */,
 				E574CF5922C642DD009CF8CD /* SwiftyBeaver.swift in Sources */,
 				E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */,

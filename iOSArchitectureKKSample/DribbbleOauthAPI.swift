@@ -13,9 +13,7 @@ protocol DribbbleOauthTargetType: TargetType {
     associatedtype Response: Codable
 }
 
-struct DribbbleOauthResponse<T: Codable>: Codable {
-    let data: T
-}
+
 
 extension DribbbleOauthTargetType {
     
