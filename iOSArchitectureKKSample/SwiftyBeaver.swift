@@ -14,13 +14,13 @@ let log: SwiftyBeaver.Type = {
     let log = SwiftyBeaver.self
     let console = ConsoleDestination()
     console.asynchronously = false
-    let platform = SBPlatformDestination(
-        appID: "dGP9zN",
-        appSecret: "llk2d5Ykblm7256bcnixmq7wxtp3hs2y",
-        encryptionKey: "cey6iswd7xM9rkv6bewttynpkhbtqXj2")
+//    let platform = SBPlatformDestination(
+//        appID: "dGP9zN",
+//        appSecret: "llk2d5Ykblm7256bcnixmq7wxtp3hs2y",
+//        encryptionKey: "cey6iswd7xM9rkv6bewttynpkhbtqXj2")
     
     log.addDestination(console)
-    log.addDestination(platform)
+//    log.addDestination(platform)
     return log
 }()
 #endif
