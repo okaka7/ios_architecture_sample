@@ -17,3 +17,4 @@
 "dribbbleAPIClientSecret" = "c2cb39ed366a6faf3eca26929e3bdd4bd40b7f6a5cb5ab88341033129eb57b72";
 "dribbbleOauthBaseURL" = "https://dribbble.com/oauth";
 "appURLScheme" = "oauth-colour://callback";
+"dribbbleState" = "dribbbleState";

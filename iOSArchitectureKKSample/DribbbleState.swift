@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DribbbleState: ExpressibleByStringLiteral, Equatable {
+struct DribbbleState: Codable, ExpressibleByStringLiteral, Equatable {
     typealias StringLiteralType = String
     
     let state: String

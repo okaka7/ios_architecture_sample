@@ -19,3 +19,11 @@ struct LocalCacheKey<Value: LocalCacheValue>: LocalCacheKeys {
         self.defaultValue = defaultValue
     }
 }
+
+extension LocalCacheKeys {
+    static var dribbbleState: LocalCacheKey<DribbbleState> {
+        return LocalCacheKey(R.string.localizable.dribbbleState(), defaultValue: nil)
+    }
+}
+
+extension DribbbleState: LocalCacheValue {}
