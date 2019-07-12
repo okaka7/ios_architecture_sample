@@ -11,7 +11,6 @@ import Moya
 import RxSwift
 import RxMoya
 
-
 extension Repository {
     struct DribbbleOauth {
         static let provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
@@ -23,6 +22,10 @@ extension Repository {
         
         static func authenticateRequest() -> Single<Authentication.Response> {
             return request(Authentication())
+        }
+        
+        static func tokenRequest(code: String) -> Single<Token.Response> {
+            return request(Token(code: code))
         }
         
     }

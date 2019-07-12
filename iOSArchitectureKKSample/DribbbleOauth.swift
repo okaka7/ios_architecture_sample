@@ -43,7 +43,7 @@ struct DribbbleOauth {
     }
     
     init(clientID: String = R.string.localizable.dribbbleAPIClientID(),
-         redirectURL: String = R.string.localizable.appURLScheme(),
+         redirectURL: String = R.string.localizable.appURL(),
          scope: String = "public",
          state: String = UUID().uuidString) {
         self.clientID = clientID
