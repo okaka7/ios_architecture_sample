@@ -17,8 +17,11 @@ class SplashViewController: UIViewController {
         label.center = self.view.center
         return label
     }()
+    
+    weak var transition: TransitionToMainTabVC?
 
-    init() {
+    init(transition: TransitionToMainTabVC) {
+        self.transition = transition
         super.init(nibName: nil, bundle: nil)
         self.view.backgroundColor = .white
     }
@@ -31,5 +34,14 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.addSubview(label)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: { [weak self] in
+            guard let self = self else {
+                return
+            }
+        })
+
     }
 }
