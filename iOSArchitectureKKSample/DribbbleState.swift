@@ -8,20 +8,26 @@
 
 import Foundation
 
-struct DribbbleState: Codable, ExpressibleByStringLiteral, Equatable {
+struct DribbbleState: ExpressibleByStringLiteral, Equatable, Codable, CustomStringConvertible, CustomDebugStringConvertible  {
+    
     typealias StringLiteralType = String
     
     let state: String
     
-    init(stringLiteral value: DribbbleState.StringLiteralType) {
+    var description: String { return state }
+    
+    var debugDescription: String { return "\(String(describing: type(of: self))) \(state)"}
+    
+    
+    init(stringLiteral value: StringLiteralType) {
         self.state = value
     }
     
-    static func ==(lhs: DribbbleState, rhs: DribbbleState) -> Bool {
+    static func == (lhs: DribbbleState, rhs: DribbbleState) -> Bool {
         return lhs.state == rhs.state
     }
     
-    static func ==(lhs: DribbbleState, rhs: String) -> Bool {
+    static func == (lhs: DribbbleState, rhs: String) -> Bool {
         return lhs.state == rhs
     }
 }

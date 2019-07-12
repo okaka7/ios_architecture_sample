@@ -19,6 +19,8 @@ struct DribbbleOauth {
     private let path: String = "/authorize"
     private var url: URL { return URL(string: baseURL + path)! }
     
+    private let localCache = LocalCache.shared
+    
     private var queryItems: [URLQueryItem] {
         return [URLQueryItem(name: "client_id", value: clientID),
                 URLQueryItem(name: "redirect_uri", value: redirectURL),
@@ -48,5 +50,9 @@ struct DribbbleOauth {
         self.redirectURL = redirectURL
         self.scope = scope
         self.state = state
+    }
+    
+    func saveState() {
+        localCache[.dribbbleState] = DribbbleState(stringLiteral: self.state)
     }
 }
