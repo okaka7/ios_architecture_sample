@@ -23,6 +23,9 @@ extension ColourAPITargetType {
         return ["Accept": "application/vnd.dribbble.v2.param+json"]
     }
     
+    // TODO: あとでテストコードの際に具体的な返り値を設定
+    var sampleData: Data { return Data() }
+    
     var validationType: ValidationType {
         return .successAndRedirectCodes
     }
