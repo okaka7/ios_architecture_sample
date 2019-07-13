@@ -59,11 +59,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
         
-        if components.path == R.string.localizable.dribbbleOauthCallBackPath()  {
-            let oauthToken = DribbbleOauthToken(components: components)
-            oauthToken.requestToken(onSuccess: { response in
-                oauthToken.saveToken(response.accessToken)
-            }, onError: {_ in })
+        if components.path == R.string.localizable.dribbbleOauthCallBackPath() &&
+            DribbbleOauthToken.isReceivedStateCorrect(components),
+            let code = DribbbleOauthToken.getCode(components: components) {
+        
+            DribbbleOauthToken.requestToken(code: code,
+                                            onSuccess: { response in
+                                                DribbbleOauthToken.saveToken(response.accessToken)
+                                            },
+                                            onError: {_ in })
         }
         
         
