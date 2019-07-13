@@ -10,31 +10,37 @@ import UIKit
 
 struct DribbbleOauth {
     
-    private let clientID: String
-    private let redirectURL: String
-    private let scope: String
-    private let state: String
+    private let clientID: String = R.string.localizable.dribbbleAPIClientID()
+    private let redirectURL: String = {
+        let scheme = R.string.localizable.appScheme()
+        let host = R.string.localizable.appHost()
+        let path = R.string.localizable.dribbbleOauthCallBackPath()
+        return "\(scheme)://\(host)\(path)"
+    }()
+    private let scope: String = "public"
+    private let state: String = UUID().uuidString
     
-    private let baseURL: String = R.string.localizable.dribbbleOauthBaseURL()
-    private let path: String = "/authorize"
-    private var url: URL { return URL(string: baseURL + path)! }
+    private let url: URL = {
+        let baseURL: String = R.string.localizable.dribbbleOauthBaseURL()
+        let path: String = "/authorize"
+        return URL(string: baseURL + path)!
+    }()
     
     private let localCache = LocalCache.shared
     
-    private var queryItems: [URLQueryItem] {
-        return [URLQueryItem(name: "client_id", value: clientID),
-                URLQueryItem(name: "redirect_uri", value: redirectURL),
-                URLQueryItem(name: "scope", value: scope),
-                URLQueryItem(name: "state", value: state)
-        ]
-    }
     
     private var authenticationURL: URL? {
         guard var components = URLComponents(url: self.url, resolvingAgainstBaseURL: true) else {
             return nil
         }
         
-        components.queryItems = self.queryItems
+        components.queryItems = {
+            return [URLQueryItem(name: "client_id", value: clientID),
+                    URLQueryItem(name: "redirect_uri", value: redirectURL),
+                    URLQueryItem(name: "scope", value: scope),
+                    URLQueryItem(name: "state", value: state)
+            ]
+        }()
         
         guard let url = components.url else {
             return nil
@@ -42,15 +48,6 @@ struct DribbbleOauth {
         return url
     }
     
-    init(clientID: String = R.string.localizable.dribbbleAPIClientID(),
-         redirectURL: String = R.string.localizable.appURL(),
-         scope: String = "public",
-         state: String = UUID().uuidString) {
-        self.clientID = clientID
-        self.redirectURL = redirectURL
-        self.scope = scope
-        self.state = state
-    }
     
     @discardableResult
     func authenticate() -> Bool {
