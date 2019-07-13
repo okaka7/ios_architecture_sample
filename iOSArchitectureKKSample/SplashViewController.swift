@@ -43,8 +43,6 @@ class SplashViewController: UIViewController {
                 return
             }
             DribbbleOauth().authenticate()
-            
-            
         })
 
     }
