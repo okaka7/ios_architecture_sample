@@ -37,7 +37,7 @@
 		E57826CF22D8AB20002499A9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826CE22D8AB20002499A9 /* Repository.swift */; };
 		E57826D122D8AB3C002499A9 /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826D022D8AB3C002499A9 /* APIRepository.swift */; };
 		E57826D322D8AB8A002499A9 /* OauthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826D222D8AB8A002499A9 /* OauthRepository.swift */; };
-		E57826D522D8C493002499A9 /* DribbbleOauth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826D422D8C493002499A9 /* DribbbleOauth.swift */; };
+		E57826D522D8C493002499A9 /* DribbbleOauthAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826D422D8C493002499A9 /* DribbbleOauthAuthentication.swift */; };
 		E57826DC22D8D070002499A9 /* UIApplication+openURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826DB22D8D070002499A9 /* UIApplication+openURL.swift */; };
 		E57826DE22D8D8FC002499A9 /* ReferrerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826DD22D8D8FC002499A9 /* ReferrerURL.swift */; };
 		E57826E022D8DA01002499A9 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826DF22D8DA01002499A9 /* NSObject+ClassName.swift */; };
@@ -115,7 +115,7 @@
 		E57826CE22D8AB20002499A9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		E57826D022D8AB3C002499A9 /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
 		E57826D222D8AB8A002499A9 /* OauthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthRepository.swift; sourceTree = "<group>"; };
-		E57826D422D8C493002499A9 /* DribbbleOauth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleOauth.swift; sourceTree = "<group>"; };
+		E57826D422D8C493002499A9 /* DribbbleOauthAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleOauthAuthentication.swift; sourceTree = "<group>"; };
 		E57826DB22D8D070002499A9 /* UIApplication+openURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+openURL.swift"; sourceTree = "<group>"; };
 		E57826DD22D8D8FC002499A9 /* ReferrerURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferrerURL.swift; sourceTree = "<group>"; };
 		E57826DF22D8DA01002499A9 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
@@ -422,7 +422,7 @@
 		E5A8138F22DA0E760028F80F /* Dribbble */ = {
 			isa = PBXGroup;
 			children = (
-				E57826D422D8C493002499A9 /* DribbbleOauth.swift */,
+				E57826D422D8C493002499A9 /* DribbbleOauthAuthentication.swift */,
 				E5A8139022DA0EAB0028F80F /* DribbbleOauthToken.swift */,
 			);
 			name = Dribbble;
@@ -791,7 +791,7 @@
 				E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */,
 				E57BD50722C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift in Sources */,
 				E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */,
-				E57826D522D8C493002499A9 /* DribbbleOauth.swift in Sources */,
+				E57826D522D8C493002499A9 /* DribbbleOauthAuthentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

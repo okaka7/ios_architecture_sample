@@ -47,7 +47,7 @@ class SplashViewController: UIViewController {
             if let token: String = ColourKeychainAccess.dribbbleToken {
                 log.debug(token)
             } else {
-                DribbbleOauth().authenticate()
+                DribbbleOauthAuthentication.authenticate()
             }
             
         })
