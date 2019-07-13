@@ -53,16 +53,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private let isReceivedStateCorrect: (URLComponents) -> Bool = { components in
-        guard let stateQuery = components.queryItems?.first(where: { item in
-                    return item.name == "state"
-                }),
-            let newState = stateQuery.value else {
-                return false
-            }
-        guard  let state: DribbbleState = LocalCache.shared[.dribbbleState] else {
+        guard let receivedState: String = components.queryItems?.getFirstQueryValue("state") as? String,
+                let sentState: DribbbleState = LocalCache.shared[.dribbbleState] else {
             return false
         }
-        return state == newState
+        
+        return sentState == receivedState
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -72,9 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         if components.path == R.string.localizable.dribbbleOauthCallBackPath()  {
-            
             if isReceivedStateCorrect(components) {
-                print(components.url)
                 guard let code = components.queryItems?.getFirstQueryValue("code") as? String else {
                         return false
                 }
@@ -86,8 +80,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                onError: {error in log.error("tokenFail\(error)")})
                 
             }
+            LocalCache.shared[.dribbbleState] = nil
         }
-        LocalCache.shared[.dribbbleState] = nil
+        
         
         return true
     }
