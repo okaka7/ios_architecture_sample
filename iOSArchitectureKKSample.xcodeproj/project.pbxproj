@@ -57,6 +57,7 @@
 		E592298322AE65E9003EC30C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E592298222AE65E9003EC30C /* Assets.xcassets */; };
 		E592299122AE65E9003EC30C /* ArchitectureKKSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592299022AE65E9003EC30C /* ArchitectureKKSampleTests.swift */; };
 		E592299C22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592299B22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift */; };
+		E5A8139122DA0EAB0028F80F /* DribbbleOauthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8139022DA0EAB0028F80F /* DribbbleOauthToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		E592299722AE65E9003EC30C /* iOSArchitectureKKSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSArchitectureKKSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E592299B22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureKKSampleUITests.swift; sourceTree = "<group>"; };
 		E592299D22AE65E9003EC30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5A8139022DA0EAB0028F80F /* DribbbleOauthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleOauthToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,7 +304,6 @@
 			children = (
 				E57826CE22D8AB20002499A9 /* Repository.swift */,
 				E57826D022D8AB3C002499A9 /* APIRepository.swift */,
-				E57826D422D8C493002499A9 /* DribbbleOauth.swift */,
 				E57826DD22D8D8FC002499A9 /* ReferrerURL.swift */,
 				E57826D222D8AB8A002499A9 /* OauthRepository.swift */,
 			);
@@ -341,6 +342,7 @@
 		E57826EE22D8E20E002499A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E5A8138F22DA0E760028F80F /* Dribbble */,
 				E57826EF22D8E21C002499A9 /* Entity */,
 			);
 			name = Model;
@@ -412,6 +414,15 @@
 				E592299D22AE65E9003EC30C /* Info.plist */,
 			);
 			path = iOSArchitectureKKSampleUITests;
+			sourceTree = "<group>";
+		};
+		E5A8138F22DA0E760028F80F /* Dribbble */ = {
+			isa = PBXGroup;
+			children = (
+				E57826D422D8C493002499A9 /* DribbbleOauth.swift */,
+				E5A8139022DA0EAB0028F80F /* DribbbleOauthToken.swift */,
+			);
+			name = Dribbble;
 			sourceTree = "<group>";
 		};
 		EFBD7F67D6E3C2F7FF40E41B /* Pods */ = {
@@ -762,6 +773,7 @@
 				E57826DE22D8D8FC002499A9 /* ReferrerURL.swift in Sources */,
 				E57826CA22D8A1B8002499A9 /* TokenResponse.swift in Sources */,
 				E5291A9F22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift in Sources */,
+				E5A8139122DA0EAB0028F80F /* DribbbleOauthToken.swift in Sources */,
 				E53F1E0022C0B6BB00F81CAA /* ColourSettingViewController.swift in Sources */,
 				E574CF5922C642DD009CF8CD /* SwiftyBeaver.swift in Sources */,
 				E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */,

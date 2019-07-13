@@ -20,4 +20,5 @@
 "appHost" = "colour.com";
 "dribbbleOauthCallBackPath" = "/dribbble-oauth-callback";
 "dribbbleState" = "dribbbleState";
+"dribbbleToken" = "dribbbleToken";
 

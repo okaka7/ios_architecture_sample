@@ -52,35 +52,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    private let isReceivedStateCorrect: (URLComponents) -> Bool = { components in
-        guard let receivedState: String = components.queryItems?.getFirstQueryValue("state") as? String,
-                let sentState: DribbbleState = LocalCache.shared[.dribbbleState] else {
-            return false
-        }
-        
-        return sentState == receivedState
-    }
+    
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
             return false
         }
         
-        
         if components.path == R.string.localizable.dribbbleOauthCallBackPath()  {
-            if isReceivedStateCorrect(components) {
-                guard let code = components.queryItems?.getFirstQueryValue("code") as? String else {
-                        return false
-                }
-                
-                Repository.DribbbleOauth
-                    .tokenRequest(code: code)
-                    .subscribe(onSuccess: { token in log.debug("tokenGet\(token)")},
-                               
-                               onError: {error in log.error("tokenFail\(error)")})
-                
-            }
-            LocalCache.shared[.dribbbleState] = nil
+            let oauthToken = DribbbleOauthToken(components: components)
+            oauthToken.requestToken(onSuccess: {_ in }, onError: {_ in })
         }
         
         

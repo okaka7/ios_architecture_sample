@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainAccess
 
 class SplashViewController: UIViewController {
     
@@ -42,7 +43,13 @@ class SplashViewController: UIViewController {
             guard let self = self else {
                 return
             }
-            DribbbleOauth().authenticate()
+            let keychain = Keychain(service: R.string.localizable.appHost())
+            if let token: String = keychain[R.string.localizable.dribbbleToken()] {
+                log.debug(token)
+            } else {
+                DribbbleOauth().authenticate()
+            }
+            
         })
 
     }

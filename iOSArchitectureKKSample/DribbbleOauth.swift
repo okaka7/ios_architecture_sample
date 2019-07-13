@@ -48,7 +48,6 @@ struct DribbbleOauth {
         return url
     }
     
-    
     @discardableResult
     func authenticate() -> Bool {
         guard let dribbbleOauthURL = self.authenticationURL else {
