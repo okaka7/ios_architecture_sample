@@ -36,10 +36,8 @@ struct DribbbleOauthToken {
             Repository.DribbbleOauth
                 .tokenRequest(code: code)
                 .subscribe(
-                    onSuccess: { token in
-                        successHandler(token)
-                        let keychain = Keychain(service: R.string.localizable.appHost())
-                        keychain[R.string.localizable.dribbbleToken()] = token.accessToken
+                    onSuccess: { response in
+                        successHandler(response)
                         log.debug("saveToken!!!!")
                     },
                     onError: {error in
@@ -48,5 +46,9 @@ struct DribbbleOauthToken {
             
         }
         LocalCache.shared[.dribbbleState] = nil
+    }
+    
+    func saveToken(_ token: String) {
+        ColourKeychainAccess.saveDribbbleToken(token)
     }
 }

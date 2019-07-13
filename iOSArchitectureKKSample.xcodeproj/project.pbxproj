@@ -58,6 +58,7 @@
 		E592299122AE65E9003EC30C /* ArchitectureKKSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592299022AE65E9003EC30C /* ArchitectureKKSampleTests.swift */; };
 		E592299C22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592299B22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift */; };
 		E5A8139122DA0EAB0028F80F /* DribbbleOauthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8139022DA0EAB0028F80F /* DribbbleOauthToken.swift */; };
+		E5A8139422DA230D0028F80F /* ColourKeyChainAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8139322DA230D0028F80F /* ColourKeyChainAccess.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,7 @@
 		E592299B22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureKKSampleUITests.swift; sourceTree = "<group>"; };
 		E592299D22AE65E9003EC30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5A8139022DA0EAB0028F80F /* DribbbleOauthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleOauthToken.swift; sourceTree = "<group>"; };
+		E5A8139322DA230D0028F80F /* ColourKeyChainAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourKeyChainAccess.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +327,7 @@
 		E57826E122D8E07F002499A9 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				E5A8139222DA22EF0028F80F /* KeyChainAccess */,
 				E57826E222D8E08E002499A9 /* LocalCache */,
 			);
 			name = Utility;
@@ -423,6 +426,14 @@
 				E5A8139022DA0EAB0028F80F /* DribbbleOauthToken.swift */,
 			);
 			name = Dribbble;
+			sourceTree = "<group>";
+		};
+		E5A8139222DA22EF0028F80F /* KeyChainAccess */ = {
+			isa = PBXGroup;
+			children = (
+				E5A8139322DA230D0028F80F /* ColourKeyChainAccess.swift */,
+			);
+			name = KeyChainAccess;
 			sourceTree = "<group>";
 		};
 		EFBD7F67D6E3C2F7FF40E41B /* Pods */ = {
@@ -749,6 +760,7 @@
 				E57826E422D8E0A2002499A9 /* LocalCache.swift in Sources */,
 				E57826C122D86444002499A9 /* Authentication.swift in Sources */,
 				E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */,
+				E5A8139422DA230D0028F80F /* ColourKeyChainAccess.swift in Sources */,
 				E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */,
 				E57826E022D8DA01002499A9 /* NSObject+ClassName.swift in Sources */,
 				E57826F122D8E22C002499A9 /* DribbbleState.swift in Sources */,

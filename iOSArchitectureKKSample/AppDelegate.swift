@@ -61,7 +61,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if components.path == R.string.localizable.dribbbleOauthCallBackPath()  {
             let oauthToken = DribbbleOauthToken(components: components)
-            oauthToken.requestToken(onSuccess: {_ in }, onError: {_ in })
+            oauthToken.requestToken(onSuccess: { response in
+                oauthToken.saveToken(response.accessToken)
+            }, onError: {_ in })
         }
         
         

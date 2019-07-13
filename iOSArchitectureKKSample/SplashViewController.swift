@@ -43,8 +43,8 @@ class SplashViewController: UIViewController {
             guard let self = self else {
                 return
             }
-            let keychain = Keychain(service: R.string.localizable.appHost())
-            if let token: String = keychain[R.string.localizable.dribbbleToken()] {
+            
+            if let token: String = ColourKeychainAccess.dribbbleToken {
                 log.debug(token)
             } else {
                 DribbbleOauth().authenticate()
