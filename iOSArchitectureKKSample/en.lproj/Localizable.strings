@@ -16,7 +16,7 @@
 "dribbbleAPIClientID" = "7943afffb80649f432d52db5194940b9875a78eb04bbb7bee9fba108fe8bcc17";
 "dribbbleAPIClientSecret" = "c2cb39ed366a6faf3eca26929e3bdd4bd40b7f6a5cb5ab88341033129eb57b72";
 "dribbbleOauthBaseURL" = "https://dribbble.com/oauth";
-"appURL" = "oauth-colour://callback";
+"appURL" = "com-app://colour.com/dribbble-oauth-callback";
 "appScheme" = "oauth-colour";
 "callBackHost" = "callback";
 "dribbbleState" = "dribbbleState";

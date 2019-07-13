@@ -57,7 +57,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
         
-        print(components.queryItems)
         if let scheme = components.scheme,
             let host = components.host,
             let state = LocalCache.shared[.dribbbleState],
