@@ -6,7 +6,7 @@
 //  Copyright © 2019 Kota Kawanishi. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct DribbbleOauth {
     
@@ -29,7 +29,7 @@ struct DribbbleOauth {
         ]
     }
     
-    var authenticationURL: URL? {
+    private var authenticationURL: URL? {
         guard var components = URLComponents(url: self.url, resolvingAgainstBaseURL: true) else {
             return nil
         }
@@ -50,6 +50,20 @@ struct DribbbleOauth {
         self.redirectURL = redirectURL
         self.scope = scope
         self.state = state
+    }
+    
+    @discardableResult
+    func authenticate() -> Bool {
+        guard let dribbbleOauthURL = self.authenticationURL else {
+            return false
+        }
+        
+        let successs: Bool = UIApplication.shared.openURLIfPossible(dribbbleOauthURL, options: [:]) { result in
+            if result {
+                self.saveState()
+            }
+        }
+        return successs
     }
     
     func saveState() {

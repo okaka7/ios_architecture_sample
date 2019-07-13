@@ -42,13 +42,9 @@ class SplashViewController: UIViewController {
             guard let self = self else {
                 return
             }
-            let oauth = DribbbleOauth()
-            guard let dribbbleOauthURL = oauth.authenticationURL else {
-                return
-            }
-            if UIApplication.shared.openURLIfPossible(dribbbleOauthURL, options: [:]) {
-                oauth.saveState()
-            }
+            DribbbleOauth().authenticate()
+            
+            
         })
 
     }
