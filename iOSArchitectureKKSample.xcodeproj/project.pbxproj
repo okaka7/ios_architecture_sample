@@ -17,6 +17,7 @@
 		E516490422CCDC9B00D3D2D7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490322CCDC9B00D3D2D7 /* Alamofire.framework */; };
 		E516490622CCDCFE00D3D2D7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490522CCDCFE00D3D2D7 /* Result.framework */; };
 		E516490922CD0F0000D3D2D7 /* DribbbleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E516490822CD0F0000D3D2D7 /* DribbbleAPI.swift */; };
+		E5291A9F22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift */; };
 		E53F1DFA22C0B60300F81CAA /* ColourCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DF922C0B60300F81CAA /* ColourCategoryViewController.swift */; };
 		E53F1DFC22C0B63000F81CAA /* ColourSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DFB22C0B63000F81CAA /* ColourSearchViewController.swift */; };
 		E53F1DFE22C0B66700F81CAA /* ColourFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DFD22C0B66700F81CAA /* ColourFavoritesViewController.swift */; };
@@ -91,6 +92,7 @@
 		E516490322CCDC9B00D3D2D7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		E516490522CCDCFE00D3D2D7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		E516490822CD0F0000D3D2D7 /* DribbbleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleAPI.swift; sourceTree = "<group>"; };
+		E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array<URLQueryItem>.queryItem.swift"; sourceTree = "<group>"; };
 		E53F1DF922C0B60300F81CAA /* ColourCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourCategoryViewController.swift; sourceTree = "<group>"; };
 		E53F1DFB22C0B63000F81CAA /* ColourSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSearchViewController.swift; sourceTree = "<group>"; };
 		E53F1DFD22C0B66700F81CAA /* ColourFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourFavoritesViewController.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 			children = (
 				E57826DB22D8D070002499A9 /* UIApplication+openURL.swift */,
 				E57826DF22D8DA01002499A9 /* NSObject+ClassName.swift */,
+				E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift */,
 			);
 			name = Extension;
 			path = iOSArchitectureKKSample;
@@ -758,6 +761,7 @@
 				E57826C622D89F6A002499A9 /* Token.swift in Sources */,
 				E57826DE22D8D8FC002499A9 /* ReferrerURL.swift in Sources */,
 				E57826CA22D8A1B8002499A9 /* TokenResponse.swift in Sources */,
+				E5291A9F22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift in Sources */,
 				E53F1E0022C0B6BB00F81CAA /* ColourSettingViewController.swift in Sources */,
 				E574CF5922C642DD009CF8CD /* SwiftyBeaver.swift in Sources */,
 				E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */,

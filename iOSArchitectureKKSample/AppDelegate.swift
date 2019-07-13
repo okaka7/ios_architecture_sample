@@ -52,32 +52,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    private let isReceivedStateCorrect: (URLComponents) -> Bool = { components in
+        guard let stateQuery = components.queryItems?.first(where: { item in
+                    return item.name == "state"
+                }),
+            let newState = stateQuery.value else {
+                return false
+            }
+        guard  let state: DribbbleState = LocalCache.shared[.dribbbleState] else {
+            return false
+        }
+        return state == newState
+    }
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
             return false
         }
         
-        if let scheme = components.scheme,
-            let host = components.host,
-            let state = LocalCache.shared[.dribbbleState],
-            let stateQuery = components.queryItems?.first(where: { item in
-                    return item.name == "state"
-                }),
-            let newState = stateQuery.value,
-            state == newState,
-        scheme == R.string.localizable.appScheme() && host == R.string.localizable.callBackHost() {
+        
+        if components.path == R.string.localizable.dribbbleOauthCallBackPath()  {
             
-            guard let codeQuery = components.queryItems?.first(where: { item in return item.name == "code"}),
-                let code = codeQuery.value else {
-                    return false
+            if isReceivedStateCorrect(components) {
+                print(components.url)
+                guard let code = components.queryItems?.getFirstQueryValue("code") as? String else {
+                        return false
+                }
+                
+                Repository.DribbbleOauth
+                    .tokenRequest(code: code)
+                    .subscribe(onSuccess: { token in log.debug("tokenGet\(token)")},
+                               
+                               onError: {error in log.error("tokenFail\(error)")})
+                
             }
-            
-            
-            Repository.DribbbleOauth.tokenRequest(code: code).subscribe(onSuccess: {token in log.debug("tokenGet\(token)")},
-                                                        
-                                                                        onError: {error in log.error("tokenFail\(error)")})
-            
-            
         }
         LocalCache.shared[.dribbbleState] = nil
         
