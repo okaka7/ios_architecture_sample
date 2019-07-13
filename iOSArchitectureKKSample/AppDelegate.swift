@@ -57,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
         
+        print(components.queryItems)
         if let scheme = components.scheme,
             let host = components.host,
             let state = LocalCache.shared[.dribbbleState],
@@ -66,10 +67,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let newState = stateQuery.value,
             state == newState,
         scheme == R.string.localizable.appScheme() && host == R.string.localizable.callBackHost() {
-            let codeQuery = components.queryItems?.first(where: { item in
-                return item.name == "code"
-            })
-            let code = stateQuery.value!
+            
+            guard let codeQuery = components.queryItems?.first(where: { item in return item.name == "code"}),
+                let code = codeQuery.value else {
+                    return false
+            }
+            
             
             Repository.DribbbleOauth.tokenRequest(code: code).subscribe(onSuccess: {token in log.debug("tokenGet\(token)")},
                                                         
