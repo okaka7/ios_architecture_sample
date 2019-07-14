@@ -8,28 +8,36 @@
 
 import UIKit
 
-struct DribbbleOauthAuthentication {
+protocol DribbbleAuthentication {
+    func authenticate()
+}
+
+protocol DribbbleAuthenticationOutputView: class {
+    func openAuthenticationURL(_ url: URL, completionHandler completion: @escaping (Bool)->())
+}
+
+struct DribbbleOauthAuthentication: DribbbleAuthentication {
     
-    static private let clientID: String = R.string.localizable.dribbbleAPIClientID()
-    static private let redirectURL: String = {
+    private let clientID: String = R.string.localizable.dribbbleAPIClientID()
+    private let redirectURL: String = {
         let scheme = R.string.localizable.appScheme()
         let host = R.string.localizable.appHost()
         let path = R.string.localizable.dribbbleOauthCallBackPath()
         return "\(scheme)://\(host)\(path)"
     }()
-    static private let scope: String = "public"
-    static private let state: String = UUID().uuidString
+    private let scope: String = "public"
+    private let state: String = UUID().uuidString
     
-    static private let url: URL = {
+    private let url: URL = {
         let baseURL: String = R.string.localizable.dribbbleOauthBaseURL()
         let path: String = "/authorize"
         return URL(string: baseURL + path)!
     }()
     
-    static private let localCache = LocalCache.shared
+    private let localCache = LocalCache.shared
+    private weak var authenticationView: DribbbleAuthenticationOutputView?
     
-    
-    static private var authenticationURL: URL? {
+    private var authenticationURL: URL? {
         guard var components = URLComponents(url: self.url, resolvingAgainstBaseURL: true) else {
             return nil
         }
@@ -48,22 +56,24 @@ struct DribbbleOauthAuthentication {
         return url
     }
     
-    @discardableResult
-    static func authenticate() -> Bool {
-        guard let dribbbleOauthURL = self.authenticationURL else {
-            return false
-        }
-        
-        let successs: Bool = UIApplication.shared.openURLIfPossible(dribbbleOauthURL,
-                                                                    options: [:]) { result in
-            if result {
-                self.saveState()
-            }
-        }
-        return successs
+    init(outputView: DribbbleAuthenticationOutputView) {
+        self.authenticationView = outputView
     }
     
-    static func saveState() {
+    func authenticate() {
+        guard let dribbbleOauthURL = self.authenticationURL else {
+            return
+        }
+        
+        self.authenticationView?.openAuthenticationURL( dribbbleOauthURL, completionHandler: { success in
+            if success {
+                self.saveState()
+            }
+        })
+      
+    }
+    
+    private func saveState() {
         localCache[.dribbbleState] = DribbbleState(stringLiteral: self.state)
     }
 }
