@@ -9,7 +9,13 @@
 import Foundation
 import KeychainAccess
 
-struct DribbbleOauthToken {
+protocol DribbbleTokenRequest {
+    static func requestToken(code: String,
+                      onSuccess successHandler: @escaping (TokenResponse) -> (),
+                      onError errorHandler: (Error) -> ())
+}
+
+struct DribbbleOauthToken: DribbbleTokenRequest {
     
     static func isReceivedStateCorrect(_ state: String) -> Bool {
         guard let sentState: DribbbleState = LocalCache.shared[.dribbbleState] else {
