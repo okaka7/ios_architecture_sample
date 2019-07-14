@@ -11,16 +11,28 @@ import KeychainAccess
 
 struct DribbbleOauthToken {
     
-    static let isReceivedStateCorrect: (URLComponents) -> Bool = { components in
-        guard let receivedState: String = components.queryItems?.getFirstQueryValue("state") as? String,
+    static func isReceivedStateCorrect(_ state: String) -> Bool {
+        guard let sentState: DribbbleState = LocalCache.shared[.dribbbleState] else {
+            return false
+        }
+        
+        return sentState == state
+    }
+    
+    static func isReceivedStateCorrect(from components:URLComponents) -> Bool {
+        guard let state: String = components.queryItems?.getFirstQueryValue("state") as? String,
             let sentState: DribbbleState = LocalCache.shared[.dribbbleState] else {
                 return false
         }
         
-        return sentState == receivedState
+        return sentState == state
     }
     
-    static func getCode(components: URLComponents) -> String? {
+    static func getState(from components: URLComponents) -> String? {
+        return components.queryItems?.getFirstQueryValue("state") as? String
+    }
+    
+    static func getCode(from components: URLComponents) -> String? {
         return components.queryItems?.getFirstQueryValue("code") as? String
     }
     

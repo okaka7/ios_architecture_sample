@@ -14,7 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     private(set) var appCoordinator: AppCoordinator?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // アプリウィンドウを設定します。
         let window = UIWindow(frame: UIScreen.main.bounds)
@@ -54,14 +55,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
             return false
         }
         
-        if components.path == R.string.localizable.dribbbleOauthCallBackPath() &&
-            DribbbleOauthToken.isReceivedStateCorrect(components),
-            let code = DribbbleOauthToken.getCode(components: components) {
+        if components.path == R.string.localizable.dribbbleOauthCallBackPath(),
+            let state = DribbbleOauthToken.getState(from: components),
+            DribbbleOauthToken.isReceivedStateCorrect(state),
+            let code = DribbbleOauthToken.getCode(from: components) {
         
             DribbbleOauthToken.requestToken(code: code,
                                             onSuccess: { response in
