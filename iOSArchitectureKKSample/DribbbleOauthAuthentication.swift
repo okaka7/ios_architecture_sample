@@ -12,7 +12,7 @@ protocol DribbbleAuthentication {
     func authenticate()
 }
 
-protocol DribbbleAuthenticationOutputView: class {
+protocol DribbbleAuthenticationOutput: class {
     func openAuthenticationURL(_ url: URL, completionHandler completion: @escaping (Bool)->())
 }
 
@@ -35,7 +35,7 @@ struct DribbbleOauthAuthentication: DribbbleAuthentication {
     }()
     
     private let localCache = LocalCache.shared
-    private weak var authenticationView: DribbbleAuthenticationOutputView?
+    private weak var authenticationView: DribbbleAuthenticationOutput?
     
     private var authenticationURL: URL? {
         guard var components = URLComponents(url: self.url, resolvingAgainstBaseURL: true) else {
@@ -56,7 +56,7 @@ struct DribbbleOauthAuthentication: DribbbleAuthentication {
         return url
     }
     
-    init(outputView: DribbbleAuthenticationOutputView) {
+    init(outputView: DribbbleAuthenticationOutput) {
         self.authenticationView = outputView
     }
     

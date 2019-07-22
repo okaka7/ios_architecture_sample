@@ -43,7 +43,6 @@ class SplashViewController: UIViewController {
             guard let self = self else {
                 return
             }
-            
             if let token: String = ColourKeychainAccess.dribbbleToken {
                 log.debug(token)
             } else {
@@ -56,7 +55,7 @@ class SplashViewController: UIViewController {
     }
 }
 
-extension SplashViewController: DribbbleAuthenticationOutputView {
+extension SplashViewController: DribbbleAuthenticationOutput {
     func openAuthenticationURL(_ url: URL, completionHandler completion: @escaping (Bool) -> ()) {
         UIApplication.shared.openURLIfPossible(url,
                                                options: [:],
