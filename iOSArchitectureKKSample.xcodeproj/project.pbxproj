@@ -34,6 +34,9 @@
 		E5B5BEDD22E9E7A500C9F770 /* FavoritePhotoActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B5BEDC22E9E7A500C9F770 /* FavoritePhotoActionCreator.swift */; };
 		E5B5BEDF22E9E86B00C9F770 /* FavoritePhotoDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B5BEDE22E9E86B00C9F770 /* FavoritePhotoDispatcher.swift */; };
 		E5B5BEE122E9E9A500C9F770 /* FavoritePhotosStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B5BEE022E9E9A500C9F770 /* FavoritePhotosStore.swift */; };
+		E5B5BEE322E9EE7500C9F770 /* PhotoCollectionActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B5BEE222E9EE7500C9F770 /* PhotoCollectionActionCreator.swift */; };
+		E5B5BEE522E9EF1A00C9F770 /* PhotoCollectionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B5BEE422E9EF1A00C9F770 /* PhotoCollectionDispatcher.swift */; };
+		E5B5BEE722E9F09A00C9F770 /* PhotoCollectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B5BEE622E9F09A00C9F770 /* PhotoCollectionStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,9 @@
 		E5B5BEDC22E9E7A500C9F770 /* FavoritePhotoActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePhotoActionCreator.swift; sourceTree = "<group>"; };
 		E5B5BEDE22E9E86B00C9F770 /* FavoritePhotoDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePhotoDispatcher.swift; sourceTree = "<group>"; };
 		E5B5BEE022E9E9A500C9F770 /* FavoritePhotosStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePhotosStore.swift; sourceTree = "<group>"; };
+		E5B5BEE222E9EE7500C9F770 /* PhotoCollectionActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionActionCreator.swift; sourceTree = "<group>"; };
+		E5B5BEE422E9EF1A00C9F770 /* PhotoCollectionDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionDispatcher.swift; sourceTree = "<group>"; };
+		E5B5BEE622E9F09A00C9F770 /* PhotoCollectionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +164,7 @@
 				E586818A22E5FFC100CF26BB /* Photo */,
 				E586818D22E600A200CF26BB /* User */,
 				E586818F22E6015300CF26BB /* FavoritePhotos */,
-				E586819022E6035C00CF26BB /* Collections */,
+				E586819022E6035C00CF26BB /* PhotoCollections */,
 			);
 			name = Flux;
 			sourceTree = "<group>";
@@ -202,11 +208,14 @@
 			name = FavoritePhotos;
 			sourceTree = "<group>";
 		};
-		E586819022E6035C00CF26BB /* Collections */ = {
+		E586819022E6035C00CF26BB /* PhotoCollections */ = {
 			isa = PBXGroup;
 			children = (
+				E5B5BEE222E9EE7500C9F770 /* PhotoCollectionActionCreator.swift */,
+				E5B5BEE422E9EF1A00C9F770 /* PhotoCollectionDispatcher.swift */,
+				E5B5BEE622E9F09A00C9F770 /* PhotoCollectionStore.swift */,
 			);
-			name = Collections;
+			name = PhotoCollections;
 			sourceTree = "<group>";
 		};
 		E592296F22AE65E8003EC30C = {
@@ -588,17 +597,20 @@
 				E5B5BEE122E9E9A500C9F770 /* FavoritePhotosStore.swift in Sources */,
 				E53F1DFC22C0B63000F81CAA /* ColourSearchViewController.swift in Sources */,
 				E586818922E5FFAF00CF26BB /* SearchPhotoActionCreator.swift in Sources */,
+				E5B5BEE322E9EE7500C9F770 /* PhotoCollectionActionCreator.swift in Sources */,
 				E53F1DFE22C0B66700F81CAA /* ColourFavoritesViewController.swift in Sources */,
 				E5867C0422C4831E009E9EF8 /* ColourWorkDetailViewController.swift in Sources */,
 				E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */,
 				E57BD50522C4B58B00FE44D4 /* ColourSettingCoordinator.swift in Sources */,
 				E5B5BEDD22E9E7A500C9F770 /* FavoritePhotoActionCreator.swift in Sources */,
+				E5B5BEE522E9EF1A00C9F770 /* PhotoCollectionDispatcher.swift in Sources */,
 				E592297C22AE65E8003EC30C /* AppDelegate.swift in Sources */,
 				E57DEECE22C48CB300B0AAA1 /* R.generated.swift in Sources */,
 				E53F1E0022C0B6BB00F81CAA /* ColourSettingViewController.swift in Sources */,
 				E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */,
 				E57BD50722C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift in Sources */,
 				E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */,
+				E5B5BEE722E9F09A00C9F770 /* PhotoCollectionStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
