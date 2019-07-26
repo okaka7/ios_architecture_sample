@@ -18,6 +18,12 @@
 		E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68522B28BC400AE6940 /* AppCoordinator.swift */; };
 		E571E6F822B8325B0032A748 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */; };
 		E577D5C022C56B0000588A38 /* MainTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E577D5BF22C56B0000588A38 /* MainTabCoordinator.swift */; };
+		E57AA42A22EB0FD400B83155 /* HomeVCStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57AA42922EB0FD400B83155 /* HomeVCStore.swift */; };
+		E57AA42C22EB105100B83155 /* HomeVCDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57AA42B22EB105100B83155 /* HomeVCDispatcher.swift */; };
+		E57AA42E22EB111300B83155 /* HomeVCActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57AA42D22EB111300B83155 /* HomeVCActionCreator.swift */; };
+		E57AA43122EB1BA700B83155 /* HomeTabStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57AA43022EB1BA700B83155 /* HomeTabStore.swift */; };
+		E57AA43322EB1E3000B83155 /* HomeTabDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57AA43222EB1E3000B83155 /* HomeTabDispatcher.swift */; };
+		E57AA43522EB1E4100B83155 /* HomeTabActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57AA43422EB1E4100B83155 /* HomeTabActionCreator.swift */; };
 		E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */; };
 		E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */; };
 		E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */; };
@@ -74,6 +80,12 @@
 		E56FD68522B28BC400AE6940 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		E577D5BF22C56B0000588A38 /* MainTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabCoordinator.swift; sourceTree = "<group>"; };
+		E57AA42922EB0FD400B83155 /* HomeVCStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCStore.swift; sourceTree = "<group>"; };
+		E57AA42B22EB105100B83155 /* HomeVCDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCDispatcher.swift; sourceTree = "<group>"; };
+		E57AA42D22EB111300B83155 /* HomeVCActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCActionCreator.swift; sourceTree = "<group>"; };
+		E57AA43022EB1BA700B83155 /* HomeTabStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabStore.swift; sourceTree = "<group>"; };
+		E57AA43222EB1E3000B83155 /* HomeTabDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabDispatcher.swift; sourceTree = "<group>"; };
+		E57AA43422EB1E4100B83155 /* HomeTabActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabActionCreator.swift; sourceTree = "<group>"; };
 		E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourCategoryCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSearchCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourFavoritesCoordinator.swift; sourceTree = "<group>"; };
@@ -156,6 +168,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E57AA42822EB0F7D00B83155 /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				E57AA42922EB0FD400B83155 /* HomeVCStore.swift */,
+				E57AA42B22EB105100B83155 /* HomeVCDispatcher.swift */,
+				E57AA42D22EB111300B83155 /* HomeVCActionCreator.swift */,
+			);
+			name = HomeVC;
+			sourceTree = "<group>";
+		};
+		E57AA42F22EB19C600B83155 /* HomeTab */ = {
+			isa = PBXGroup;
+			children = (
+				E57AA43022EB1BA700B83155 /* HomeTabStore.swift */,
+				E57AA43222EB1E3000B83155 /* HomeTabDispatcher.swift */,
+				E57AA43422EB1E4100B83155 /* HomeTabActionCreator.swift */,
+			);
+			name = HomeTab;
+			sourceTree = "<group>";
+		};
 		E586818522E5FB2300CF26BB /* Flux */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +219,8 @@
 		E586818C22E5FFFB00CF26BB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E57AA42F22EB19C600B83155 /* HomeTab */,
+				E57AA42822EB0F7D00B83155 /* HomeVC */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -592,6 +626,7 @@
 				E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */,
 				E5B5BEDF22E9E86B00C9F770 /* FavoritePhotoDispatcher.swift in Sources */,
 				E592297E22AE65E8003EC30C /* SplashViewController.swift in Sources */,
+				E57AA42E22EB111300B83155 /* HomeVCActionCreator.swift in Sources */,
 				E577D5C022C56B0000588A38 /* MainTabCoordinator.swift in Sources */,
 				E53F1DFA22C0B60300F81CAA /* ColourCategoryViewController.swift in Sources */,
 				E5B5BEE122E9E9A500C9F770 /* FavoritePhotosStore.swift in Sources */,
@@ -599,9 +634,14 @@
 				E586818922E5FFAF00CF26BB /* SearchPhotoActionCreator.swift in Sources */,
 				E5B5BEE322E9EE7500C9F770 /* PhotoCollectionActionCreator.swift in Sources */,
 				E53F1DFE22C0B66700F81CAA /* ColourFavoritesViewController.swift in Sources */,
+				E57AA42A22EB0FD400B83155 /* HomeVCStore.swift in Sources */,
+				E57AA43322EB1E3000B83155 /* HomeTabDispatcher.swift in Sources */,
 				E5867C0422C4831E009E9EF8 /* ColourWorkDetailViewController.swift in Sources */,
+				E57AA43122EB1BA700B83155 /* HomeTabStore.swift in Sources */,
+				E57AA42C22EB105100B83155 /* HomeVCDispatcher.swift in Sources */,
 				E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */,
 				E57BD50522C4B58B00FE44D4 /* ColourSettingCoordinator.swift in Sources */,
+				E57AA43522EB1E4100B83155 /* HomeTabActionCreator.swift in Sources */,
 				E5B5BEDD22E9E7A500C9F770 /* FavoritePhotoActionCreator.swift in Sources */,
 				E5B5BEE522E9EF1A00C9F770 /* PhotoCollectionDispatcher.swift in Sources */,
 				E592297C22AE65E8003EC30C /* AppDelegate.swift in Sources */,
