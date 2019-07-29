@@ -121,6 +121,9 @@
 		E5F64BF322EF362C0054BD03 /* PhotoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStore.swift; sourceTree = "<group>"; };
 		E5F64BF422EF362C0054BD03 /* PhotoDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDispatcher.swift; sourceTree = "<group>"; };
 		E5F64BF522EF362C0054BD03 /* PhotoActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoActionCreator.swift; sourceTree = "<group>"; };
+		E5F64BF622EF38440054BD03 /* PhotoActionCreator copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoActionCreator copy.swift"; sourceTree = "<group>"; };
+		E5F64BF722EF38440054BD03 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		E5F64BF822EF38440054BD03 /* UserDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDispatcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +266,9 @@
 		E586818D22E600A200CF26BB /* User */ = {
 			isa = PBXGroup;
 			children = (
+				E5F64BF722EF38440054BD03 /* UserStore.swift */,
+				E5F64BF822EF38440054BD03 /* UserDispatcher.swift */,
+				E5F64BF622EF38440054BD03 /* PhotoActionCreator copy.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
