@@ -1,5 +1,5 @@
 //
-//  HomeVCActionCreator.swift
+//  UserActionCreator.swift
 //  iOSArchitectureKKSample
 //
 //  Created by Kota Kawanishi on 2019/07/26.

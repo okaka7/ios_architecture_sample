@@ -1,5 +1,5 @@
 //
-//  HomeVCStore.swift
+//  UserStore.swift
 //  iOSArchitectureKKSample
 //
 //  Created by Kota Kawanishi on 2019/07/26.
