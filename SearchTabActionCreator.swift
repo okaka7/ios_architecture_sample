@@ -9,16 +9,16 @@
 import Foundation
 
 
-final class HomeTabActionCreator {
-    static let shared = HomeTabActionCreator()
+final class SearchTabActionCreator {
+    static let shared = SearchTabActionCreator()
     
-    private let dipatcher: HomeTabDispatcher
+    private let dipatcher: SearchTabDispatcher
     
-    init(dispatcher: HomeTabDispatcher = .shared) {
+    init(dispatcher: SearchTabDispatcher = .shared) {
         self.dipatcher = dispatcher
     }
     
-    func selectImage(image: Int) {
+    func selectCategory(category: Int) {
         
     }
     

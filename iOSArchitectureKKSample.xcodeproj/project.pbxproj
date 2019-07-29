@@ -96,6 +96,9 @@
 		E57CAC1F22EEE9AB008F42B7 /* SearchPhotoVCStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPhotoVCStore.swift; sourceTree = "<group>"; };
 		E57CAC2122EEE9B8008F42B7 /* SearchPhotoVCDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPhotoVCDispatcher.swift; sourceTree = "<group>"; };
 		E57CAC2322EEE9C3008F42B7 /* SearchPhotoVCActionCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPhotoVCActionCreator.swift; sourceTree = "<group>"; };
+		E57CAC2B22EEEAD9008F42B7 /* SearchTabStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabStore.swift; sourceTree = "<group>"; };
+		E57CAC2C22EEEAD9008F42B7 /* SearchTabDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabDispatcher.swift; sourceTree = "<group>"; };
+		E57CAC2D22EEEAD9008F42B7 /* SearchTabActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabActionCreator.swift; sourceTree = "<group>"; };
 		E57DEECD22C48CB300B0AAA1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E5867C0322C4831E009E9EF8 /* ColourWorkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourWorkDetailViewController.swift; sourceTree = "<group>"; };
 		E592297822AE65E8003EC30C /* iOSArchitectureKKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSArchitectureKKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +198,9 @@
 		E57CAC1722EEE925008F42B7 /* SearchTab */ = {
 			isa = PBXGroup;
 			children = (
+				E57CAC2B22EEEAD9008F42B7 /* SearchTabStore.swift */,
+				E57CAC2C22EEEAD9008F42B7 /* SearchTabDispatcher.swift */,
+				E57CAC2D22EEEAD9008F42B7 /* SearchTabActionCreator.swift */,
 			);
 			name = SearchTab;
 			path = ..;

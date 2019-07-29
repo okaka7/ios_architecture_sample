@@ -12,9 +12,9 @@ import Foundation
 final class HomeVCActionCreator {
     static let shared = HomeVCActionCreator()
     
-    private let dipatcher: FavoritePhotoDispatcher
+    private let dipatcher: HomeVCDispatcher
     
-    init(dispatcher: FavoritePhotoDispatcher = .shared) {
+    init(dispatcher: HomeVCDispatcher = .shared) {
         self.dipatcher = dispatcher
     }
     
