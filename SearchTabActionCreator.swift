@@ -18,16 +18,15 @@ final class SearchTabActionCreator {
         self.dipatcher = dispatcher
     }
     
-    func selectCategory(category: Int) {
+    func selectImage(image: Int) {
         
     }
     
-    func switchTopImage(photo: Int) {
+    func selectUser(user: Int) {
         
     }
     
-    func slideCategoryView(proceeding: Float) {
+    func downloadPhoto(image: Int) {
         
     }
-    
 }

@@ -29,7 +29,7 @@ final class SearchTabStore {
     
     init(dispatcher: SearchTabDispatcher = .shared) {
         dispatcher
-            .selectedCategory
+            .selectPhoto
             .bind(to: _selectedCategory)
             .disposed(by: disposeBag)
         

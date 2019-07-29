@@ -13,7 +13,7 @@ import RxCocoa
 final class HomeTabDispatcher {
     static let shared = HomeTabDispatcher()
     
-    let selectedCategory = PublishRelay<Int>()
-    let selectedPhoto = PublishRelay<Int>()
-    let slideCategoryViews = PublishRelay<Float>()
+    let selectedItems = PublishRelay<[Int:Int]?>()
+    let selectItem = PublishRelay<Int>()
+    let downloadPhoto = PublishRelay<Int>()
 }

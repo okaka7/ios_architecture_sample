@@ -11,9 +11,9 @@ import RxSwift
 import RxCocoa
 
 final class SearchTabDispatcher {
-    static let shared = HomeTabDispatcher()
+    static let shared = SearchTabDispatcher()
     
-    let selectedCategory = PublishRelay<Int>()
-    let selectedPhoto = PublishRelay<Int>()
-    let slideCategoryViews = PublishRelay<Float>()
+    let selectedItems = PublishRelay<[Int:Int]?>()
+    let selectItem = PublishRelay<Int>()
+    let downloadPhoto = PublishRelay<Int>()
 }

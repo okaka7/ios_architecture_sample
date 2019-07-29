@@ -27,9 +27,9 @@ final class HomeTabStore {
     
     private let disposeBag = DisposeBag()
     
-    init(dispatcher: HomeVCDispatcher = .shared) {
+    init(dispatcher: HomeTabDispatcher = .shared) {
         dispatcher
-            .selectedCategory
+            .selectItem
             .bind(to: _selectedCategory)
             .disposed(by: disposeBag)
         

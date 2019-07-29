@@ -22,11 +22,11 @@ final class HomeTabActionCreator {
         
     }
     
-    func switchTopImage(photo: Int) {
+    func selectUser(photo: Int) {
         
     }
     
-    func slideCategoryView(proceeding: Float) {
+    func downloadPhoto(photo: Int) {
         
     }
     
