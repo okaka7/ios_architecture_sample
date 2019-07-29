@@ -29,9 +29,11 @@
 		E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */; };
 		E57BD50522C4B58B00FE44D4 /* ColourSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50422C4B58B00FE44D4 /* ColourSettingCoordinator.swift */; };
 		E57BD50722C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50622C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift */; };
+		E57CAC2022EEE9AB008F42B7 /* SearchPhotoVCStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CAC1F22EEE9AB008F42B7 /* SearchPhotoVCStore.swift */; };
+		E57CAC2222EEE9B8008F42B7 /* SearchPhotoVCDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CAC2122EEE9B8008F42B7 /* SearchPhotoVCDispatcher.swift */; };
+		E57CAC2422EEE9C3008F42B7 /* SearchPhotoVCActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CAC2322EEE9C3008F42B7 /* SearchPhotoVCActionCreator.swift */; };
 		E57DEECE22C48CB300B0AAA1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DEECD22C48CB300B0AAA1 /* R.generated.swift */; };
 		E5867C0422C4831E009E9EF8 /* ColourWorkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5867C0322C4831E009E9EF8 /* ColourWorkDetailViewController.swift */; };
-		E586818922E5FFAF00CF26BB /* SearchPhotoActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E586818822E5FFAF00CF26BB /* SearchPhotoActionCreator.swift */; };
 		E592297C22AE65E8003EC30C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592297B22AE65E8003EC30C /* AppDelegate.swift */; };
 		E592297E22AE65E8003EC30C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592297D22AE65E8003EC30C /* SplashViewController.swift */; };
 		E592298322AE65E9003EC30C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E592298222AE65E9003EC30C /* Assets.xcassets */; };
@@ -91,9 +93,11 @@
 		E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourFavoritesCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50422C4B58B00FE44D4 /* ColourSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSettingCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50622C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourWorkDetailCoordinator.swift; sourceTree = "<group>"; };
+		E57CAC1F22EEE9AB008F42B7 /* SearchPhotoVCStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPhotoVCStore.swift; sourceTree = "<group>"; };
+		E57CAC2122EEE9B8008F42B7 /* SearchPhotoVCDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPhotoVCDispatcher.swift; sourceTree = "<group>"; };
+		E57CAC2322EEE9C3008F42B7 /* SearchPhotoVCActionCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPhotoVCActionCreator.swift; sourceTree = "<group>"; };
 		E57DEECD22C48CB300B0AAA1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E5867C0322C4831E009E9EF8 /* ColourWorkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourWorkDetailViewController.swift; sourceTree = "<group>"; };
-		E586818822E5FFAF00CF26BB /* SearchPhotoActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoActionCreator.swift; sourceTree = "<group>"; };
 		E592297822AE65E8003EC30C /* iOSArchitectureKKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSArchitectureKKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E592297B22AE65E8003EC30C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E592297D22AE65E8003EC30C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -188,11 +192,29 @@
 			name = HomeTab;
 			sourceTree = "<group>";
 		};
+		E57CAC1722EEE925008F42B7 /* SearchTab */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SearchTab;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		E57CAC1822EEE938008F42B7 /* SearchVC */ = {
+			isa = PBXGroup;
+			children = (
+				E57CAC1F22EEE9AB008F42B7 /* SearchPhotoVCStore.swift */,
+				E57CAC2122EEE9B8008F42B7 /* SearchPhotoVCDispatcher.swift */,
+				E57CAC2322EEE9C3008F42B7 /* SearchPhotoVCActionCreator.swift */,
+			);
+			path = SearchVC;
+			sourceTree = "<group>";
+		};
 		E586818522E5FB2300CF26BB /* Flux */ = {
 			isa = PBXGroup;
 			children = (
 				E586818C22E5FFFB00CF26BB /* Home */,
-				E586818B22E5FFCB00CF26BB /* SearchPhoto */,
+				E586818B22E5FFCB00CF26BB /* Search */,
 				E586818A22E5FFC100CF26BB /* Photo */,
 				E586818D22E600A200CF26BB /* User */,
 				E586818F22E6015300CF26BB /* FavoritePhotos */,
@@ -208,12 +230,13 @@
 			name = Photo;
 			sourceTree = "<group>";
 		};
-		E586818B22E5FFCB00CF26BB /* SearchPhoto */ = {
+		E586818B22E5FFCB00CF26BB /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				E586818822E5FFAF00CF26BB /* SearchPhotoActionCreator.swift */,
+				E57CAC1722EEE925008F42B7 /* SearchTab */,
+				E57CAC1822EEE938008F42B7 /* SearchVC */,
 			);
-			name = SearchPhoto;
+			name = Search;
 			sourceTree = "<group>";
 		};
 		E586818C22E5FFFB00CF26BB /* Home */ = {
@@ -626,12 +649,13 @@
 				E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */,
 				E5B5BEDF22E9E86B00C9F770 /* FavoritePhotoDispatcher.swift in Sources */,
 				E592297E22AE65E8003EC30C /* SplashViewController.swift in Sources */,
+				E57CAC2422EEE9C3008F42B7 /* SearchPhotoVCActionCreator.swift in Sources */,
 				E57AA42E22EB111300B83155 /* HomeVCActionCreator.swift in Sources */,
 				E577D5C022C56B0000588A38 /* MainTabCoordinator.swift in Sources */,
 				E53F1DFA22C0B60300F81CAA /* ColourCategoryViewController.swift in Sources */,
+				E57CAC2022EEE9AB008F42B7 /* SearchPhotoVCStore.swift in Sources */,
 				E5B5BEE122E9E9A500C9F770 /* FavoritePhotosStore.swift in Sources */,
 				E53F1DFC22C0B63000F81CAA /* ColourSearchViewController.swift in Sources */,
-				E586818922E5FFAF00CF26BB /* SearchPhotoActionCreator.swift in Sources */,
 				E5B5BEE322E9EE7500C9F770 /* PhotoCollectionActionCreator.swift in Sources */,
 				E53F1DFE22C0B66700F81CAA /* ColourFavoritesViewController.swift in Sources */,
 				E57AA42A22EB0FD400B83155 /* HomeVCStore.swift in Sources */,
@@ -646,6 +670,7 @@
 				E5B5BEE522E9EF1A00C9F770 /* PhotoCollectionDispatcher.swift in Sources */,
 				E592297C22AE65E8003EC30C /* AppDelegate.swift in Sources */,
 				E57DEECE22C48CB300B0AAA1 /* R.generated.swift in Sources */,
+				E57CAC2222EEE9B8008F42B7 /* SearchPhotoVCDispatcher.swift in Sources */,
 				E53F1E0022C0B6BB00F81CAA /* ColourSettingViewController.swift in Sources */,
 				E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */,
 				E57BD50722C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift in Sources */,
