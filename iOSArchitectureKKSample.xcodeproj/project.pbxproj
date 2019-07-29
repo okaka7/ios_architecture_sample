@@ -118,6 +118,9 @@
 		E5B5BEE222E9EE7500C9F770 /* PhotoCollectionActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionActionCreator.swift; sourceTree = "<group>"; };
 		E5B5BEE422E9EF1A00C9F770 /* PhotoCollectionDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionDispatcher.swift; sourceTree = "<group>"; };
 		E5B5BEE622E9F09A00C9F770 /* PhotoCollectionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionStore.swift; sourceTree = "<group>"; };
+		E5F64BF322EF362C0054BD03 /* PhotoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStore.swift; sourceTree = "<group>"; };
+		E5F64BF422EF362C0054BD03 /* PhotoDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDispatcher.swift; sourceTree = "<group>"; };
+		E5F64BF522EF362C0054BD03 /* PhotoActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoActionCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +235,9 @@
 		E586818A22E5FFC100CF26BB /* Photo */ = {
 			isa = PBXGroup;
 			children = (
+				E5F64BF322EF362C0054BD03 /* PhotoStore.swift */,
+				E5F64BF422EF362C0054BD03 /* PhotoDispatcher.swift */,
+				E5F64BF522EF362C0054BD03 /* PhotoActionCreator.swift */,
 			);
 			name = Photo;
 			sourceTree = "<group>";
