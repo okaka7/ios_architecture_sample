@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key></key>
+	<string></string>
+	<key>Unsplash API</key>
+	<dict>
+		<key>Access Key</key>
+		<string>5dc24ea0cc9c0f0ee82b9964089bca022289ef096548eae83bb60dec79fd3255</string>
+		<key>Secret Key</key>
+		<string>80dd27bd466530f8993de6588144e453cf6f823d2f58639c14e41260c435a791</string>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
