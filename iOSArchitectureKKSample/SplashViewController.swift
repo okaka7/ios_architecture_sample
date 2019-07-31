@@ -10,7 +10,7 @@ import UIKit
 import KeychainAccess
 
 protocol UnsplashAuthenticationOutput where Self: UIViewController {
-    func openAuthenticationURL(_ url: URL, completionHandler completion: ((Bool)->())?)
+    func openAuthenticationURL(_ url: URL, completionHandler completion: ((Bool)->Void)?)
 }
 
 
@@ -51,7 +51,6 @@ class SplashViewController: UIViewController {
             if let token: String = ColourKeychainAccess.dribbbleToken {
                 log.debug(token)
             } else {
-                
                 let authentication = UnsplashOauthAuthentication(outputView: self)
                 authentication.authenticate()
             }
@@ -64,7 +63,7 @@ class SplashViewController: UIViewController {
 extension SplashViewController: UnsplashAuthenticationOutput { }
 
 extension UnsplashAuthenticationOutput {
-    func openAuthenticationURL(_ url: URL, completionHandler completion: ((Bool) -> ())? = nil) {
+    func openAuthenticationURL(_ url: URL, completionHandler completion: ((Bool) -> Void)? = nil) {
         UIApplication.shared.openURLIfPossible(url,
                                                options: [:],
                                                completionHandler: completion)

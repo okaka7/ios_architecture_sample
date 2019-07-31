@@ -26,4 +26,5 @@
 "dribbbleOauthCallBackPath" = "/dribbble-oauth-callback";
 "dribbbleState" = "dribbbleState";
 "dribbbleToken" = "dribbbleToken";
+"unsplashToken" = "unsplashToken";
 

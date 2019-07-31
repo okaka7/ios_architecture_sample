@@ -19,5 +19,14 @@ struct ColourKeychainAccess {
         keychain[R.string.localizable.dribbbleToken()] = token
     }
     
+    static var unsplashToken: String? {
+        return keychain[R.string.localizable.unsplashToken()]
+    }
+    
+    static func saveUnsplashToken(_ token: String) {
+        keychain[R.string.localizable.dribbbleToken()] = token
+    }
+    
+    
     
 }

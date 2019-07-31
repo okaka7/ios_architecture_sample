@@ -58,8 +58,6 @@ struct DribbbleOauthToken: DribbbleTokenRequest {
                     log.error(error, context: "TokenRequestError")
             })
         
-        
-        LocalCache.shared[.dribbbleState] = nil
     }
     
     static func saveToken(_ token: String) {
