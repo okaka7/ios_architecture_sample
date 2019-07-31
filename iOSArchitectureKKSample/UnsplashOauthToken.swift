@@ -16,13 +16,19 @@ protocol UnsplashTokenRequest {
 }
 
 struct UnsplashOauthToken {
-    static func requestToken(code: String,
-                             onSuccess successHandler: @escaping (TokenResponse) -> (),
-                             onError errorHandler: (Error) -> ()) {
+    
+    static func getCode(from components: URLComponents) -> String? {
+        return components.queryItems?.getFirstQueryValue("code") as? String
+    }
+    
+    let code: String
+    
+    func requestToken(onSuccess successHandler: @escaping (UnsplashToken.Response) -> Void,
+                      onError errorHandler: (Error) -> Void) {
         
         
-        _ = Repository.DribbbleOauth
-            .tokenRequest(code: code)
+        _ = Repository.UnsplashOauth
+            .tokenRequest(code: self.code)
             .subscribe(
                 onSuccess: { response in
                     successHandler(response)
@@ -33,7 +39,7 @@ struct UnsplashOauthToken {
             })
     }
     
-    static func saveToken(_ token: String) {
+    func saveToken(_ token: String) {
         ColourKeychainAccess.saveUnsplashToken(token)
     }
 }

@@ -61,16 +61,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
         
-        if components.path == R.string.localizable.dribbbleOauthCallBackPath(),
-            let state = DribbbleOauthToken.getState(from: components),
-            DribbbleOauthToken.isReceivedStateCorrect(state),
-            let code = DribbbleOauthToken.getCode(from: components) {
-        
-            DribbbleOauthToken.requestToken(code: code,
-                                            onSuccess: { response in
-                                                DribbbleOauthToken.saveToken(response.accessToken)
-                                            },
-                                            onError: {_ in })
+        if components.path == R.string.localizable.unsplashOauthCallBackPath(),
+            let code = UnsplashOauthToken.getCode(from: components) {
+            let oauthToken = UnsplashOauthToken(code: code)
+            
+            oauthToken.requestToken(onSuccess: { response in
+                                        oauthToken.saveToken(response.accessToken)
+                                    },
+                                    onError: {_ in })
         }
         
         

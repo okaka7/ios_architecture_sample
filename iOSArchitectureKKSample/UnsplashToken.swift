@@ -11,7 +11,7 @@ import Moya
 
 struct UnsplashToken: UnsplashOauthTargetType {
     
-    typealias Response = TokenResponse
+    typealias Response = UnsplashTokenResposne
     
     private struct Parameter: Encodable {
         let clientID: String
@@ -33,9 +33,10 @@ struct UnsplashToken: UnsplashOauthTargetType {
             case code
         }
         
-        init(clientID: String = R.string.localizable.dribbbleAPIClientID(),
-             clientSecret: String = R.string.localizable.dribbbleAPIClientSecret(),
+        init(clientID: String = R.string.localizable.unsplashAPIClientID(),
+             clientSecret: String = R.string.localizable.unsplashAPIClientSecret(),
              code: String) {
+            
             self.clientID = clientID
             self.clientSecret = clientSecret
             self.code = code
@@ -46,7 +47,7 @@ struct UnsplashToken: UnsplashOauthTargetType {
     let method: Moya.Method = .post
     let code: String
     var task: Task {
-        return .requestJSONEncodable(Parameter(code: code))
+        return .requestJSONEncodable(Parameter(code: self.code))
     }
     
     init(code: String) {

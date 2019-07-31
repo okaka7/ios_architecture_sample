@@ -17,6 +17,8 @@
 "unsplashAPI" = "Unsplash API";
 "dribbbleAPIClientID" = "7943afffb80649f432d52db5194940b9875a78eb04bbb7bee9fba108fe8bcc17";
 "dribbbleAPIClientSecret" = "c2cb39ed366a6faf3eca26929e3bdd4bd40b7f6a5cb5ab88341033129eb57b72";
+"unsplashAPIClientID" = "5dc24ea0cc9c0f0ee82b9964089bca022289ef096548eae83bb60dec79fd3255";
+"unsplashAPIClientSecret" = "80dd27bd466530f8993de6588144e453cf6f823d2f58639c14e41260c435a791";
 "dribbbleOauthBaseURL" = "https://dribbble.com/oauth";
 "unsplashOauthBaseURL" = "https://unsplash.com/oauth";
 

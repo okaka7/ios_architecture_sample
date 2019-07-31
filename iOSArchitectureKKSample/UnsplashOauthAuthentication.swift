@@ -30,7 +30,7 @@ struct UnsplashOauthAuthentication: UnsplashAuthentication {
     private let scope: String = "public+read_user+read_photos+write_likes+write_followers+read_collections+write_collections"
     
     private let url: URL = {
-        let baseURL: String = R.string.localizable.dribbbleOauthBaseURL()
+        let baseURL: String = R.string.localizable.unsplashOauthBaseURL()
         let path: String = "/authorize"
         return URL(string: baseURL + path)!
     }()
