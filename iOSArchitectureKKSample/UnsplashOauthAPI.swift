@@ -22,7 +22,7 @@ extension UnsplashOauthTargetType {
     }
     
     var headers: [String: String]? {
-        return [:]
+        return ["Authorization": R.string.localizable.unsplashAPIClientID()]
     }
     
     // TODO: あとでテストコードの際に具体的な返り値を設定
