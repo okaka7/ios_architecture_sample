@@ -59,6 +59,8 @@
 		E592299C22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592299B22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift */; };
 		E5A8139122DA0EAB0028F80F /* DribbbleOauthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8139022DA0EAB0028F80F /* DribbbleOauthToken.swift */; };
 		E5A8139422DA230D0028F80F /* ColourKeyChainAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8139322DA230D0028F80F /* ColourKeyChainAccess.swift */; };
+		E5C5646D22F18EDC00DD9401 /* UnsplashUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */; };
+		E5C5646F22F18F7C00DD9401 /* UnsplashLinksEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646E22F18F7C00DD9401 /* UnsplashLinksEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +146,8 @@
 		E592299D22AE65E9003EC30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5A8139022DA0EAB0028F80F /* DribbbleOauthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleOauthToken.swift; sourceTree = "<group>"; };
 		E5A8139322DA230D0028F80F /* ColourKeyChainAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourKeyChainAccess.swift; sourceTree = "<group>"; };
+		E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserEntity.swift; sourceTree = "<group>"; };
+		E5C5646E22F18F7C00DD9401 /* UnsplashLinksEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashLinksEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +349,7 @@
 		E57826EE22D8E20E002499A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E5C5646922F18E2400DD9401 /* Unsplash */,
 				E5A8138F22DA0E760028F80F /* Dribbble */,
 				E57826EF22D8E21C002499A9 /* Entity */,
 			);
@@ -355,6 +360,8 @@
 			isa = PBXGroup;
 			children = (
 				E57826F022D8E22C002499A9 /* DribbbleState.swift */,
+				E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */,
+				E5C5646E22F18F7C00DD9401 /* UnsplashLinksEntity.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -434,6 +441,13 @@
 				E5A8139322DA230D0028F80F /* ColourKeyChainAccess.swift */,
 			);
 			name = KeyChainAccess;
+			sourceTree = "<group>";
+		};
+		E5C5646922F18E2400DD9401 /* Unsplash */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Unsplash;
 			sourceTree = "<group>";
 		};
 		EFBD7F67D6E3C2F7FF40E41B /* Pods */ = {
@@ -766,6 +780,7 @@
 				E57826F122D8E22C002499A9 /* DribbbleState.swift in Sources */,
 				E592297E22AE65E8003EC30C /* SplashViewController.swift in Sources */,
 				E577D5C022C56B0000588A38 /* MainTabCoordinator.swift in Sources */,
+				E5C5646F22F18F7C00DD9401 /* UnsplashLinksEntity.swift in Sources */,
 				E53F1DFA22C0B60300F81CAA /* ColourCategoryViewController.swift in Sources */,
 				E53F1DFC22C0B63000F81CAA /* ColourSearchViewController.swift in Sources */,
 				E516490922CD0F0000D3D2D7 /* DribbbleAPI.swift in Sources */,
@@ -782,6 +797,7 @@
 				E57DEECE22C48CB300B0AAA1 /* R.generated.swift in Sources */,
 				E57826C322D865F4002499A9 /* DribbbleOauthAPI.swift in Sources */,
 				E57826C622D89F6A002499A9 /* Token.swift in Sources */,
+				E5C5646D22F18EDC00DD9401 /* UnsplashUserEntity.swift in Sources */,
 				E57826DE22D8D8FC002499A9 /* ReferrerURL.swift in Sources */,
 				E57826CA22D8A1B8002499A9 /* TokenResponse.swift in Sources */,
 				E5291A9F22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift in Sources */,
