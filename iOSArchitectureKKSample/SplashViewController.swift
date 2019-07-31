@@ -9,6 +9,11 @@
 import UIKit
 import KeychainAccess
 
+protocol UnsplashAuthenticationOutput where Self: UIViewController {
+    func openAuthenticationURL(_ url: URL, completionHandler completion: ((Bool)->())?)
+}
+
+
 class SplashViewController: UIViewController {
     
     lazy private var label: UILabel = {
@@ -46,7 +51,8 @@ class SplashViewController: UIViewController {
             if let token: String = ColourKeychainAccess.dribbbleToken {
                 log.debug(token)
             } else {
-                let authentication = DribbbleOauthAuthentication(outputView: self)
+                
+                let authentication = UnsplashOauthAuthentication(outputView: self)
                 authentication.authenticate()
             }
             
@@ -55,8 +61,10 @@ class SplashViewController: UIViewController {
     }
 }
 
-extension SplashViewController: DribbbleAuthenticationOutput {
-    func openAuthenticationURL(_ url: URL, completionHandler completion: @escaping (Bool) -> ()) {
+extension SplashViewController: UnsplashAuthenticationOutput { }
+
+extension UnsplashAuthenticationOutput {
+    func openAuthenticationURL(_ url: URL, completionHandler completion: ((Bool) -> ())? = nil) {
         UIApplication.shared.openURLIfPossible(url,
                                                options: [:],
                                                completionHandler: completion)
