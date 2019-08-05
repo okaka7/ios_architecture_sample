@@ -15,15 +15,14 @@ extension Repository {
     struct UnsplashOauth {
         static let provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
         
-        static private func request<R>(_ request: R) -> Single<R.Response> where R: UnsplashOauthTargetType {
-            let target = MultiTarget(request)
+        static private func request<R>(_ target: R) -> Single<R.Response> where R: UnsplashOauthTargetType {
+            let target = MultiTarget(target)
             return provider.rx.request(target).map(R.Response.self)
         }
         
-      
-        
         static func tokenRequest(code: String) -> Single<UnsplashToken.Response> {
-            return request(UnsplashToken(code: code))
+            let target: UnsplashToken = .init(code: code)
+            return request(target)
         }
         
     }

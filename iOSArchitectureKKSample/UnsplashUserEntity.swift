@@ -12,7 +12,7 @@ struct UnsplashUserEntity: Codable {
     let id, updatedAt, username, firstName: String
     let lastName, email: String
     let portfolioURL: String?
-    let bio: String
+    let bio: String?
     let location: String?
     let totalLikes, totalPhotos, totalCollections: Int
     let followedByUser: Bool

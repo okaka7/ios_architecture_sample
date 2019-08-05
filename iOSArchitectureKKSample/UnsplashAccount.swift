@@ -16,11 +16,8 @@ struct UnsplashAccount: UnsplashAPITargetType {
     
     let path: String = "/me"
     let method: Moya.Method = .get
-    let code: String
     var task: Task {
         return .requestPlain
     }
     
-    init() {
-    }
 }
