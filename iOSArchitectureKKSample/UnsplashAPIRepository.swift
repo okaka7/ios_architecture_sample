@@ -48,7 +48,7 @@ extension Repository {
         }
         
         static func requestUser(user: String) -> Single<UnsplashUser.Response> {
-            let target: UnsplashUser = .init(user: user)
+            let target: UnsplashUser = .init(userName: user)
             return request(target)
         }
         

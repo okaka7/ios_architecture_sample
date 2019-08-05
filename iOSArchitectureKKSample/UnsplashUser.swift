@@ -12,27 +12,16 @@ import Moya
 struct UnsplashUser: UnsplashAPITargetType {
     typealias Response = UnsplashUserEntity
     
-    private struct Parameter: Encodable {
-        let user: String
-        
-        enum CodingKeys: String, CodingKey {
-            case user
-        }
-        
-        init(user: String) {
-            self.user = user
-        }
+    var path: String {
+       return "/users/\(userName)"
     }
-    
-    let path: String = "/users"
-    let method: Moya.Method = .post
-    let user: String
+    let method: Moya.Method = .get
+    let userName: String
     var task: Task {
-        return .requestParameters(parameters: ["username": Parameter(user: user)],
-                                  encoding: URLEncoding.default)
+        return .requestPlain
     }
     
-    init(user: String) {
-        self.user = user
+    init(userName: String) {
+        self.userName = userName
     }
 }
