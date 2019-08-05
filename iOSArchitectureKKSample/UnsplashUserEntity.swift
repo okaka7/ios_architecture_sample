@@ -10,14 +10,14 @@ import Foundation
 
 struct UnsplashUserEntity: Codable {
     let id, updatedAt, username, firstName: String
-    let lastName, twitterUsername: String
+    let lastName, email: String
     let portfolioURL: String?
     let bio: String
     let location: String?
     let totalLikes, totalPhotos, totalCollections: Int
     let followedByUser: Bool
     let downloads, uploadsRemaining: Int
-    let instagramUsername, email: String
+    let instagramUsername,twitterUsername: String?
     let links: Links
 
     enum CodingKeys: String, CodingKey {
@@ -46,12 +46,15 @@ struct UnsplashUserEntity: Codable {
 
 extension UnsplashUserEntity {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(UnsplashUserEntity.self, from: data) else { return nil }
+        guard let me = try? JSONDecoder().decode(UnsplashUserEntity.self, from: data) else { return nil
+        }
         self = me
     }
 
     init?(_ json: String, using encoding: String.Encoding = .utf8) {
-        guard let data = json.data(using: encoding) else { return nil }
+        guard let data = json.data(using: encoding) else {
+            return nil
+        }
         self.init(data: data)
     }
 

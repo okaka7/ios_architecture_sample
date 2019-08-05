@@ -28,6 +28,6 @@ extension UnsplashAPITargetType {
     var sampleData: Data { return Data() }
     
     var validationType: ValidationType {
-        return .successAndRedirectCodes
+        return .successCodes
     }
 }
