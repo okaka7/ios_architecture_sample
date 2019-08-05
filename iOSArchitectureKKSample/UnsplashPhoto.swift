@@ -14,10 +14,8 @@ struct UnsplashPhoto: UnsplashAPITargetType {
     
     typealias Response = String
     
-    
-    
     let path: String = "/photos"
-    let method: Moya.Method = .post
+    let method: Moya.Method = .get
     let code: String
     var task: Task {
         return .requestPlain

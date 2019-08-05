@@ -13,6 +13,12 @@ protocol UnsplashAPITargetType: TargetType {
     associatedtype Response: Codable
 }
 
+enum OrderBy: String, Encodable {
+    case latest
+    case oldest
+    case popular
+}
+
 
 extension UnsplashAPITargetType {
     
