@@ -17,7 +17,7 @@ protocol UnsplashAPITargetType: TargetType {
 extension UnsplashAPITargetType {
     
     public var baseURL: URL {
-        return URL(string: R.string.localizable.dribbbleAPIBaseURL())!
+        return URL(string: R.string.localizable.unsplashAPIBaseURL())!
     }
     
     var headers: [String: String]? {

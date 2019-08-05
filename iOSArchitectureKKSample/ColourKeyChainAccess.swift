@@ -11,14 +11,7 @@ import KeychainAccess
 struct ColourKeychainAccess {
     private static let keychain = Keychain(service: R.string.localizable.appHost())
     
-    static var dribbbleToken: String? {
-        return keychain[R.string.localizable.dribbbleToken()]
-    }
-    
-    static func saveDribbbleToken(_ token: String) {
-        keychain[R.string.localizable.dribbbleToken()] = token
-    }
-    
+   
     static var unsplashToken: String? {
         return keychain[R.string.localizable.unsplashToken()]
     }
