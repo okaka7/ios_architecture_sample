@@ -37,13 +37,18 @@ extension Repository {
             return provider
         }()
         
-        static private func request<R>(_ request: R) -> Single<R.Response> where R: UnsplashOauthTargetType {
-            let target = MultiTarget(request)
+        static private func request<R>(_ target: R) -> Single<R.Response> where R: UnsplashOauthTargetType {
+            let target = MultiTarget(target)
             return provider.rx.request(target).map(R.Response.self)
         }
         
         static func requestAccount() -> Single<UnsplashAccount.Response> {
             let target: UnsplashAccount = .init()
+            return request(target)
+        }
+        
+        static func requestUser(user: String) -> Single<UnsplashUser.Response> {
+            let target: UnsplashUser = .init(user: user)
             return request(target)
         }
         
