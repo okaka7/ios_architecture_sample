@@ -16,7 +16,6 @@
 		E516490222CCDC6500D3D2D7 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490122CCDC6500D3D2D7 /* RxMoya.framework */; };
 		E516490422CCDC9B00D3D2D7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490322CCDC9B00D3D2D7 /* Alamofire.framework */; };
 		E516490622CCDCFE00D3D2D7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490522CCDCFE00D3D2D7 /* Result.framework */; };
-		E516490922CD0F0000D3D2D7 /* DribbbleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E516490822CD0F0000D3D2D7 /* DribbbleAPI.swift */; };
 		E5291A9F22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift */; };
 		E53F1DFA22C0B60300F81CAA /* ColourCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DF922C0B60300F81CAA /* ColourCategoryViewController.swift */; };
 		E53F1DFC22C0B63000F81CAA /* ColourSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DFB22C0B63000F81CAA /* ColourSearchViewController.swift */; };
@@ -34,20 +33,14 @@
 		E577D5C022C56B0000588A38 /* MainTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E577D5BF22C56B0000588A38 /* MainTabCoordinator.swift */; };
 		E57826BC22D85506002499A9 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57826BB22D85505002499A9 /* RealmSwift.framework */; };
 		E57826BE22D855D2002499A9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57826BD22D855D2002499A9 /* Realm.framework */; };
-		E57826C122D86444002499A9 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826C022D86444002499A9 /* Authentication.swift */; };
-		E57826C322D865F4002499A9 /* DribbbleOauthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826C222D865F4002499A9 /* DribbbleOauthAPI.swift */; };
-		E57826C622D89F6A002499A9 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826C522D89F6A002499A9 /* Token.swift */; };
-		E57826CA22D8A1B8002499A9 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826C922D8A1B8002499A9 /* TokenResponse.swift */; };
 		E57826CF22D8AB20002499A9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826CE22D8AB20002499A9 /* Repository.swift */; };
 		E57826D122D8AB3C002499A9 /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826D022D8AB3C002499A9 /* APIRepository.swift */; };
 		E57826D322D8AB8A002499A9 /* OauthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826D222D8AB8A002499A9 /* OauthRepository.swift */; };
-		E57826D522D8C493002499A9 /* DribbbleOauthAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826D422D8C493002499A9 /* DribbbleOauthAuthentication.swift */; };
 		E57826DC22D8D070002499A9 /* UIApplication+openURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826DB22D8D070002499A9 /* UIApplication+openURL.swift */; };
 		E57826DE22D8D8FC002499A9 /* ReferrerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826DD22D8D8FC002499A9 /* ReferrerURL.swift */; };
 		E57826E022D8DA01002499A9 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826DF22D8DA01002499A9 /* NSObject+ClassName.swift */; };
 		E57826E422D8E0A2002499A9 /* LocalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826E322D8E0A2002499A9 /* LocalCache.swift */; };
 		E57826E622D8E0CF002499A9 /* LocalCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826E522D8E0CF002499A9 /* LocalCacheKey.swift */; };
-		E57826F122D8E22C002499A9 /* DribbbleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826F022D8E22C002499A9 /* DribbbleState.swift */; };
 		E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */; };
 		E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */; };
 		E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */; };
@@ -61,7 +54,6 @@
 		E592298322AE65E9003EC30C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E592298222AE65E9003EC30C /* Assets.xcassets */; };
 		E592299122AE65E9003EC30C /* ArchitectureKKSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592299022AE65E9003EC30C /* ArchitectureKKSampleTests.swift */; };
 		E592299C22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592299B22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift */; };
-		E5A8139122DA0EAB0028F80F /* DribbbleOauthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8139022DA0EAB0028F80F /* DribbbleOauthToken.swift */; };
 		E5A8139422DA230D0028F80F /* ColourKeyChainAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8139322DA230D0028F80F /* ColourKeyChainAccess.swift */; };
 		E5C5646D22F18EDC00DD9401 /* UnsplashUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */; };
 		E5C5646F22F18F7C00DD9401 /* UnsplashLinksEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646E22F18F7C00DD9401 /* UnsplashLinksEntity.swift */; };
@@ -104,7 +96,6 @@
 		E516490122CCDC6500D3D2D7 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
 		E516490322CCDC9B00D3D2D7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		E516490522CCDCFE00D3D2D7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		E516490822CD0F0000D3D2D7 /* DribbbleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleAPI.swift; sourceTree = "<group>"; };
 		E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array<URLQueryItem>.queryItem.swift"; sourceTree = "<group>"; };
 		E53F1DF922C0B60300F81CAA /* ColourCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourCategoryViewController.swift; sourceTree = "<group>"; };
 		E53F1DFB22C0B63000F81CAA /* ColourSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSearchViewController.swift; sourceTree = "<group>"; };
@@ -123,20 +114,14 @@
 		E577D5BF22C56B0000588A38 /* MainTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabCoordinator.swift; sourceTree = "<group>"; };
 		E57826BB22D85505002499A9 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		E57826BD22D855D2002499A9 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		E57826C022D86444002499A9 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
-		E57826C222D865F4002499A9 /* DribbbleOauthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleOauthAPI.swift; sourceTree = "<group>"; };
-		E57826C522D89F6A002499A9 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		E57826C922D8A1B8002499A9 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		E57826CE22D8AB20002499A9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		E57826D022D8AB3C002499A9 /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
 		E57826D222D8AB8A002499A9 /* OauthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthRepository.swift; sourceTree = "<group>"; };
-		E57826D422D8C493002499A9 /* DribbbleOauthAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleOauthAuthentication.swift; sourceTree = "<group>"; };
 		E57826DB22D8D070002499A9 /* UIApplication+openURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+openURL.swift"; sourceTree = "<group>"; };
 		E57826DD22D8D8FC002499A9 /* ReferrerURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferrerURL.swift; sourceTree = "<group>"; };
 		E57826DF22D8DA01002499A9 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		E57826E322D8E0A2002499A9 /* LocalCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCache.swift; sourceTree = "<group>"; };
 		E57826E522D8E0CF002499A9 /* LocalCacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCacheKey.swift; sourceTree = "<group>"; };
-		E57826F022D8E22C002499A9 /* DribbbleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleState.swift; sourceTree = "<group>"; };
 		E578B49622CE046700729054 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourCategoryCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSearchCoordinator.swift; sourceTree = "<group>"; };
@@ -157,7 +142,6 @@
 		E592299722AE65E9003EC30C /* iOSArchitectureKKSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSArchitectureKKSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E592299B22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureKKSampleUITests.swift; sourceTree = "<group>"; };
 		E592299D22AE65E9003EC30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E5A8139022DA0EAB0028F80F /* DribbbleOauthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleOauthToken.swift; sourceTree = "<group>"; };
 		E5A8139322DA230D0028F80F /* ColourKeyChainAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourKeyChainAccess.swift; sourceTree = "<group>"; };
 		E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserEntity.swift; sourceTree = "<group>"; };
 		E5C5646E22F18F7C00DD9401 /* UnsplashLinksEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashLinksEntity.swift; sourceTree = "<group>"; };
@@ -210,10 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				E5C5647722F1BB6000DD9401 /* Unsplash */,
-				E516490822CD0F0000D3D2D7 /* DribbbleAPI.swift */,
-				E57826C222D865F4002499A9 /* DribbbleOauthAPI.swift */,
 				E57826C722D8A176002499A9 /* EndPoint */,
-				E57826C822D8A192002499A9 /* Response Entity */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -275,54 +256,12 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		E57826BF22D85A76002499A9 /* DribbbleAPIEndPoint */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = DribbbleAPIEndPoint;
-			sourceTree = "<group>";
-		};
-		E57826C422D868FA002499A9 /* DribbbleOauthEndPoint */ = {
-			isa = PBXGroup;
-			children = (
-				E57826C022D86444002499A9 /* Authentication.swift */,
-				E57826C522D89F6A002499A9 /* Token.swift */,
-			);
-			name = DribbbleOauthEndPoint;
-			sourceTree = "<group>";
-		};
 		E57826C722D8A176002499A9 /* EndPoint */ = {
 			isa = PBXGroup;
 			children = (
 				E5C5647622F1BADA00DD9401 /* UnsplashOauthEndpoint */,
-				E57826BF22D85A76002499A9 /* DribbbleAPIEndPoint */,
-				E57826C422D868FA002499A9 /* DribbbleOauthEndPoint */,
 			);
 			name = EndPoint;
-			sourceTree = "<group>";
-		};
-		E57826C822D8A192002499A9 /* Response Entity */ = {
-			isa = PBXGroup;
-			children = (
-				E57826CC22D8A275002499A9 /* DribbbleAPIResponse */,
-				E57826CB22D8A261002499A9 /* DribbbleOauthResponse */,
-			);
-			name = "Response Entity";
-			sourceTree = "<group>";
-		};
-		E57826CB22D8A261002499A9 /* DribbbleOauthResponse */ = {
-			isa = PBXGroup;
-			children = (
-				E57826C922D8A1B8002499A9 /* TokenResponse.swift */,
-			);
-			name = DribbbleOauthResponse;
-			sourceTree = "<group>";
-		};
-		E57826CC22D8A275002499A9 /* DribbbleAPIResponse */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = DribbbleAPIResponse;
 			sourceTree = "<group>";
 		};
 		E57826CD22D8AB06002499A9 /* Repository */ = {
@@ -369,7 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				E5C5646922F18E2400DD9401 /* Unsplash */,
-				E5A8138F22DA0E760028F80F /* Dribbble */,
 				E57826EF22D8E21C002499A9 /* Entity */,
 			);
 			name = Model;
@@ -378,7 +316,6 @@
 		E57826EF22D8E21C002499A9 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				E57826F022D8E22C002499A9 /* DribbbleState.swift */,
 				E5521F4B22F1C54D00D38F02 /* UnsplashTokenResposne.swift */,
 				E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */,
 				E5C5646E22F18F7C00DD9401 /* UnsplashLinksEntity.swift */,
@@ -445,15 +382,6 @@
 				E592299D22AE65E9003EC30C /* Info.plist */,
 			);
 			path = iOSArchitectureKKSampleUITests;
-			sourceTree = "<group>";
-		};
-		E5A8138F22DA0E760028F80F /* Dribbble */ = {
-			isa = PBXGroup;
-			children = (
-				E57826D422D8C493002499A9 /* DribbbleOauthAuthentication.swift */,
-				E5A8139022DA0EAB0028F80F /* DribbbleOauthToken.swift */,
-			);
-			name = Dribbble;
 			sourceTree = "<group>";
 		};
 		E5A8139222DA22EF0028F80F /* KeyChainAccess */ = {
@@ -821,13 +749,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E57826E422D8E0A2002499A9 /* LocalCache.swift in Sources */,
-				E57826C122D86444002499A9 /* Authentication.swift in Sources */,
 				E5C5647522F1BAB100DD9401 /* UnsplashOauthAPI.swift in Sources */,
 				E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */,
 				E5A8139422DA230D0028F80F /* ColourKeyChainAccess.swift in Sources */,
 				E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */,
 				E57826E022D8DA01002499A9 /* NSObject+ClassName.swift in Sources */,
-				E57826F122D8E22C002499A9 /* DribbbleState.swift in Sources */,
 				E592297E22AE65E8003EC30C /* SplashViewController.swift in Sources */,
 				E5C5647322F1947C00DD9401 /* UnsplashOauthToken.swift in Sources */,
 				E577D5C022C56B0000588A38 /* MainTabCoordinator.swift in Sources */,
@@ -835,7 +761,6 @@
 				E53F1DFA22C0B60300F81CAA /* ColourCategoryViewController.swift in Sources */,
 				E5C5647122F193DE00DD9401 /* UnsplashOauthAuthentication.swift in Sources */,
 				E53F1DFC22C0B63000F81CAA /* ColourSearchViewController.swift in Sources */,
-				E516490922CD0F0000D3D2D7 /* DribbbleAPI.swift in Sources */,
 				E5521F5222F1E30100D38F02 /* UnsplashPhoto.swift in Sources */,
 				E57826D122D8AB3C002499A9 /* APIRepository.swift in Sources */,
 				E57826D322D8AB8A002499A9 /* OauthRepository.swift in Sources */,
@@ -852,20 +777,15 @@
 				E5C5647C22F1BC6600DD9401 /* UnsplashToken.swift in Sources */,
 				E592297C22AE65E8003EC30C /* AppDelegate.swift in Sources */,
 				E57DEECE22C48CB300B0AAA1 /* R.generated.swift in Sources */,
-				E57826C322D865F4002499A9 /* DribbbleOauthAPI.swift in Sources */,
-				E57826C622D89F6A002499A9 /* Token.swift in Sources */,
 				E5C5646D22F18EDC00DD9401 /* UnsplashUserEntity.swift in Sources */,
 				E5C5647922F1BB8F00DD9401 /* UnsplashAPI.swift in Sources */,
 				E57826DE22D8D8FC002499A9 /* ReferrerURL.swift in Sources */,
-				E57826CA22D8A1B8002499A9 /* TokenResponse.swift in Sources */,
 				E5291A9F22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift in Sources */,
-				E5A8139122DA0EAB0028F80F /* DribbbleOauthToken.swift in Sources */,
 				E53F1E0022C0B6BB00F81CAA /* ColourSettingViewController.swift in Sources */,
 				E574CF5922C642DD009CF8CD /* SwiftyBeaver.swift in Sources */,
 				E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */,
 				E57BD50722C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift in Sources */,
 				E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */,
-				E57826D522D8C493002499A9 /* DribbbleOauthAuthentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
