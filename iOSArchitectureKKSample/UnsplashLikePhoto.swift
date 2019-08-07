@@ -1,5 +1,5 @@
 //
-//  UnsplashPhoto.swift
+//  UnsplashLikePhoto.swift
 //  iOSArchitectureKKSample
 //
 //  Created by Kota Kawanishi on 2019/08/06.
@@ -9,20 +9,24 @@
 import Foundation
 import Moya
 
-struct UnsplashPhoto: UnsplashAPITargetType {
+struct UnsplashLikePhoto: UnsplashAPITargetType {
     
     typealias Response = String
     
     var path: String {
-        return "/photos/\(id)"
+        return "/photos/\(id)/like"
     }
-    let method: Moya.Method = .get
+    var method: Moya.Method {
+        return self.like ? .post : .delete
+    }
     let id: String
+    let like: Bool
     var task: Task {
         return .requestPlain
     }
     
-    init(id: String) {
+    init(id: String, like: Bool) {
         self.id = id
+        self.like = like
     }
 }
