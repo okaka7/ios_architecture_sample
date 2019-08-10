@@ -9,8 +9,8 @@
 import Foundation
 import Moya
 
-struct UnsplashUsersLikes: UnsplashAPITargetType {
-    typealias Response = UnsplashUserEntity
+struct UnsplashUserLikesTarget: UnsplashAPITargetType {
+    typealias Response = [UnsplashPhotoEntity]
     
     private struct Parameter: Encodable {
         let page: String
@@ -56,7 +56,7 @@ struct UnsplashUsersLikes: UnsplashAPITargetType {
     }
 }
 
-extension UnsplashUsersLikes: AccessTokenAuthorizable {
+extension UnsplashUserLikesTarget: AccessTokenAuthorizable {
     var authorizationType: AuthorizationType {
         return .bearer
     }
