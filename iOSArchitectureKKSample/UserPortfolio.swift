@@ -6,11 +6,10 @@
 //  Copyright © 2019 Kota Kawanishi. All rights reserved.
 //
 
-
 import Foundation
 import Moya
 
-struct UnsplashUserPortfolio: UnsplashAPITargetType {
+struct UnsplashUserPortfolioTarget: UnsplashAPITargetType {
     typealias Response = UnsplashPortfolio
     
     var path: String {
@@ -27,7 +26,7 @@ struct UnsplashUserPortfolio: UnsplashAPITargetType {
     }
 }
 
-extension UnsplashUserPortfolio: AccessTokenAuthorizable {
+extension UnsplashUserPortfolioTarget: AccessTokenAuthorizable {
     var authorizationType: AuthorizationType {
         return .bearer
     }
