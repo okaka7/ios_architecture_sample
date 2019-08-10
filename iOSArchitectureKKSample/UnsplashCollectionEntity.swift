@@ -169,10 +169,6 @@ extension CoverPhotoLinks {
     }
 }
 
-
-
-
-
 extension UnsplashCollectionEntityLinks {
     init?(data: Data) {
         guard let me = try? JSONDecoder().decode(UnsplashCollectionEntityLinks.self, from: data) else { return nil }

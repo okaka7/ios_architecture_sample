@@ -54,7 +54,7 @@ struct SponsoredBy: Codable {
     let id, updatedAt, username, name: String
     let firstName, lastName, twitterUsername, portfolioURL: String
     let bio, location: String
-    let links: SponsoredByLinks
+    let links: Links
     let profileImage: ProfileImage
     let instagramUsername: String
     let totalCollections, totalLikes, totalPhotos: Int
@@ -78,15 +78,6 @@ struct SponsoredBy: Codable {
     }
 }
 
-struct SponsoredByLinks: Codable {
-    let purpleSelf, html, photos, likes: String
-    let portfolio, following, followers: String
-
-    enum CodingKeys: String, CodingKey {
-        case purpleSelf = "self"
-        case html, photos, likes, portfolio, following, followers
-    }
-}
 
 struct ProfileImage: Codable {
     let small, medium, large: String
@@ -192,35 +183,6 @@ extension SponsoredBy {
     }
 }
 
-extension SponsoredByLinks {
-    init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(SponsoredByLinks.self, from: data) else { return nil }
-        self = me
-    }
-
-    init?(_ json: String, using encoding: String.Encoding = .utf8) {
-        guard let data = json.data(using: encoding) else { return nil }
-        self.init(data: data)
-    }
-
-    init?(fromURL url: String) {
-        guard let url = URL(string: url) else { return nil }
-        guard let data = try? Data(contentsOf: url) else { return nil }
-        self.init(data: data)
-    }
-
-    var jsonData: Data? {
-        return try? JSONEncoder().encode(self)
-    }
-
-    var json: String? {
-        guard let data = self.jsonData else { return nil }
-        return String(data: data, encoding: .utf8)
-    }
-}
-
-
-
 extension Sponsorship {
     init?(data: Data) {
         guard let me = try? JSONDecoder().decode(Sponsorship.self, from: data) else { return nil }
@@ -274,6 +236,3 @@ extension Urls {
         return String(data: data, encoding: .utf8)
     }
 }
-
-// MARK: Encode/decode helpers
-

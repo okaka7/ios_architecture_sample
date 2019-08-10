@@ -12,8 +12,6 @@ struct UnsplashPortfolio: Codable {
     let url: String
 }
 
-// MARK: Convenience initializers
-
 extension UnsplashPortfolio {
     init?(data: Data) {
         guard let me = try? JSONDecoder().decode(UnsplashPortfolio.self, from: data) else { return nil }
