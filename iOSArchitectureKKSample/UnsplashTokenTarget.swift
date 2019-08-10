@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-struct UnsplashToken: UnsplashOauthTargetType {
+struct UnsplashTokenTarget: UnsplashOauthTargetType {
     
     typealias Response = UnsplashTokenResposne
     

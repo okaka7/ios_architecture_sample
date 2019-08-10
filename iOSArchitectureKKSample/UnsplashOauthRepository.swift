@@ -20,8 +20,8 @@ extension Repository {
             return provider.rx.request(target).map(R.Response.self)
         }
         
-        static func tokenRequest(code: String) -> Single<UnsplashToken.Response> {
-            let target: UnsplashToken = .init(code: code)
+        static func tokenRequest(code: String) -> Single<UnsplashTokenTarget.Response> {
+            let target: UnsplashTokenTarget = .init(code: code)
             return request(target)
         }
         
