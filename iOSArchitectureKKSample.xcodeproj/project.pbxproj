@@ -42,7 +42,7 @@
 		E57826E622D8E0CF002499A9 /* LocalCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826E522D8E0CF002499A9 /* LocalCacheKey.swift */; };
 		E57915CE22F85AD4009BCE95 /* UnsplashAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915CD22F85AD4009BCE95 /* UnsplashAPIRepository.swift */; };
 		E57915D022F8621C009BCE95 /* UnsplashAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915CF22F8621C009BCE95 /* UnsplashAccount.swift */; };
-		E57915D222F865AD009BCE95 /* UnsplashUserAccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915D122F865AD009BCE95 /* UnsplashUserAccountEntity.swift */; };
+		E57915D222F865AD009BCE95 /* UnsplashAccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915D122F865AD009BCE95 /* UnsplashAccountEntity.swift */; };
 		E57915D422F86676009BCE95 /* UnsplashUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915D322F86676009BCE95 /* UnsplashUser.swift */; };
 		E57915D622F88D6A009BCE95 /* UnsplashUsersPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915D522F88D6A009BCE95 /* UnsplashUsersPhotos.swift */; };
 		E57915D822F89743009BCE95 /* UnsplashUsersLikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915D722F89743009BCE95 /* UnsplashUsersLikes.swift */; };
@@ -132,7 +132,7 @@
 		E578B49622CE046700729054 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		E57915CD22F85AD4009BCE95 /* UnsplashAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPIRepository.swift; sourceTree = "<group>"; };
 		E57915CF22F8621C009BCE95 /* UnsplashAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAccount.swift; sourceTree = "<group>"; };
-		E57915D122F865AD009BCE95 /* UnsplashUserAccountEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserAccountEntity.swift; sourceTree = "<group>"; };
+		E57915D122F865AD009BCE95 /* UnsplashAccountEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAccountEntity.swift; sourceTree = "<group>"; };
 		E57915D322F86676009BCE95 /* UnsplashUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUser.swift; sourceTree = "<group>"; };
 		E57915D522F88D6A009BCE95 /* UnsplashUsersPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUsersPhotos.swift; sourceTree = "<group>"; };
 		E57915D722F89743009BCE95 /* UnsplashUsersLikes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUsersLikes.swift; sourceTree = "<group>"; };
@@ -263,7 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */,
-				E57915D122F865AD009BCE95 /* UnsplashUserAccountEntity.swift */,
+				E57915D122F865AD009BCE95 /* UnsplashAccountEntity.swift */,
 				E5C5646E22F18F7C00DD9401 /* UnsplashLinksEntity.swift */,
 				E5521F4F22F1E18A00D38F02 /* UnsplashPhotoEntity.swift */,
 				E577379F22FECEE400559D37 /* UnsplashError.swift */,
@@ -825,7 +825,7 @@
 				E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */,
 				E57BD50722C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift in Sources */,
 				E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */,
-				E57915D222F865AD009BCE95 /* UnsplashUserAccountEntity.swift in Sources */,
+				E57915D222F865AD009BCE95 /* UnsplashAccountEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

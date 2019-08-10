@@ -9,8 +9,11 @@
 import Foundation
 
 struct UnsplashUserEntity: Codable {
-    let id, updatedAt, username, firstName: String
-    let lastName, email: String
+    let id: String
+    let updatedAt: Date
+    let username: String
+    let firstName, lastName: String
+    let email: String
     let portfolioURL: String?
     let bio: String?
     let location: String?

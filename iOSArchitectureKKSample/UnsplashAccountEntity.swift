@@ -10,15 +10,20 @@ import Foundation
 struct UnsplashAccountEntity: Codable {
     let id: String
     let updatedAt: Date
-    let username, name, firstName, lastName: String
-    let twitterUsername, portfolioURL, bio, location: JSONNull?
+    let username: String
+    let name, firstName, lastName: String
+    let twitterUsername, instagramUsername: String?
+    let portfolioURL: String?
+    let bio: String?
+    let location: String?
     let links: Links
     let profileImage: ProfileImage
-    let instagramUsername: JSONNull?
-    let totalCollections, totalLikes, totalPhotos: Int
-    let acceptedTos, followedByUser: Bool
-    let photos: [JSONAny]
-    let badge: JSONNull?
+    let totalCollections, totalPhotos: Int
+    let totalLikes: Int
+    let acceptedTos: Bool
+    let followedByUser: Bool
+    let photos: [UnsplashPhotoEntity]
+    let badge: JSONNull? //MARk:badgeとは？
     let downloads: Int
     let tags: Tags
     let followersCount, followingCount: Int
