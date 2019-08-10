@@ -9,9 +9,8 @@
 import Foundation
 import Moya
 
-struct UnsplashLikePhoto: UnsplashAPITargetType {
-    
-    typealias Response = String
+struct UnsplashLikePhotoTarget: UnsplashAPITargetType {
+    typealias Response = UnsplashPhotoEntity
     
     var path: String {
         return "/photos/\(id)/like"
@@ -31,7 +30,7 @@ struct UnsplashLikePhoto: UnsplashAPITargetType {
     }
 }
 
-extension UnsplashLikePhoto: AccessTokenAuthorizable {
+extension UnsplashLikePhotoTarget: AccessTokenAuthorizable {
     var authorizationType: AuthorizationType {
         return .bearer
     }
