@@ -25,3 +25,9 @@ struct UnsplashUser: UnsplashAPITargetType {
         self.userName = userName
     }
 }
+
+extension UnsplashUser: AccessTokenAuthorizable {
+    var authorizationType: AuthorizationType {
+        return .bearer
+    }
+}

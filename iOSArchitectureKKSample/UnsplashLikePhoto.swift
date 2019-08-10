@@ -30,3 +30,9 @@ struct UnsplashLikePhoto: UnsplashAPITargetType {
         self.like = like
     }
 }
+
+extension UnsplashLikePhoto: AccessTokenAuthorizable {
+    var authorizationType: AuthorizationType {
+        return .bearer
+    }
+}

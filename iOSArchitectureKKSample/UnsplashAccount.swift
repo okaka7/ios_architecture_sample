@@ -21,3 +21,9 @@ struct UnsplashAccount: UnsplashAPITargetType {
     }
     
 }
+
+extension UnsplashAccount: AccessTokenAuthorizable {
+    var authorizationType: AuthorizationType {
+        return .bearer
+    }
+}

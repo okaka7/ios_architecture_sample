@@ -51,3 +51,9 @@ struct UnsplashPhotos: UnsplashAPITargetType {
         return .requestPlain
     }
 }
+
+extension UnsplashPhotos: AccessTokenAuthorizable {
+    var authorizationType: AuthorizationType {
+        return .bearer
+    }
+}

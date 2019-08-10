@@ -55,3 +55,9 @@ struct UnsplashUsersLikes: UnsplashAPITargetType {
         self.userName = userName
     }
 }
+
+extension UnsplashUsersLikes: AccessTokenAuthorizable {
+    var authorizationType: AuthorizationType {
+        return .bearer
+    }
+}

@@ -14,10 +14,9 @@ import RxMoya
 extension Repository {
     struct UnsplashAPI {
         
-        
-        static let provider: MoyaProvider<MultiTarget> =  {
-            
+        static let provider: MoyaProvider<MultiTarget> = {
             //  Note: this plugin is for fetching Pagination links in photo items response header.
+            let loggerPlugin: NetworkLoggerPlugin = .init(verbose: true)
             let fetchPaginationLinksPlugin: NetworkActivityPlugin = .init(networkActivityClosure: {
                 (change: NetworkActivityChangeType, target: TargetType) in
                 guard let multiTarget = target as? MultiTarget else {
@@ -30,9 +29,19 @@ extension Repository {
                     
                 }
             })
+            
+            let accessTokenPlugin: AccessTokenPlugin = .init(tokenClosure: { () -> String in
+                if let token = ColourKeychainAccess.unsplashToken {
+                    return token
+                } else {
+                    return R.string.localizable.unsplashAPIClientID()
+                }
+            })
+            
             let provider = MoyaProvider<MultiTarget>(plugins:
-            [NetworkLoggerPlugin(verbose: true),
-             fetchPaginationLinksPlugin
+            [loggerPlugin,
+             fetchPaginationLinksPlugin,
+             accessTokenPlugin
               ])
             return provider
         }()

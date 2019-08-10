@@ -26,3 +26,9 @@ struct UnsplashPhoto: UnsplashAPITargetType {
         self.id = id
     }
 }
+
+extension UnsplashPhoto: AccessTokenAuthorizable {
+    var authorizationType: AuthorizationType {
+        return .bearer
+    }
+}

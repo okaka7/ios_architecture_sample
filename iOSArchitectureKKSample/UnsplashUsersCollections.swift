@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-struct UnsplashUsersCollectionss: UnsplashAPITargetType {
+struct UnsplashUsersCollections: UnsplashAPITargetType {
     typealias Response = UnsplashUserEntity
     
     private struct Parameter: Encodable {
@@ -53,5 +53,11 @@ struct UnsplashUsersCollectionss: UnsplashAPITargetType {
     
     init(userName: String) {
         self.userName = userName
+    }
+}
+
+extension UnsplashUsersCollections: AccessTokenAuthorizable {
+    var authorizationType: AuthorizationType {
+        return .bearer
     }
 }
