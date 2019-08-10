@@ -16,7 +16,9 @@ struct UnsplashCollectionRelatedCollectionsTarget: UnsplashAPITargetType {
     var path: String {
         return "/collections/\(id)/related"
     }
-    let method: Moya.Method = .get
+    var method: Moya.Method {
+        return .get
+    }
     let id: String
     var task: Task {
         return .requestPlain
