@@ -51,13 +51,13 @@ extension Repository {
             return provider.rx.request(target).map(R.Response.self)
         }
         
-        static func requestAccount() -> Single<UnsplashAccount.Response> {
-            let target: UnsplashAccount = .init()
+        static func requestAccount() -> Single<UnsplashAccountTarget.Response> {
+            let target: UnsplashAccountTarget = .init()
             return request(target)
         }
         
-        static func requestUser(user: String) -> Single<UnsplashUser.Response> {
-            let target: UnsplashUser = .init(userName: user)
+        static func requestUser(user: String) -> Single<UnsplashUserTarget.Response> {
+            let target: UnsplashUserTarget = .init(userName: user)
             return request(target)
         }
         

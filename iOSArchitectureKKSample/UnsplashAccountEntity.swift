@@ -23,7 +23,7 @@ struct UnsplashAccountEntity: Codable {
     let acceptedTos: Bool
     let followedByUser: Bool
     let photos: [UnsplashPhotoEntity]
-    let badge: JSONNull? //MARk:badgeとは？
+    let badge: Badge?
     let downloads: Int
     let tags: Tags
     let followersCount, followingCount: Int
@@ -73,3 +73,9 @@ struct Tags: Codable {
 struct Aggregated: Codable {
     let title: String
 }
+struct Badge: Codable {
+    let title: String
+    let primary: Bool
+    let slug, link: String
+}
+

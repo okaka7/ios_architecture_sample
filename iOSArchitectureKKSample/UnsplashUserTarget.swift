@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-struct UnsplashUser: UnsplashAPITargetType {
+struct UnsplashUserTarget: UnsplashAPITargetType {
     typealias Response = UnsplashUserEntity
     
     var path: String {
@@ -26,7 +26,7 @@ struct UnsplashUser: UnsplashAPITargetType {
     }
 }
 
-extension UnsplashUser: AccessTokenAuthorizable {
+extension UnsplashUserTarget: AccessTokenAuthorizable {
     var authorizationType: AuthorizationType {
         return .bearer
     }

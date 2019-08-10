@@ -9,8 +9,8 @@
 import Foundation
 import Moya
 
-struct UnsplashAccount: UnsplashAPITargetType {
-    typealias Account = UnsplashUserEntity
+struct UnsplashAccountTarget: UnsplashAPITargetType {
+    typealias Account = UnsplashAccountEntity
     typealias Response = Account
     
     
@@ -22,7 +22,7 @@ struct UnsplashAccount: UnsplashAPITargetType {
     
 }
 
-extension UnsplashAccount: AccessTokenAuthorizable {
+extension UnsplashAccountTarget: AccessTokenAuthorizable {
     var authorizationType: AuthorizationType {
         return .bearer
     }
