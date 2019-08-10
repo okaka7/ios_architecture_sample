@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-struct UnsplashPhoto: UnsplashAPITargetType {
+struct UnsplashPhotoTarget: UnsplashAPITargetType {
     
     typealias Response = UnsplashPhotoEntity
     
@@ -27,7 +27,7 @@ struct UnsplashPhoto: UnsplashAPITargetType {
     }
 }
 
-extension UnsplashPhoto: AccessTokenAuthorizable {
+extension UnsplashPhotoTarget: AccessTokenAuthorizable {
     var authorizationType: AuthorizationType {
         return .bearer
     }

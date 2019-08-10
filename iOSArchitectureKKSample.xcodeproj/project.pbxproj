@@ -47,7 +47,7 @@
 		E57915D622F88D6A009BCE95 /* UnsplashUserPhotosTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915D522F88D6A009BCE95 /* UnsplashUserPhotosTarget.swift */; };
 		E57915D822F89743009BCE95 /* UnsplashUserLikesTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915D722F89743009BCE95 /* UnsplashUserLikesTarget.swift */; };
 		E57915DA22F8A093009BCE95 /* UnsplashUserCollectionsTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915D922F8A093009BCE95 /* UnsplashUserCollectionsTarget.swift */; };
-		E57915DC22F8A310009BCE95 /* UnsplashPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915DB22F8A310009BCE95 /* UnsplashPhoto.swift */; };
+		E57915DC22F8A310009BCE95 /* UnsplashPhotoTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915DB22F8A310009BCE95 /* UnsplashPhotoTarget.swift */; };
 		E57915DE22F8A3B2009BCE95 /* UnsplashLikePhotoTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915DD22F8A3B2009BCE95 /* UnsplashLikePhotoTarget.swift */; };
 		E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */; };
 		E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */; };
@@ -141,7 +141,7 @@
 		E57915D522F88D6A009BCE95 /* UnsplashUserPhotosTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserPhotosTarget.swift; sourceTree = "<group>"; };
 		E57915D722F89743009BCE95 /* UnsplashUserLikesTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserLikesTarget.swift; sourceTree = "<group>"; };
 		E57915D922F8A093009BCE95 /* UnsplashUserCollectionsTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserCollectionsTarget.swift; sourceTree = "<group>"; };
-		E57915DB22F8A310009BCE95 /* UnsplashPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhoto.swift; sourceTree = "<group>"; };
+		E57915DB22F8A310009BCE95 /* UnsplashPhotoTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhotoTarget.swift; sourceTree = "<group>"; };
 		E57915DD22F8A3B2009BCE95 /* UnsplashLikePhotoTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashLikePhotoTarget.swift; sourceTree = "<group>"; };
 		E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourCategoryCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSearchCoordinator.swift; sourceTree = "<group>"; };
@@ -458,7 +458,7 @@
 			children = (
 				E5C5647B22F1BC6600DD9401 /* UnsplashToken.swift */,
 				E5521F5122F1E30100D38F02 /* UnsplashPhotosTarget.swift */,
-				E57915DB22F8A310009BCE95 /* UnsplashPhoto.swift */,
+				E57915DB22F8A310009BCE95 /* UnsplashPhotoTarget.swift */,
 				E57915CF22F8621C009BCE95 /* UnsplashAccountTarget.swift */,
 				E57915D322F86676009BCE95 /* UnsplashUserTarget.swift */,
 				E57915D522F88D6A009BCE95 /* UnsplashUserPhotosTarget.swift */,
@@ -809,7 +809,7 @@
 				E53F1DFC22C0B63000F81CAA /* ColourSearchViewController.swift in Sources */,
 				E57915D422F86676009BCE95 /* UnsplashUserTarget.swift in Sources */,
 				E5521F5222F1E30100D38F02 /* UnsplashPhotosTarget.swift in Sources */,
-				E57915DC22F8A310009BCE95 /* UnsplashPhoto.swift in Sources */,
+				E57915DC22F8A310009BCE95 /* UnsplashPhotoTarget.swift in Sources */,
 				E592E72822FEFB4300AECEC4 /* UnsplashDownloadPhoto.swift in Sources */,
 				E53F1DFE22C0B66700F81CAA /* ColourFavoritesViewController.swift in Sources */,
 				E5521F5022F1E18A00D38F02 /* UnsplashPhotoEntity.swift in Sources */,
