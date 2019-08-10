@@ -22,7 +22,7 @@ struct UnsplashAccountEntity: Codable {
     let totalLikes: Int
     let acceptedTos: Bool
     let followedByUser: Bool
-    let photos: [UnsplashPhotoEntity]
+    let photos: [Photo]
     let badge: Badge?
     let downloads: Int
     let tags: Tags
@@ -32,7 +32,7 @@ struct UnsplashAccountEntity: Codable {
     let uid: String
     let uploadsRemaining: Int
     let unlimitedUploads: Bool
-    let email: String
+    let email: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -79,3 +79,7 @@ struct Badge: Codable {
     let slug, link: String
 }
 
+struct Photo: Codable {
+    let id: String
+    let urls: Urls
+}

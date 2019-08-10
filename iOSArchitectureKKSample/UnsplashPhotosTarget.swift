@@ -1,16 +1,18 @@
 //
-//  UnsplashUsersCollections.swift
+//  UnsplashPhoto.swift
 //  iOSArchitectureKKSample
 //
-//  Created by Kota Kawanishi on 2019/08/06.
+//  Created by Kota Kawanishi on 2019/07/31.
 //  Copyright © 2019 Kota Kawanishi. All rights reserved.
 //
 
 import Foundation
+
 import Moya
 
-struct UnsplashUsersCollections: UnsplashAPITargetType {
-    typealias Response = UnsplashUserEntity
+struct UnsplashPhotosTarget: UnsplashAPITargetType {
+    
+    typealias Response = [UnsplashPhotoEntity]
     
     private struct Parameter: Encodable {
         let page: String
@@ -42,21 +44,15 @@ struct UnsplashUsersCollections: UnsplashAPITargetType {
         }
     }
     
-    var path: String {
-        return "/users/\(userName)/collections"
-    }
+    let path: String = "/photos"
     let method: Moya.Method = .get
-    let userName: String
+    let code: String
     var task: Task {
         return .requestPlain
     }
-    
-    init(userName: String) {
-        self.userName = userName
-    }
 }
 
-extension UnsplashUsersCollections: AccessTokenAuthorizable {
+extension UnsplashPhotosTarget: AccessTokenAuthorizable {
     var authorizationType: AuthorizationType {
         return .bearer
     }
