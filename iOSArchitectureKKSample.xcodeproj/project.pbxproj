@@ -62,9 +62,10 @@
 		E592298322AE65E9003EC30C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E592298222AE65E9003EC30C /* Assets.xcassets */; };
 		E592299122AE65E9003EC30C /* ArchitectureKKSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592299022AE65E9003EC30C /* ArchitectureKKSampleTests.swift */; };
 		E592299C22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592299B22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift */; };
+		E592E72222FEDE6E00AECEC4 /* UserPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72122FEDE6E00AECEC4 /* UserPortfolio.swift */; };
+		E592E72422FEDEAB00AECEC4 /* UnsplashPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72322FEDEAB00AECEC4 /* UnsplashPortfolio.swift */; };
 		E5A8139422DA230D0028F80F /* ColourKeyChainAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8139322DA230D0028F80F /* ColourKeyChainAccess.swift */; };
 		E5C5646D22F18EDC00DD9401 /* UnsplashUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */; };
-		E5C5646F22F18F7C00DD9401 /* UnsplashLinksEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646E22F18F7C00DD9401 /* UnsplashLinksEntity.swift */; };
 		E5C5647122F193DE00DD9401 /* UnsplashOauthAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647022F193DE00DD9401 /* UnsplashOauthAuthentication.swift */; };
 		E5C5647322F1947C00DD9401 /* UnsplashOauthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647222F1947C00DD9401 /* UnsplashOauthToken.swift */; };
 		E5C5647522F1BAB100DD9401 /* UnsplashOauthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647422F1BAB100DD9401 /* UnsplashOauthAPI.swift */; };
@@ -158,9 +159,10 @@
 		E592299722AE65E9003EC30C /* iOSArchitectureKKSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSArchitectureKKSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E592299B22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureKKSampleUITests.swift; sourceTree = "<group>"; };
 		E592299D22AE65E9003EC30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E592E72122FEDE6E00AECEC4 /* UserPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPortfolio.swift; sourceTree = "<group>"; };
+		E592E72322FEDEAB00AECEC4 /* UnsplashPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPortfolio.swift; sourceTree = "<group>"; };
 		E5A8139322DA230D0028F80F /* ColourKeyChainAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourKeyChainAccess.swift; sourceTree = "<group>"; };
 		E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserEntity.swift; sourceTree = "<group>"; };
-		E5C5646E22F18F7C00DD9401 /* UnsplashLinksEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashLinksEntity.swift; sourceTree = "<group>"; };
 		E5C5647022F193DE00DD9401 /* UnsplashOauthAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashOauthAuthentication.swift; sourceTree = "<group>"; };
 		E5C5647222F1947C00DD9401 /* UnsplashOauthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashOauthToken.swift; sourceTree = "<group>"; };
 		E5C5647422F1BAB100DD9401 /* UnsplashOauthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashOauthAPI.swift; sourceTree = "<group>"; };
@@ -264,9 +266,9 @@
 			children = (
 				E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */,
 				E57915D122F865AD009BCE95 /* UnsplashAccountEntity.swift */,
-				E5C5646E22F18F7C00DD9401 /* UnsplashLinksEntity.swift */,
 				E5521F4F22F1E18A00D38F02 /* UnsplashPhotoEntity.swift */,
 				E577379F22FECEE400559D37 /* UnsplashError.swift */,
+				E592E72322FEDEAB00AECEC4 /* UnsplashPortfolio.swift */,
 			);
 			name = UnsplashEntity;
 			sourceTree = "<group>";
@@ -455,6 +457,7 @@
 				E57915D922F8A093009BCE95 /* UnsplashUsersCollections.swift */,
 				E57915DD22F8A3B2009BCE95 /* UnsplashLikePhoto.swift */,
 				E57915DB22F8A310009BCE95 /* UnsplashPhoto.swift */,
+				E592E72122FEDE6E00AECEC4 /* UserPortfolio.swift */,
 			);
 			name = EndPoint;
 			sourceTree = "<group>";
@@ -791,7 +794,6 @@
 				E592297E22AE65E8003EC30C /* SplashViewController.swift in Sources */,
 				E5C5647322F1947C00DD9401 /* UnsplashOauthToken.swift in Sources */,
 				E577D5C022C56B0000588A38 /* MainTabCoordinator.swift in Sources */,
-				E5C5646F22F18F7C00DD9401 /* UnsplashLinksEntity.swift in Sources */,
 				E53F1DFA22C0B60300F81CAA /* ColourCategoryViewController.swift in Sources */,
 				E5C5647122F193DE00DD9401 /* UnsplashOauthAuthentication.swift in Sources */,
 				E53F1DFC22C0B63000F81CAA /* ColourSearchViewController.swift in Sources */,
@@ -812,6 +814,7 @@
 				E5521F4E22F1CC6F00D38F02 /* UnsplashOauthRepository.swift in Sources */,
 				E5C5647C22F1BC6600DD9401 /* UnsplashToken.swift in Sources */,
 				E57915DA22F8A093009BCE95 /* UnsplashUsersCollections.swift in Sources */,
+				E592E72222FEDE6E00AECEC4 /* UserPortfolio.swift in Sources */,
 				E57915D622F88D6A009BCE95 /* UnsplashUsersPhotos.swift in Sources */,
 				E592297C22AE65E8003EC30C /* AppDelegate.swift in Sources */,
 				E57DEECE22C48CB300B0AAA1 /* R.generated.swift in Sources */,
@@ -825,6 +828,7 @@
 				E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */,
 				E57BD50722C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift in Sources */,
 				E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */,
+				E592E72422FEDEAB00AECEC4 /* UnsplashPortfolio.swift in Sources */,
 				E57915D222F865AD009BCE95 /* UnsplashAccountEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
