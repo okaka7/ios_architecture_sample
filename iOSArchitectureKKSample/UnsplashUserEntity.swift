@@ -91,30 +91,13 @@ extension UnsplashUserEntity {
     }
 }
 
-// MARK: Encode/decode helpers
-
-class JSONNull: Codable {
-    public init() {}
-
-    public required init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if !container.decodeNil() {
-            throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
-        }
-    }
-
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encodeNil()
-    }
-}
-
 struct Links: Codable {
-    let selfLink, html, photos, likes, portfolio: String
+    let linksSelf, html, photos, likes: String
+    let portfolio, following, followers: String
     
     enum CodingKeys: String, CodingKey {
-        case selfLink = "self"
-        case html, photos, likes, portfolio
+        case linksSelf = "self"
+        case html, photos, likes, portfolio, following, followers
     }
 }
 

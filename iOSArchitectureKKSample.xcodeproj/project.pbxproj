@@ -64,6 +64,7 @@
 		E592299C22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592299B22AE65E9003EC30C /* ArchitectureKKSampleUITests.swift */; };
 		E592E72222FEDE6E00AECEC4 /* UserPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72122FEDE6E00AECEC4 /* UserPortfolio.swift */; };
 		E592E72422FEDEAB00AECEC4 /* UnsplashPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72322FEDEAB00AECEC4 /* UnsplashPortfolio.swift */; };
+		E592E72622FEECEC00AECEC4 /* UnsplashCollectionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72522FEECEC00AECEC4 /* UnsplashCollectionEntity.swift */; };
 		E5A8139422DA230D0028F80F /* ColourKeyChainAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8139322DA230D0028F80F /* ColourKeyChainAccess.swift */; };
 		E5C5646D22F18EDC00DD9401 /* UnsplashUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */; };
 		E5C5647122F193DE00DD9401 /* UnsplashOauthAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647022F193DE00DD9401 /* UnsplashOauthAuthentication.swift */; };
@@ -161,6 +162,7 @@
 		E592299D22AE65E9003EC30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E592E72122FEDE6E00AECEC4 /* UserPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPortfolio.swift; sourceTree = "<group>"; };
 		E592E72322FEDEAB00AECEC4 /* UnsplashPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPortfolio.swift; sourceTree = "<group>"; };
+		E592E72522FEECEC00AECEC4 /* UnsplashCollectionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashCollectionEntity.swift; sourceTree = "<group>"; };
 		E5A8139322DA230D0028F80F /* ColourKeyChainAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourKeyChainAccess.swift; sourceTree = "<group>"; };
 		E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserEntity.swift; sourceTree = "<group>"; };
 		E5C5647022F193DE00DD9401 /* UnsplashOauthAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashOauthAuthentication.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				E5521F4F22F1E18A00D38F02 /* UnsplashPhotoEntity.swift */,
 				E577379F22FECEE400559D37 /* UnsplashError.swift */,
 				E592E72322FEDEAB00AECEC4 /* UnsplashPortfolio.swift */,
+				E592E72522FEECEC00AECEC4 /* UnsplashCollectionEntity.swift */,
 			);
 			name = UnsplashEntity;
 			sourceTree = "<group>";
@@ -783,6 +786,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E592E72622FEECEC00AECEC4 /* UnsplashCollectionEntity.swift in Sources */,
 				E57826E422D8E0A2002499A9 /* LocalCache.swift in Sources */,
 				E5C5647522F1BAB100DD9401 /* UnsplashOauthAPI.swift in Sources */,
 				E57915CE22F85AD4009BCE95 /* UnsplashAPIRepository.swift in Sources */,
