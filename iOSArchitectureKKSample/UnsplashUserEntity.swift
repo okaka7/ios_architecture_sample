@@ -17,7 +17,7 @@ struct UnsplashUserEntity: Codable {
     let totalLikes, totalPhotos, totalCollections: Int
     let followedByUser: Bool
     let downloads, uploadsRemaining: Int
-    let instagramUsername,twitterUsername: String?
+    let instagramUsername, twitterUsername: String?
     let links: Links
 
     enum CodingKeys: String, CodingKey {
@@ -40,13 +40,12 @@ struct UnsplashUserEntity: Codable {
     }
 }
 
-
-
 // MARK: Convenience initializers
 
 extension UnsplashUserEntity {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(UnsplashUserEntity.self, from: data) else { return nil
+        guard let me = try? JSONDecoder().decode(UnsplashUserEntity.self, from: data) else {
+            return nil
         }
         self = me
     }
@@ -59,8 +58,12 @@ extension UnsplashUserEntity {
     }
 
     init?(fromURL url: String) {
-        guard let url = URL(string: url) else { return nil }
-        guard let data = try? Data(contentsOf: url) else { return nil }
+        guard let url = URL(string: url) else {
+            return nil
+        }
+        guard let data = try? Data(contentsOf: url) else {
+            return nil
+        }
         self.init(data: data)
     }
 
@@ -69,12 +72,12 @@ extension UnsplashUserEntity {
     }
 
     var json: String? {
-        guard let data = self.jsonData else { return nil }
+        guard let data = self.jsonData else {
+            return nil
+        }
         return String(data: data, encoding: .utf8)
     }
 }
-
-
 
 // MARK: Encode/decode helpers
 

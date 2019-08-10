@@ -11,8 +11,8 @@ import KeychainAccess
 
 protocol UnsplashTokenRequest {
     static func requestToken(code: String,
-                             onSuccess successHandler: @escaping (TokenResponse) -> (),
-                             onError errorHandler: (Error) -> ())
+                             onSuccess successHandler: @escaping (UnsplashToken.Response) -> Void,
+                             onError errorHandler: (Error) -> Void)
 }
 
 struct UnsplashOauthToken {
@@ -25,7 +25,6 @@ struct UnsplashOauthToken {
     
     func requestToken(onSuccess successHandler: @escaping (UnsplashToken.Response) -> Void,
                       onError errorHandler: (Error) -> Void) {
-        
         
         _ = Repository.UnsplashOauth
             .tokenRequest(code: self.code)

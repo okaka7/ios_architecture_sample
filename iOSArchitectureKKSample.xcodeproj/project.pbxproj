@@ -40,7 +40,6 @@
 		E57826E022D8DA01002499A9 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826DF22D8DA01002499A9 /* NSObject+ClassName.swift */; };
 		E57826E422D8E0A2002499A9 /* LocalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826E322D8E0A2002499A9 /* LocalCache.swift */; };
 		E57826E622D8E0CF002499A9 /* LocalCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826E522D8E0CF002499A9 /* LocalCacheKey.swift */; };
-		E57915CC22F853D7009BCE95 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915CB22F853D7009BCE95 /* TokenResponse.swift */; };
 		E57915CE22F85AD4009BCE95 /* UnsplashAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915CD22F85AD4009BCE95 /* UnsplashAPIRepository.swift */; };
 		E57915D022F8621C009BCE95 /* UnsplashAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915CF22F8621C009BCE95 /* UnsplashAccount.swift */; };
 		E57915D222F865AD009BCE95 /* UnsplashUserAccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57915D122F865AD009BCE95 /* UnsplashUserAccountEntity.swift */; };
@@ -131,7 +130,6 @@
 		E57826E322D8E0A2002499A9 /* LocalCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCache.swift; sourceTree = "<group>"; };
 		E57826E522D8E0CF002499A9 /* LocalCacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCacheKey.swift; sourceTree = "<group>"; };
 		E578B49622CE046700729054 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
-		E57915CB22F853D7009BCE95 /* TokenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		E57915CD22F85AD4009BCE95 /* UnsplashAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPIRepository.swift; sourceTree = "<group>"; };
 		E57915CF22F8621C009BCE95 /* UnsplashAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAccount.swift; sourceTree = "<group>"; };
 		E57915D122F865AD009BCE95 /* UnsplashUserAccountEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserAccountEntity.swift; sourceTree = "<group>"; };
@@ -261,6 +259,17 @@
 			name = Logger;
 			sourceTree = "<group>";
 		};
+		E577379E22FECA8200559D37 /* UnsplashEntity */ = {
+			isa = PBXGroup;
+			children = (
+				E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */,
+				E57915D122F865AD009BCE95 /* UnsplashUserAccountEntity.swift */,
+				E5C5646E22F18F7C00DD9401 /* UnsplashLinksEntity.swift */,
+				E5521F4F22F1E18A00D38F02 /* UnsplashPhotoEntity.swift */,
+			);
+			name = UnsplashEntity;
+			sourceTree = "<group>";
+		};
 		E577B6D122C8B48C00AB2399 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,12 +343,8 @@
 		E57826EF22D8E21C002499A9 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				E577379E22FECA8200559D37 /* UnsplashEntity */,
 				E5521F4B22F1C54D00D38F02 /* UnsplashTokenResposne.swift */,
-				E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */,
-				E57915D122F865AD009BCE95 /* UnsplashUserAccountEntity.swift */,
-				E5C5646E22F18F7C00DD9401 /* UnsplashLinksEntity.swift */,
-				E5521F4F22F1E18A00D38F02 /* UnsplashPhotoEntity.swift */,
-				E57915CB22F853D7009BCE95 /* TokenResponse.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -794,7 +799,6 @@
 				E5521F5222F1E30100D38F02 /* UnsplashPhotos.swift in Sources */,
 				E57915DC22F8A310009BCE95 /* UnsplashPhoto.swift in Sources */,
 				E57826D322D8AB8A002499A9 /* OauthRepository.swift in Sources */,
-				E57915CC22F853D7009BCE95 /* TokenResponse.swift in Sources */,
 				E53F1DFE22C0B66700F81CAA /* ColourFavoritesViewController.swift in Sources */,
 				E5521F5022F1E18A00D38F02 /* UnsplashPhotoEntity.swift in Sources */,
 				E57915D022F8621C009BCE95 /* UnsplashAccount.swift in Sources */,

@@ -111,7 +111,9 @@ struct Urls: Codable {
 
 extension UnsplashPhotoEntity {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(UnsplashPhotoEntity.self, from: data) else { return nil }
+        guard let me = try? JSONDecoder().decode(UnsplashPhotoEntity.self, from: data) else {
+            return nil
+        }
         self = me
     }
 

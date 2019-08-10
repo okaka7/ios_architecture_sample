@@ -10,7 +10,6 @@ import Foundation
 
 import UIKit
 
-
 public protocol ClassNameProtocol {
     static var className: String { get }
     var className: String { get }

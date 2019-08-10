@@ -13,8 +13,6 @@ protocol UnsplashOauthTargetType: TargetType {
     associatedtype Response: Codable
 }
 
-
-
 extension UnsplashOauthTargetType {
     
     public var baseURL: URL {

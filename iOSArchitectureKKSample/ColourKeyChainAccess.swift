@@ -11,7 +11,6 @@ import KeychainAccess
 struct ColourKeychainAccess {
     private static let keychain = Keychain(service: R.string.localizable.appHost())
     
-   
     static var unsplashToken: String? {
         return keychain[R.string.localizable.unsplashToken()]
     }

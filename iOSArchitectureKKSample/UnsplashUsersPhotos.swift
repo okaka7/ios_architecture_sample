@@ -60,7 +60,7 @@ struct UnsplashUsersPhotos: UnsplashAPITargetType {
     let method: Moya.Method = .get
     let userName: String
     var task: Task {
-        return .requestParameters(parameters: Parameter(u), encoding: <#T##ParameterEncoding#>)
+        return .requestParameters(parameters: Parameter().parameter, encoding: URLEncoding.default)
     }
     
     init(userName: String) {
