@@ -49,7 +49,9 @@ class SplashViewController: UIViewController {
                 return
             }
             if let token = ColourKeychainAccess.unsplashToken {
+                #if DEBUG
                 log.debug(token)
+                #endif
             } else {
                 let authentication = UnsplashOauthAuthentication(outputView: self)
                 authentication.authenticate()

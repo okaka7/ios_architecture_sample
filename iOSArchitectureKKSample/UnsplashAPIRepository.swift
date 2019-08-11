@@ -16,7 +16,9 @@ extension Repository {
         
         static let provider: MoyaProvider<MultiTarget> = {
             //  Note: this plugin is for fetching Pagination links in photo items response header.
+            #if DEBUG
             let loggerPlugin: NetworkLoggerPlugin = .init(verbose: true)
+            #endif
             let fetchPaginationLinksPlugin: NetworkActivityPlugin = .init(networkActivityClosure: {
                 (change: NetworkActivityChangeType, target: TargetType) in
                 guard let multiTarget = target as? MultiTarget else {

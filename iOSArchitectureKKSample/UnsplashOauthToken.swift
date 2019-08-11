@@ -31,10 +31,14 @@ struct UnsplashOauthToken {
             .subscribe(
                 onSuccess: { response in
                     successHandler(response)
+                    #if DEBUG
                     log.debug("saveToken!!!!")
+                    #endif
             },
                 onError: {error in
+                     #if DEBUG
                     log.error(error, context: "TokenRequestError")
+                     #endif
             })
     }
     
