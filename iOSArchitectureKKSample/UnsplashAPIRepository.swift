@@ -39,7 +39,7 @@ extension Repository {
                     } else {
                         return R.string.localizable.unsplashAPIClientID()
                     }
-                })
+                })（）
                 
                 #if DEBUG
                     return [loggerPlugin,
