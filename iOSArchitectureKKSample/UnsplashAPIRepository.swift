@@ -15,36 +15,48 @@ extension Repository {
     struct UnsplashAPI {
         
         static let provider: MoyaProvider<MultiTarget> = {
-            //  Note: this plugin is for fetching Pagination links in photo items response header.
-            #if DEBUG
-            let loggerPlugin: NetworkLoggerPlugin = .init(verbose: true)
-            #endif
-            let fetchPaginationLinksPlugin: NetworkActivityPlugin = .init(networkActivityClosure: {
-                (change: NetworkActivityChangeType, target: TargetType) in
-                guard let multiTarget = target as? MultiTarget else {
-                    return
-                }
-                
-                if  change == .ended,
-                    let headers = target.headers,
-                    let links = headers["Link"] {
+            let plugins: [Moya.PluginType] = {
+                #if DEBUG
+                let loggerPlugin: NetworkLoggerPlugin = .init(verbose: true)
+                #endif
+                //  Note: this plugin is for fetching Pagination links in photo items response header.
+                let fetchPaginationLinksPlugin: NetworkActivityPlugin = .init(networkActivityClosure: {
+                    (change: NetworkActivityChangeType, target: TargetType) in
+                    guard let multiTarget = target as? MultiTarget else {
+                        return
+                    }
                     
-                }
-            })
+                    if  change == .ended,
+                        let headers = target.headers,
+                        let links = headers["Link"] {
+                        
+                    }
+                })
+                
+                let accessTokenPlugin: AccessTokenPlugin = .init(tokenClosure: { () -> String in
+                    if let token = ColourKeychainAccess.unsplashToken {
+                        return token
+                    } else {
+                        return R.string.localizable.unsplashAPIClientID()
+                    }
+                })
+                
+                #if DEBUG
+                    return [loggerPlugin,
+                            fetchPaginationLinksPlugin,
+                            accessTokenPlugin
+                            ]
+                #else
+                    return [fetchPaginationLinksPlugin,
+                            accessTokenPlugin
+                    ]
+                #endif
+                
+            }
+           
             
-            let accessTokenPlugin: AccessTokenPlugin = .init(tokenClosure: { () -> String in
-                if let token = ColourKeychainAccess.unsplashToken {
-                    return token
-                } else {
-                    return R.string.localizable.unsplashAPIClientID()
-                }
-            })
             
-            let provider = MoyaProvider<MultiTarget>(plugins:
-            [loggerPlugin,
-             fetchPaginationLinksPlugin,
-             accessTokenPlugin
-              ])
+            let provider = MoyaProvider<MultiTarget>(plugins: plugins)
             return provider
         }()
         
