@@ -51,6 +51,7 @@
 		E579509B2307CB1E00000FD8 /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E579509A2307CB1E00000FD8 /* HomeUseCase.swift */; };
 		E57950A22307E2C800000FD8 /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57950A12307E2C800000FD8 /* SearchUseCase.swift */; };
 		E57950A52307EBCF00000FD8 /* PhotoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57950A42307EBCF00000FD8 /* PhotoUseCase.swift */; };
+		E57950B82308594400000FD8 /* TokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57950B72308594400000FD8 /* TokenRepository.swift */; };
 		E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */; };
 		E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */; };
 		E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */; };
@@ -153,6 +154,7 @@
 		E579509A2307CB1E00000FD8 /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
 		E57950A12307E2C800000FD8 /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
 		E57950A42307EBCF00000FD8 /* PhotoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUseCase.swift; sourceTree = "<group>"; };
+		E57950B72308594400000FD8 /* TokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRepository.swift; sourceTree = "<group>"; };
 		E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourCategoryCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSearchCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourFavoritesCoordinator.swift; sourceTree = "<group>"; };
@@ -286,9 +288,10 @@
 		E577379E22FECA8200559D37 /* Unsplash */ = {
 			isa = PBXGroup;
 			children = (
-				E57950AE2307FA4A00000FD8 /* Account(User) */,
-				E57950AF2307FA7100000FD8 /* Photo(Collection) */,
-				E57950B02307FAB400000FD8 /* Others */,
+				E57950B5230858F100000FD8 /* API Token */,
+				E57950AE2307FA4A00000FD8 /* Account&User */,
+				E57950AF2307FA7100000FD8 /* Photo&Collection */,
+				E57950B02307FAB400000FD8 /* Error */,
 			);
 			name = Unsplash;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				E57826CE22D8AB20002499A9 /* Repository.swift */,
+				E57950B62308592700000FD8 /* API Token */,
 			);
 			name = Repository;
 			path = ..;
@@ -462,24 +466,17 @@
 			name = Photo;
 			sourceTree = "<group>";
 		};
-		E57950AB2307F96300000FD8 /* Account */ = {
+		E57950AC2307F96F00000FD8 /* User&Account */ = {
 			isa = PBXGroup;
 			children = (
 				E57915CF22F8621C009BCE95 /* UnsplashAccountTarget.swift */,
-			);
-			name = Account;
-			sourceTree = "<group>";
-		};
-		E57950AC2307F96F00000FD8 /* User */ = {
-			isa = PBXGroup;
-			children = (
 				E57915D322F86676009BCE95 /* UnsplashUserTarget.swift */,
 				E57915D522F88D6A009BCE95 /* UnsplashUserPhotosTarget.swift */,
 				E57915D722F89743009BCE95 /* UnsplashUserLikesTarget.swift */,
 				E57915D922F8A093009BCE95 /* UnsplashUserCollectionsTarget.swift */,
 				E592E72122FEDE6E00AECEC4 /* UserPortfolioTarget.swift */,
 			);
-			name = User;
+			name = "User&Account";
 			sourceTree = "<group>";
 		};
 		E57950AD2307F9B400000FD8 /* Collection */ = {
@@ -493,17 +490,17 @@
 			name = Collection;
 			sourceTree = "<group>";
 		};
-		E57950AE2307FA4A00000FD8 /* Account(User) */ = {
+		E57950AE2307FA4A00000FD8 /* Account&User */ = {
 			isa = PBXGroup;
 			children = (
 				E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */,
 				E57915D122F865AD009BCE95 /* UnsplashAccountValueObject.swift */,
 				E592E72322FEDEAB00AECEC4 /* UnsplashPortfolioValueObject.swift */,
 			);
-			name = "Account(User)";
+			name = "Account&User";
 			sourceTree = "<group>";
 		};
-		E57950AF2307FA7100000FD8 /* Photo(Collection) */ = {
+		E57950AF2307FA7100000FD8 /* Photo&Collection */ = {
 			isa = PBXGroup;
 			children = (
 				E592E72D22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift */,
@@ -511,16 +508,15 @@
 				E592E72522FEECEC00AECEC4 /* UnsplashCollectionValueObject.swift */,
 				E592E72922FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift */,
 			);
-			name = "Photo(Collection)";
+			name = "Photo&Collection";
 			sourceTree = "<group>";
 		};
-		E57950B02307FAB400000FD8 /* Others */ = {
+		E57950B02307FAB400000FD8 /* Error */ = {
 			isa = PBXGroup;
 			children = (
-				E5521F4B22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift */,
 				E577379F22FECEE400559D37 /* UnsplashErrorValueObject.swift */,
 			);
-			name = Others;
+			name = Error;
 			sourceTree = "<group>";
 		};
 		E57950B12308536A00000FD8 /* Provider */ = {
@@ -538,6 +534,22 @@
 			children = (
 			);
 			name = UnsplashAPIProvider;
+			sourceTree = "<group>";
+		};
+		E57950B5230858F100000FD8 /* API Token */ = {
+			isa = PBXGroup;
+			children = (
+				E5521F4B22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift */,
+			);
+			name = "API Token";
+			sourceTree = "<group>";
+		};
+		E57950B62308592700000FD8 /* API Token */ = {
+			isa = PBXGroup;
+			children = (
+				E57950B72308594400000FD8 /* TokenRepository.swift */,
+			);
+			path = "API Token";
 			sourceTree = "<group>";
 		};
 		E592296F22AE65E8003EC30C = {
@@ -618,20 +630,20 @@
 			name = Unsplash;
 			sourceTree = "<group>";
 		};
-		E5C5647622F1BADA00DD9401 /* UnsplashOauthEndpoint */ = {
+		E5C5647622F1BADA00DD9401 /* OauthEndpoint */ = {
 			isa = PBXGroup;
 			children = (
 				E5C5647B22F1BC6600DD9401 /* UnsplashTokenTarget.swift */,
 			);
-			name = UnsplashOauthEndpoint;
+			name = OauthEndpoint;
 			sourceTree = "<group>";
 		};
 		E5C5647722F1BB6000DD9401 /* Target */ = {
 			isa = PBXGroup;
 			children = (
 				E5C5647422F1BAB100DD9401 /* UnsplashOauthAPI.swift */,
+				E5C5647622F1BADA00DD9401 /* OauthEndpoint */,
 				E5C5647822F1BB8F00DD9401 /* UnsplashAPI.swift */,
-				E5C5647622F1BADA00DD9401 /* UnsplashOauthEndpoint */,
 				E5C5647A22F1BC4B00DD9401 /* EndPoint */,
 			);
 			name = Target;
@@ -641,8 +653,7 @@
 			isa = PBXGroup;
 			children = (
 				E57950AA2307F95200000FD8 /* Photo */,
-				E57950AB2307F96300000FD8 /* Account */,
-				E57950AC2307F96F00000FD8 /* User */,
+				E57950AC2307F96F00000FD8 /* User&Account */,
 				E57950AD2307F9B400000FD8 /* Collection */,
 			);
 			name = EndPoint;
@@ -1027,6 +1038,7 @@
 				E592E72422FEDEAB00AECEC4 /* UnsplashPortfolioValueObject.swift in Sources */,
 				E57915D222F865AD009BCE95 /* UnsplashAccountValueObject.swift in Sources */,
 				E57950A22307E2C800000FD8 /* SearchUseCase.swift in Sources */,
+				E57950B82308594400000FD8 /* TokenRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
