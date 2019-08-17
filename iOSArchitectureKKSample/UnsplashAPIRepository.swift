@@ -106,8 +106,17 @@ struct UnsplashAPIProvider {
         return request(target)
     }
     
+    static func requestUserLikes(userName name: String) -> Single<UnsplashUserLikesTarget.Response> {
+        let target: UnsplashUserLikesTarget = .init(userName: name)
+        return request(target)
+    }
+    
     static func requestUserPortfolio(userName name: String) -> Single<UnsplashUserPortfolioTarget.Response> {
         let target: UnsplashUserPortfolioTarget = .init(userName: name)
         return request(target)
     }
+    
+ 
+    
+    
 }
