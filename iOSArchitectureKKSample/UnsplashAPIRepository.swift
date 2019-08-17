@@ -116,6 +116,11 @@ struct UnsplashAPIProvider {
         return request(target)
     }
     
+    static func requestUserCollections(userName name: String) -> Single<UnsplashUserCollectionsTarget.Response> {
+        let target: UnsplashUserCollectionsTarget = .init(userName: name)
+        return request(target)
+    }
+    
  
     
     
