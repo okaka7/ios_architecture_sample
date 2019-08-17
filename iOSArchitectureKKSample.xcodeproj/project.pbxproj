@@ -73,7 +73,7 @@
 		E592E72E22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72D22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift */; };
 		E592E73022FF01E800AECEC4 /* UnsplashCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72F22FF01E700AECEC4 /* UnsplashCollection.swift */; };
 		E592E73222FF026300AECEC4 /* UnsplashCollectionPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73122FF026300AECEC4 /* UnsplashCollectionPhotos.swift */; };
-		E592E73422FF02E500AECEC4 /* UnsplashCollectionRelatedCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73322FF02E500AECEC4 /* UnsplashCollectionRelatedCollections.swift */; };
+		E592E73422FF02E500AECEC4 /* UnsplashRelatedCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73322FF02E500AECEC4 /* UnsplashRelatedCollections.swift */; };
 		E592E73622FF037100AECEC4 /* UnsplashManagePhotoInCollectionTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73522FF037100AECEC4 /* UnsplashManagePhotoInCollectionTarget.swift */; };
 		E5A8139422DA230D0028F80F /* ColourKeyChainAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8139322DA230D0028F80F /* ColourKeyChainAccess.swift */; };
 		E5C5646D22F18EDC00DD9401 /* UnsplashUserValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */; };
@@ -181,7 +181,7 @@
 		E592E72D22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoReponseValueObject.swift; sourceTree = "<group>"; };
 		E592E72F22FF01E700AECEC4 /* UnsplashCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashCollection.swift; sourceTree = "<group>"; };
 		E592E73122FF026300AECEC4 /* UnsplashCollectionPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashCollectionPhotos.swift; sourceTree = "<group>"; };
-		E592E73322FF02E500AECEC4 /* UnsplashCollectionRelatedCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashCollectionRelatedCollections.swift; sourceTree = "<group>"; };
+		E592E73322FF02E500AECEC4 /* UnsplashRelatedCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRelatedCollections.swift; sourceTree = "<group>"; };
 		E592E73522FF037100AECEC4 /* UnsplashManagePhotoInCollectionTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashManagePhotoInCollectionTarget.swift; sourceTree = "<group>"; };
 		E5A8139322DA230D0028F80F /* ColourKeyChainAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourKeyChainAccess.swift; sourceTree = "<group>"; };
 		E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserValueObject.swift; sourceTree = "<group>"; };
@@ -488,7 +488,7 @@
 			children = (
 				E592E72F22FF01E700AECEC4 /* UnsplashCollection.swift */,
 				E592E73122FF026300AECEC4 /* UnsplashCollectionPhotos.swift */,
-				E592E73322FF02E500AECEC4 /* UnsplashCollectionRelatedCollections.swift */,
+				E592E73322FF02E500AECEC4 /* UnsplashRelatedCollections.swift */,
 				E592E73522FF037100AECEC4 /* UnsplashManagePhotoInCollectionTarget.swift */,
 			);
 			name = Collection;
@@ -981,7 +981,7 @@
 				E57915D022F8621C009BCE95 /* UnsplashAccountTarget.swift in Sources */,
 				E57826CF22D8AB20002499A9 /* Repository.swift in Sources */,
 				E5867C0422C4831E009E9EF8 /* ColourWorkDetailViewController.swift in Sources */,
-				E592E73422FF02E500AECEC4 /* UnsplashCollectionRelatedCollections.swift in Sources */,
+				E592E73422FF02E500AECEC4 /* UnsplashRelatedCollections.swift in Sources */,
 				E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */,
 				E5521F4C22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift in Sources */,
 				E57BD50522C4B58B00FE44D4 /* ColourSettingCoordinator.swift in Sources */,

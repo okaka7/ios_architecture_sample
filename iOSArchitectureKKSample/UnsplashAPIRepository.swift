@@ -130,4 +130,9 @@ struct UnsplashAPIProvider {
         let target: UnsplashCollectionPhotosTarget = .init(id: id)
         return request(target)
     }
+    
+    static func requestRelatedCollectionPhotos(id : String) -> Single<UnsplashRelatedCollectionsTarget.Response> {
+        let target: UnsplashRelatedCollectionsTarget = .init(id: id)
+        return request(target)
+    }
 }

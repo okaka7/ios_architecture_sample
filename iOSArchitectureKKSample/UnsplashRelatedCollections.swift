@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-struct UnsplashCollectionRelatedCollectionsTarget: UnsplashAPITargetType {
+struct UnsplashRelatedCollectionsTarget: UnsplashAPITargetType {
     
     typealias Response = [UnsplashCollectionValueObject]
     
@@ -29,7 +29,7 @@ struct UnsplashCollectionRelatedCollectionsTarget: UnsplashAPITargetType {
     }
 }
 
-extension UnsplashCollectionRelatedCollectionsTarget: AccessTokenAuthorizable {
+extension UnsplashRelatedCollectionsTarget: AccessTokenAuthorizable {
     var authorizationType: AuthorizationType {
         return .bearer
     }
