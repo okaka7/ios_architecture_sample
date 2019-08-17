@@ -21,13 +21,34 @@ protocol FetchPhotosRepository {
 
 protocol LikePhotoRepository {
     func likePhoto() -> PhotoObject
-    func unlikePhoto() -> PhotoObject
+    func removelikePhoto() -> PhotoObject
+}
+
+protocol CollectionRepository {
+    func addPhoto(into collectionID: String) -> [PhotoObject]
+    func removePhoto(from collectionID: String) -> [PhotoObject]
 }
 
 protocol DownloadPhotoRepository {
     func downloadPhoto(id: String) -> PhotoDownloadURLObject
 }
 
+
+
 protocol SearchPhotoRepository {
     func searchPhotos(query: String) -> SearchPhotoResultObject
+}
+
+protocol AccountRepository {
+    func fetchAccount() -> AccountObject
+    func fetchPhotos() -> [PhotoObject]
+    func fetchCollection() -> [CollectionObject]
+    func fetchPortfolioURL() -> PortfolioURLObject
+}
+
+protocol UserRepository {
+    func fetchUserRepository() -> UserObject
+    func fetchPhotos() -> [PhotoObject]
+    func fetchCollection() -> [CollectionObject]
+    func fetchPortfolioURL() -> PortfolioURLObject
 }

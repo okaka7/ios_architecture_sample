@@ -7,7 +7,10 @@
 //
 
 import Foundation
-struct UnsplashAccountValueObject: UserObject, Codable {
+
+protocol AccountObject {}
+
+struct UnsplashAccountValueObject: AccountObject, Codable {
     let id: String
     let updatedAt: Date
     let username: String
