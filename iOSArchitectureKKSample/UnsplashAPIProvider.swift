@@ -31,7 +31,7 @@ struct UnsplashAPIProvider {
             })
             
             let accessTokenPlugin: AccessTokenPlugin = .init(tokenClosure: { () -> String in
-                if let token = ColourKeychainAccess.unsplashToken {
+                if let token = KeychainStore.unsplashToken {
                     return token
                 } else {
                     return R.string.localizable.unsplashAPIClientID()

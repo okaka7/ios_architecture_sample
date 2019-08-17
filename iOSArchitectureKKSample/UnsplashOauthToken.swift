@@ -43,6 +43,6 @@ struct UnsplashOauthToken {
     }
     
     func saveToken(_ token: String) {
-        ColourKeychainAccess.saveUnsplashToken(token)
+        KeychainStore.saveUnsplashToken(token)
     }
 }

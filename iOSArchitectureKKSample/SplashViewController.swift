@@ -48,7 +48,7 @@ class SplashViewController: UIViewController {
             guard let self = self else {
                 return
             }
-            if let token = ColourKeychainAccess.unsplashToken {
+            if let token = KeychainStore.unsplashToken {
                 #if DEBUG
                 log.debug(token)
                 #endif
