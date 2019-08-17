@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct UnsplashPhotoValueObject: Codable {
+protocol PhotoObject {}
+
+struct UnsplashPhotoValueObject: PhotoObject, Codable {
     let id, createdAt, updatedAt: String
     let width, height: Int
     let color, description, altDescription: String

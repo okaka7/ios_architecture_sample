@@ -71,7 +71,7 @@
 		E592E72822FEFB4300AECEC4 /* UnsplashDownloadPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72722FEFB4300AECEC4 /* UnsplashDownloadPhoto.swift */; };
 		E592E72A22FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72922FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift */; };
 		E592E72C22FEFE2B00AECEC4 /* UnsplashSearchPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72B22FEFE2B00AECEC4 /* UnsplashSearchPhotos.swift */; };
-		E592E72E22FF008D00AECEC4 /* SearchPhotoReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72D22FF008D00AECEC4 /* SearchPhotoReponse.swift */; };
+		E592E72E22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72D22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift */; };
 		E592E73022FF01E800AECEC4 /* UnsplashPhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72F22FF01E700AECEC4 /* UnsplashPhotoCollection.swift */; };
 		E592E73222FF026300AECEC4 /* UnsplashCollectionPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73122FF026300AECEC4 /* UnsplashCollectionPhotos.swift */; };
 		E592E73422FF02E500AECEC4 /* UnsplashCollectionRelatedCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73322FF02E500AECEC4 /* UnsplashCollectionRelatedCollections.swift */; };
@@ -180,7 +180,7 @@
 		E592E72722FEFB4300AECEC4 /* UnsplashDownloadPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashDownloadPhoto.swift; sourceTree = "<group>"; };
 		E592E72922FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhotoDownloadURLValueObject.swift; sourceTree = "<group>"; };
 		E592E72B22FEFE2B00AECEC4 /* UnsplashSearchPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashSearchPhotos.swift; sourceTree = "<group>"; };
-		E592E72D22FF008D00AECEC4 /* SearchPhotoReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoReponse.swift; sourceTree = "<group>"; };
+		E592E72D22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoReponseValueObject.swift; sourceTree = "<group>"; };
 		E592E72F22FF01E700AECEC4 /* UnsplashPhotoCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhotoCollection.swift; sourceTree = "<group>"; };
 		E592E73122FF026300AECEC4 /* UnsplashCollectionPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashCollectionPhotos.swift; sourceTree = "<group>"; };
 		E592E73322FF02E500AECEC4 /* UnsplashCollectionRelatedCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashCollectionRelatedCollections.swift; sourceTree = "<group>"; };
@@ -510,7 +510,7 @@
 		E57950AF2307FA7100000FD8 /* Photo(Collection) */ = {
 			isa = PBXGroup;
 			children = (
-				E592E72D22FF008D00AECEC4 /* SearchPhotoReponse.swift */,
+				E592E72D22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift */,
 				E5521F4F22F1E18A00D38F02 /* UnsplashPhotoValueObject.swift */,
 				E592E72522FEECEC00AECEC4 /* UnsplashCollectionValueObject.swift */,
 				E592E72922FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift */,
@@ -969,7 +969,7 @@
 				E592297E22AE65E8003EC30C /* SplashViewController.swift in Sources */,
 				E57950A52307EBCF00000FD8 /* PhotoUseCase.swift in Sources */,
 				E5C5647322F1947C00DD9401 /* UnsplashOauthToken.swift in Sources */,
-				E592E72E22FF008D00AECEC4 /* SearchPhotoReponse.swift in Sources */,
+				E592E72E22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift in Sources */,
 				E577D5C022C56B0000588A38 /* MainTabCoordinator.swift in Sources */,
 				E592E72C22FEFE2B00AECEC4 /* UnsplashSearchPhotos.swift in Sources */,
 				E53F1DFA22C0B60300F81CAA /* ColourCategoryViewController.swift in Sources */,

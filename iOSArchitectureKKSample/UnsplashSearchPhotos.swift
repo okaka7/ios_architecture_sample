@@ -16,7 +16,7 @@ enum PhotoOrientation: String {
 }
 
 struct UnsplashSearchPhotosTarget: UnsplashAPITargetType {
-    typealias Response = SearchPhotoReponse
+    typealias Response = SearchPhotoReponseValueObject
     
     private struct Parameter: Encodable {
         let query: String

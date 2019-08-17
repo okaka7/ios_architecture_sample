@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct UnsplashPhotoDownloadURLValueObject: Codable {
+protocol PhotoDownloadURLObject {}
+
+struct UnsplashPhotoDownloadURLValueObject: PhotoDownloadURLObject, Codable {
     let url: String
 }
 

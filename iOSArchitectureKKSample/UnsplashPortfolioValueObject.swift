@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct UnsplashPortfolioValueObject: Codable {
+protocol PortfolioObject {}
+
+struct UnsplashPortfolioValueObject: PortfolioObject, Codable {
     let url: String
 }
 

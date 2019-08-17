@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct SearchPhotoReponse: Codable {
+protocol SearchPhotoResultObject {}
+
+struct SearchPhotoReponseValueObject: SearchPhotoResultObject, Codable {
     let total, totalPages: Int
     let results: [UnsplashPhotoValueObject]
 

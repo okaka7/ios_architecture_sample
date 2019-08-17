@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct UnsplashCollectionValueObject: Codable {
+protocol CollectionObject {}
+
+struct UnsplashCollectionValueObject: CollectionObject, Codable {
     let id: Int
     let title: String
     let description: String?

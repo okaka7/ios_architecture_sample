@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct UnsplashUserValueObject: Codable {
+protocol UserObject {}
+
+struct UnsplashUserValueObject: UserObject, Codable {
     let id: String
     let updatedAt: Date
     let username, name, firstName, lastName: String

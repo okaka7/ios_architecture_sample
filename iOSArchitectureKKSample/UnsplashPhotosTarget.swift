@@ -11,7 +11,6 @@ import Foundation
 import Moya
 
 struct UnsplashPhotosTarget: UnsplashAPITargetType {
-    
     typealias Response = [UnsplashPhotoValueObject]
     
     private struct Parameter: Encodable {
