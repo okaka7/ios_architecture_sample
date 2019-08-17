@@ -34,7 +34,7 @@
 		E577D5C022C56B0000588A38 /* MainTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E577D5BF22C56B0000588A38 /* MainTabCoordinator.swift */; };
 		E57826BC22D85506002499A9 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57826BB22D85505002499A9 /* RealmSwift.framework */; };
 		E57826BE22D855D2002499A9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57826BD22D855D2002499A9 /* Realm.framework */; };
-		E57826CF22D8AB20002499A9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826CE22D8AB20002499A9 /* Repository.swift */; };
+		E57826CF22D8AB20002499A9 /* UnsplashRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826CE22D8AB20002499A9 /* UnsplashRepository.swift */; };
 		E57826DC22D8D070002499A9 /* UIApplication+openURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826DB22D8D070002499A9 /* UIApplication+openURL.swift */; };
 		E57826E022D8DA01002499A9 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826DF22D8DA01002499A9 /* NSObject+ClassName.swift */; };
 		E57826E422D8E0A2002499A9 /* LocalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826E322D8E0A2002499A9 /* LocalCache.swift */; };
@@ -136,7 +136,7 @@
 		E577D5BF22C56B0000588A38 /* MainTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabCoordinator.swift; sourceTree = "<group>"; };
 		E57826BB22D85505002499A9 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		E57826BD22D855D2002499A9 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		E57826CE22D8AB20002499A9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		E57826CE22D8AB20002499A9 /* UnsplashRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRepository.swift; sourceTree = "<group>"; };
 		E57826DB22D8D070002499A9 /* UIApplication+openURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+openURL.swift"; sourceTree = "<group>"; };
 		E57826DF22D8DA01002499A9 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		E57826E322D8E0A2002499A9 /* LocalCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCache.swift; sourceTree = "<group>"; };
@@ -309,8 +309,8 @@
 		E57826CD22D8AB06002499A9 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				E57826CE22D8AB20002499A9 /* Repository.swift */,
-				E57950B62308592700000FD8 /* API Token */,
+				E57826CE22D8AB20002499A9 /* UnsplashRepository.swift */,
+				E57950B72308594400000FD8 /* TokenRepository.swift */,
 			);
 			name = Repository;
 			path = ..;
@@ -542,14 +542,6 @@
 				E5521F4B22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift */,
 			);
 			name = "API Token";
-			sourceTree = "<group>";
-		};
-		E57950B62308592700000FD8 /* API Token */ = {
-			isa = PBXGroup;
-			children = (
-				E57950B72308594400000FD8 /* TokenRepository.swift */,
-			);
-			path = "API Token";
 			sourceTree = "<group>";
 		};
 		E592296F22AE65E8003EC30C = {
@@ -1006,7 +998,7 @@
 				E53F1DFE22C0B66700F81CAA /* ColourFavoritesViewController.swift in Sources */,
 				E5521F5022F1E18A00D38F02 /* UnsplashPhotoValueObject.swift in Sources */,
 				E57915D022F8621C009BCE95 /* UnsplashAccountTarget.swift in Sources */,
-				E57826CF22D8AB20002499A9 /* Repository.swift in Sources */,
+				E57826CF22D8AB20002499A9 /* UnsplashRepository.swift in Sources */,
 				E5867C0422C4831E009E9EF8 /* ColourWorkDetailViewController.swift in Sources */,
 				E592E73422FF02E500AECEC4 /* UnsplashRelatedCollections.swift in Sources */,
 				E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */,

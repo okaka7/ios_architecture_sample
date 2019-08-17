@@ -8,9 +8,7 @@
 
 import Foundation
 
-struct Repository {}
-
-
+// MARK: Photo
 protocol FetchPhotoRepository {
     func fetchPhoto(id: String) -> PhotoObject
 }
@@ -24,19 +22,19 @@ protocol LikePhotoRepository {
     func removelikePhoto() -> PhotoObject
 }
 
-protocol CollectionRepository {
-    func addPhoto(into collectionID: String) -> [PhotoObject]
-    func removePhoto(from collectionID: String) -> [PhotoObject]
-}
-
 protocol DownloadPhotoRepository {
     func downloadPhoto(id: String) -> PhotoDownloadURLObject
 }
 
-
-
 protocol SearchPhotoRepository {
     func searchPhotos(query: String) -> SearchPhotoResultObject
+}
+
+// MARK: Collection
+
+protocol CollectionRepository {
+    func addPhoto(into collectionID: String) -> [PhotoObject]
+    func removePhoto(from collectionID: String) -> [PhotoObject]
 }
 
 protocol AccountRepository {
