@@ -131,8 +131,17 @@ struct UnsplashAPIProvider {
         return request(target)
     }
     
-    static func requestRelatedCollectionPhotos(id : String) -> Single<UnsplashRelatedCollectionsTarget.Response> {
+    static func requestRelatedCollections(id : String) -> Single<UnsplashRelatedCollectionsTarget.Response> {
         let target: UnsplashRelatedCollectionsTarget = .init(id: id)
+        return request(target)
+    }
+    
+    static func requestEditPhotoInCollection(isAdding: Bool,
+                                             collectionID: String,
+                                             photoID: String) -> Single<UnsplashEditPhotoInCollectionTarget.Response> {
+        let target: UnsplashEditPhotoInCollectionTarget = .init(isAdding: isAdding,
+                                                                collectionID: collectionID,
+                                                                photoID: photoID)
         return request(target)
     }
 }

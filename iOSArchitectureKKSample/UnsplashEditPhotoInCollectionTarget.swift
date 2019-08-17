@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-struct UnsplashManagePhotoInCollectionTarget: UnsplashAPITargetType {
+struct UnsplashEditPhotoInCollectionTarget: UnsplashAPITargetType {
     typealias Response = SearchPhotoReponseValueObject
     
     private struct Parameter: Encodable {
@@ -27,7 +27,8 @@ struct UnsplashManagePhotoInCollectionTarget: UnsplashAPITargetType {
     }
     
     var path: String {
-        return "/collections/\(self.collectionID)/add"
+        let endPath = self.isAdding ? "/add" : "/remove"
+        return "/collections/\(self.collectionID)/\(endPath)"
     }
     var method: Moya.Method {
         return self.isAdding ? .post : .delete
@@ -48,7 +49,7 @@ struct UnsplashManagePhotoInCollectionTarget: UnsplashAPITargetType {
     }
 }
 
-extension UnsplashManagePhotoInCollectionTarget: AccessTokenAuthorizable {
+extension UnsplashEditPhotoInCollectionTarget: AccessTokenAuthorizable {
     var authorizationType: AuthorizationType {
         return .bearer
     }
