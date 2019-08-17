@@ -18,7 +18,9 @@ struct UnsplashOauthAPIProvider {
         let target = MultiTarget(target)
         return provider.rx.request(target).map(R.Response.self)
     }
-    
+}
+
+extension UnsplashOauthAPIProvider {
     static func tokenRequest(code: String) -> Single<UnsplashTokenTarget.Response> {
         let target: UnsplashTokenTarget = .init(code: code)
         return request(target)

@@ -71,10 +71,7 @@ struct UnsplashAPIProvider {
         return request(target)
     }
     
-    static func requestPhoto(id: String) -> Single<UnsplashPhotoTarget.Response> {
-        let target: UnsplashPhotoTarget = .init(id: id)
-        return request(target)
-    }
+    
     
     static func requestPhotos() -> Single<UnsplashPhotosTarget.Response> {
         let target: UnsplashPhotosTarget = .init()
