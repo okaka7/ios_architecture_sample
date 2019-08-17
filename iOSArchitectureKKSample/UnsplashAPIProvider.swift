@@ -27,7 +27,6 @@ struct UnsplashAPIProvider {
                 if  change == .ended,
                     let headers = target.headers,
                     let links = headers["Link"] {
-                    
                 }
             })
             
@@ -62,17 +61,10 @@ struct UnsplashAPIProvider {
         let target = MultiTarget(target)
         return provider.rx.request(target).map(R.Response.self)
     }
-    
-    // MARK: UnsplashAPIProvider
-    
-    
-    static func requestUser(user: String) -> Single<UnsplashUserTarget.Response> {
-        let target: UnsplashUserTarget = .init(userName: user)
-        return request(target)
-    }
-    
-    
-    
+}
+
+// MARK: Photo
+extension UnsplashAPIProvider {
     static func requestPhotos() -> Single<UnsplashPhotosTarget.Response> {
         let target: UnsplashPhotosTarget = .init()
         return request(target)
@@ -92,32 +84,10 @@ struct UnsplashAPIProvider {
         let target: UnsplashSearchPhotosTarget = .init(query: query)
         return request(target)
     }
-    
-    static func requestAccount() -> Single<UnsplashAccountTarget.Response> {
-        let target: UnsplashAccountTarget = .init()
-        return request(target)
-    }
-    
-    static func requestUser(userName name: String) -> Single<UnsplashUserTarget.Response> {
-        let target: UnsplashUserTarget = .init(userName: name)
-        return request(target)
-    }
-    
-    static func requestUserLikes(userName name: String) -> Single<UnsplashUserLikesTarget.Response> {
-        let target: UnsplashUserLikesTarget = .init(userName: name)
-        return request(target)
-    }
-    
-    static func requestUserPortfolio(userName name: String) -> Single<UnsplashUserPortfolioTarget.Response> {
-        let target: UnsplashUserPortfolioTarget = .init(userName: name)
-        return request(target)
-    }
-    
-    static func requestUserCollections(userName name: String) -> Single<UnsplashUserCollectionsTarget.Response> {
-        let target: UnsplashUserCollectionsTarget = .init(userName: name)
-        return request(target)
-    }
-    
+}
+
+// MARK: Collection
+extension UnsplashAPIProvider {
     static func requestCollection(id : String) -> Single<UnsplashCollectionTarget.Response> {
         let target: UnsplashCollectionTarget = .init(id: id)
         return request(target)
@@ -142,3 +112,34 @@ struct UnsplashAPIProvider {
         return request(target)
     }
 }
+
+// MARK: Acount & User
+extension UnsplashAPIProvider {
+    static func requestAccount() -> Single<UnsplashAccountTarget.Response> {
+        let target: UnsplashAccountTarget = .init()
+        return request(target)
+    }
+    
+    static func requestUser(userName name: String) -> Single<UnsplashUserTarget.Response> {
+        let target: UnsplashUserTarget = .init(userName: name)
+        return request(target)
+    }
+    
+    static func requestUserLikes(userName name: String) -> Single<UnsplashUserLikesTarget.Response> {
+        let target: UnsplashUserLikesTarget = .init(userName: name)
+        return request(target)
+    }
+    
+    static func requestUserPortfolio(userName name: String) -> Single<UnsplashUserPortfolioTarget.Response> {
+        let target: UnsplashUserPortfolioTarget = .init(userName: name)
+        return request(target)
+    }
+    
+    static func requestUserCollections(userName name: String) -> Single<UnsplashUserCollectionsTarget.Response> {
+        let target: UnsplashUserCollectionsTarget = .init(userName: name)
+        return request(target)
+    }
+}
+
+
+
