@@ -36,7 +36,6 @@
 		E57826BE22D855D2002499A9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57826BD22D855D2002499A9 /* Realm.framework */; };
 		E57826CF22D8AB20002499A9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826CE22D8AB20002499A9 /* Repository.swift */; };
 		E57826DC22D8D070002499A9 /* UIApplication+openURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826DB22D8D070002499A9 /* UIApplication+openURL.swift */; };
-		E57826DE22D8D8FC002499A9 /* ReferrerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826DD22D8D8FC002499A9 /* ReferrerURL.swift */; };
 		E57826E022D8DA01002499A9 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826DF22D8DA01002499A9 /* NSObject+ClassName.swift */; };
 		E57826E422D8E0A2002499A9 /* LocalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826E322D8E0A2002499A9 /* LocalCache.swift */; };
 		E57826E622D8E0CF002499A9 /* LocalCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826E522D8E0CF002499A9 /* LocalCacheKey.swift */; };
@@ -138,7 +137,6 @@
 		E57826BD22D855D2002499A9 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		E57826CE22D8AB20002499A9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		E57826DB22D8D070002499A9 /* UIApplication+openURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+openURL.swift"; sourceTree = "<group>"; };
-		E57826DD22D8D8FC002499A9 /* ReferrerURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferrerURL.swift; sourceTree = "<group>"; };
 		E57826DF22D8DA01002499A9 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		E57826E322D8E0A2002499A9 /* LocalCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCache.swift; sourceTree = "<group>"; };
 		E57826E522D8E0CF002499A9 /* LocalCacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCacheKey.swift; sourceTree = "<group>"; };
@@ -308,7 +306,6 @@
 			isa = PBXGroup;
 			children = (
 				E57826CE22D8AB20002499A9 /* Repository.swift */,
-				E57826DD22D8D8FC002499A9 /* ReferrerURL.swift */,
 				E5521F4D22F1CC6F00D38F02 /* UnsplashOauthRepository.swift */,
 				E57915CD22F85AD4009BCE95 /* UnsplashAPIRepository.swift */,
 			);
@@ -1003,7 +1000,6 @@
 				E57737A022FECEE400559D37 /* UnsplashErrorValueObject.swift in Sources */,
 				E592E73222FF026300AECEC4 /* UnsplashCollectionPhotos.swift in Sources */,
 				E5C5647922F1BB8F00DD9401 /* UnsplashAPI.swift in Sources */,
-				E57826DE22D8D8FC002499A9 /* ReferrerURL.swift in Sources */,
 				E592E72A22FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift in Sources */,
 				E5291A9F22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift in Sources */,
 				E53F1E0022C0B6BB00F81CAA /* ColourSettingViewController.swift in Sources */,

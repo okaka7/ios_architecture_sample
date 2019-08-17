@@ -100,4 +100,14 @@ struct UnsplashAPIProvider {
         let target: UnsplashAccountTarget = .init()
         return request(target)
     }
+    
+    static func requestUser(userName name: String) -> Single<UnsplashUserTarget.Response> {
+        let target: UnsplashUserTarget = .init(userName: name)
+        return request(target)
+    }
+    
+    static func requestUserPortfolio(userName name: String) -> Single<UnsplashUserPortfolioTarget.Response> {
+        let target: UnsplashUserPortfolioTarget = .init(userName: name)
+        return request(target)
+    }
 }
