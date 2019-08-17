@@ -121,7 +121,13 @@ struct UnsplashAPIProvider {
         return request(target)
     }
     
- 
+    static func requestCollection(id : String) -> Single<UnsplashCollectionTarget.Response> {
+        let target: UnsplashCollectionTarget = .init(id: id)
+        return request(target)
+    }
     
-    
+    static func requestCollectionPhotos(id : String) -> Single<UnsplashCollectionPhotosTarget.Response> {
+        let target: UnsplashCollectionPhotosTarget = .init(id: id)
+        return request(target)
+    }
 }

@@ -71,7 +71,7 @@
 		E592E72A22FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72922FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift */; };
 		E592E72C22FEFE2B00AECEC4 /* UnsplashSearchPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72B22FEFE2B00AECEC4 /* UnsplashSearchPhotos.swift */; };
 		E592E72E22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72D22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift */; };
-		E592E73022FF01E800AECEC4 /* UnsplashPhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72F22FF01E700AECEC4 /* UnsplashPhotoCollection.swift */; };
+		E592E73022FF01E800AECEC4 /* UnsplashCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72F22FF01E700AECEC4 /* UnsplashCollection.swift */; };
 		E592E73222FF026300AECEC4 /* UnsplashCollectionPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73122FF026300AECEC4 /* UnsplashCollectionPhotos.swift */; };
 		E592E73422FF02E500AECEC4 /* UnsplashCollectionRelatedCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73322FF02E500AECEC4 /* UnsplashCollectionRelatedCollections.swift */; };
 		E592E73622FF037100AECEC4 /* UnsplashManagePhotoInCollectionTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73522FF037100AECEC4 /* UnsplashManagePhotoInCollectionTarget.swift */; };
@@ -179,7 +179,7 @@
 		E592E72922FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhotoDownloadURLValueObject.swift; sourceTree = "<group>"; };
 		E592E72B22FEFE2B00AECEC4 /* UnsplashSearchPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashSearchPhotos.swift; sourceTree = "<group>"; };
 		E592E72D22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoReponseValueObject.swift; sourceTree = "<group>"; };
-		E592E72F22FF01E700AECEC4 /* UnsplashPhotoCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhotoCollection.swift; sourceTree = "<group>"; };
+		E592E72F22FF01E700AECEC4 /* UnsplashCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashCollection.swift; sourceTree = "<group>"; };
 		E592E73122FF026300AECEC4 /* UnsplashCollectionPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashCollectionPhotos.swift; sourceTree = "<group>"; };
 		E592E73322FF02E500AECEC4 /* UnsplashCollectionRelatedCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashCollectionRelatedCollections.swift; sourceTree = "<group>"; };
 		E592E73522FF037100AECEC4 /* UnsplashManagePhotoInCollectionTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashManagePhotoInCollectionTarget.swift; sourceTree = "<group>"; };
@@ -486,7 +486,7 @@
 		E57950AD2307F9B400000FD8 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
-				E592E72F22FF01E700AECEC4 /* UnsplashPhotoCollection.swift */,
+				E592E72F22FF01E700AECEC4 /* UnsplashCollection.swift */,
 				E592E73122FF026300AECEC4 /* UnsplashCollectionPhotos.swift */,
 				E592E73322FF02E500AECEC4 /* UnsplashCollectionRelatedCollections.swift */,
 				E592E73522FF037100AECEC4 /* UnsplashManagePhotoInCollectionTarget.swift */,
@@ -987,7 +987,7 @@
 				E57BD50522C4B58B00FE44D4 /* ColourSettingCoordinator.swift in Sources */,
 				E57826E622D8E0CF002499A9 /* LocalCacheKey.swift in Sources */,
 				E57915D822F89743009BCE95 /* UnsplashUserLikesTarget.swift in Sources */,
-				E592E73022FF01E800AECEC4 /* UnsplashPhotoCollection.swift in Sources */,
+				E592E73022FF01E800AECEC4 /* UnsplashCollection.swift in Sources */,
 				E57826DC22D8D070002499A9 /* UIApplication+openURL.swift in Sources */,
 				E5521F4E22F1CC6F00D38F02 /* UnsplashOauthRepository.swift in Sources */,
 				E5C5647C22F1BC6600DD9401 /* UnsplashTokenTarget.swift in Sources */,
