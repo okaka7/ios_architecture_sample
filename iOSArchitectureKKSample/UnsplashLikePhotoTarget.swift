@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 struct UnsplashLikePhotoTarget: UnsplashAPITargetType {
-    typealias Response = UnsplashPhotoEntity
+    typealias Response = UnsplashPhotoValueObject
     
     var path: String {
         return "/photos/\(id)/like"

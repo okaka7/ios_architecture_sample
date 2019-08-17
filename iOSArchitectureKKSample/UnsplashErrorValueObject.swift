@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct UnsplashError: Codable {
+struct UnsplashErrorValueObject: Codable {
     let errors: [String]
 }
 
 // MARK: Convenience initializers
-extension UnsplashError {
+extension UnsplashErrorValueObject {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(UnsplashError.self, from: data) else { return nil }
+        guard let me = try? JSONDecoder().decode(UnsplashErrorValueObject.self, from: data) else { return nil }
         self = me
     }
 

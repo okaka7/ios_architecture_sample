@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UnsplashUserEntity: Codable {
+struct UnsplashUserValueObject: Codable {
     let id: String
     let updatedAt: Date
     let username, name, firstName, lastName: String
@@ -54,9 +54,9 @@ struct UnsplashUserEntity: Codable {
 
 // MARK: Convenience initializers
 
-extension UnsplashUserEntity {
+extension UnsplashUserValueObject {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(UnsplashUserEntity.self, from: data) else {
+        guard let me = try? JSONDecoder().decode(UnsplashUserValueObject.self, from: data) else {
             return nil
         }
         self = me

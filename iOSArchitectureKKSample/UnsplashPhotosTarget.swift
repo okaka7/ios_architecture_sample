@@ -12,7 +12,7 @@ import Moya
 
 struct UnsplashPhotosTarget: UnsplashAPITargetType {
     
-    typealias Response = [UnsplashPhotoEntity]
+    typealias Response = [UnsplashPhotoValueObject]
     
     private struct Parameter: Encodable {
         let page: String

@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct UnsplashPhotoDownloadURLEntity: Codable {
+struct UnsplashPhotoDownloadURLValueObject: Codable {
     let url: String
 }
 
 // MARK: Convenience initializers
 
-extension UnsplashPhotoDownloadURLEntity {
+extension UnsplashPhotoDownloadURLValueObject {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(UnsplashPhotoDownloadURLEntity.self, from: data) else { return nil }
+        guard let me = try? JSONDecoder().decode(UnsplashPhotoDownloadURLValueObject.self, from: data) else { return nil }
         self = me
     }
 

@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 struct UnsplashUserLikesTarget: UnsplashAPITargetType {
-    typealias Response = [UnsplashPhotoEntity]
+    typealias Response = [UnsplashPhotoValueObject]
     
     private struct Parameter: Encodable {
         let page: String

@@ -10,7 +10,7 @@ import Foundation
 
 struct SearchPhotoReponse: Codable {
     let total, totalPages: Int
-    let results: [UnsplashPhotoEntity]
+    let results: [UnsplashPhotoValueObject]
 
     enum CodingKeys: String, CodingKey {
         case total

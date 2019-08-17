@@ -11,7 +11,7 @@ import Moya
 
 struct UnsplashCollectionTarget: UnsplashAPITargetType {
     
-    typealias Response = UnsplashCollectionEntity
+    typealias Response = UnsplashCollectionValueObject
     
     var path: String {
         return "/collections/\(id)"

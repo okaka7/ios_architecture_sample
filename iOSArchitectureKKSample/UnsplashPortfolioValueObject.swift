@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct UnsplashPortfolio: Codable {
+struct UnsplashPortfolioValueObject: Codable {
     let url: String
 }
 
-extension UnsplashPortfolio {
+extension UnsplashPortfolioValueObject {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(UnsplashPortfolio.self, from: data) else { return nil }
+        guard let me = try? JSONDecoder().decode(UnsplashPortfolioValueObject.self, from: data) else { return nil }
         self = me
     }
 

@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 struct UnsplashUserPortfolioTarget: UnsplashAPITargetType {
-    typealias Response = UnsplashPortfolio
+    typealias Response = UnsplashPortfolioValueObject
     
     var path: String {
         return "/users/\(userName)/portfolio"

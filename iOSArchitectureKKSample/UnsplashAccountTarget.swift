@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 struct UnsplashAccountTarget: UnsplashAPITargetType {
-    typealias Account = UnsplashAccountEntity
+    typealias Account = UnsplashAccountValueObject
     typealias Response = Account
     
     
