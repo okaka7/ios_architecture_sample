@@ -52,6 +52,7 @@
 		E57950A22307E2C800000FD8 /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57950A12307E2C800000FD8 /* SearchUseCase.swift */; };
 		E57950A52307EBCF00000FD8 /* PhotoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57950A42307EBCF00000FD8 /* PhotoUseCase.swift */; };
 		E57950B82308594400000FD8 /* TokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57950B72308594400000FD8 /* TokenRepository.swift */; };
+		E57950BE23085EE000000FD8 /* UnsplashOauthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57950BD23085EE000000FD8 /* UnsplashOauthRepository.swift */; };
 		E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */; };
 		E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */; };
 		E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */; };
@@ -78,8 +79,8 @@
 		E592E73622FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73522FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift */; };
 		E5A8139422DA230D0028F80F /* KeyChainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8139322DA230D0028F80F /* KeyChainStore.swift */; };
 		E5C5646D22F18EDC00DD9401 /* UnsplashUserValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */; };
-		E5C5647122F193DE00DD9401 /* UnsplashOauthAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647022F193DE00DD9401 /* UnsplashOauthAuthentication.swift */; };
-		E5C5647322F1947C00DD9401 /* UnsplashOauthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647222F1947C00DD9401 /* UnsplashOauthToken.swift */; };
+		E5C5647122F193DE00DD9401 /* OauthAuthenticationGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647022F193DE00DD9401 /* OauthAuthenticationGateway.swift */; };
+		E5C5647322F1947C00DD9401 /* OauthTokenRequestGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */; };
 		E5C5647522F1BAB100DD9401 /* UnsplashOauthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647422F1BAB100DD9401 /* UnsplashOauthAPI.swift */; };
 		E5C5647922F1BB8F00DD9401 /* UnsplashAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647822F1BB8F00DD9401 /* UnsplashAPI.swift */; };
 		E5C5647C22F1BC6600DD9401 /* UnsplashTokenTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647B22F1BC6600DD9401 /* UnsplashTokenTarget.swift */; };
@@ -155,6 +156,7 @@
 		E57950A12307E2C800000FD8 /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
 		E57950A42307EBCF00000FD8 /* PhotoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUseCase.swift; sourceTree = "<group>"; };
 		E57950B72308594400000FD8 /* TokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRepository.swift; sourceTree = "<group>"; };
+		E57950BD23085EE000000FD8 /* UnsplashOauthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashOauthRepository.swift; sourceTree = "<group>"; };
 		E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourCategoryCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSearchCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourFavoritesCoordinator.swift; sourceTree = "<group>"; };
@@ -187,8 +189,8 @@
 		E592E73522FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashEditPhotoInCollectionTarget.swift; sourceTree = "<group>"; };
 		E5A8139322DA230D0028F80F /* KeyChainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStore.swift; sourceTree = "<group>"; };
 		E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserValueObject.swift; sourceTree = "<group>"; };
-		E5C5647022F193DE00DD9401 /* UnsplashOauthAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashOauthAuthentication.swift; sourceTree = "<group>"; };
-		E5C5647222F1947C00DD9401 /* UnsplashOauthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashOauthToken.swift; sourceTree = "<group>"; };
+		E5C5647022F193DE00DD9401 /* OauthAuthenticationGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthAuthenticationGateway.swift; sourceTree = "<group>"; };
+		E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthTokenRequestGateway.swift; sourceTree = "<group>"; };
 		E5C5647422F1BAB100DD9401 /* UnsplashOauthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashOauthAPI.swift; sourceTree = "<group>"; };
 		E5C5647822F1BB8F00DD9401 /* UnsplashAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPI.swift; sourceTree = "<group>"; };
 		E5C5647B22F1BC6600DD9401 /* UnsplashTokenTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashTokenTarget.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				E57826CE22D8AB20002499A9 /* UnsplashRepository.swift */,
+				E57950BD23085EE000000FD8 /* UnsplashOauthRepository.swift */,
 				E57950B72308594400000FD8 /* TokenRepository.swift */,
 			);
 			name = RepositoryInterface;
@@ -548,6 +551,8 @@
 		E57950BC23085D8300000FD8 /* Gateway */ = {
 			isa = PBXGroup;
 			children = (
+				E5C5647022F193DE00DD9401 /* OauthAuthenticationGateway.swift */,
+				E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */,
 			);
 			name = Gateway;
 			sourceTree = "<group>";
@@ -624,8 +629,6 @@
 		E5C5646922F18E2400DD9401 /* Unsplash */ = {
 			isa = PBXGroup;
 			children = (
-				E5C5647022F193DE00DD9401 /* UnsplashOauthAuthentication.swift */,
-				E5C5647222F1947C00DD9401 /* UnsplashOauthToken.swift */,
 			);
 			name = Unsplash;
 			sourceTree = "<group>";
@@ -992,12 +995,13 @@
 				E592E73622FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift in Sources */,
 				E592297E22AE65E8003EC30C /* SplashViewController.swift in Sources */,
 				E57950A52307EBCF00000FD8 /* PhotoUseCase.swift in Sources */,
-				E5C5647322F1947C00DD9401 /* UnsplashOauthToken.swift in Sources */,
+				E5C5647322F1947C00DD9401 /* OauthTokenRequestGateway.swift in Sources */,
 				E592E72E22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift in Sources */,
 				E577D5C022C56B0000588A38 /* MainTabCoordinator.swift in Sources */,
+				E57950BE23085EE000000FD8 /* UnsplashOauthRepository.swift in Sources */,
 				E592E72C22FEFE2B00AECEC4 /* UnsplashSearchPhotos.swift in Sources */,
 				E53F1DFA22C0B60300F81CAA /* ColourCategoryViewController.swift in Sources */,
-				E5C5647122F193DE00DD9401 /* UnsplashOauthAuthentication.swift in Sources */,
+				E5C5647122F193DE00DD9401 /* OauthAuthenticationGateway.swift in Sources */,
 				E53F1DFC22C0B63000F81CAA /* ColourSearchViewController.swift in Sources */,
 				E57915D422F86676009BCE95 /* UnsplashUserTarget.swift in Sources */,
 				E5521F5222F1E30100D38F02 /* UnsplashPhotosTarget.swift in Sources */,

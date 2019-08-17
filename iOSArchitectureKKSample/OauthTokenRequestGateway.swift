@@ -7,16 +7,8 @@
 //
 
 import Foundation
-import KeychainAccess
 
-protocol UnsplashTokenRequest {
-    static func requestToken(code: String,
-                             onSuccess successHandler: @escaping (UnsplashTokenTarget.Response) -> Void,
-                             onError errorHandler: (Error) -> Void)
-}
-
-struct UnsplashOauthToken {
-    
+struct OauthTokenRequestGateway: UnsplashTokenRequestReposiotry {
     static func getCode(from components: URLComponents) -> String? {
         return components.queryItems?.getFirstQueryValue("code") as? String
     }

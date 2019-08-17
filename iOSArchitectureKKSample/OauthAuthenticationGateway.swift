@@ -7,15 +7,8 @@
 //
 
 import Foundation
-import UIKit
 
-protocol UnsplashAuthentication {
-    func authenticate()
-}
-
-
-
-struct UnsplashOauthAuthentication: UnsplashAuthentication {
+struct OauthAuthenticationGateway: AuthenticationRepository {
     
     private let clientID: String?
     private let redirectURL: String = {

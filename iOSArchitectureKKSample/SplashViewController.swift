@@ -53,7 +53,7 @@ class SplashViewController: UIViewController {
                 log.debug(token)
                 #endif
             } else {
-                let authentication = UnsplashOauthAuthentication(outputView: self)
+                let authentication = OauthAuthenticationGateway(outputView: self)
                 authentication.authenticate()
             }
 
