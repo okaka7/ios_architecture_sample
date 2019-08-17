@@ -10,7 +10,7 @@
 
 import Foundation
 
-struct UnsplashTokenResposne: Codable {
+struct UnsplashTokenResposneValueObject: Codable {
     let accessToken, tokenType, scope: String
     let createdAt: Int
 
@@ -24,9 +24,9 @@ struct UnsplashTokenResposne: Codable {
 
 // MARK: Convenience initializers
 
-extension UnsplashTokenResposne {
+extension UnsplashTokenResposneValueObject {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(UnsplashTokenResposne.self, from: data) else { return nil }
+        guard let me = try? JSONDecoder().decode(UnsplashTokenResposneValueObject.self, from: data) else { return nil }
         self = me
     }
 

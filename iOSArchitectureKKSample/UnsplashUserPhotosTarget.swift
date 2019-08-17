@@ -58,7 +58,7 @@ struct UnsplashUserPhotosTarget: UnsplashAPITargetType {
         return "/users/\(userName)/photos"
     }
     var method: Moya.Method {
-    return .get
+        return .get
     }
     let userName: String
     var task: Task {

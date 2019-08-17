@@ -11,7 +11,7 @@ import Moya
 
 struct UnsplashTokenTarget: UnsplashOauthTargetType {
     
-    typealias Response = UnsplashTokenResposne
+    typealias Response = UnsplashTokenResposneValueObject
     
     private struct Parameter: Encodable {
         let clientID: String
