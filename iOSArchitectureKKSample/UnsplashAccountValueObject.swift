@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AccountObject {}
+protocol AccountObject: Codable {}
 
 struct UnsplashAccountValueObject: AccountObject, Codable {
     let id: String
