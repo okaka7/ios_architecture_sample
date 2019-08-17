@@ -16,7 +16,7 @@ struct UnsplashUserTarget: UnsplashAPITargetType {
        return "/users/\(userName)"
     }
     var method: Moya.Method {
-    return .get
+        return .get
     }
     let userName: String
     var task: Task {

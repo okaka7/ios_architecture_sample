@@ -68,7 +68,7 @@
 		E592E72222FEDE6E00AECEC4 /* UserPortfolioTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72122FEDE6E00AECEC4 /* UserPortfolioTarget.swift */; };
 		E592E72422FEDEAB00AECEC4 /* UnsplashPortfolioValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72322FEDEAB00AECEC4 /* UnsplashPortfolioValueObject.swift */; };
 		E592E72622FEECEC00AECEC4 /* UnsplashCollectionValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72522FEECEC00AECEC4 /* UnsplashCollectionValueObject.swift */; };
-		E592E72822FEFB4300AECEC4 /* UnsplashDownloadPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72722FEFB4300AECEC4 /* UnsplashDownloadPhoto.swift */; };
+		E592E72822FEFB4300AECEC4 /* UnsplashDownloadPhotoTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72722FEFB4300AECEC4 /* UnsplashDownloadPhotoTarget.swift */; };
 		E592E72A22FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72922FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift */; };
 		E592E72C22FEFE2B00AECEC4 /* UnsplashSearchPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72B22FEFE2B00AECEC4 /* UnsplashSearchPhotos.swift */; };
 		E592E72E22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E72D22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift */; };
@@ -177,7 +177,7 @@
 		E592E72122FEDE6E00AECEC4 /* UserPortfolioTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPortfolioTarget.swift; sourceTree = "<group>"; };
 		E592E72322FEDEAB00AECEC4 /* UnsplashPortfolioValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPortfolioValueObject.swift; sourceTree = "<group>"; };
 		E592E72522FEECEC00AECEC4 /* UnsplashCollectionValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashCollectionValueObject.swift; sourceTree = "<group>"; };
-		E592E72722FEFB4300AECEC4 /* UnsplashDownloadPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashDownloadPhoto.swift; sourceTree = "<group>"; };
+		E592E72722FEFB4300AECEC4 /* UnsplashDownloadPhotoTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashDownloadPhotoTarget.swift; sourceTree = "<group>"; };
 		E592E72922FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhotoDownloadURLValueObject.swift; sourceTree = "<group>"; };
 		E592E72B22FEFE2B00AECEC4 /* UnsplashSearchPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashSearchPhotos.swift; sourceTree = "<group>"; };
 		E592E72D22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoReponseValueObject.swift; sourceTree = "<group>"; };
@@ -460,7 +460,7 @@
 				E57915DB22F8A310009BCE95 /* UnsplashPhotoTarget.swift */,
 				E5521F5122F1E30100D38F02 /* UnsplashPhotosTarget.swift */,
 				E57915DD22F8A3B2009BCE95 /* UnsplashLikePhotoTarget.swift */,
-				E592E72722FEFB4300AECEC4 /* UnsplashDownloadPhoto.swift */,
+				E592E72722FEFB4300AECEC4 /* UnsplashDownloadPhotoTarget.swift */,
 				E592E72B22FEFE2B00AECEC4 /* UnsplashSearchPhotos.swift */,
 			);
 			name = Photo;
@@ -978,7 +978,7 @@
 				E57915D422F86676009BCE95 /* UnsplashUserTarget.swift in Sources */,
 				E5521F5222F1E30100D38F02 /* UnsplashPhotosTarget.swift in Sources */,
 				E57915DC22F8A310009BCE95 /* UnsplashPhotoTarget.swift in Sources */,
-				E592E72822FEFB4300AECEC4 /* UnsplashDownloadPhoto.swift in Sources */,
+				E592E72822FEFB4300AECEC4 /* UnsplashDownloadPhotoTarget.swift in Sources */,
 				E53F1DFE22C0B66700F81CAA /* ColourFavoritesViewController.swift in Sources */,
 				E5521F5022F1E18A00D38F02 /* UnsplashPhotoValueObject.swift in Sources */,
 				E57915D022F8621C009BCE95 /* UnsplashAccountTarget.swift in Sources */,

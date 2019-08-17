@@ -63,10 +63,8 @@ struct UnsplashAPIProvider {
         return provider.rx.request(target).map(R.Response.self)
     }
     
-    static func requestAccount() -> Single<UnsplashAccountTarget.Response> {
-        let target: UnsplashAccountTarget = .init()
-        return request(target)
-    }
+    // MARK: UnsplashAPIProvider
+    
     
     static func requestUser(user: String) -> Single<UnsplashUserTarget.Response> {
         let target: UnsplashUserTarget = .init(userName: user)
@@ -83,5 +81,23 @@ struct UnsplashAPIProvider {
         return request(target)
     }
     
+    static func requestLikePhoto(id: String, isLike: Bool) -> Single<UnsplashLikePhotoTarget.Response> {
+        let target: UnsplashLikePhotoTarget = .init(id: id, like: isLike)
+        return request(target)
+    }
     
+    static func requestDownloadPhotoURL(id: String) -> Single<UnsplashDownloadPhotoTarget.Response> {
+        let target: UnsplashDownloadPhotoTarget = .init(id: id)
+        return request(target)
+    }
+    
+    static func requestSearchPhots(query: String) -> Single<UnsplashSearchPhotosTarget.Response> {
+        let target: UnsplashSearchPhotosTarget = .init(query: query)
+        return request(target)
+    }
+    
+    static func requestAccount() -> Single<UnsplashAccountTarget.Response> {
+        let target: UnsplashAccountTarget = .init()
+        return request(target)
+    }
 }

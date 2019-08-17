@@ -9,9 +9,9 @@
 import Foundation
 import Moya
 
-struct UnsplashDownloadPhoto: UnsplashAPITargetType {
+struct UnsplashDownloadPhotoTarget: UnsplashAPITargetType {
     
-    typealias Response = String
+    typealias Response = UnsplashPhotoDownloadURLValueObject
     
     var path: String {
         return "/photos/\(id)/download"
@@ -24,12 +24,12 @@ struct UnsplashDownloadPhoto: UnsplashAPITargetType {
         return .requestPlain
     }
     
-    init(id: String, like: Bool) {
+    init(id: String) {
         self.id = id
     }
 }
 
-extension UnsplashDownloadPhoto: AccessTokenAuthorizable {
+extension UnsplashDownloadPhotoTarget: AccessTokenAuthorizable {
     var authorizationType: AuthorizationType {
         return .bearer
     }
