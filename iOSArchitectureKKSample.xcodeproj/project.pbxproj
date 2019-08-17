@@ -241,7 +241,7 @@
 			name = API;
 			sourceTree = "<group>";
 		};
-		E56FD68222B28B2A00AE6940 /* Coordinator */ = {
+		E56FD68222B28B2A00AE6940 /* WireFrame */ = {
 			isa = PBXGroup;
 			children = (
 				E56FD68322B28B8400AE6940 /* Coordinator.swift */,
@@ -253,7 +253,7 @@
 				E57BD50422C4B58B00FE44D4 /* ColourSettingCoordinator.swift */,
 				E57BD50622C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift */,
 			);
-			name = Coordinator;
+			name = WireFrame;
 			sourceTree = "<group>";
 		};
 		E571E6F422B8324B0032A748 /* Frameworks */ = {
@@ -306,13 +306,13 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		E57826CD22D8AB06002499A9 /* Repository */ = {
+		E57826CD22D8AB06002499A9 /* RepositoryInterface */ = {
 			isa = PBXGroup;
 			children = (
 				E57826CE22D8AB20002499A9 /* UnsplashRepository.swift */,
 				E57950B72308594400000FD8 /* TokenRepository.swift */,
 			);
-			name = Repository;
+			name = RepositoryInterface;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -369,6 +369,7 @@
 		E57950932307B00200000FD8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				E57950BC23085D8300000FD8 /* Gateway */,
 				E57826E222D8E08E002499A9 /* LocalCache */,
 				E5A8139222DA22EF0028F80F /* KeyChainAccess */,
 				E516490722CD0E6200D3D2D7 /* API */,
@@ -380,7 +381,7 @@
 		E57950992307C45700000FD8 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				E57826CD22D8AB06002499A9 /* Repository */,
+				E57826CD22D8AB06002499A9 /* RepositoryInterface */,
 				E579509C2307D9E500000FD8 /* Home */,
 				E57950A02307DD2300000FD8 /* Search */,
 				E57950A32307E85800000FD8 /* Photo */,
@@ -544,6 +545,13 @@
 			name = "API Token";
 			sourceTree = "<group>";
 		};
+		E57950BC23085D8300000FD8 /* Gateway */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Gateway;
+			sourceTree = "<group>";
+		};
 		E592296F22AE65E8003EC30C = {
 			isa = PBXGroup;
 			children = (
@@ -577,7 +585,7 @@
 				E57826EE22D8E20E002499A9 /* Model */,
 				E574CF5722C642B7009CF8CD /* Logger */,
 				E57826E122D8E07F002499A9 /* Utility */,
-				E56FD68222B28B2A00AE6940 /* Coordinator */,
+				E56FD68222B28B2A00AE6940 /* WireFrame */,
 				E57826D622D8C977002499A9 /* Extension */,
 				E592298222AE65E9003EC30C /* Assets.xcassets */,
 				E57DEECD22C48CB300B0AAA1 /* R.generated.swift */,
