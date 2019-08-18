@@ -90,6 +90,7 @@
 		E5B8A2382309CEF600AE29E8 /* TokenRequestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2372309CEF600AE29E8 /* TokenRequestUseCase.swift */; };
 		E5B8A23A2309DC7100AE29E8 /* AuthenticateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */; };
 		E5B8A23C2309E4A600AE29E8 /* AuthenticationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A23B2309E4A600AE29E8 /* AuthenticationPresenter.swift */; };
+		E5B8A23E2309E8E000AE29E8 /* PhotoUIValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A23D2309E8E000AE29E8 /* PhotoUIValueObject.swift */; };
 		E5C5646D22F18EDC00DD9401 /* UnsplashUserValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */; };
 		E5C5647322F1947C00DD9401 /* OauthTokenRequestGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */; };
 		E5C5647522F1BAB100DD9401 /* UnsplashOauthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647422F1BAB100DD9401 /* UnsplashOauthAPI.swift */; };
@@ -211,6 +212,7 @@
 		E5B8A2372309CEF600AE29E8 /* TokenRequestUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequestUseCase.swift; sourceTree = "<group>"; };
 		E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUseCase.swift; sourceTree = "<group>"; };
 		E5B8A23B2309E4A600AE29E8 /* AuthenticationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenter.swift; sourceTree = "<group>"; };
+		E5B8A23D2309E8E000AE29E8 /* PhotoUIValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUIValueObject.swift; sourceTree = "<group>"; };
 		E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserValueObject.swift; sourceTree = "<group>"; };
 		E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthTokenRequestGateway.swift; sourceTree = "<group>"; };
 		E5C5647422F1BAB100DD9401 /* UnsplashOauthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashOauthAPI.swift; sourceTree = "<group>"; };
@@ -375,7 +377,7 @@
 		E57826EE22D8E20E002499A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E5C5646922F18E2400DD9401 /* Unsplash */,
+				E5B8A23D2309E8E000AE29E8 /* PhotoUIValueObject.swift */,
 			);
 			name = Model;
 			path = ..;
@@ -650,13 +652,6 @@
 				E5A8139322DA230D0028F80F /* KeyChainStore.swift */,
 			);
 			name = KeyChainAccess;
-			sourceTree = "<group>";
-		};
-		E5C5646922F18E2400DD9401 /* Unsplash */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Unsplash;
 			sourceTree = "<group>";
 		};
 		E5C5647622F1BADA00DD9401 /* OauthEndpoint */ = {
@@ -1017,6 +1012,7 @@
 				E5B8A2382309CEF600AE29E8 /* TokenRequestUseCase.swift in Sources */,
 				E57915CE22F85AD4009BCE95 /* UnsplashAPIProvider.swift in Sources */,
 				E5B8A2362309C8A800AE29E8 /* ViewControlelrGettable.swift in Sources */,
+				E5B8A23E2309E8E000AE29E8 /* PhotoUIValueObject.swift in Sources */,
 				E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */,
 				E5A8139422DA230D0028F80F /* KeyChainStore.swift in Sources */,
 				E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */,

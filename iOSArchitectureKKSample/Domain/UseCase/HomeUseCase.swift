@@ -9,7 +9,11 @@
 import Foundation
 
 
-protocol HomeUseCaseInputPort {
+protocol TopImageUseCaseInputPort {
     func switchTopImage(id: String)
     func selectTopImage(id: String)
+}
+
+protocol TopImageUseCaseOutputPort {
+    
 }

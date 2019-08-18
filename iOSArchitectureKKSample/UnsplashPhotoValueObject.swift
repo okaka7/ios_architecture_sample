@@ -18,12 +18,12 @@ struct UnsplashPhotoValueObject: PhotoObject, Codable {
     let links: UnsplashPhotoVOLinks
     let categories: [String?]
     let sponsored: Bool
-    let sponsoredBy: SponsoredBy
+    let sponsoredBy: UnsplashUserValueObject
     let sponsoredImpressionsID: String
     let likes: Int
     let likedByUser: Bool
     let currentUserCollections: [String?]
-    let user: SponsoredBy
+    let user: UnsplashUserValueObject
     let sponsorship: Sponsorship
 
     enum CodingKeys: String, CodingKey {
@@ -52,33 +52,7 @@ struct UnsplashPhotoVOLinks: Codable {
     }
 }
 
-struct SponsoredBy: Codable {
-    let id, updatedAt, username, name: String
-    let firstName, lastName, twitterUsername, portfolioURL: String
-    let bio, location: String
-    let links: Links
-    let profileImage: ProfileImage
-    let instagramUsername: String
-    let totalCollections, totalLikes, totalPhotos: Int
-    let acceptedTos: Bool
 
-    enum CodingKeys: String, CodingKey {
-        case id
-        case updatedAt = "updated_at"
-        case username, name
-        case firstName = "first_name"
-        case lastName = "last_name"
-        case twitterUsername = "twitter_username"
-        case portfolioURL = "portfolio_url"
-        case bio, location, links
-        case profileImage = "profile_image"
-        case instagramUsername = "instagram_username"
-        case totalCollections = "total_collections"
-        case totalLikes = "total_likes"
-        case totalPhotos = "total_photos"
-        case acceptedTos = "accepted_tos"
-    }
-}
 
 
 struct ProfileImage: Codable {
@@ -87,7 +61,7 @@ struct ProfileImage: Codable {
 
 struct Sponsorship: Codable {
     let impressionsID, tagline: String
-    let sponsor: SponsoredBy
+    let sponsor: UnsplashUserValueObject
 
     enum CodingKeys: String, CodingKey {
         case impressionsID = "impressions_id"
@@ -158,32 +132,7 @@ extension UnsplashPhotoVOLinks {
     }
 }
 
-extension SponsoredBy {
-    init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(SponsoredBy.self, from: data) else { return nil }
-        self = me
-    }
 
-    init?(_ json: String, using encoding: String.Encoding = .utf8) {
-        guard let data = json.data(using: encoding) else { return nil }
-        self.init(data: data)
-    }
-
-    init?(fromURL url: String) {
-        guard let url = URL(string: url) else { return nil }
-        guard let data = try? Data(contentsOf: url) else { return nil }
-        self.init(data: data)
-    }
-
-    var jsonData: Data? {
-        return try? JSONEncoder().encode(self)
-    }
-
-    var json: String? {
-        guard let data = self.jsonData else { return nil }
-        return String(data: data, encoding: .utf8)
-    }
-}
 
 extension Sponsorship {
     init?(data: Data) {
