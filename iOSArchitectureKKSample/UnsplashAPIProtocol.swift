@@ -9,9 +9,9 @@
 import Foundation
 import RxSwift
 
-typealias UnsplashAPI = UnsplashAPIPhoto & UnsplashAPICollection & UnsplashAPIUserAccount
+typealias UnsplashClient = UnsplashPhotoClient & UnsplashCollectionClient & UnsplashUserAccountClient
 
-protocol UnsplashAPIPhoto {
+protocol UnsplashPhotoClient {
     static func requestPhotos() -> Single<UnsplashPhotosTarget.Response>
     static func requestLikePhoto(id: String, isLike: Bool) -> Single<UnsplashLikePhotoTarget.Response>
     
@@ -20,7 +20,7 @@ protocol UnsplashAPIPhoto {
     static func requestSearchPhots(query: String) -> Single<UnsplashSearchPhotosTarget.Response> 
 }
 
-protocol UnsplashAPICollection {
+protocol UnsplashCollectionClient {
     static func requestCollection(id : String) -> Single<UnsplashCollectionTarget.Response>
     
     static func requestCollectionPhotos(id : String) -> Single<UnsplashCollectionPhotosTarget.Response>
@@ -32,7 +32,7 @@ protocol UnsplashAPICollection {
                                              photoID: String) -> Single<UnsplashEditPhotoInCollectionTarget.Response> 
 }
 
-protocol UnsplashAPIUserAccount {
+protocol UnsplashUserAccountClient {
     static func requestAccount() -> Single<UnsplashAccountTarget.Response>
     
     static func requestUser(userName name: String) -> Single<UnsplashUserTarget.Response>

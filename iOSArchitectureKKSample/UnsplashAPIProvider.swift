@@ -64,7 +64,7 @@ struct UnsplashAPIProvider {
 }
 
 // MARK: Photo
-extension UnsplashAPIProvider: UnsplashAPIPhoto {
+extension UnsplashAPIProvider: UnsplashPhotoClient {
     static func requestPhotos() -> Single<UnsplashPhotosTarget.Response> {
         let target: UnsplashPhotosTarget = .init()
         return request(target)
@@ -87,7 +87,7 @@ extension UnsplashAPIProvider: UnsplashAPIPhoto {
 }
 
 // MARK: Collection
-extension UnsplashAPIProvider: UnsplashAPICollection {
+extension UnsplashAPIProvider: UnsplashCollectionClient {
     static func requestCollection(id : String) -> Single<UnsplashCollectionTarget.Response> {
         let target: UnsplashCollectionTarget = .init(id: id)
         return request(target)
@@ -114,7 +114,7 @@ extension UnsplashAPIProvider: UnsplashAPICollection {
 }
 
 // MARK: Acount & User
-extension UnsplashAPIProvider: UnsplashAPIUserAccount {
+extension UnsplashAPIProvider: UnsplashUserAccountClient {
     static func requestAccount() -> Single<UnsplashAccountTarget.Response> {
         let target: UnsplashAccountTarget = .init()
         return request(target)
