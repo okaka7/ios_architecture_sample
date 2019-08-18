@@ -12,7 +12,10 @@ import RxSwift
 import RxMoya
 
 struct UnsplashAPIProvider {
-    static let provider: MoyaProvider<MultiTarget> = {
+    
+    let tokenRepository: APITokenRepository
+    
+    private lazy var provider: MoyaProvider<MultiTarget> = {
         let plugins: [Moya.PluginType] = {
             #if DEBUG
             let loggerPlugin: NetworkLoggerPlugin = .init(verbose: true)
@@ -30,8 +33,8 @@ struct UnsplashAPIProvider {
                 }
             })
             
-            let accessTokenPlugin: AccessTokenPlugin = .init(tokenClosure: { () -> String in
-                if let token = KeychainStore.unsplashToken {
+            let accessTokenPlugin: AccessTokenPlugin = .init(tokenClosure: { [tokenRepository] () -> String in
+                if let token = tokenRepository.fetchToken() {
                     return token
                 } else {
                     return R.string.localizable.unsplashAPIClientID()
@@ -57,7 +60,11 @@ struct UnsplashAPIProvider {
         return provider
     }()
     
-    static private func request<R>(_ target: R) -> Single<R.Response> where R: UnsplashAPITargetType {
+    init(tokenRepository: APITokenRepository) {
+        self.tokenRepository = tokenRepository
+    }
+    
+    private func request<R>(_ target: R) -> Single<R.Response> where R: UnsplashAPITargetType {
         let target = MultiTarget(target)
         return provider.rx.request(target).map(R.Response.self)
     }
@@ -65,22 +72,22 @@ struct UnsplashAPIProvider {
 
 // MARK: Photo
 extension UnsplashAPIProvider: UnsplashPhotoClient {
-    static func requestPhotos() -> Single<UnsplashPhotosTarget.Response> {
+    func requestPhotos() -> Single<UnsplashPhotosTarget.Response> {
         let target: UnsplashPhotosTarget = .init()
         return request(target)
     }
     
-    static func requestLikePhoto(id: String, isLike: Bool) -> Single<UnsplashLikePhotoTarget.Response> {
+    func requestLikePhoto(id: String, isLike: Bool) -> Single<UnsplashLikePhotoTarget.Response> {
         let target: UnsplashLikePhotoTarget = .init(id: id, like: isLike)
         return request(target)
     }
     
-    static func requestDownloadPhotoURL(id: String) -> Single<UnsplashDownloadPhotoTarget.Response> {
+    func requestDownloadPhotoURL(id: String) -> Single<UnsplashDownloadPhotoTarget.Response> {
         let target: UnsplashDownloadPhotoTarget = .init(id: id)
         return request(target)
     }
     
-    static func requestSearchPhots(query: String) -> Single<UnsplashSearchPhotosTarget.Response> {
+    func requestSearchPhots(query: String) -> Single<UnsplashSearchPhotosTarget.Response> {
         let target: UnsplashSearchPhotosTarget = .init(query: query)
         return request(target)
     }
@@ -88,17 +95,17 @@ extension UnsplashAPIProvider: UnsplashPhotoClient {
 
 // MARK: Collection
 extension UnsplashAPIProvider: UnsplashCollectionClient {
-    static func requestCollection(id : String) -> Single<UnsplashCollectionTarget.Response> {
+    func requestCollection(id : String) -> Single<UnsplashCollectionTarget.Response> {
         let target: UnsplashCollectionTarget = .init(id: id)
         return request(target)
     }
     
-    static func requestCollectionPhotos(id : String) -> Single<UnsplashCollectionPhotosTarget.Response> {
+    func requestCollectionPhotos(id : String) -> Single<UnsplashCollectionPhotosTarget.Response> {
         let target: UnsplashCollectionPhotosTarget = .init(id: id)
         return request(target)
     }
     
-    static func requestRelatedCollections(id : String) -> Single<UnsplashRelatedCollectionsTarget.Response> {
+    func requestRelatedCollections(id : String) -> Single<UnsplashRelatedCollectionsTarget.Response> {
         let target: UnsplashRelatedCollectionsTarget = .init(id: id)
         return request(target)
     }
@@ -115,27 +122,27 @@ extension UnsplashAPIProvider: UnsplashCollectionClient {
 
 // MARK: Acount & User
 extension UnsplashAPIProvider: UnsplashUserAccountClient {
-    static func requestAccount() -> Single<UnsplashAccountTarget.Response> {
+    func requestAccount() -> Single<UnsplashAccountTarget.Response> {
         let target: UnsplashAccountTarget = .init()
         return request(target)
     }
     
-    static func requestUser(userName name: String) -> Single<UnsplashUserTarget.Response> {
+    func requestUser(userName name: String) -> Single<UnsplashUserTarget.Response> {
         let target: UnsplashUserTarget = .init(userName: name)
         return request(target)
     }
     
-    static func requestUserLikes(userName name: String) -> Single<UnsplashUserLikesTarget.Response> {
+    func requestUserLikes(userName name: String) -> Single<UnsplashUserLikesTarget.Response> {
         let target: UnsplashUserLikesTarget = .init(userName: name)
         return request(target)
     }
     
-    static func requestUserPortfolio(userName name: String) -> Single<UnsplashUserPortfolioTarget.Response> {
+    func requestUserPortfolio(userName name: String) -> Single<UnsplashUserPortfolioTarget.Response> {
         let target: UnsplashUserPortfolioTarget = .init(userName: name)
         return request(target)
     }
     
-    static func requestUserCollections(userName name: String) -> Single<UnsplashUserCollectionsTarget.Response> {
+    func requestUserCollections(userName name: String) -> Single<UnsplashUserCollectionsTarget.Response> {
         let target: UnsplashUserCollectionsTarget = .init(userName: name)
         return request(target)
     }

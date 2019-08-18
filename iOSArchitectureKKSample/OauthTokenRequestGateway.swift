@@ -15,6 +15,8 @@ struct OauthTokenRequestGateway: UnsplashTokenRequestReposiotry {
     
     let code: String
     
+    let tokenRepository: APITokenRepository
+    
     func requestToken(onSuccess successHandler: @escaping (UnsplashTokenTarget.Response) -> Void,
                       onError errorHandler: (Error) -> Void) {
         
@@ -34,7 +36,11 @@ struct OauthTokenRequestGateway: UnsplashTokenRequestReposiotry {
             })
     }
     
+    init(tokenRepository: APITokenRepository) {
+        self.tokenRepository = tokenRepository
+    }
+    
     func saveToken(_ token: String) {
-        KeychainStore.saveUnsplashToken(token)
+        tokenRepository.saveUnsplashToken(token)
     }
 }

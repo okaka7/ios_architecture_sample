@@ -10,5 +10,5 @@ import Foundation
 
 protocol APITokenRepository {
     func saveToken(token: String)
-    func fetchToken() -> String
+    func fetchToken() -> String?
 }
