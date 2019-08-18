@@ -93,6 +93,7 @@
 		E5B8A23E2309E8E000AE29E8 /* PhotoUIValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A23D2309E8E000AE29E8 /* PhotoUIValueObject.swift */; };
 		E5B8A2402309EB6000AE29E8 /* CollectionUIValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A23F2309EB6000AE29E8 /* CollectionUIValueObject.swift */; };
 		E5B8A2442309EC7200AE29E8 /* UserUIValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2432309EC7200AE29E8 /* UserUIValueObject.swift */; };
+		E5B8A2462309ED4C00AE29E8 /* AccountUIValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2452309ED4C00AE29E8 /* AccountUIValueObject.swift */; };
 		E5C5646D22F18EDC00DD9401 /* UnsplashUserValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */; };
 		E5C5647322F1947C00DD9401 /* OauthTokenRequestGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */; };
 		E5C5647522F1BAB100DD9401 /* UnsplashOauthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647422F1BAB100DD9401 /* UnsplashOauthAPI.swift */; };
@@ -217,6 +218,7 @@
 		E5B8A23D2309E8E000AE29E8 /* PhotoUIValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUIValueObject.swift; sourceTree = "<group>"; };
 		E5B8A23F2309EB6000AE29E8 /* CollectionUIValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionUIValueObject.swift; sourceTree = "<group>"; };
 		E5B8A2432309EC7200AE29E8 /* UserUIValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUIValueObject.swift; sourceTree = "<group>"; };
+		E5B8A2452309ED4C00AE29E8 /* AccountUIValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUIValueObject.swift; sourceTree = "<group>"; };
 		E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserValueObject.swift; sourceTree = "<group>"; };
 		E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthTokenRequestGateway.swift; sourceTree = "<group>"; };
 		E5C5647422F1BAB100DD9401 /* UnsplashOauthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashOauthAPI.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				E5B8A23D2309E8E000AE29E8 /* PhotoUIValueObject.swift */,
 				E5B8A23F2309EB6000AE29E8 /* CollectionUIValueObject.swift */,
 				E5B8A2432309EC7200AE29E8 /* UserUIValueObject.swift */,
+				E5B8A2452309ED4C00AE29E8 /* AccountUIValueObject.swift */,
 			);
 			name = Model;
 			path = ..;
@@ -1010,6 +1013,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5B8A2462309ED4C00AE29E8 /* AccountUIValueObject.swift in Sources */,
 				E592E72622FEECEC00AECEC4 /* UnsplashCollectionValueObject.swift in Sources */,
 				E57826E422D8E0A2002499A9 /* LocalCache.swift in Sources */,
 				E5C5647522F1BAB100DD9401 /* UnsplashOauthAPI.swift in Sources */,
