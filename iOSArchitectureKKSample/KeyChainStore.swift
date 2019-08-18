@@ -14,8 +14,8 @@ struct KeychainStore {
     
     private let keychain: Keychain
     
-    public init(_ keychainServiceeName: String) {
-        self.keychain = Keychain(service: keychainServiceeName)
+    public init(_ keychainServiceName: String) {
+        self.keychain = Keychain(service: keychainServiceName)
     }
     
     public func save(key: String, value: String) {
