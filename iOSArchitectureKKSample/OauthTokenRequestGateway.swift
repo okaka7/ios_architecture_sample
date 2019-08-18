@@ -19,13 +19,26 @@ extension CodeGettable {
     }
 }
 
-protocol TokenRequestable: class {
+protocol TokenRequestEmitter: class {
+    var presenter: TokenRequestEmitAcceptable { get set }
     func tokenRequest(with urlComponents: URLComponents)
+}
+
+protocol TokenRequestEmitAcceptable: class, CodeGettable {
+    var tokenRequestUseCase: TokenRequestUseCase { get set }
+    func tokenRequest(with urlComponents: URLComponents)
+}
+
+extension TokenRequestEmitAcceptable {
+    func tokenRequest(with urlComponents: URLComponents) {
+        guard let code = self.getCode(from: urlComponents) else { return }
+        tokenRequestUseCase.requestToken(code: code)
+    }
 }
 
 struct OauthTokenRequestGateway: TokenRequestReposiotry {
     
-    let tokenRequestClient: TokenRequestClient
+    private let tokenRequestClient: TokenRequestClient
     
     func requestToken(code: String) {
         tokenRequestClient.request(code: code,

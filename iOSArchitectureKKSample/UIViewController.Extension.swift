@@ -11,7 +11,7 @@ import UIKit
 extension UIViewController: ExtensionCompatible {}
 
 extension Extension where Base: UIViewController {
-    func getPresentedViewController() -> UIViewController? {
+    var showedViewController: UIViewController? {
         switch self.base {
         case let naviVC as UINavigationController:
             return naviVC.visibleViewController
@@ -20,6 +20,5 @@ extension Extension where Base: UIViewController {
         default:
             return self.base.presentedViewController
         }
-        
     }
 }

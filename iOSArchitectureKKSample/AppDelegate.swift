@@ -62,16 +62,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         if components.path == R.string.localizable.unsplashOauthCallBackPath(),
-            let code = UnsplashOauthToken.getCode(from: components) {
-            let oauthToken = UnsplashOauthToken(code: code)
-            
-            oauthToken.requestToken(onSuccess: { response in
-                                        oauthToken.saveToken(response.accessToken)
-                                    },
-                                    onError: {_ in })
+            let tokenRequestEmitter = self.topViewController as? TokenRequestEmitter {
+            tokenRequestEmitter.tokenRequest(with: components)
         }
-        
-        
+
         return true
     }
 }
+
+extension AppDelegate: TopViewContollerGettable { }
