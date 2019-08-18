@@ -31,7 +31,6 @@
 		E55E19C72309A5F1007C1C57 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C62309A5F1007C1C57 /* Builder.swift */; };
 		E55E19C92309ACAB007C1C57 /* AuthenticationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C82309ACAB007C1C57 /* AuthenticationClient.swift */; };
 		E55E19CB2309B149007C1C57 /* TokenRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19CA2309B149007C1C57 /* TokenRequestClient.swift */; };
-		E55E19CD2309BFC1007C1C57 /* ViewControllerGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19CC2309BFC1007C1C57 /* ViewControllerGettable.swift */; };
 		E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68322B28B8400AE6940 /* Coordinator.swift */; };
 		E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68522B28BC400AE6940 /* AppCoordinator.swift */; };
 		E571E6F822B8325B0032A748 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */; };
@@ -85,6 +84,7 @@
 		E592E73422FF02E500AECEC4 /* UnsplashRelatedCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73322FF02E500AECEC4 /* UnsplashRelatedCollections.swift */; };
 		E592E73622FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73522FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift */; };
 		E5A8139422DA230D0028F80F /* KeyChainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8139322DA230D0028F80F /* KeyChainStore.swift */; };
+		E5B8A2302309C7A900AE29E8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A22F2309C7A900AE29E8 /* Extension.swift */; };
 		E5C5646D22F18EDC00DD9401 /* UnsplashUserValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */; };
 		E5C5647122F193DE00DD9401 /* OauthAuthenticationGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647022F193DE00DD9401 /* OauthAuthenticationGateway.swift */; };
 		E5C5647322F1947C00DD9401 /* OauthTokenRequestGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */; };
@@ -141,7 +141,6 @@
 		E55E19C62309A5F1007C1C57 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		E55E19C82309ACAB007C1C57 /* AuthenticationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationClient.swift; sourceTree = "<group>"; };
 		E55E19CA2309B149007C1C57 /* TokenRequestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequestClient.swift; sourceTree = "<group>"; };
-		E55E19CC2309BFC1007C1C57 /* ViewControllerGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerGettable.swift; sourceTree = "<group>"; };
 		E56FD68322B28B8400AE6940 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E56FD68522B28BC400AE6940 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
@@ -202,6 +201,7 @@
 		E592E73322FF02E500AECEC4 /* UnsplashRelatedCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRelatedCollections.swift; sourceTree = "<group>"; };
 		E592E73522FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashEditPhotoInCollectionTarget.swift; sourceTree = "<group>"; };
 		E5A8139322DA230D0028F80F /* KeyChainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStore.swift; sourceTree = "<group>"; };
+		E5B8A22F2309C7A900AE29E8 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserValueObject.swift; sourceTree = "<group>"; };
 		E5C5647022F193DE00DD9401 /* OauthAuthenticationGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthAuthenticationGateway.swift; sourceTree = "<group>"; };
 		E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthTokenRequestGateway.swift; sourceTree = "<group>"; };
@@ -338,7 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				E57826DB22D8D070002499A9 /* UIApplication+openURL.swift */,
-				E55E19CC2309BFC1007C1C57 /* ViewControllerGettable.swift */,
+				E5B8A22F2309C7A900AE29E8 /* Extension.swift */,
 				E57826DF22D8DA01002499A9 /* NSObject+ClassName.swift */,
 				E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift */,
 			);
@@ -1000,6 +1000,7 @@
 				E592E72622FEECEC00AECEC4 /* UnsplashCollectionValueObject.swift in Sources */,
 				E57826E422D8E0A2002499A9 /* LocalCache.swift in Sources */,
 				E5C5647522F1BAB100DD9401 /* UnsplashOauthAPI.swift in Sources */,
+				E5B8A2302309C7A900AE29E8 /* Extension.swift in Sources */,
 				E55E19C1230991BC007C1C57 /* OauthTokenManageGateway.swift in Sources */,
 				E57915CE22F85AD4009BCE95 /* UnsplashAPIProvider.swift in Sources */,
 				E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */,
@@ -1035,7 +1036,6 @@
 				E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */,
 				E5521F4C22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift in Sources */,
 				E57BD50522C4B58B00FE44D4 /* ColourSettingCoordinator.swift in Sources */,
-				E55E19CD2309BFC1007C1C57 /* ViewControllerGettable.swift in Sources */,
 				E57826E622D8E0CF002499A9 /* LocalCacheKey.swift in Sources */,
 				E57915D822F89743009BCE95 /* UnsplashUserLikesTarget.swift in Sources */,
 				E592E73022FF01E800AECEC4 /* UnsplashCollection.swift in Sources */,
