@@ -24,10 +24,10 @@ class SplashViewController: UIViewController {
         return label
     }()
     
-    weak var transition: TransitionToMainTabVC?
+    weak var transitioner: SplashTransitioner?
 
-    init(transition: TransitionToMainTabVC) {
-        self.transition = transition
+    init(transition: SplashTransitioner) {
+        self.transitioner = transition
         super.init(nibName: nil, bundle: nil)
         self.view.backgroundColor = .white
     }
@@ -48,14 +48,16 @@ class SplashViewController: UIViewController {
             guard let self = self else {
                 return
             }
-            if let token = KeychainStore.unsplashToken {
-                #if DEBUG
-                log.debug(token)
-                #endif
-            } else {
-                let authentication = OauthAuthenticationGateway(outputView: self)
-                authentication.authenticate()
-            }
+            self.transitioner?.transition()
+            //note: splash画面でのトークン処理が必要ではならなくなったのでコメントアウト。ただどこかの画面で流用する可能性もあるのでコメントアウトで削除はしない
+//            if let token = KeychainStore.unsplashToken {
+//                #if DEBUG
+//                log.debug(token)
+//                #endif
+//            } else {
+//                let authentication = OauthAuthenticationGateway(outputView: self)
+//                authentication.authenticate()
+//            }
 
         })
 

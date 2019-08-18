@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol TransitionToMainTabVC: class {
-    func transitionToMainTab()
+protocol SplashTransitioner: class {
+    func transition()
 }
 
-final class AppCoordinator: Coordinator, TransitionToMainTabVC {
+final class AppCoordinator: Coordinator, SplashTransitioner {
     
     enum LaunchType {
         
@@ -34,7 +34,7 @@ final class AppCoordinator: Coordinator, TransitionToMainTabVC {
         window.makeKeyAndVisible()
     }
     
-    func transitionToMainTab() {
+    func transition() {
         self.mainTabCoordinator.start()
         self.rootViewController.present(self.mainTabCoordinator.mainTabBarController, animated: false)
     }
