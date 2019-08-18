@@ -8,12 +8,11 @@
 
 import Foundation
 
-protocol AuthenticationClient {
-    func authenticate()
+protocol Authenticater {
+    var url: URL? { get }
 }
 
-
-struct UnsplashAuthenticater: AuthenticationClient {
+struct UnsplashAuthenticater: Authenticater {
     private let clientID: String?
     private let redirectURL: String = {
         let scheme = R.string.localizable.appScheme()
@@ -26,7 +25,7 @@ struct UnsplashAuthenticater: AuthenticationClient {
     
     private let scope: String = "public+read_user+read_photos+write_likes+write_followers+read_collections+write_collections"
     
-    private let url: URL = {
+    private let baseURL: URL = {
         let baseURL: String = R.string.localizable.unsplashOauthBaseURL()
         let path: String = "/authorize"
         return URL(string: baseURL + path)!
@@ -34,9 +33,8 @@ struct UnsplashAuthenticater: AuthenticationClient {
     
     // private weak var authenticationView: UnsplashAuthenticationOutput?
     
-    
-    private var authenticationURL: URL? {
-        guard var components = URLComponents(url: self.url, resolvingAgainstBaseURL: true) else {
+    var url: URL? {
+        guard var components = URLComponents(url: self.baseURL, resolvingAgainstBaseURL: true) else {
             return nil
         }
         
@@ -65,7 +63,7 @@ struct UnsplashAuthenticater: AuthenticationClient {
     
     
     func authenticate(){
-        guard let unsplashOauthURL = self.authenticationURL else {
+        guard let unsplashOauthURL = self.url else {
             return
         }
         

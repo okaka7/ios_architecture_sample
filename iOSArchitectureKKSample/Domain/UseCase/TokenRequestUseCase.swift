@@ -18,3 +18,4 @@ extension TokenRequestUseCase {
         tokenRequestRepository.requestToken(code: code)
     }
 }
+

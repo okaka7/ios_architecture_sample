@@ -29,7 +29,7 @@
 		E55E19C1230991BC007C1C57 /* OauthTokenManageGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C0230991BC007C1C57 /* OauthTokenManageGateway.swift */; };
 		E55E19C5230998DD007C1C57 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C4230998DD007C1C57 /* SplashPresenter.swift */; };
 		E55E19C72309A5F1007C1C57 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C62309A5F1007C1C57 /* Builder.swift */; };
-		E55E19C92309ACAB007C1C57 /* AuthenticationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C82309ACAB007C1C57 /* AuthenticationClient.swift */; };
+		E55E19C92309ACAB007C1C57 /* Authenticater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C82309ACAB007C1C57 /* Authenticater.swift */; };
 		E55E19CB2309B149007C1C57 /* TokenRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19CA2309B149007C1C57 /* TokenRequestClient.swift */; };
 		E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68322B28B8400AE6940 /* Coordinator.swift */; };
 		E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68522B28BC400AE6940 /* AppCoordinator.swift */; };
@@ -88,8 +88,9 @@
 		E5B8A2322309C81100AE29E8 /* UIViewController.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2312309C81100AE29E8 /* UIViewController.Extension.swift */; };
 		E5B8A2362309C8A800AE29E8 /* ViewControlelrGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2352309C8A800AE29E8 /* ViewControlelrGettable.swift */; };
 		E5B8A2382309CEF600AE29E8 /* TokenRequestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2372309CEF600AE29E8 /* TokenRequestUseCase.swift */; };
+		E5B8A23A2309DC7100AE29E8 /* AuthenticateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */; };
+		E5B8A23C2309E4A600AE29E8 /* AuthenticationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A23B2309E4A600AE29E8 /* AuthenticationPresenter.swift */; };
 		E5C5646D22F18EDC00DD9401 /* UnsplashUserValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */; };
-		E5C5647122F193DE00DD9401 /* OauthAuthenticationGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647022F193DE00DD9401 /* OauthAuthenticationGateway.swift */; };
 		E5C5647322F1947C00DD9401 /* OauthTokenRequestGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */; };
 		E5C5647522F1BAB100DD9401 /* UnsplashOauthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647422F1BAB100DD9401 /* UnsplashOauthAPI.swift */; };
 		E5C5647922F1BB8F00DD9401 /* UnsplashAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647822F1BB8F00DD9401 /* UnsplashAPI.swift */; };
@@ -142,7 +143,7 @@
 		E55E19C0230991BC007C1C57 /* OauthTokenManageGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthTokenManageGateway.swift; sourceTree = "<group>"; };
 		E55E19C4230998DD007C1C57 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		E55E19C62309A5F1007C1C57 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
-		E55E19C82309ACAB007C1C57 /* AuthenticationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationClient.swift; sourceTree = "<group>"; };
+		E55E19C82309ACAB007C1C57 /* Authenticater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticater.swift; sourceTree = "<group>"; };
 		E55E19CA2309B149007C1C57 /* TokenRequestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequestClient.swift; sourceTree = "<group>"; };
 		E56FD68322B28B8400AE6940 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E56FD68522B28BC400AE6940 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -208,8 +209,9 @@
 		E5B8A2312309C81100AE29E8 /* UIViewController.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.Extension.swift; sourceTree = "<group>"; };
 		E5B8A2352309C8A800AE29E8 /* ViewControlelrGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControlelrGettable.swift; sourceTree = "<group>"; };
 		E5B8A2372309CEF600AE29E8 /* TokenRequestUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequestUseCase.swift; sourceTree = "<group>"; };
+		E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUseCase.swift; sourceTree = "<group>"; };
+		E5B8A23B2309E4A600AE29E8 /* AuthenticationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenter.swift; sourceTree = "<group>"; };
 		E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserValueObject.swift; sourceTree = "<group>"; };
-		E5C5647022F193DE00DD9401 /* OauthAuthenticationGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthAuthenticationGateway.swift; sourceTree = "<group>"; };
 		E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthTokenRequestGateway.swift; sourceTree = "<group>"; };
 		E5C5647422F1BAB100DD9401 /* UnsplashOauthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashOauthAPI.swift; sourceTree = "<group>"; };
 		E5C5647822F1BB8F00DD9401 /* UnsplashAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPI.swift; sourceTree = "<group>"; };
@@ -257,7 +259,6 @@
 		E516490722CD0E6200D3D2D7 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				E55E19C82309ACAB007C1C57 /* AuthenticationClient.swift */,
 				E55E19CA2309B149007C1C57 /* TokenRequestClient.swift */,
 				E55E19BE2308E066007C1C57 /* UnsplashAPIProtocol.swift */,
 				E57950B12308536A00000FD8 /* Provider */,
@@ -321,6 +322,7 @@
 		E577379E22FECA8200559D37 /* Unsplash */ = {
 			isa = PBXGroup;
 			children = (
+				E55E19C82309ACAB007C1C57 /* Authenticater.swift */,
 				E57950B5230858F100000FD8 /* API Token */,
 				E57950AE2307FA4A00000FD8 /* Account&User */,
 				E57950AF2307FA7100000FD8 /* Photo&Collection */,
@@ -429,6 +431,7 @@
 				E57950A92307F4A800000FD8 /* Account(User) */,
 				E55E19C22309959C007C1C57 /* Photo */,
 				E55E19C3230995CA007C1C57 /* Collection */,
+				E5B8A23B2309E4A600AE29E8 /* AuthenticationPresenter.swift */,
 			);
 			name = Presentation;
 			sourceTree = "<group>";
@@ -565,7 +568,6 @@
 		E57950BC23085D8300000FD8 /* Gateway */ = {
 			isa = PBXGroup;
 			children = (
-				E5C5647022F193DE00DD9401 /* OauthAuthenticationGateway.swift */,
 				E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */,
 				E55E19C0230991BC007C1C57 /* OauthTokenManageGateway.swift */,
 			);
@@ -577,6 +579,7 @@
 			children = (
 				E579509A2307CB1E00000FD8 /* HomeUseCase.swift */,
 				E5B8A2372309CEF600AE29E8 /* TokenRequestUseCase.swift */,
+				E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */,
 				E57950A12307E2C800000FD8 /* SearchUseCase.swift */,
 				E57950A42307EBCF00000FD8 /* PhotoUseCase.swift */,
 			);
@@ -1024,15 +1027,15 @@
 				E55E19CB2309B149007C1C57 /* TokenRequestClient.swift in Sources */,
 				E592297E22AE65E8003EC30C /* SplashViewController.swift in Sources */,
 				E57950A52307EBCF00000FD8 /* PhotoUseCase.swift in Sources */,
+				E5B8A23A2309DC7100AE29E8 /* AuthenticateUseCase.swift in Sources */,
 				E5C5647322F1947C00DD9401 /* OauthTokenRequestGateway.swift in Sources */,
 				E55E19BF2308E066007C1C57 /* UnsplashAPIProtocol.swift in Sources */,
 				E592E72E22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift in Sources */,
 				E577D5C022C56B0000588A38 /* MainTabCoordinator.swift in Sources */,
 				E57950BE23085EE000000FD8 /* UnsplashOauthRepository.swift in Sources */,
 				E592E72C22FEFE2B00AECEC4 /* UnsplashSearchPhotos.swift in Sources */,
-				E55E19C92309ACAB007C1C57 /* AuthenticationClient.swift in Sources */,
+				E55E19C92309ACAB007C1C57 /* Authenticater.swift in Sources */,
 				E53F1DFA22C0B60300F81CAA /* ColourCategoryViewController.swift in Sources */,
-				E5C5647122F193DE00DD9401 /* OauthAuthenticationGateway.swift in Sources */,
 				E53F1DFC22C0B63000F81CAA /* ColourSearchViewController.swift in Sources */,
 				E57915D422F86676009BCE95 /* UnsplashUserTarget.swift in Sources */,
 				E5521F5222F1E30100D38F02 /* UnsplashPhotosTarget.swift in Sources */,
@@ -1045,6 +1048,7 @@
 				E5867C0422C4831E009E9EF8 /* ColourWorkDetailViewController.swift in Sources */,
 				E592E73422FF02E500AECEC4 /* UnsplashRelatedCollections.swift in Sources */,
 				E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */,
+				E5B8A23C2309E4A600AE29E8 /* AuthenticationPresenter.swift in Sources */,
 				E5521F4C22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift in Sources */,
 				E57BD50522C4B58B00FE44D4 /* ColourSettingCoordinator.swift in Sources */,
 				E57826E622D8E0CF002499A9 /* LocalCacheKey.swift in Sources */,
