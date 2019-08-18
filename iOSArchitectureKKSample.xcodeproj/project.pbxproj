@@ -86,6 +86,7 @@
 		E5A8139422DA230D0028F80F /* KeyChainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8139322DA230D0028F80F /* KeyChainStore.swift */; };
 		E5B8A2302309C7A900AE29E8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A22F2309C7A900AE29E8 /* Extension.swift */; };
 		E5B8A2322309C81100AE29E8 /* UIViewController.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2312309C81100AE29E8 /* UIViewController.Extension.swift */; };
+		E5B8A2362309C8A800AE29E8 /* ViewControlelrGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2352309C8A800AE29E8 /* ViewControlelrGettable.swift */; };
 		E5C5646D22F18EDC00DD9401 /* UnsplashUserValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */; };
 		E5C5647122F193DE00DD9401 /* OauthAuthenticationGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647022F193DE00DD9401 /* OauthAuthenticationGateway.swift */; };
 		E5C5647322F1947C00DD9401 /* OauthTokenRequestGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */; };
@@ -204,6 +205,7 @@
 		E5A8139322DA230D0028F80F /* KeyChainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStore.swift; sourceTree = "<group>"; };
 		E5B8A22F2309C7A900AE29E8 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		E5B8A2312309C81100AE29E8 /* UIViewController.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.Extension.swift; sourceTree = "<group>"; };
+		E5B8A2352309C8A800AE29E8 /* ViewControlelrGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControlelrGettable.swift; sourceTree = "<group>"; };
 		E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserValueObject.swift; sourceTree = "<group>"; };
 		E5C5647022F193DE00DD9401 /* OauthAuthenticationGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthAuthenticationGateway.swift; sourceTree = "<group>"; };
 		E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthTokenRequestGateway.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 		E57826D622D8C977002499A9 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E5B8A2352309C8A800AE29E8 /* ViewControlelrGettable.swift */,
 				E5B8A22F2309C7A900AE29E8 /* Extension.swift */,
 				E5B8A2312309C81100AE29E8 /* UIViewController.Extension.swift */,
 				E57826DB22D8D070002499A9 /* UIApplication+openURL.swift */,
@@ -1006,6 +1009,7 @@
 				E5B8A2302309C7A900AE29E8 /* Extension.swift in Sources */,
 				E55E19C1230991BC007C1C57 /* OauthTokenManageGateway.swift in Sources */,
 				E57915CE22F85AD4009BCE95 /* UnsplashAPIProvider.swift in Sources */,
+				E5B8A2362309C8A800AE29E8 /* ViewControlelrGettable.swift in Sources */,
 				E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */,
 				E5A8139422DA230D0028F80F /* KeyChainStore.swift in Sources */,
 				E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */,
