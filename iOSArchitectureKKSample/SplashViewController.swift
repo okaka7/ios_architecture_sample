@@ -17,7 +17,7 @@ import KeychainAccess
 
 
 
-class SplashViewController: UIViewController {
+class SplashViewController: UIViewController, SplashPresenterOutput {
     
     lazy private var label: UILabel = {
         let label: UILabel = .init(frame: .zero)
@@ -27,13 +27,10 @@ class SplashViewController: UIViewController {
         return label
     }()
     
-    weak private var transitioner: SplashTransitioner!
-    weak private var presenter: SplashPresenter!
+    weak private var transitioner: SplashTransitioner! 
+    weak private var presenter: SplashPresenterProtocol!
 
-    init(transition: SplashTransitioner,
-         presenter: SplashPresenter) {
-        self.transitioner = transition
-        self.presenter = presenter
+    init() {
         super.init(nibName: nil, bundle: nil)
         self.view.backgroundColor = .white
     }
@@ -67,6 +64,18 @@ class SplashViewController: UIViewController {
 
         })
 
+    }
+}
+
+extension SplashViewController: SplashTransitionerInjectable {
+    func inject(transitioner: SplashTransitioner) {
+        self.transitioner = transitioner
+    }
+}
+
+extension SplashViewController: SplashPresenterInjectable{
+    func inject(presenter: SplashPresenterProtocol) {
+        self.presenter = presenter
     }
 }
 

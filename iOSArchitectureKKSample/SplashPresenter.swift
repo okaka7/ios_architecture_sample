@@ -17,6 +17,10 @@ protocol SplashPresenterOutput: class {
     
 }
 
+protocol SplashPresenterInjectable: class {
+    func inject(presenter: SplashPresenterProtocol)
+}
+
 
 final class SplashPresenter: SplashPresenterProtocol {
     let output: SplashPresenterOutput

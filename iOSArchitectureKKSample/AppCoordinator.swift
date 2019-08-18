@@ -12,6 +12,10 @@ protocol SplashTransitioner: class {
     func transition()
 }
 
+protocol SplashTransitionerInjectable: class {
+    func inject(transitioner: SplashTransitioner)
+}
+
 final class AppCoordinator: Coordinator, SplashTransitioner {
     
     enum LaunchType {
@@ -19,20 +23,16 @@ final class AppCoordinator: Coordinator, SplashTransitioner {
     }
     
     private let window: UIWindow
-    private lazy var rootViewController: SplashViewController = {
-        
-        return SplashViewController(transition: self,
-                                    presenter: self.presenter)
-    }()
+    private let rootViewController: SplashViewController
     private var mainTabCoordinator: MainTabCoordinator
-    private weak var presenter: SplashPresenter!
-    
+ 
     init(window: UIWindow,
-         mainTabCoordinator mainTab: MainTabCoordinator = MainTabCoordinator(),
-         presenter: SplashPresenter) {
+         rootVC: SplashViewController,
+         mainTabCoordinator mainTab: MainTabCoordinator = MainTabCoordinator()
+        ) {
         self.window = window
-        mainTabCoordinator = mainTab
-        self.presenter = presenter
+        self.rootViewController = rootVC
+        self.mainTabCoordinator = mainTab
     }
     
     func start() {
@@ -42,6 +42,7 @@ final class AppCoordinator: Coordinator, SplashTransitioner {
     
     func transition() {
         self.mainTabCoordinator.start()
-        self.rootViewController.present(self.mainTabCoordinator.mainTabBarController, animated: false)
+        self.rootViewController.present(self.mainTabCoordinator.mainTabBarController,
+                                        animated: false)
     }
 }
