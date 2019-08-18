@@ -20,13 +20,19 @@ final class AppCoordinator: Coordinator, SplashTransitioner {
     
     private let window: UIWindow
     private lazy var rootViewController: SplashViewController = {
-        return SplashViewController(transition: self)
+        
+        return SplashViewController(transition: self,
+                                    presenter: self.presenter)
     }()
     private var mainTabCoordinator: MainTabCoordinator
+    private weak var presenter: SplashPresenter!
     
-    init(window: UIWindow, mainTabCoordinator mainTab: MainTabCoordinator = MainTabCoordinator()) {
+    init(window: UIWindow,
+         mainTabCoordinator mainTab: MainTabCoordinator = MainTabCoordinator(),
+         presenter: SplashPresenter) {
         self.window = window
         mainTabCoordinator = mainTab
+        self.presenter = presenter
     }
     
     func start() {

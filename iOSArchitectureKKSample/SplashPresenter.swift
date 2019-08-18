@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+
+protocol SplashPresenterProtocol: class {
+    
+}
+
+protocol SplashPresenterOutput: class {
+    
+}
+
+
+final class SplashPresenter: SplashPresenterProtocol {
+    let output: SplashPresenterOutput
+    
+    init (output: SplashPresenterOutput) {
+        self.output = output
+    }
+}

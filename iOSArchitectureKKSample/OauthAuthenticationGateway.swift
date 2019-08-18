@@ -28,7 +28,7 @@ struct OauthAuthenticationGateway: AuthenticationRepository {
         return URL(string: baseURL + path)!
     }()
     
-    private weak var authenticationView: UnsplashAuthenticationOutput?
+   // private weak var authenticationView: UnsplashAuthenticationOutput?
     
     
     private var authenticationURL: URL? {
@@ -50,11 +50,12 @@ struct OauthAuthenticationGateway: AuthenticationRepository {
         return url
     }
     
-    init(outputView: UnsplashAuthenticationOutput) {
+    //outputView: UnsplashAuthenticationOutput
+    init() {
         let data = Bundle.main.infoDictionary!
         let unsplashAPIKeys = data["Unsplash API"] as? [String: String]
         self.clientID = unsplashAPIKeys?["Access Key"]
-        self.authenticationView = outputView
+       // self.authenticationView = outputView
     }
     
    
@@ -64,6 +65,6 @@ struct OauthAuthenticationGateway: AuthenticationRepository {
             return
         }
         
-        self.authenticationView?.openAuthenticationURL(unsplashOauthURL)
+       // self.authenticationView?.openAuthenticationURL(unsplashOauthURL)
     }
 }

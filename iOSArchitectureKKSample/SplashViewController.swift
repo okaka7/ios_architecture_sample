@@ -9,9 +9,12 @@
 import UIKit
 import KeychainAccess
 
-protocol UnsplashAuthenticationOutput where Self: UIViewController {
-    func openAuthenticationURL(_ url: URL, completionHandler completion: ((Bool) -> Void)?)
-}
+//protocol UnsplashAuthenticationOutput where Self: UIViewController {
+//    func openAuthenticationURL(_ url: URL, completionHandler completion: ((Bool) -> Void)?)
+//}
+
+
+
 
 
 class SplashViewController: UIViewController {
@@ -24,10 +27,13 @@ class SplashViewController: UIViewController {
         return label
     }()
     
-    weak var transitioner: SplashTransitioner?
+    weak private var transitioner: SplashTransitioner!
+    weak private var presenter: SplashPresenter!
 
-    init(transition: SplashTransitioner) {
+    init(transition: SplashTransitioner,
+         presenter: SplashPresenter) {
         self.transitioner = transition
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
         self.view.backgroundColor = .white
     }
@@ -64,13 +70,13 @@ class SplashViewController: UIViewController {
     }
 }
 
-extension SplashViewController: UnsplashAuthenticationOutput { }
-
-extension UnsplashAuthenticationOutput {
-    func openAuthenticationURL(_ url: URL, completionHandler completion: ((Bool) -> Void)? = nil) {
-        UIApplication.shared.openURLIfPossible(url,
-                                               options: [:],
-                                               completionHandler: completion)
-        
-    }
-}
+//extension SplashViewController: UnsplashAuthenticationOutput { }
+//
+//extension UnsplashAuthenticationOutput {
+//    func openAuthenticationURL(_ url: URL, completionHandler completion: ((Bool) -> Void)? = nil) {
+//        UIApplication.shared.openURLIfPossible(url,
+//                                               options: [:],
+//                                               completionHandler: completion)
+//
+//    }
+//}

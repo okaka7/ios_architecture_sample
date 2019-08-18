@@ -11,7 +11,7 @@ import Moya
 import RxSwift
 import RxMoya
 
-struct UnsplashAPIProvider {
+final class UnsplashAPIProvider {
     
     let tokenRepository: APITokenRepository
     
@@ -110,7 +110,7 @@ extension UnsplashAPIProvider: UnsplashCollectionClient {
         return request(target)
     }
     
-    static func requestEditPhotoInCollection(isAdding: Bool,
+    func requestEditPhotoInCollection(isAdding: Bool,
                                              collectionID: String,
                                              photoID: String) -> Single<UnsplashEditPhotoInCollectionTarget.Response> {
         let target: UnsplashEditPhotoInCollectionTarget = .init(isAdding: isAdding,

@@ -28,6 +28,7 @@
 		E55E19BF2308E066007C1C57 /* UnsplashAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19BE2308E066007C1C57 /* UnsplashAPIProtocol.swift */; };
 		E55E19C1230991BC007C1C57 /* OauthTokenManageGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C0230991BC007C1C57 /* OauthTokenManageGateway.swift */; };
 		E55E19C5230998DD007C1C57 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C4230998DD007C1C57 /* SplashPresenter.swift */; };
+		E55E19C72309A5F1007C1C57 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C62309A5F1007C1C57 /* Builder.swift */; };
 		E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68322B28B8400AE6940 /* Coordinator.swift */; };
 		E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68522B28BC400AE6940 /* AppCoordinator.swift */; };
 		E571E6F822B8325B0032A748 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */; };
@@ -134,6 +135,7 @@
 		E55E19BE2308E066007C1C57 /* UnsplashAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPIProtocol.swift; sourceTree = "<group>"; };
 		E55E19C0230991BC007C1C57 /* OauthTokenManageGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthTokenManageGateway.swift; sourceTree = "<group>"; };
 		E55E19C4230998DD007C1C57 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		E55E19C62309A5F1007C1C57 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		E56FD68322B28B8400AE6940 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E56FD68522B28BC400AE6940 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				E592297B22AE65E8003EC30C /* AppDelegate.swift */,
+				E55E19C62309A5F1007C1C57 /* Builder.swift */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -1032,6 +1035,7 @@
 				E57915D622F88D6A009BCE95 /* UnsplashUserPhotosTarget.swift in Sources */,
 				E592297C22AE65E8003EC30C /* AppDelegate.swift in Sources */,
 				E57DEECE22C48CB300B0AAA1 /* R.generated.swift in Sources */,
+				E55E19C72309A5F1007C1C57 /* Builder.swift in Sources */,
 				E5C5646D22F18EDC00DD9401 /* UnsplashUserValueObject.swift in Sources */,
 				E57737A022FECEE400559D37 /* UnsplashErrorValueObject.swift in Sources */,
 				E592E73222FF026300AECEC4 /* UnsplashCollectionPhotos.swift in Sources */,
