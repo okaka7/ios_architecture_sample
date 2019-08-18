@@ -13,7 +13,7 @@ protocol AuthenticationClient {
 }
 
 
-struct UnsplashAuthenticater {
+struct UnsplashAuthenticater: AuthenticationClient {
     private let clientID: String?
     private let redirectURL: String = {
         let scheme = R.string.localizable.appScheme()

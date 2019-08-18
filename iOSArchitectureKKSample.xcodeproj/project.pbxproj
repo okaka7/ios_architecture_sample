@@ -30,6 +30,8 @@
 		E55E19C5230998DD007C1C57 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C4230998DD007C1C57 /* SplashPresenter.swift */; };
 		E55E19C72309A5F1007C1C57 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C62309A5F1007C1C57 /* Builder.swift */; };
 		E55E19C92309ACAB007C1C57 /* AuthenticationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C82309ACAB007C1C57 /* AuthenticationClient.swift */; };
+		E55E19CB2309B149007C1C57 /* TokenRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19CA2309B149007C1C57 /* TokenRequestClient.swift */; };
+		E55E19CD2309BFC1007C1C57 /* ViewControllerGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19CC2309BFC1007C1C57 /* ViewControllerGettable.swift */; };
 		E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68322B28B8400AE6940 /* Coordinator.swift */; };
 		E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68522B28BC400AE6940 /* AppCoordinator.swift */; };
 		E571E6F822B8325B0032A748 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */; };
@@ -138,6 +140,8 @@
 		E55E19C4230998DD007C1C57 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		E55E19C62309A5F1007C1C57 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		E55E19C82309ACAB007C1C57 /* AuthenticationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationClient.swift; sourceTree = "<group>"; };
+		E55E19CA2309B149007C1C57 /* TokenRequestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequestClient.swift; sourceTree = "<group>"; };
+		E55E19CC2309BFC1007C1C57 /* ViewControllerGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerGettable.swift; sourceTree = "<group>"; };
 		E56FD68322B28B8400AE6940 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E56FD68522B28BC400AE6940 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				E55E19C82309ACAB007C1C57 /* AuthenticationClient.swift */,
+				E55E19CA2309B149007C1C57 /* TokenRequestClient.swift */,
 				E55E19BE2308E066007C1C57 /* UnsplashAPIProtocol.swift */,
 				E57950B12308536A00000FD8 /* Provider */,
 				E5C5647722F1BB6000DD9401 /* Target */,
@@ -333,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				E57826DB22D8D070002499A9 /* UIApplication+openURL.swift */,
+				E55E19CC2309BFC1007C1C57 /* ViewControllerGettable.swift */,
 				E57826DF22D8DA01002499A9 /* NSObject+ClassName.swift */,
 				E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift */,
 			);
@@ -1003,6 +1009,7 @@
 				E57826E022D8DA01002499A9 /* NSObject+ClassName.swift in Sources */,
 				E57915DE22F8A3B2009BCE95 /* UnsplashLikePhotoTarget.swift in Sources */,
 				E592E73622FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift in Sources */,
+				E55E19CB2309B149007C1C57 /* TokenRequestClient.swift in Sources */,
 				E592297E22AE65E8003EC30C /* SplashViewController.swift in Sources */,
 				E57950A52307EBCF00000FD8 /* PhotoUseCase.swift in Sources */,
 				E5C5647322F1947C00DD9401 /* OauthTokenRequestGateway.swift in Sources */,
@@ -1028,6 +1035,7 @@
 				E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */,
 				E5521F4C22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift in Sources */,
 				E57BD50522C4B58B00FE44D4 /* ColourSettingCoordinator.swift in Sources */,
+				E55E19CD2309BFC1007C1C57 /* ViewControllerGettable.swift in Sources */,
 				E57826E622D8E0CF002499A9 /* LocalCacheKey.swift in Sources */,
 				E57915D822F89743009BCE95 /* UnsplashUserLikesTarget.swift in Sources */,
 				E592E73022FF01E800AECEC4 /* UnsplashCollection.swift in Sources */,

@@ -12,8 +12,6 @@ protocol AuthenticationRepository {
     func authenticate()
 }
 
-protocol UnsplashTokenRequestReposiotry {
-    static func requestToken(code: String,
-                             onSuccess successHandler: @escaping (UnsplashTokenTarget.Response) -> Void,
-                             onError errorHandler: (Error) -> Void)
+protocol TokenRequestReposiotry {
+    func requestToken(code: String)
 }

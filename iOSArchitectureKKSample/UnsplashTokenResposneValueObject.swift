@@ -10,7 +10,9 @@
 
 import Foundation
 
-struct UnsplashTokenResposneValueObject: Codable {
+protocol TokenValueObject {}
+
+struct UnsplashTokenResposneValueObject: Codable, TokenValueObject {
     let accessToken, tokenType, scope: String
     let createdAt: Int
 

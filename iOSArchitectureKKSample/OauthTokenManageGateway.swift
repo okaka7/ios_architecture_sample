@@ -23,6 +23,4 @@ struct OauthTokenManageGateWay: APITokenRepository {
     func fetchToken() -> String? {
         return self.keychainStore.load(key: R.string.localizable.unsplashToken())
     }
-    
-    
 }

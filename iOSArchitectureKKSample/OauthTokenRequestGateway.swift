@@ -7,40 +7,42 @@
 //
 
 import Foundation
+import Result
 
-struct OauthTokenRequestGateway: UnsplashTokenRequestReposiotry {
-    static func getCode(from components: URLComponents) -> String? {
+protocol CodeGettable {
+    func getCode(from components: URLComponents) -> String?
+}
+
+extension CodeGettable {
+    func getCode(from components: URLComponents) -> String? {
         return components.queryItems?.getFirstQueryValue("code") as? String
     }
+}
+
+protocol TokenRequestable: class {
+    func tokenRequest(with urlComponents: URLComponents)
+}
+
+struct OauthTokenRequestGateway: TokenRequestReposiotry {
     
-    let code: String
+    let tokenRequestClient: TokenRequestClient
     
-    let tokenRepository: APITokenRepository
-    
-    func requestToken(onSuccess successHandler: @escaping (UnsplashTokenTarget.Response) -> Void,
-                      onError errorHandler: (Error) -> Void) {
-        
-        _ = Repository.UnsplashOauth
-            .tokenRequest(code: self.code)
-            .subscribe(
-                onSuccess: { response in
-                    successHandler(response)
-                    #if DEBUG
-                    log.debug("saveToken!!!!")
-                    #endif
-            },
-                onError: {error in
-                     #if DEBUG
-                    log.error(error, context: "TokenRequestError")
-                     #endif
-            })
+    func requestToken(code: String) {
+        tokenRequestClient.request(code: code,
+                                   onSuccess: { tokenObject in
+                                        #if DEBUG
+                                        log.debug("saveToken!!!!")
+                                        #endif
+                                    },
+                                    onError: { error in
+                                        #if DEBUG
+                                        log.error(error, context: "TokenRequestError")
+                                        #endif
+                                    })
     }
     
-    init(tokenRepository: APITokenRepository) {
-        self.tokenRepository = tokenRepository
-    }
     
-    func saveToken(_ token: String) {
-        tokenRepository.saveUnsplashToken(token)
+    init(tokenRequestClient: TokenRequestClient) {
+        self.tokenRequestClient = tokenRequestClient
     }
 }
