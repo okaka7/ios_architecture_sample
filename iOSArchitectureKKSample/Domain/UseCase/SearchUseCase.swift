@@ -19,3 +19,5 @@ protocol SearchUsecaseInputPort {
     func searchPhotos(query: String)
     func selectPhoto(id: String)
 }
+
+
