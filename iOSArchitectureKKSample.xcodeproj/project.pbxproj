@@ -264,7 +264,7 @@
 			name = Collection;
 			sourceTree = "<group>";
 		};
-		E56FD68222B28B2A00AE6940 /* WireFrame */ = {
+		E56FD68222B28B2A00AE6940 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
 				E56FD68322B28B8400AE6940 /* Coordinator.swift */,
@@ -276,7 +276,7 @@
 				E57BD50422C4B58B00FE44D4 /* ColourSettingCoordinator.swift */,
 				E57BD50622C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift */,
 			);
-			name = WireFrame;
+			name = Coordinator;
 			sourceTree = "<group>";
 		};
 		E571E6F422B8324B0032A748 /* Frameworks */ = {
@@ -589,7 +589,7 @@
 				E57950992307C45700000FD8 /* Domain */,
 				E579509F2307DBF800000FD8 /* Presentation */,
 				E57826E122D8E07F002499A9 /* Utility */,
-				E56FD68222B28B2A00AE6940 /* WireFrame */,
+				E56FD68222B28B2A00AE6940 /* Coordinator */,
 				E57826D622D8C977002499A9 /* Extension */,
 				E592298222AE65E9003EC30C /* Assets.xcassets */,
 				E57DEECD22C48CB300B0AAA1 /* R.generated.swift */,
