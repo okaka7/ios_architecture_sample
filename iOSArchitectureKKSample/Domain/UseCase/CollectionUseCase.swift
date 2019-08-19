@@ -9,6 +9,7 @@
 import Foundation
 
 protocol CollectionUseCaseInputPort: CollectionSelectable {
+    func showCollectionPhotos(id: String)
     func showRelatedCollections(id: String)
 }
 
