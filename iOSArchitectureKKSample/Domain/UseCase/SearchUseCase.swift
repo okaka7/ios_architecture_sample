@@ -20,7 +20,7 @@ protocol SearchUsecaseInputPort: PhotoSelectable {
     func searchPhotos(query: String)
 }
 
-protocol SearchUsecaseOutputPort {
+protocol SearchUsecaseOutputPort: PhotoTransitionable {
     func setupCategoryPhotos(photos: [PhotoObject])
     func slideUpCategoryView()
     func showSearchResult(photos: [PhotoObject])

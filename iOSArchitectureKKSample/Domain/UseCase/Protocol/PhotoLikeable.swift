@@ -8,7 +8,14 @@
 
 import Foundation
 
-protocol PhotoLikable {
+protocol PhotoLikeable {
     func likePhoto(id: String)
     func removeLikePhoto(id: String)
 }
+
+protocol PhotoLikeUpdatale {
+    func likePhoto(id: String)
+    func removeLikePhoto(id: String)
+}
+
+

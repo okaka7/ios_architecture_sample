@@ -8,13 +8,12 @@
 
 import Foundation
 
-protocol PhotoUseCaseInputPort: PhotoSelectable, PhotoLikable, CollectionEditable, PhotoDownloadable {
+protocol PhotoUseCaseInputPort: PhotoSelectable, PhotoLikeable, CollectionEditable, PhotoDownloadable {
     func showDetail()
     func otherPhotosSlideUp()
 }
 
-protocol PhotoUseCaseOutputPort {
+protocol PhotoUseCaseOutputPort: PhotoLikeUpdatale, PhotoTransitionable {
     func showDetail()
     func slideUpOtherPhotoView()
-    func showPhoto(_ photo: PhotoObject)
 }

@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol PhotoDetailUseCaseInputPort: PhotoLikable, CollectionEditable, PhotoDownloadable {
+protocol PhotoDetailUseCaseInputPort: PhotoLikeable, CollectionEditable, PhotoDownloadable {
     
 }
 
-protocol PhotoDetailUseCaseOutputPort {
+protocol PhotoDetailUseCaseOutputPort: PhotoLikeUpdatale {
     
 }
