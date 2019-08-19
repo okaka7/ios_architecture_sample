@@ -8,21 +8,19 @@
 
 import Foundation
 
-protocol AuthenticationUseCaseInputPort {
-    
-}
+
 
 protocol AuthenticationUseCaseOutputPort {
     func openURL(url: URL)
 }
 
-protocol AuthenticationUseCase {
+protocol AuthenticationUseCaseInputPort {
     var authenticator: Authenticater { get }
     var output: AuthenticationUseCaseOutputPort { get set }
     func openAuthenticationURL()
 }
 
-extension AuthenticationUseCase {
+extension AuthenticationUseCaseInputPort {
     func openAuthenticationURL() {
         guard let url = authenticator.url else {
             return
