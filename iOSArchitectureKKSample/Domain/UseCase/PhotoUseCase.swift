@@ -10,10 +10,10 @@ import Foundation
 
 protocol PhotoUseCaseInputPort: PhotoSelectable, PhotoLikeable, CollectionEditable, PhotoDownloadable {
     func showDetail()
-    func otherPhotosSlideUp()
+    func slideRelatedPhotosView(up: Bool)
 }
 
 protocol PhotoUseCaseOutputPort: PhotoLikeUpdatale, PhotoTransitionable, UserTransitionable {
     func showDetail()
-    func slideUpOtherPhotoView()
+    func slideRelatedPhotosView(up: Bool)
 }
