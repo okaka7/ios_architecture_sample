@@ -9,7 +9,7 @@
 import Foundation
 
 protocol CollectionUseCaseInputPort {
-    
+    func showRelatedCollections(id: String)
 }
 
 protocol CollectionUseCaseOutputPort {
