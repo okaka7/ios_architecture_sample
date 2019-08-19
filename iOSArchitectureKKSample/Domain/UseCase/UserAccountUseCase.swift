@@ -15,7 +15,7 @@ protocol UserAccountUseCaseInputPort: PhotoSelectable, CollectionSelectable {
     func createCollection()
 }
 
-protocol UserAccountUseCaseOutputPort {
+protocol UserAccountUseCaseOutputPort: CollectionTransitionable {
     func selectPhotos()
     func selectCollections()
     func selectLikes()
