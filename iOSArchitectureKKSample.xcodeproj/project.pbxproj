@@ -87,7 +87,7 @@
 		E5B8A2302309C7A900AE29E8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A22F2309C7A900AE29E8 /* Extension.swift */; };
 		E5B8A2322309C81100AE29E8 /* UIViewController.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2312309C81100AE29E8 /* UIViewController.Extension.swift */; };
 		E5B8A2362309C8A800AE29E8 /* ViewControlelrGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2352309C8A800AE29E8 /* ViewControlelrGettable.swift */; };
-		E5B8A2382309CEF600AE29E8 /* TokenRequestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2372309CEF600AE29E8 /* TokenRequestUseCase.swift */; };
+		E5B8A2382309CEF600AE29E8 /* TokenRequestUseCaseInputPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2372309CEF600AE29E8 /* TokenRequestUseCaseInputPort.swift */; };
 		E5B8A23A2309DC7100AE29E8 /* AuthenticateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */; };
 		E5B8A23C2309E4A600AE29E8 /* AuthenticationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A23B2309E4A600AE29E8 /* AuthenticationPresenter.swift */; };
 		E5B8A23E2309E8E000AE29E8 /* PhotoUIValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A23D2309E8E000AE29E8 /* PhotoUIValueObject.swift */; };
@@ -212,7 +212,7 @@
 		E5B8A22F2309C7A900AE29E8 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		E5B8A2312309C81100AE29E8 /* UIViewController.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.Extension.swift; sourceTree = "<group>"; };
 		E5B8A2352309C8A800AE29E8 /* ViewControlelrGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControlelrGettable.swift; sourceTree = "<group>"; };
-		E5B8A2372309CEF600AE29E8 /* TokenRequestUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequestUseCase.swift; sourceTree = "<group>"; };
+		E5B8A2372309CEF600AE29E8 /* TokenRequestUseCaseInputPort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequestUseCaseInputPort.swift; sourceTree = "<group>"; };
 		E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUseCase.swift; sourceTree = "<group>"; };
 		E5B8A23B2309E4A600AE29E8 /* AuthenticationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenter.swift; sourceTree = "<group>"; };
 		E5B8A23D2309E8E000AE29E8 /* PhotoUIValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUIValueObject.swift; sourceTree = "<group>"; };
@@ -589,7 +589,7 @@
 			isa = PBXGroup;
 			children = (
 				E579509A2307CB1E00000FD8 /* HomeUseCase.swift */,
-				E5B8A2372309CEF600AE29E8 /* TokenRequestUseCase.swift */,
+				E5B8A2372309CEF600AE29E8 /* TokenRequestUseCaseInputPort.swift */,
 				E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */,
 				E57950A12307E2C800000FD8 /* SearchUseCase.swift */,
 				E57950A42307EBCF00000FD8 /* PhotoUseCase.swift */,
@@ -1019,7 +1019,7 @@
 				E5C5647522F1BAB100DD9401 /* UnsplashOauthAPI.swift in Sources */,
 				E5B8A2302309C7A900AE29E8 /* Extension.swift in Sources */,
 				E55E19C1230991BC007C1C57 /* OauthTokenManageGateway.swift in Sources */,
-				E5B8A2382309CEF600AE29E8 /* TokenRequestUseCase.swift in Sources */,
+				E5B8A2382309CEF600AE29E8 /* TokenRequestUseCaseInputPort.swift in Sources */,
 				E57915CE22F85AD4009BCE95 /* UnsplashAPIProvider.swift in Sources */,
 				E5B8A2362309C8A800AE29E8 /* ViewControlelrGettable.swift in Sources */,
 				E5B8A23E2309E8E000AE29E8 /* PhotoUIValueObject.swift in Sources */,

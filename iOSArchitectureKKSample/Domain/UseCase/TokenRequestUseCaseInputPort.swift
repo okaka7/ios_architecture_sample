@@ -8,14 +8,18 @@
 
 import Foundation
 
-protocol TokenRequestUseCase {
+protocol TokenRequestUseCaseInputPort {
     var tokenRequestRepository: TokenRequestReposiotry { get set }
     func requestToken(code: String)
 }
 
-extension TokenRequestUseCase {
+extension TokenRequestUseCaseInputPort {
     func requestToken(code: String) {
         tokenRequestRepository.requestToken(code: code)
     }
+}
+
+protocol TokenRequestUseCaseOutputPort {
+    
 }
 

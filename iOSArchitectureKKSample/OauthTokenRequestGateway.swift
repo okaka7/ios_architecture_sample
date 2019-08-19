@@ -25,7 +25,7 @@ protocol TokenRequestEmitter: class {
 }
 
 protocol TokenRequestEmitAcceptable: class, CodeGettable {
-    var tokenRequestUseCase: TokenRequestUseCase { get set }
+    var tokenRequestUseCase: TokenRequestUseCaseInputPort { get set }
     func tokenRequest(with urlComponents: URLComponents)
 }
 
