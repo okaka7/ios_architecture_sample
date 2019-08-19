@@ -13,3 +13,9 @@ protocol PhotoUseCaseInputPort {
     func otherPhotosSlideUp()
     func selectPhoto(id: String)
 }
+
+protocol PhotoUseCaseOutputPort {
+    func showDetail()
+    func slideUp()
+    func showShoto(_ photo: PhotoUIValueObject)
+}
