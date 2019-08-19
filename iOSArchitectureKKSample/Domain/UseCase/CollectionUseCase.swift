@@ -12,5 +12,5 @@ protocol CollectionUseCaseInputPort: CollectionSelectable {
     func showRelatedCollections(id: String)
 }
 
-protocol CollectionUseCaseOutputPort {
+protocol CollectionUseCaseOutputPort: PhotoTransitionable {
 }
