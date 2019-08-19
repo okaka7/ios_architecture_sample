@@ -8,9 +8,8 @@
 
 import Foundation
 
-protocol UserAccountUseCase: PhotoSelectable {
+protocol UserAccountUseCase: PhotoSelectable, CollectionSelectable {
     func selectPhotos()
     func selectCollections()
     func selectLikes()
-    
 }
