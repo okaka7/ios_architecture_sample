@@ -11,3 +11,7 @@ import Foundation
 protocol PhotoSelectable {
     func selectImage(id: String)
 }
+
+protocol PhotoTransitionable {
+    func transition(to photo: PhotoUIValueObject)
+}

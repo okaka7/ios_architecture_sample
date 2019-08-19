@@ -14,10 +14,9 @@ enum Category: Int {
     case fashion
 }
 
-protocol SearchUsecaseInputPort {
+protocol SearchUsecaseInputPort: PhotoSelectable {
     func openCategorySlide()
     func searchPhotos(query: String)
-    func selectPhoto(id: String)
 }
 
 

@@ -10,8 +10,6 @@ import Foundation
 
 protocol CollectionUseCaseInputPort {
     func openCollection(id: String)
-    func addPhoto(id: String, into collectionID: String)
-    func removePhoto(id: String, from collectionID: String)
     
 }
 

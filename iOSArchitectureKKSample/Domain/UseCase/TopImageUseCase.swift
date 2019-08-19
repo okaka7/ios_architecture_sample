@@ -14,8 +14,8 @@ protocol TopImageUseCaseInputPort: PhotoSelectable {
     func switchImage(id: String)
 }
 
-protocol TopImageUseCaseOutputPort {
-    func showUnage(_ image: PhotoUIValueObject)
+protocol TopImageUseCaseOutputPort: PhotoTransitionable {
+
     func switchImage(_ image: PhotoUIValueObject)
 }
 
