@@ -9,9 +9,9 @@
 import Foundation
 
 protocol PhotoDetailUseCaseInputPort: PhotoLikeable, CollectionEditable, PhotoDownloadable {
-    
+    func showInfo()
 }
 
 protocol PhotoDetailUseCaseOutputPort: PhotoLikeUpdatale, UserTransitionable {
-    
+    func showInfo()
 }
