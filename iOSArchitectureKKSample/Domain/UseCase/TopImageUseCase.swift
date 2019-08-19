@@ -9,13 +9,14 @@
 import Foundation
 
 
-protocol TopImageUseCaseInputPort {
+protocol TopImageUseCaseInputPort: PhotoSelectable {
     func fetchTopImages()
-    func switchTopImage(id: String)
-    func selectTopImage(id: String)
+    func switchImage(id: String)
 }
 
 protocol TopImageUseCaseOutputPort {
     func showUnage(_ image: PhotoUIValueObject)
     func switchImage(_ image: PhotoUIValueObject)
 }
+
+
