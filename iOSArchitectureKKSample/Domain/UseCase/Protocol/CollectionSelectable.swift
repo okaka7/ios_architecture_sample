@@ -11,3 +11,7 @@ import Foundation
 protocol CollectionSelectable {
     func selectCollection(id: String)
 }
+
+protocol CollectionTransitionable {
+    func transitionToCollection(id: String)
+}
