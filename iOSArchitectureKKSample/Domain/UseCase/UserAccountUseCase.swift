@@ -8,8 +8,6 @@
 
 import Foundation
 
-protocol 
-
 protocol UserAccountUseCase: PhotoSelectable {
     func selectPhotos()
     func selectCollections()

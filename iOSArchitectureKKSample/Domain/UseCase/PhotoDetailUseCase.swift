@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol PhotoDetailUseCase: PhotoLikable, CollectionEditable {
+protocol PhotoDetailUseCase: PhotoLikable, CollectionEditable, PhotoDownloadable {
     
 }

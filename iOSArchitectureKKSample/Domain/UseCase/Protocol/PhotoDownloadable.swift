@@ -1,5 +1,5 @@
 //
-//  CollectionUseCase.swift
+//  PhotoDownloadable.swift
 //  iOSArchitectureKKSample
 //
 //  Created by Kota Kawanishi on 2019/08/19.
@@ -8,9 +8,6 @@
 
 import Foundation
 
-protocol CollectionUseCaseInputPort {
-    
-}
-
-protocol CollectionUseCaseOutputPort {
+protocol PhotoDownloadable {
+    func downloadPhoto(id: String)
 }
