@@ -13,8 +13,8 @@ import UIKit
 final class Builder {
     static func buildAppCoordinator(window: UIWindow) -> AppCoordinator {
         let vc: SplashViewController = .init()
-        let presenter: SplashPresenterProtocol = SplashPresenter.init(output: vc)
-        vc.inject(presenter: presenter)
+        let viewAdapter: SplashController = SplashViewAdapter.init(output: vc)
+        vc.inject(controller: viewAdapter)
         
         let coordinator: AppCoordinator = .init(window: window,
                                                 rootVC: vc)

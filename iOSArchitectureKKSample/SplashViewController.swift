@@ -28,7 +28,7 @@ class SplashViewController: UIViewController, SplashPresenterOutput {
     }()
     
     weak private var transitioner: SplashTransitioner! 
-    weak private var presenter: SplashPresenterProtocol!
+    weak private var controller: SplashController!
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -73,9 +73,9 @@ extension SplashViewController: SplashTransitionerInjectable {
     }
 }
 
-extension SplashViewController: SplashPresenterInjectable{
-    func inject(presenter: SplashPresenterProtocol) {
-        self.presenter = presenter
+extension SplashViewController: SplashControllerInjectable{
+    func inject(controller: SplashController) {
+        self.controller = controller
     }
 }
 

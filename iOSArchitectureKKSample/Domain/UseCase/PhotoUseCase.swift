@@ -15,6 +15,6 @@ protocol PhotoUseCaseInputPort: PhotoSelectable, PhotoLikable, CollectionEditabl
 
 protocol PhotoUseCaseOutputPort {
     func showDetail()
-    func slideUp()
-    func showShoto(_ photo: PhotoUIValueObject)
+    func slideUpOtherPhotoView()
+    func showPhoto(_ photo: PhotoObject)
 }

@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 protocol AuthenticationUseCaseOutputPort {
     func openURL(url: URL)
 }

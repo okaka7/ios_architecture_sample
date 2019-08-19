@@ -9,20 +9,22 @@
 import Foundation
 
 
-protocol SplashPresenterProtocol: class {
+protocol SplashController: class {
     
 }
+
+
 
 protocol SplashPresenterOutput: class {
     
 }
 
-protocol SplashPresenterInjectable: class {
-    func inject(presenter: SplashPresenterProtocol)
+protocol SplashControllerInjectable: class {
+    func inject(controller: SplashController)
 }
 
 
-final class SplashPresenter: SplashPresenterProtocol {
+final class SplashViewAdapter: SplashController {
     let output: SplashPresenterOutput
     
     init (output: SplashPresenterOutput) {
