@@ -10,7 +10,7 @@ import Foundation
 
 
 protocol TopImageUseCaseInputPort: PhotoSelectable {
-    func fetchTopImages()
+    func showImages()
     func switchImage(id: String)
 }
 
