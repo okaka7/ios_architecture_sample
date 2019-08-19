@@ -64,6 +64,7 @@
 		E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */; };
 		E57BD50522C4B58B00FE44D4 /* ColourSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50422C4B58B00FE44D4 /* ColourSettingCoordinator.swift */; };
 		E57BD50722C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50622C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift */; };
+		E57C82EB230A85CF00F8F15C /* CollectionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C82EA230A85CF00F8F15C /* CollectionUseCase.swift */; };
 		E57DEECE22C48CB300B0AAA1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DEECD22C48CB300B0AAA1 /* R.generated.swift */; };
 		E581FBA522D346B400754098 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E581FBA422D346B400754098 /* KeychainAccess.framework */; };
 		E5867C0422C4831E009E9EF8 /* ColourWorkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5867C0322C4831E009E9EF8 /* ColourWorkDetailViewController.swift */; };
@@ -183,6 +184,7 @@
 		E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourFavoritesCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50422C4B58B00FE44D4 /* ColourSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSettingCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50622C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourWorkDetailCoordinator.swift; sourceTree = "<group>"; };
+		E57C82EA230A85CF00F8F15C /* CollectionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionUseCase.swift; sourceTree = "<group>"; };
 		E57DEECD22C48CB300B0AAA1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E581FBA422D346B400754098 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		E5867C0322C4831E009E9EF8 /* ColourWorkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourWorkDetailViewController.swift; sourceTree = "<group>"; };
@@ -593,6 +595,7 @@
 				E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */,
 				E57950A12307E2C800000FD8 /* SearchUseCase.swift */,
 				E57950A42307EBCF00000FD8 /* PhotoUseCase.swift */,
+				E57C82EA230A85CF00F8F15C /* CollectionUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1032,6 +1035,7 @@
 				E592E73622FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift in Sources */,
 				E55E19CB2309B149007C1C57 /* TokenRequestClient.swift in Sources */,
 				E592297E22AE65E8003EC30C /* SplashViewController.swift in Sources */,
+				E57C82EB230A85CF00F8F15C /* CollectionUseCase.swift in Sources */,
 				E57950A52307EBCF00000FD8 /* PhotoUseCase.swift in Sources */,
 				E5B8A23A2309DC7100AE29E8 /* AuthenticateUseCase.swift in Sources */,
 				E5C5647322F1947C00DD9401 /* OauthTokenRequestGateway.swift in Sources */,
