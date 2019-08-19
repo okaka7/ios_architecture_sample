@@ -13,7 +13,7 @@ protocol PhotoUseCaseInputPort: PhotoSelectable, PhotoLikeable, CollectionEditab
     func otherPhotosSlideUp()
 }
 
-protocol PhotoUseCaseOutputPort: PhotoLikeUpdatale, PhotoTransitionable {
+protocol PhotoUseCaseOutputPort: PhotoLikeUpdatale, PhotoTransitionable, UserTransitionable {
     func showDetail()
     func slideUpOtherPhotoView()
 }

@@ -12,6 +12,6 @@ protocol PhotoDetailUseCaseInputPort: PhotoLikeable, CollectionEditable, PhotoDo
     
 }
 
-protocol PhotoDetailUseCaseOutputPort: PhotoLikeUpdatale {
+protocol PhotoDetailUseCaseOutputPort: PhotoLikeUpdatale, UserTransitionable {
     
 }
