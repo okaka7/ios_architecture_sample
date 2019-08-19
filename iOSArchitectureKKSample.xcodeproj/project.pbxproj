@@ -66,6 +66,7 @@
 		E57BD50722C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50622C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift */; };
 		E57C82EB230A85CF00F8F15C /* CollectionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C82EA230A85CF00F8F15C /* CollectionUseCase.swift */; };
 		E57C82EE230A8E3700F8F15C /* PhotoSelectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C82ED230A8E3700F8F15C /* PhotoSelectable.swift */; };
+		E57C82F0230A8FD000F8F15C /* PhotoLikable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C82EF230A8FD000F8F15C /* PhotoLikable.swift */; };
 		E57DEECE22C48CB300B0AAA1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DEECD22C48CB300B0AAA1 /* R.generated.swift */; };
 		E581FBA522D346B400754098 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E581FBA422D346B400754098 /* KeychainAccess.framework */; };
 		E5867C0422C4831E009E9EF8 /* ColourWorkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5867C0322C4831E009E9EF8 /* ColourWorkDetailViewController.swift */; };
@@ -187,6 +188,7 @@
 		E57BD50622C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourWorkDetailCoordinator.swift; sourceTree = "<group>"; };
 		E57C82EA230A85CF00F8F15C /* CollectionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionUseCase.swift; sourceTree = "<group>"; };
 		E57C82ED230A8E3700F8F15C /* PhotoSelectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectable.swift; sourceTree = "<group>"; };
+		E57C82EF230A8FD000F8F15C /* PhotoLikable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLikable.swift; sourceTree = "<group>"; };
 		E57DEECD22C48CB300B0AAA1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E581FBA422D346B400754098 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		E5867C0322C4831E009E9EF8 /* ColourWorkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourWorkDetailViewController.swift; sourceTree = "<group>"; };
@@ -431,8 +433,6 @@
 				E57826EE22D8E20E002499A9 /* Model */,
 				E57826CD22D8AB06002499A9 /* RepositoryInterface */,
 				E57950BF2308608300000FD8 /* UseCase */,
-				E57950A02307DD2300000FD8 /* Search */,
-				E57950A32307E85800000FD8 /* Photo */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -449,20 +449,6 @@
 				E5B8A23B2309E4A600AE29E8 /* AuthenticationPresenter.swift */,
 			);
 			name = Presentation;
-			sourceTree = "<group>";
-		};
-		E57950A02307DD2300000FD8 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
-		E57950A32307E85800000FD8 /* Photo */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Photo;
 			sourceTree = "<group>";
 		};
 		E57950A62307F43A00000FD8 /* Splash */ = {
@@ -607,6 +593,7 @@
 			isa = PBXGroup;
 			children = (
 				E57C82ED230A8E3700F8F15C /* PhotoSelectable.swift */,
+				E57C82EF230A8FD000F8F15C /* PhotoLikable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1092,6 +1079,7 @@
 				E57737A022FECEE400559D37 /* UnsplashErrorValueObject.swift in Sources */,
 				E592E73222FF026300AECEC4 /* UnsplashCollectionPhotos.swift in Sources */,
 				E5C5647922F1BB8F00DD9401 /* UnsplashAPI.swift in Sources */,
+				E57C82F0230A8FD000F8F15C /* PhotoLikable.swift in Sources */,
 				E592E72A22FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift in Sources */,
 				E5291A9F22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift in Sources */,
 				E53F1E0022C0B6BB00F81CAA /* ColourSettingViewController.swift in Sources */,
