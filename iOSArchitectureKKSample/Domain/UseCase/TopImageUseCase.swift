@@ -15,8 +15,8 @@ protocol TopImageUseCaseInputPort: PhotoSelectable {
 }
 
 protocol TopImageUseCaseOutputPort: PhotoTransitionable {
-
     func switchImage(_ image: PhotoUIValueObject)
+    func showImages(_ image: [PhotoUIValueObject])
 }
 
 
