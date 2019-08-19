@@ -15,14 +15,14 @@ enum Category: Int {
 }
 
 protocol SearchUsecaseInputPort: PhotoSelectable {
-    func openCategorySlide()
+    func slideCategoryView(up: Bool)
     func fetchCategoryPhotos()
     func searchPhotos(query: String)
 }
 
 protocol SearchUsecaseOutputPort: PhotoTransitionable {
     func setupCategoryPhotos(photos: [PhotoObject])
-    func slideUpCategoryView()
+    func slideCategoryView(up: Bool)
     func showSearchResult(photos: [PhotoObject])
 }
 
