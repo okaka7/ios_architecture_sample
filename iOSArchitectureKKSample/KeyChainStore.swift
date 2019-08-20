@@ -14,7 +14,7 @@ public protocol KeychainStorable {
     func delete(key: String)
 }
 
-public class KeychainStore: KeychainStorable {
+public final class KeychainStore: KeychainStorable {
     private let keychain: Keychain
     
     public init(_ keychainServiceName: String) {
