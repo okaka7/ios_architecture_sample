@@ -38,7 +38,17 @@ final class LocalCache: LocalCacheable {
     static let shared = LocalCache()
     fileprivate let dataStore: DataStorable
     
+    func save<T: LocalCacheKeys>(key: T, value: T.Value) {
+        <#code#>
+    }
     
+    func fetch<T: LocalCacheKeys>(key: T) -> T.Value? {
+        <#code#>
+    }
+    
+    func delete<T: LocalCacheKeys>(key: T) {
+        <#code#>
+    }
     
     private init(dataStore: DataStorable = UserDefaults.standard) {}
 }
