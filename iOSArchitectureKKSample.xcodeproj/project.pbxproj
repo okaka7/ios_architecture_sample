@@ -595,7 +595,7 @@
 		E57950BF2308608300000FD8 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				E57C82EC230A8E2000F8F15C /* Protocol */,
+				E57C82EC230A8E2000F8F15C /* Common */,
 				E579509A2307CB1E00000FD8 /* WarpingPhotoUseCase.swift */,
 				E5B8A2372309CEF600AE29E8 /* TokenRequestUseCaseInputPort.swift */,
 				E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */,
@@ -608,7 +608,7 @@
 			path = UseCase;
 			sourceTree = "<group>";
 		};
-		E57C82EC230A8E2000F8F15C /* Protocol */ = {
+		E57C82EC230A8E2000F8F15C /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				E57C82ED230A8E3700F8F15C /* PhotoSelectable.swift */,
@@ -618,7 +618,7 @@
 				E57C82F9230AA29900F8F15C /* CollectionSelectable.swift */,
 				E5713F20230B0FF20033AF21 /* UserProtocol.swift */,
 			);
-			path = Protocol;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		E592296F22AE65E8003EC30C = {
