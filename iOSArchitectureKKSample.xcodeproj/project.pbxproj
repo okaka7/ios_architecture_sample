@@ -297,6 +297,13 @@
 			name = Web;
 			sourceTree = "<group>";
 		};
+		E51B85B0230D1DAA00D81DDE /* Photo Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Photo Detail";
+			sourceTree = "<group>";
+		};
 		E55E19C22309959C007C1C57 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +468,7 @@
 				E57950A82307F47900000FD8 /* Search */,
 				E57950A92307F4A800000FD8 /* Account(User) */,
 				E55E19C22309959C007C1C57 /* Photo */,
+				E51B85B0230D1DAA00D81DDE /* Photo Detail */,
 				E55E19C3230995CA007C1C57 /* Collection */,
 				E5B8A23B2309E4A600AE29E8 /* AuthenticationPresenter.swift */,
 			);
