@@ -8,14 +8,18 @@
 
 import Foundation
 
-protocol LocalCacheKeys {}
+protocol LocalCacheKeys {
+    associatedtype Value: LocalCacheValue
+    var keyValue: String { get }
+    var defaultValue: Value? { get }
+}
 
 struct LocalCacheKey<Value: LocalCacheValue>: LocalCacheKeys {
-    let rawValue: String
+    let keyValue: String
     let defaultValue: Value?
     
     fileprivate init(_ rawValue: String, defaultValue: Value?) {
-        self.rawValue = rawValue
+        self.keyValue = rawValue
         self.defaultValue = defaultValue
     }
 }

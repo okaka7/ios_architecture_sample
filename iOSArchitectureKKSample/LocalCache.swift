@@ -26,16 +26,15 @@ protocol LocalCacheable: class {
 
 
 final class LocalCache: LocalCacheable {
-    
     static let shared = LocalCache()
     private let userDefaults = UserDefaults.standard
     
     subscript<T: LocalCacheValue>(_ key: LocalCacheKey<T>) -> T? {
         set {
-            T.set(key: key.rawValue, value: newValue, cache: self)
+            T.set(key: key.keyValue, value: newValue, cache: self)
         }
         get {
-            return T.get(key: key.rawValue, cache: self) ?? key.defaultValue
+            return T.get(key: key.keyValue, cache: self) ?? key.defaultValue
         }
     }
     private init() {}
