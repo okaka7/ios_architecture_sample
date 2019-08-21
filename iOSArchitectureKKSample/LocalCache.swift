@@ -30,6 +30,7 @@ protocol LocalCacheable: class {
 }
 
 public protocol DataStorable {}
+extension UserDefaults: DataStorable {}
 
 
 final class LocalCache: LocalCacheable {
