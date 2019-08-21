@@ -21,13 +21,11 @@ protocol LocalCacheGettable {
 typealias LocalCacheValue = LocalCacheGettable & LocalCacheSettable
 
 protocol LocalCacheable: class {
-    associatedtype Data: Codable
-    associatedtype Key: LocalCacheKeys
-    func save(key: Key, value: Data)
+    func save<T: LocalCacheKeys>(key: T, value: T.Value)
     
-    func fetch(key: Key) -> Data?
+    func fetch<T: LocalCacheKeys>(key: T) -> T.Value?
     
-    func delete(key: Key)
+    func delete<T: LocalCacheKeys>(key: T)
 }
 
 public protocol DataStorable {}
@@ -35,29 +33,13 @@ extension UserDefaults: DataStorable {}
 
 
 final class LocalCache: LocalCacheable {
-    func save<T>(key: String, value: T) where T : Encodable {
-        <#code#>
-    }
     
-    func fetch<T>(key: String) -> T? where T : Decodable {
-        <#code#>
-    }
-    
-    func delete(key: String) {
-        <#code#>
-    }
     
     static let shared = LocalCache()
     fileprivate let dataStore: DataStorable
     
-    subscript<T: LocalCacheValue>(_ key: LocalCacheKey<T>) -> T? {
-        set {
-            T.set(key: key.keyValue, value: newValue, cache: self)
-        }
-        get {
-            return T.get(key: key.keyValue, cache: self) ?? key.defaultValue
-        }
-    }
+    
+    
     private init(dataStore: DataStorable = UserDefaults.standard) {}
 }
 
