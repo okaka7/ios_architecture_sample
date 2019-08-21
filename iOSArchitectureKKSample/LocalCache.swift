@@ -29,6 +29,7 @@ protocol LocalCacheable: class {
     init(dataStore: DataStorable)
 }
 
+public protocol DataStorable {}
 
 
 final class LocalCache: LocalCacheable {
