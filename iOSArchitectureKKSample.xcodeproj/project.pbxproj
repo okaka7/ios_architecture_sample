@@ -361,14 +361,14 @@
 			name = Unsplash;
 			sourceTree = "<group>";
 		};
-		E57826CD22D8AB06002499A9 /* RepositoryInterface */ = {
+		E57826CD22D8AB06002499A9 /* Repository(IF) */ = {
 			isa = PBXGroup;
 			children = (
 				E57826CE22D8AB20002499A9 /* UnsplashRepository.swift */,
 				E57950BD23085EE000000FD8 /* UnsplashOauthRepository.swift */,
 				E57950B72308594400000FD8 /* TokenRepository.swift */,
 			);
-			name = RepositoryInterface;
+			name = "Repository(IF)";
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -447,7 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				E57826EE22D8E20E002499A9 /* Model */,
-				E57826CD22D8AB06002499A9 /* RepositoryInterface */,
+				E57826CD22D8AB06002499A9 /* Repository(IF) */,
 				E57950BF2308608300000FD8 /* UseCase */,
 			);
 			path = Domain;
