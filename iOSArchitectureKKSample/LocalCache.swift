@@ -21,8 +21,14 @@ protocol LocalCacheGettable {
 typealias LocalCacheValue = LocalCacheGettable & LocalCacheSettable
 
 protocol LocalCacheable: class {
-    subscript<T: LocalCacheValue>(_ key: LocalCacheKey<T>) -> T? { get set }
+    associatedtype DataStorable
+    
+    var dataStore: DataStorable { get }
+    
+    
+    init(dataStore: DataStorable)
 }
+
 
 
 final class LocalCache: LocalCacheable {

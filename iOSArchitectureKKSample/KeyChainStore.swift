@@ -8,6 +8,7 @@
 
 import KeychainAccess
 
+
 public protocol KeychainStorable {
     func save(key: String, value: String)
     func load(key: String) -> String?
