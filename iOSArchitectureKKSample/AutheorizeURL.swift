@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol Authenticater {
+protocol AutheorizeURL {
     var url: URL? { get }
 }
 
-struct UnsplashAuthenticater: Authenticater {
+struct UnsplashAuthorizeURL: AutheorizeURL {
     private let clientID: String?
     private let redirectURL: String = {
         let scheme = R.string.localizable.appScheme()
