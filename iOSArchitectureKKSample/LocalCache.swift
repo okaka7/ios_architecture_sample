@@ -21,11 +21,13 @@ protocol LocalCacheGettable {
 typealias LocalCacheValue = LocalCacheGettable & LocalCacheSettable
 
 protocol LocalCacheable: class {
-    func save<T: Encodable>(key: String, value: T)
+    associatedtype Data: Codable
+    associatedtype Key: LocalCacheKeys
+    func save(key: Key, value: Data)
     
-    func fetch<T: Decodable>(key: String) -> T?
+    func fetch(key: Key) -> Data?
     
-    func delete(key: String)
+    func delete(key: Key)
 }
 
 public protocol DataStorable {}
