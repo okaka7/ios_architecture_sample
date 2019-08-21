@@ -13,7 +13,7 @@ protocol AuthenticationUseCaseOutputPort {
 }
 
 protocol AuthenticationUseCaseInputPort {
-    var authenticator: AutheorizeURL { get }
+    var authenticator: AuthorizableURL { get }
     var output: AuthenticationUseCaseOutputPort { get set }
     func openAuthenticationURL()
 }

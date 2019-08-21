@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol AutheorizeURL {
+protocol AuthorizableURL {
     var url: URL? { get }
 }
 
-struct UnsplashAuthorizeURL: AutheorizeURL {
+struct UnsplashAuthorizeURL: AuthorizableURL {
     private let clientID: String?
     private let redirectURL: String = {
         let scheme = R.string.localizable.appScheme()
