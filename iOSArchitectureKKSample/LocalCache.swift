@@ -33,6 +33,18 @@ extension UserDefaults: DataStorable {}
 
 
 final class LocalCache: LocalCacheable {
+    func save<T>(key: String, value: T) where T : Encodable {
+        <#code#>
+    }
+    
+    func fetch<T>(key: String) -> T? where T : Decodable {
+        <#code#>
+    }
+    
+    func delete(key: String) {
+        <#code#>
+    }
+    
     static let shared = LocalCache()
     fileprivate let dataStore: DataStorable
     
@@ -69,7 +81,7 @@ extension LocalCache {
 }
 
 extension LocalCacheSettable where Self: Encodable {
-    static func set(key: String, value: Self?, cache: LocalCache) {
+    static func set(key: String, value: Self?, cache: LocalCacheable) {
         guard let value = value else {
             cache.removeObject(forKey: key)
             return
@@ -77,7 +89,7 @@ extension LocalCacheSettable where Self: Encodable {
         cache.setEncodableObject(forKey: key, value: value)
     }
     
-    static func set(key: String, array: [Self], cache: LocalCache) {
+    static func set(key: String, array: [Self], cache: LocalCacheable) {
         guard array.isEmpty else {
             cache.removeObject(forKey: key)
             return
@@ -87,27 +99,27 @@ extension LocalCacheSettable where Self: Encodable {
 }
 
 extension LocalCacheGettable where Self: Decodable {
-    static func get(key: String, cache: LocalCache) -> Self? {
+    static func get(key: String, cache: LocalCacheable) -> Self? {
         return cache.getDecodableObject(forKey: key) as Self?
     }
     
-    static func getArray(key: String, cache: LocalCache) -> [Self]? {
+    static func getArray(key: String, cache: LocalCacheable) -> [Self]? {
         return cache.getDecodableObject(forKey: key) as [Self]?
     }
 }
 
 
 extension Array: LocalCacheValue where Element: LocalCacheValue {
-    static func get(key: String, cache: LocalCache) -> [Element]? {
+    static func get(key: String, cache: LocalCacheable) -> [Element]? {
         return Element.getArray(key: key, cache: cache)
     }
     
-    static func getArray(key: String, cache: LocalCache) -> [[Element]]? {
+    static func getArray(key: String, cache: LocalCacheable) -> [[Element]]? {
         assertionFailure("two dimentional array not supported yet")
         return nil
     }
     
-    static func set(key: String, value: [Element]?, cache: LocalCache) {
+    static func set(key: String, value: [Element]?, cache: LocalCacheable) {
         guard let value = value else {
             cache.removeObject(forKey: key)
             return
@@ -115,7 +127,7 @@ extension Array: LocalCacheValue where Element: LocalCacheValue {
         Element.set(key: key, array: value, cache: cache)
     }
     
-    static func set(key: String, array: [[Element]], cache: LocalCache) {
+    static func set(key: String, array: [[Element]], cache: LocalCacheable) {
         assertionFailure("two dimentional array not supported yet")
     }
 }
