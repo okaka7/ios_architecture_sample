@@ -25,5 +25,14 @@ class WarpView: UIView {
         return scene
     }()
     
-
+    var warpSpriteNode: SKSpriteNode
+    
+    init(warpSpriteNode sprite: SKSpriteNode) {
+        warpSpriteNode = sprite
+        super.init(frame: .zero)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
