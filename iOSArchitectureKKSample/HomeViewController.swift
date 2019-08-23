@@ -9,6 +9,24 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    lazy private(set) var collectionView: UICollectionView = {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 15
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
+        self.view.addSubview(collectionView)
+        self.view.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true
+        collectionView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        self.view.widthAnchor.constraint(equalTo: collectionView.widthAnchor, multiplier: 1).isActive = true
+        collectionView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3).isActive = true
+        return collectionView
+    }()
 
     lazy private var label: UILabel = {
         let label: UILabel = .init(frame: .zero)
@@ -46,3 +64,6 @@ class HomeViewController: UIViewController {
     */
 
 }
+
+
+
