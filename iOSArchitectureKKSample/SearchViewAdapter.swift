@@ -8,14 +8,14 @@
 
 import Foundation
 
-protocol SearchViewInput: class {
+protocol SearchViewInput {
     
 }
 
-protocol SearchViewPresenter: class {
+protocol SearchViewPresenter {
     
 }
 
-struct SearchViewAdapter: SearchViewInt, SearchViewPresenter {
+struct SearchViewAdapter: SearchViewInput, SearchViewPresenter {
     
 }

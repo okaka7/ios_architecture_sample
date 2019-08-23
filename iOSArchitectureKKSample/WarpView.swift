@@ -52,6 +52,6 @@ class WarpView: UIView, Warp {
 class WarpTransitionView: WarpView, WarpTransition {
     
     func warpTransiton(to node: SKSpriteNode) {
-        <#code#>
+        
     }
 }
