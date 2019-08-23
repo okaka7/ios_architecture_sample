@@ -21,9 +21,8 @@ class HomeViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(collectionView)
         self.view.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true
-        
         self.view.widthAnchor.constraint(equalTo: collectionView.widthAnchor, multiplier: 1).isActive = true
-        collectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        collectionView.heightAnchor.constraint(equalToConstant: 110).isActive = true
         collectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         return collectionView
     }()
