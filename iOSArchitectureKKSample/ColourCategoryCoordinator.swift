@@ -9,8 +9,8 @@
 import Foundation
 
 final class ColourCategoryCoordinator: Coordinator {
-    let categoryVC: ColourCategoryViewController = {
-        let categoryVC: ColourCategoryViewController = .init()
+    let categoryVC: HomeViewController = {
+        let categoryVC: HomeViewController = .init()
         categoryVC.tabBarItem.title = R.string.localizable.category()
         return categoryVC
     }()

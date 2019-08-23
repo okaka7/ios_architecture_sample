@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ColourCategoryViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     lazy private var label: UILabel = {
         let label: UILabel = .init(frame: .zero)

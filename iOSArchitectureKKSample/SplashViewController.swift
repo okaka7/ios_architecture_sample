@@ -21,7 +21,7 @@ class SplashViewController: UIViewController, SplashPresenterOutput {
     
     lazy private var label: UILabel = {
         let label: UILabel = .init(frame: .zero)
-        label.text = "colour"
+        label.text = "splash"
         label.sizeToFit()
         label.center = self.view.center
         return label
