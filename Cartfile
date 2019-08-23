@@ -1,4 +1,3 @@
-github "SwiftyBeaver/SwiftyBeaver"
-github "Moya/Moya"
-github "kishikawakatsumi/KeychainAccess"
-gitHub "realm/realm-cocoa"
+github "SwiftyBeaver/SwiftyBeaver" == 1.7.1
+github "Moya/Moya" == 13.0.1
+github "kishikawakatsumi/KeychainAccess" == 3.2.0

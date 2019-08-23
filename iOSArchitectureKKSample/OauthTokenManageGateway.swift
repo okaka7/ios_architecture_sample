@@ -9,15 +9,13 @@
 import Foundation
 
 struct OauthTokenManageGateWay: APITokenRepository {
-    
-    let keychainStore: KeychainStorable
-    
-    init(keychainStorable: KeychainStorable) {
+    let keychainStore: Cacheable
+    init(keychainStorable: Cacheable = KeyChainCache.shared) {
         self.keychainStore = keychainStorable
     }
     
     func saveToken(token: String) {
-        self.keychainStore.save(key: R.string.localizable.unsplashToken(), value: token)
+        self.keychainStore.save(<#T##key: CacheKey<CacheSettable & LocalCacheGettable, Cacheable>##CacheKey<CacheSettable & LocalCacheGettable, Cacheable>#>, value: <#T##CacheSettable & LocalCacheGettable#>)
     }
     
     func fetchToken() -> String? {
