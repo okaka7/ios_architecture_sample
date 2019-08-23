@@ -18,7 +18,7 @@
 		E516490622CCDCFE00D3D2D7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490522CCDCFE00D3D2D7 /* Result.framework */; };
 		E5291A9F22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift */; };
 		E53F1DFA22C0B60300F81CAA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DF922C0B60300F81CAA /* HomeViewController.swift */; };
-		E53F1DFC22C0B63000F81CAA /* ColourSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DFB22C0B63000F81CAA /* ColourSearchViewController.swift */; };
+		E53F1DFC22C0B63000F81CAA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DFB22C0B63000F81CAA /* SearchViewController.swift */; };
 		E53F1DFE22C0B66700F81CAA /* ColourFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DFD22C0B66700F81CAA /* ColourFavoritesViewController.swift */; };
 		E53F1E0022C0B6BB00F81CAA /* ColourSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DFF22C0B6BB00F81CAA /* ColourSettingViewController.swift */; };
 		E54151B6230FFFB40036BA0F /* UnsplashTokenValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54151B5230FFFB40036BA0F /* UnsplashTokenValueObject.swift */; };
@@ -145,7 +145,7 @@
 		E516490522CCDCFE00D3D2D7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array<URLQueryItem>.queryItem.swift"; sourceTree = "<group>"; };
 		E53F1DF922C0B60300F81CAA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		E53F1DFB22C0B63000F81CAA /* ColourSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSearchViewController.swift; sourceTree = "<group>"; };
+		E53F1DFB22C0B63000F81CAA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E53F1DFD22C0B66700F81CAA /* ColourFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourFavoritesViewController.swift; sourceTree = "<group>"; };
 		E53F1DFF22C0B6BB00F81CAA /* ColourSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSettingViewController.swift; sourceTree = "<group>"; };
 		E54151B5230FFFB40036BA0F /* UnsplashTokenValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashTokenValueObject.swift; sourceTree = "<group>"; };
@@ -499,7 +499,7 @@
 		E57950A82307F47900000FD8 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				E53F1DFB22C0B63000F81CAA /* ColourSearchViewController.swift */,
+				E53F1DFB22C0B63000F81CAA /* SearchViewController.swift */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -1074,7 +1074,7 @@
 				E592E72C22FEFE2B00AECEC4 /* UnsplashSearchPhotos.swift in Sources */,
 				E55E19C92309ACAB007C1C57 /* AuthorizableURL.swift in Sources */,
 				E53F1DFA22C0B60300F81CAA /* HomeViewController.swift in Sources */,
-				E53F1DFC22C0B63000F81CAA /* ColourSearchViewController.swift in Sources */,
+				E53F1DFC22C0B63000F81CAA /* SearchViewController.swift in Sources */,
 				E57915D422F86676009BCE95 /* UnsplashUserTarget.swift in Sources */,
 				E5B8A2402309EB6000AE29E8 /* CollectionUIValueObject.swift in Sources */,
 				E5521F5222F1E30100D38F02 /* UnsplashPhotosTarget.swift in Sources */,

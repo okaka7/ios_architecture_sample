@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ColourSearchViewController: UIViewController {
+class SearchViewController: UIViewController {
     
     lazy private var label: UILabel = {
         let label: UILabel = .init(frame: .zero)

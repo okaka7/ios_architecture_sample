@@ -9,8 +9,8 @@
 import Foundation
 
 final class ColourSearchCoordinator: Coordinator {
-    let searchVC: ColourSearchViewController = {
-        let searchVC: ColourSearchViewController = .init()
+    let searchVC: SearchViewController = {
+        let searchVC: SearchViewController = .init()
         searchVC.tabBarItem.title = R.string.localizable.search()
         return searchVC
     }()
