@@ -6,9 +6,17 @@
 //  Copyright © 2019 Kota Kawanishi. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class AccountCoordinator: Coordinator {
+    lazy var naviVC: UINavigationController = {
+        let naviVC: UINavigationController = .init(rootViewController: self.settingVC)
+        naviVC.navigationBar.barStyle = .black
+        naviVC.navigationBar.isTranslucent = false
+        naviVC.tabBarItem.title = R.string.localizable.home()
+        return naviVC
+    }()
+    
     let settingVC: AccountViewController = {
         let settingVC: AccountViewController = .init()
         settingVC.tabBarItem.title = R.string.localizable.setting()
