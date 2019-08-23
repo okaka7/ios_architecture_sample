@@ -10,14 +10,14 @@ import UIKit
 
 final class AccountCoordinator: Coordinator {
     lazy var naviVC: UINavigationController = {
-        let naviVC: UINavigationController = .init(rootViewController: self.settingVC)
+        let naviVC: UINavigationController = .init(rootViewController: self.accountVC)
         naviVC.navigationBar.barStyle = .black
         naviVC.navigationBar.isTranslucent = false
         naviVC.tabBarItem.title = R.string.localizable.home()
         return naviVC
     }()
     
-    private let settingVC: AccountViewController = {
+    private let accountVC: AccountViewController = {
         let settingVC: AccountViewController = .init()
         settingVC.tabBarItem.title = R.string.localizable.setting()
         return settingVC
