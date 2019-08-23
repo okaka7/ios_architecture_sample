@@ -17,14 +17,14 @@ class HomeViewController: UIViewController {
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 15
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
+        collectionView.backgroundColor = .red
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .clear
         self.view.addSubview(collectionView)
         self.view.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true
-        collectionView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        
         self.view.widthAnchor.constraint(equalTo: collectionView.widthAnchor, multiplier: 1).isActive = true
-        collectionView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3).isActive = true
+        collectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        collectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         return collectionView
     }()
 
@@ -42,6 +42,7 @@ class HomeViewController: UIViewController {
         log.debug("ColourCategoryViewController.init()!!!")
         #endif
         self.view.backgroundColor = .white
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,6 +52,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(label)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        _ = self.collectionView
     }
 
     /*

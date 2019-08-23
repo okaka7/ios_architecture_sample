@@ -13,6 +13,7 @@ final class ColourCategoryCoordinator: Coordinator {
     lazy var naviVC: UINavigationController = {
         let naviVC: UINavigationController = .init(rootViewController: self.categoryVC)
         naviVC.navigationBar.barStyle = .black
+        naviVC.navigationBar.isTranslucent = false
         naviVC.tabBarItem.title = R.string.localizable.home()
         return naviVC
     }()

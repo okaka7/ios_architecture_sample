@@ -10,7 +10,6 @@ import UIKit
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     var image: UIImage?
-    
     func configureImage(image: UIImage) {
         self.image = image
         
