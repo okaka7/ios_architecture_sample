@@ -9,8 +9,6 @@
 import UIKit
 
 
-
-
 final class MainTabCoordinator: Coordinator {
     let mainTabBarController: UITabBarController = .init()
     private let categoryCoordinator: ColourCategoryCoordinator = .init()
@@ -22,7 +20,7 @@ final class MainTabCoordinator: Coordinator {
     }
     
     func start() {
-        let tabBarControllers: [UIViewController] = [ categoryCoordinator.categoryVC,
+        let tabBarControllers: [UIViewController] = [ categoryCoordinator.naviVC,
                                                       searchCoordinator.searchVC,
                                                       settingCoordinator.settingVC]
         mainTabBarController.setViewControllers( tabBarControllers, animated: false)
