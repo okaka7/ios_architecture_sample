@@ -14,9 +14,6 @@ import KeychainAccess
 //}
 
 
-
-
-
 class SplashViewController: UIViewController, SplashPresenterOutput {
     
     lazy private var label: UILabel = {

@@ -23,6 +23,7 @@
 		E53F1E0022C0B6BB00F81CAA /* ColourSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DFF22C0B6BB00F81CAA /* ColourSettingViewController.swift */; };
 		E54151B6230FFFB40036BA0F /* UnsplashTokenValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54151B5230FFFB40036BA0F /* UnsplashTokenValueObject.swift */; };
 		E54151B823103BFF0036BA0F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54151B723103BFF0036BA0F /* PhotoCollectionViewCell.swift */; };
+		E54151BF231049AA0036BA0F /* WarpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54151BE231049AA0036BA0F /* WarpView.swift */; };
 		E54D3664230DB6C000C6476B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54D3663230DB6C000C6476B /* DataStore.swift */; };
 		E5521F4C22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5521F4B22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift */; };
 		E5521F4E22F1CC6F00D38F02 /* UnsplashOauthAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5521F4D22F1CC6F00D38F02 /* UnsplashOauthAPIProvider.swift */; };
@@ -149,6 +150,7 @@
 		E53F1DFF22C0B6BB00F81CAA /* ColourSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSettingViewController.swift; sourceTree = "<group>"; };
 		E54151B5230FFFB40036BA0F /* UnsplashTokenValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashTokenValueObject.swift; sourceTree = "<group>"; };
 		E54151B723103BFF0036BA0F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		E54151BE231049AA0036BA0F /* WarpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarpView.swift; sourceTree = "<group>"; };
 		E545EC3CCE7B0B70E34174AC /* Pods_iOSArchitectureKKSampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSArchitectureKKSampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E54D3663230DB6C000C6476B /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		E5521F4B22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashTokenResposneValueObject.swift; sourceTree = "<group>"; };
@@ -296,6 +298,14 @@
 			children = (
 			);
 			name = "Photo Detail";
+			sourceTree = "<group>";
+		};
+		E54151B9231047DB0036BA0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E54151BE231049AA0036BA0F /* WarpView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		E55E19C22309959C007C1C57 /* Photo */ = {
@@ -461,6 +471,7 @@
 				E55E19C22309959C007C1C57 /* Photo */,
 				E51B85B0230D1DAA00D81DDE /* Photo Detail */,
 				E55E19C3230995CA007C1C57 /* Collection */,
+				E54151B9231047DB0036BA0F /* View */,
 				E54151B723103BFF0036BA0F /* PhotoCollectionViewCell.swift */,
 				E5B8A23B2309E4A600AE29E8 /* AuthenticationPresenter.swift */,
 			);
@@ -1055,6 +1066,7 @@
 				E57C82F4230A9ABC00F8F15C /* UserAccountUseCase.swift in Sources */,
 				E5C5647322F1947C00DD9401 /* OauthTokenRequestGateway.swift in Sources */,
 				E57C82FA230AA29900F8F15C /* CollectionSelectable.swift in Sources */,
+				E54151BF231049AA0036BA0F /* WarpView.swift in Sources */,
 				E55E19BF2308E066007C1C57 /* UnsplashAPIProtocol.swift in Sources */,
 				E592E72E22FF008D00AECEC4 /* SearchPhotoReponseValueObject.swift in Sources */,
 				E577D5C022C56B0000588A38 /* MainTabCoordinator.swift in Sources */,
