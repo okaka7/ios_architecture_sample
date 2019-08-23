@@ -14,7 +14,7 @@ import KeychainAccess
 //}
 
 
-class SplashViewController: UIViewController, SplashPresenterOutput {
+class SplashViewController: UIViewController, SplashViewPresenter {
     
     lazy private var label: UILabel = {
         let label: UILabel = .init(frame: .zero)
@@ -25,7 +25,7 @@ class SplashViewController: UIViewController, SplashPresenterOutput {
     }()
     
     weak private var transitioner: SplashTransitioner! 
-    weak private var controller: SplashController!
+    weak private var controller: SplashViewInput!
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -71,7 +71,7 @@ extension SplashViewController: SplashTransitionerInjectable {
 }
 
 extension SplashViewController: SplashControllerInjectable{
-    func inject(controller: SplashController) {
+    func inject(controller: SplashViewInput) {
         self.controller = controller
     }
 }
