@@ -12,10 +12,10 @@ struct UnsplashTokenValueObject: Codable {
     let rawValue: String
 
     init (_ value: UnsplashTokenResposneValueObject) {
-        self.rawValue = tokenValue.accessToken
+        self.rawValue = value.accessToken
     }
     
     enum CodingKeys: String, CodingKey {
-        case accessToken = "access_token"
+        case rawValue = "raw_value"
     }
 }

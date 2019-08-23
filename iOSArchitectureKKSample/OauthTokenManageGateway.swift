@@ -9,16 +9,18 @@
 import Foundation
 
 struct OauthTokenManageGateWay: APITokenRepository {
+   
     let keychainStore: Cacheable
+    
     init(keychainStorable: Cacheable = KeyChainCache.shared) {
         self.keychainStore = keychainStorable
     }
     
-    func saveToken(token: String) {
-        self.keychainStore.save(<#T##key: CacheKey<CacheSettable & LocalCacheGettable, Cacheable>##CacheKey<CacheSettable & LocalCacheGettable, Cacheable>#>, value: <#T##CacheSettable & LocalCacheGettable#>)
+    func saveToken(token: UnsplashTokenValueObject) {
+        self.keychainStore.save(.token, value: token)
     }
     
-    func fetchToken() -> String? {
-        return self.keychainStore.load(key: R.string.localizable.unsplashToken())
+    func fetchToken() -> UnsplashTokenValueObject? {
+        return self.keychainStore.fetch(.token)
     }
 }

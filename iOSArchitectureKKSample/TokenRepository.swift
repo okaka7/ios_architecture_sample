@@ -9,6 +9,6 @@
 import Foundation
 
 protocol APITokenRepository {
-    func saveToken(token: String)
-    func fetchToken() -> String?
+    func saveToken(token: UnsplashTokenValueObject)
+    func fetchToken() -> UnsplashTokenValueObject?
 }

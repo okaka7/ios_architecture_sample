@@ -9,14 +9,14 @@
 import Foundation
 
 // MARK: CacheKey
-public protocol LocalCacheKeys {
+public protocol CacheKeys {
     associatedtype Value: CacheValue
     var rawValue: String { get }
     var defaultValue: Value? { get }
 }
 
 
-public class CacheKey<Value: CacheValue>: LocalCacheKeys {
+public class CacheKey<Value: CacheValue>: CacheKeys {
     public let rawValue: String
     public let defaultValue: Value?
     
@@ -26,4 +26,10 @@ public class CacheKey<Value: CacheValue>: LocalCacheKeys {
     }
 }
 
-extension Account: LocalCacheValue {}
+extension CacheKeys {
+    static var token: CacheKey<UnsplashTokenValueObject> {
+        return CacheKey("token", defaultValue: nil)
+    }
+}
+
+extension UnsplashTokenValueObject: CacheValue {}

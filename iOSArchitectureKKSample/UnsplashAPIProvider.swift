@@ -35,7 +35,7 @@ final class UnsplashAPIProvider {
             
             let accessTokenPlugin: AccessTokenPlugin = .init(tokenClosure: { [tokenRepository] () -> String in
                 if let token = tokenRepository.fetchToken() {
-                    return token
+                    return token.rawValue
                 } else {
                     return R.string.localizable.unsplashAPIClientID()
                 }
