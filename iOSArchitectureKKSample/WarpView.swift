@@ -9,7 +9,15 @@
 import UIKit
 import SpriteKit
 
-class WarpView: UIView {
+protocol Warp {
+    func warp()
+}
+
+protocol WarpTransition {
+    func warpTransiton(to node: SKSpriteNode)
+}
+
+class WarpView: UIView, Warp {
     lazy var skView: SKView = {
         let skView = SKView()
         skView.translatesAutoresizingMaskIntoConstraints = false
@@ -34,5 +42,16 @@ class WarpView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func warp() {
+        fatalError("this is abstract method")
+    }
+}
+
+class WarpTransitionView: WarpView, WarpTransition {
+    
+    func warpTransiton(to node: SKSpriteNode) {
+        <#code#>
     }
 }
