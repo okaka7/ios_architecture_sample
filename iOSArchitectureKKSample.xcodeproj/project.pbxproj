@@ -22,6 +22,7 @@
 		E53F1DFE22C0B66700F81CAA /* ColourFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DFD22C0B66700F81CAA /* ColourFavoritesViewController.swift */; };
 		E53F1E0022C0B6BB00F81CAA /* ColourSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DFF22C0B6BB00F81CAA /* ColourSettingViewController.swift */; };
 		E54151B6230FFFB40036BA0F /* UnsplashTokenValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54151B5230FFFB40036BA0F /* UnsplashTokenValueObject.swift */; };
+		E54151B823103BFF0036BA0F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54151B723103BFF0036BA0F /* PhotoCollectionViewCell.swift */; };
 		E54D3664230DB6C000C6476B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54D3663230DB6C000C6476B /* DataStore.swift */; };
 		E5521F4C22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5521F4B22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift */; };
 		E5521F4E22F1CC6F00D38F02 /* UnsplashOauthAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5521F4D22F1CC6F00D38F02 /* UnsplashOauthAPIProvider.swift */; };
@@ -147,6 +148,7 @@
 		E53F1DFD22C0B66700F81CAA /* ColourFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourFavoritesViewController.swift; sourceTree = "<group>"; };
 		E53F1DFF22C0B6BB00F81CAA /* ColourSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSettingViewController.swift; sourceTree = "<group>"; };
 		E54151B5230FFFB40036BA0F /* UnsplashTokenValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashTokenValueObject.swift; sourceTree = "<group>"; };
+		E54151B723103BFF0036BA0F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		E545EC3CCE7B0B70E34174AC /* Pods_iOSArchitectureKKSampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSArchitectureKKSampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E54D3663230DB6C000C6476B /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		E5521F4B22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashTokenResposneValueObject.swift; sourceTree = "<group>"; };
@@ -459,6 +461,7 @@
 				E55E19C22309959C007C1C57 /* Photo */,
 				E51B85B0230D1DAA00D81DDE /* Photo Detail */,
 				E55E19C3230995CA007C1C57 /* Collection */,
+				E54151B723103BFF0036BA0F /* PhotoCollectionViewCell.swift */,
 				E5B8A23B2309E4A600AE29E8 /* AuthenticationPresenter.swift */,
 			);
 			name = Presentation;
@@ -1066,6 +1069,7 @@
 				E57915DC22F8A310009BCE95 /* UnsplashPhotoTarget.swift in Sources */,
 				E592E72822FEFB4300AECEC4 /* UnsplashDownloadPhotoTarget.swift in Sources */,
 				E53F1DFE22C0B66700F81CAA /* ColourFavoritesViewController.swift in Sources */,
+				E54151B823103BFF0036BA0F /* PhotoCollectionViewCell.swift in Sources */,
 				E5521F5022F1E18A00D38F02 /* UnsplashPhotoValueObject.swift in Sources */,
 				E57915D022F8621C009BCE95 /* UnsplashAccountTarget.swift in Sources */,
 				E57826CF22D8AB20002499A9 /* UnsplashRepository.swift in Sources */,
