@@ -17,7 +17,7 @@ final class AccountCoordinator: Coordinator {
         return naviVC
     }()
     
-    let settingVC: AccountViewController = {
+    private let settingVC: AccountViewController = {
         let settingVC: AccountViewController = .init()
         settingVC.tabBarItem.title = R.string.localizable.setting()
         return settingVC
