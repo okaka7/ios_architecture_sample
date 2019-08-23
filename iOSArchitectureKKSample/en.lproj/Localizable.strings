@@ -7,7 +7,7 @@
 */
 
 "appName" = "Colour";
-
+"home" = "HOME";
 "category" = "category";
 "search" = "search";
 "favorites" = "favorites";
