@@ -12,7 +12,7 @@ import UIKit
 final class MainTabCoordinator: Coordinator {
     let mainTabBarController: UITabBarController = .init()
     private let categoryCoordinator: HomeVCCoordinator = .init()
-    private let searchCoordinator: ColourSearchCoordinator = .init()
+    private let searchCoordinator: SearchVCCoordinator = .init()
     private let settingCoordinator: ColourSettingCoordinator = .init()
     
     init() {
