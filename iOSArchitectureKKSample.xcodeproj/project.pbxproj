@@ -433,7 +433,6 @@
 			children = (
 				E57950BC23085D8300000FD8 /* Gateway */,
 				E57826E222D8E08E002499A9 /* LocalCache */,
-				E5A8139222DA22EF0028F80F /* KeyChainAccess */,
 				E516490722CD0E6200D3D2D7 /* Web */,
 				E57826EF22D8E21C002499A9 /* Entity */,
 			);
@@ -676,13 +675,6 @@
 				E592299D22AE65E9003EC30C /* Info.plist */,
 			);
 			path = iOSArchitectureKKSampleUITests;
-			sourceTree = "<group>";
-		};
-		E5A8139222DA22EF0028F80F /* KeyChainAccess */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = KeyChainAccess;
 			sourceTree = "<group>";
 		};
 		E5C5647622F1BADA00DD9401 /* OauthEndpoint */ = {
