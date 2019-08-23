@@ -6,10 +6,19 @@
 //  Copyright © 2019 Kota Kawanishi. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class SearchVCCoordinator: Coordinator {
-    let searchVC: SearchViewController = {
+    
+    lazy var naviVC: UINavigationController = {
+        let naviVC: UINavigationController = .init(rootViewController: self.searchVC)
+        naviVC.navigationBar.barStyle = .black
+        naviVC.navigationBar.isTranslucent = false
+        naviVC.tabBarItem.title = R.string.localizable.home()
+        return naviVC
+    }()
+    
+    private let searchVC: SearchViewController = {
         let searchVC: SearchViewController = .init()
         searchVC.tabBarItem.title = R.string.localizable.search()
         return searchVC

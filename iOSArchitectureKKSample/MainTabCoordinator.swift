@@ -21,7 +21,7 @@ final class MainTabCoordinator: Coordinator {
     
     func start() {
         let tabBarControllers: [UIViewController] = [ categoryCoordinator.naviVC,
-                                                      searchCoordinator.searchVC,
+                                                      searchCoordinator.naviVC,
                                                       settingCoordinator.settingVC]
         mainTabBarController.setViewControllers( tabBarControllers, animated: false)
         
