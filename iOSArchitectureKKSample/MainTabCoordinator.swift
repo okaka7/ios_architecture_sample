@@ -10,7 +10,11 @@ import UIKit
 
 
 final class MainTabCoordinator: Coordinator {
-    let mainTabBarController: UITabBarController = .init()
+    let mainTabBarController: UITabBarController = {
+        let tab = UITabBarController()
+        tab.tabBar.isTranslucent = false
+        return tab
+    }()
     private let categoryCoordinator: HomeVCCoordinator = .init()
     private let searchCoordinator: SearchVCCoordinator = .init()
     private let settingCoordinator: ColourSettingCoordinator = .init()
@@ -23,6 +27,7 @@ final class MainTabCoordinator: Coordinator {
         let tabBarControllers: [UIViewController] = [ categoryCoordinator.naviVC,
                                                       searchCoordinator.naviVC,
                                                       settingCoordinator.settingVC]
+        
         mainTabBarController.setViewControllers( tabBarControllers, animated: false)
         
         return
