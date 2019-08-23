@@ -19,6 +19,7 @@ final class ColourCategoryCoordinator: Coordinator {
     
     let categoryVC: HomeViewController = {
         let categoryVC: HomeViewController = .init()
+        categoryVC.navigationItem.title = "Home"
         return categoryVC
     }()
     
