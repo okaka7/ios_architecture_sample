@@ -17,7 +17,7 @@ final class MainTabCoordinator: Coordinator {
     }()
     private let categoryCoordinator: HomeVCCoordinator = .init()
     private let searchCoordinator: SearchVCCoordinator = .init()
-    private let settingCoordinator: ColourSettingCoordinator = .init()
+    private let settingCoordinator: AccountCoordinator = .init()
     
     init() {
         
