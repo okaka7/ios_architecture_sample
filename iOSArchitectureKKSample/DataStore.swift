@@ -23,8 +23,7 @@ public protocol DataStorable {
 }
 
 extension Cacheable {
-
-    public func save<T: CacheValue>(_ key: CacheKey<T>, value: T){
+    public func save<T: CacheValue>(_ key: CacheKey<T>, value: T) {
         T.set(key: key.rawValue, value: value, cache: self)
     }
     
@@ -109,7 +108,6 @@ public final class KeyChainCache: Cacheable {
     }
 }
 
-
 // MARK: LocalCacheValue
 public protocol CacheSettable {
     static func set<Cache: Cacheable>(key: String, value: Self?, cache: Cache)
@@ -171,8 +169,6 @@ extension LocalCacheGettable where Self: Decodable {
     private static func decode<T: Decodable>(_ type: T.Type, from data: Data) -> T? {
         return try? JSONDecoder().decode(type, from: data)
     }
-    
-    
 }
 
 extension Array: CacheValue where Element: CacheValue {
