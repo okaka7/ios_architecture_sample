@@ -14,13 +14,13 @@ final class SearchVCCoordinator: Coordinator {
         let naviVC: UINavigationController = .init(rootViewController: self.searchVC)
         naviVC.navigationBar.barStyle = .black
         naviVC.navigationBar.isTranslucent = false
-        naviVC.tabBarItem.title = R.string.localizable.home()
+        naviVC.tabBarItem.title = R.string.localizable.search()
         return naviVC
     }()
     
     private let searchVC: SearchViewController = {
         let searchVC: SearchViewController = .init()
-        searchVC.tabBarItem.title = R.string.localizable.search()
+        searchVC.navigationItem.title = R.string.localizable.search()
         return searchVC
     }()
     func start() {

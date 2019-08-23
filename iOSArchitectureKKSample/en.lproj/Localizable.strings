@@ -9,7 +9,7 @@
 "appName" = "Colour";
 "home" = "HOME";
 "category" = "category";
-"search" = "search";
+"search" = "SEARCH";
 "favorites" = "favorites";
 "setting" = "setting";
 "unsplashAPIBaseURL" = "https://api.unsplash.com/";
