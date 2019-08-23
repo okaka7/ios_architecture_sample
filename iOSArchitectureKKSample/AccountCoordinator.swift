@@ -13,13 +13,13 @@ final class AccountCoordinator: Coordinator {
         let naviVC: UINavigationController = .init(rootViewController: self.accountVC)
         naviVC.navigationBar.barStyle = .black
         naviVC.navigationBar.isTranslucent = false
-        naviVC.tabBarItem.title = R.string.localizable.home()
+        naviVC.tabBarItem.title = R.string.localizable.account()
         return naviVC
     }()
     
     private let accountVC: AccountViewController = {
         let settingVC: AccountViewController = .init()
-        settingVC.tabBarItem.title = R.string.localizable.setting()
+        settingVC.navigationItem.title = R.string.localizable.account()
         return settingVC
     }()
     

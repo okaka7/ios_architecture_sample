@@ -10,6 +10,7 @@
 "home" = "HOME";
 "category" = "category";
 "search" = "SEARCH";
+"account" = "ACCOUNT";
 "favorites" = "favorites";
 "setting" = "setting";
 "unsplashAPIBaseURL" = "https://api.unsplash.com/";
