@@ -304,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				E54151BE231049AA0036BA0F /* WarpView.swift */,
+				E54151B723103BFF0036BA0F /* PhotoCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -472,7 +473,6 @@
 				E51B85B0230D1DAA00D81DDE /* Photo Detail */,
 				E55E19C3230995CA007C1C57 /* Collection */,
 				E54151B9231047DB0036BA0F /* View */,
-				E54151B723103BFF0036BA0F /* PhotoCollectionViewCell.swift */,
 				E5B8A23B2309E4A600AE29E8 /* AuthenticationPresenter.swift */,
 			);
 			name = Presentation;

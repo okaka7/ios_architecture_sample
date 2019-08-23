@@ -17,7 +17,6 @@ class WarpView: UIView {
         skView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         skView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
         skView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
-        
         return skView
     }()
     
