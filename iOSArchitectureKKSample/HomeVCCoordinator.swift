@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ColourCategoryCoordinator: Coordinator {
+final class HomeVCCoordinator: Coordinator {
     
     lazy var naviVC: UINavigationController = {
         let naviVC: UINavigationController = .init(rootViewController: self.homeVC)

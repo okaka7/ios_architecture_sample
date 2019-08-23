@@ -63,7 +63,7 @@
 		E57950A52307EBCF00000FD8 /* PhotoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57950A42307EBCF00000FD8 /* PhotoUseCase.swift */; };
 		E57950B82308594400000FD8 /* TokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57950B72308594400000FD8 /* TokenRepository.swift */; };
 		E57950BE23085EE000000FD8 /* UnsplashOauthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57950BD23085EE000000FD8 /* UnsplashOauthRepository.swift */; };
-		E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */; };
+		E57BD4FF22C4B4DD00FE44D4 /* HomeVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD4FE22C4B4DD00FE44D4 /* HomeVCCoordinator.swift */; };
 		E57BD50122C4B55700FE44D4 /* ColourSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */; };
 		E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */; };
 		E57BD50522C4B58B00FE44D4 /* ColourSettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BD50422C4B58B00FE44D4 /* ColourSettingCoordinator.swift */; };
@@ -193,7 +193,7 @@
 		E57950A42307EBCF00000FD8 /* PhotoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUseCase.swift; sourceTree = "<group>"; };
 		E57950B72308594400000FD8 /* TokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRepository.swift; sourceTree = "<group>"; };
 		E57950BD23085EE000000FD8 /* UnsplashOauthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashOauthRepository.swift; sourceTree = "<group>"; };
-		E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourCategoryCoordinator.swift; sourceTree = "<group>"; };
+		E57BD4FE22C4B4DD00FE44D4 /* HomeVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSearchCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourFavoritesCoordinator.swift; sourceTree = "<group>"; };
 		E57BD50422C4B58B00FE44D4 /* ColourSettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSettingCoordinator.swift; sourceTree = "<group>"; };
@@ -333,7 +333,7 @@
 				E56FD68322B28B8400AE6940 /* Coordinator.swift */,
 				E56FD68522B28BC400AE6940 /* AppCoordinator.swift */,
 				E577D5BF22C56B0000588A38 /* MainTabCoordinator.swift */,
-				E57BD4FE22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift */,
+				E57BD4FE22C4B4DD00FE44D4 /* HomeVCCoordinator.swift */,
 				E57BD50022C4B55700FE44D4 /* ColourSearchCoordinator.swift */,
 				E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */,
 				E57BD50422C4B58B00FE44D4 /* ColourSettingCoordinator.swift */,
@@ -1053,7 +1053,7 @@
 				E5B8A23E2309E8E000AE29E8 /* PhotoUIValueObject.swift in Sources */,
 				E54D3664230DB6C000C6476B /* DataStore.swift in Sources */,
 				E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */,
-				E57BD4FF22C4B4DD00FE44D4 /* ColourCategoryCoordinator.swift in Sources */,
+				E57BD4FF22C4B4DD00FE44D4 /* HomeVCCoordinator.swift in Sources */,
 				E55E19C5230998DD007C1C57 /* SplashViewAdapter.swift in Sources */,
 				E57826E022D8DA01002499A9 /* NSObject+ClassName.swift in Sources */,
 				E57C82EE230A8E3700F8F15C /* PhotoSelectable.swift in Sources */,
