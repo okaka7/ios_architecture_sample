@@ -146,7 +146,7 @@ extension CacheSettable where Self: Encodable {
         cache.store.save(key, value: data)
     }
     
-    private static func encode<T: Encodable>(_ value: T) -> Data?  {
+    private static func encode<T: Encodable>(_ value: T) -> Data? {
         return try? JSONEncoder().encode(value)
     }
 }
@@ -194,8 +194,3 @@ extension Array: CacheValue where Element: CacheValue {
     }
     
 }
-
-
-
-
-
