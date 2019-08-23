@@ -9,8 +9,8 @@
 import Foundation
 
 final class AccountCoordinator: Coordinator {
-    let settingVC: ColourSettingViewController = {
-        let settingVC: ColourSettingViewController = .init()
+    let settingVC: AccountViewController = {
+        let settingVC: AccountViewController = .init()
         settingVC.tabBarItem.title = R.string.localizable.setting()
         return settingVC
     }()

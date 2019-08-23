@@ -20,7 +20,7 @@
 		E53F1DFA22C0B60300F81CAA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DF922C0B60300F81CAA /* HomeViewController.swift */; };
 		E53F1DFC22C0B63000F81CAA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DFB22C0B63000F81CAA /* SearchViewController.swift */; };
 		E53F1DFE22C0B66700F81CAA /* ColourFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DFD22C0B66700F81CAA /* ColourFavoritesViewController.swift */; };
-		E53F1E0022C0B6BB00F81CAA /* ColourSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DFF22C0B6BB00F81CAA /* ColourSettingViewController.swift */; };
+		E53F1E0022C0B6BB00F81CAA /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DFF22C0B6BB00F81CAA /* AccountViewController.swift */; };
 		E54151B6230FFFB40036BA0F /* UnsplashTokenValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54151B5230FFFB40036BA0F /* UnsplashTokenValueObject.swift */; };
 		E54151B823103BFF0036BA0F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54151B723103BFF0036BA0F /* PhotoCollectionViewCell.swift */; };
 		E54151BF231049AA0036BA0F /* WarpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54151BE231049AA0036BA0F /* WarpView.swift */; };
@@ -148,7 +148,7 @@
 		E53F1DF922C0B60300F81CAA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E53F1DFB22C0B63000F81CAA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E53F1DFD22C0B66700F81CAA /* ColourFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourFavoritesViewController.swift; sourceTree = "<group>"; };
-		E53F1DFF22C0B6BB00F81CAA /* ColourSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSettingViewController.swift; sourceTree = "<group>"; };
+		E53F1DFF22C0B6BB00F81CAA /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		E54151B5230FFFB40036BA0F /* UnsplashTokenValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashTokenValueObject.swift; sourceTree = "<group>"; };
 		E54151B723103BFF0036BA0F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		E54151BE231049AA0036BA0F /* WarpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarpView.swift; sourceTree = "<group>"; };
@@ -510,7 +510,7 @@
 		E57950A92307F4A800000FD8 /* Account(User) */ = {
 			isa = PBXGroup;
 			children = (
-				E53F1DFF22C0B6BB00F81CAA /* ColourSettingViewController.swift */,
+				E53F1DFF22C0B6BB00F81CAA /* AccountViewController.swift */,
 			);
 			name = "Account(User)";
 			sourceTree = "<group>";
@@ -1119,7 +1119,7 @@
 				E592E72A22FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift in Sources */,
 				E5713F21230B0FF20033AF21 /* UserProtocol.swift in Sources */,
 				E5291A9F22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift in Sources */,
-				E53F1E0022C0B6BB00F81CAA /* ColourSettingViewController.swift in Sources */,
+				E53F1E0022C0B6BB00F81CAA /* AccountViewController.swift in Sources */,
 				E574CF5922C642DD009CF8CD /* SwiftyBeaver.swift in Sources */,
 				E579509B2307CB1E00000FD8 /* WarpingPhotoUseCase.swift in Sources */,
 				E57BD50122C4B55700FE44D4 /* SearchVCCoordinator.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ColourSettingViewController: UIViewController {
+class AccountViewController: UIViewController {
     
     lazy private var label: UILabel = {
         let label: UILabel = .init(frame: .zero)
