@@ -27,12 +27,13 @@ public extension Reactive where Base: Cacheable {
     }
     
     func fetch<T: CacheValue>(key: CacheKey<T>) -> Maybe<T?> {
-        return Observable<T?>.create { observer in
+        
+        
+        return Maybe.create{ (observer: @escaping (MaybeEvent<T?>) -> ()) -> Disposable in
             let element = self.base.fetch(key)
-            observer.on(.next(element))
-            observer.on(.completed)
+            observer(MaybeEvent.success(element))
             return Disposables.create()
-        }.asMaybe()
+        }
     }
   
     func delete<T: CacheValue>(key: CacheKey<T>) -> Completable {
@@ -43,7 +44,6 @@ public extension Reactive where Base: Cacheable {
             } catch {
                 observer(CompletableEvent.error(error))
             }
-            observer(CompletableEvent.completed)
             return Disposables.create()
         }
     }
