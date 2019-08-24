@@ -10,6 +10,7 @@
 		8A1F7E0788CD9A59C843E655 /* Pods_iOSArchitectureKKSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D9BDEBD800FC2B27475793 /* Pods_iOSArchitectureKKSample.framework */; };
 		98DB59B2D0F2E30AD7073B3E /* Pods_iOSArchitectureKKSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B059DBC24F5F99CC619BD3 /* Pods_iOSArchitectureKKSampleTests.framework */; };
 		A47FFB047C2B3969D94C6C27 /* Pods_iOSArchitectureKKSampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E545EC3CCE7B0B70E34174AC /* Pods_iOSArchitectureKKSampleUITests.framework */; };
+		E513C7152311A948005B0EC5 /* SingleNillable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E513C7142311A948005B0EC5 /* SingleNillable.swift */; };
 		E51648FC22CCDB5600D3D2D7 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51648FB22CCDB5600D3D2D7 /* Moya.framework */; };
 		E51648FE22CCDC2F00D3D2D7 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51648FD22CCDC2F00D3D2D7 /* RxAtomic.framework */; };
 		E516490022CCDC5300D3D2D7 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51648FF22CCDC5300D3D2D7 /* RxSwift.framework */; };
@@ -139,6 +140,7 @@
 		7E41D721FC13AB0982756A8E /* Pods-iOSArchitectureKKSampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSArchitectureKKSampleUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSArchitectureKKSampleUITests/Pods-iOSArchitectureKKSampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C52D9CC4468A60A6CB4B1D28 /* Pods-iOSArchitectureKKSampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSArchitectureKKSampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOSArchitectureKKSampleUITests/Pods-iOSArchitectureKKSampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D20711DED560C0808A1F1681 /* Pods-iOSArchitectureKKSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSArchitectureKKSample.release.xcconfig"; path = "Target Support Files/Pods-iOSArchitectureKKSample/Pods-iOSArchitectureKKSample.release.xcconfig"; sourceTree = "<group>"; };
+		E513C7142311A948005B0EC5 /* SingleNillable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleNillable.swift; sourceTree = "<group>"; };
 		E51648FB22CCDB5600D3D2D7 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		E51648FD22CCDC2F00D3D2D7 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		E51648FF22CCDC5300D3D2D7 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 		E513C7132311A8CD005B0EC5 /* Rx */ = {
 			isa = PBXGroup;
 			children = (
+				E513C7142311A948005B0EC5 /* SingleNillable.swift */,
 			);
 			name = Rx;
 			sourceTree = "<group>";
@@ -1139,6 +1142,7 @@
 				E57BD50722C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift in Sources */,
 				E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */,
 				E592E72422FEDEAB00AECEC4 /* UnsplashPortfolioValueObject.swift in Sources */,
+				E513C7152311A948005B0EC5 /* SingleNillable.swift in Sources */,
 				E57915D222F865AD009BCE95 /* UnsplashAccountValueObject.swift in Sources */,
 				E57950A22307E2C800000FD8 /* SearchUseCase.swift in Sources */,
 				E57950B82308594400000FD8 /* TokenRepository.swift in Sources */,
