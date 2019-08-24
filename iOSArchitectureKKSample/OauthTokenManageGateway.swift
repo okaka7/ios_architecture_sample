@@ -17,7 +17,12 @@ struct OauthTokenManageGateWay: APITokenRepository {
     }
     
     func saveToken(token: UnsplashTokenValueObject) {
-        self.keychainStore.save(.token, value: token)
+        do {
+            try self.keychainStore.save(.token, value: token)
+        } catch {
+            return
+        }
+        
     }
     
     func fetchToken() -> UnsplashTokenValueObject? {

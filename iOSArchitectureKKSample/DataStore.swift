@@ -10,9 +10,9 @@ import Foundation
 import KeychainAccess
 
 public protocol Cacheable {
-    func save<T: CacheValue>(_ key: CacheKey<T>, value: T)
+    func save<T: CacheValue>(_ key: CacheKey<T>, value: T) throws
     func fetch<T: CacheValue>(_ key: CacheKey<T>) -> T?
-    func delete<T: CacheValue>(_ key: CacheKey<T>)
+    func delete<T: CacheValue>(_ key: CacheKey<T>) throws
 }
 
 public protocol DataStorable {
@@ -23,16 +23,16 @@ public protocol DataStorable {
 }
 
 extension Cacheable {
-    public func save<T: CacheValue>(_ key: CacheKey<T>, value: T) {
-        T.set(key: key.rawValue, value: value, cache: self)
+    public func save<T: CacheValue>(_ key: CacheKey<T>, value: T) throws {
+        try T.set(key: key.rawValue, value: value, cache: self)
     }
     
     public func fetch<T: CacheValue>(_ key: CacheKey<T>) -> T? {
         return T.get(key: key.rawValue, cache: self) ?? key.defaultValue
     }
     
-    public func delete<T: CacheValue>(_ key: CacheKey<T>) {
-        T.set(key: key.rawValue, value: nil, cache: self)
+    public func delete<T: CacheValue>(_ key: CacheKey<T>) throws {
+        try T.set(key: key.rawValue, value: nil, cache: self)
     }
     // Note: You need to override this method
     fileprivate var store: DataStorable { fatalError("abstract class instance") }
@@ -110,8 +110,8 @@ public final class KeyChainCache: Cacheable {
 
 // MARK: LocalCacheValue
 public protocol CacheSettable {
-    static func set<Cache: Cacheable>(key: String, value: Self?, cache: Cache)
-    static func set<Cache: Cacheable>(key: String, array: [Self], cache: Cache)
+    static func set<Cache: Cacheable>(key: String, value: Self?, cache: Cache) throws
+    static func set<Cache: Cacheable>(key: String, array: [Self], cache: Cache) throws
 }
 
 public protocol LocalCacheGettable {
@@ -122,32 +122,32 @@ public protocol LocalCacheGettable {
 public typealias CacheValue = LocalCacheGettable & CacheSettable
 
 extension CacheSettable where Self: Encodable {
-    static func set<Cache: Cacheable>(key: String, value: Self?, cache: Cache) {
+    static func set<Cache: Cacheable>(key: String, value: Self?, cache: Cache) throws {
         guard let value = value else {
             cache.store.delete(key)
             return
         }
-        guard let data = encode(value) else {
+        guard let data = try encode(value) else {
             return
         }
         
         cache.store.save(key, value: data)
     }
-    static func set<Cache: Cacheable>(key: String, array: [Self], cache: Cache) {
+    static func set<Cache: Cacheable>(key: String, array: [Self], cache: Cache) throws {
         guard array.isEmpty else {
             cache.store.delete(key)
             return
         }
         
-        guard let data = encode(array) else {
+        guard let data = try encode(array) else {
             return
         }
         
         cache.store.save(key, value: data)
     }
     
-    private static func encode<T: Encodable>(_ value: T) -> Data? {
-        return try? JSONEncoder().encode(value)
+    private static func encode<T: Encodable>(_ value: T) throws -> Data? {
+        return try JSONEncoder().encode(value)
     }
 }
 
@@ -181,12 +181,12 @@ extension Array: CacheValue where Element: CacheValue {
         return nil
     }
     
-    public static func set<Cache: Cacheable>(key: String, value: [Element]?, cache: Cache) {
+    public static func set<Cache: Cacheable>(key: String, value: [Element]?, cache: Cache) throws {
         guard let value = value else {
             cache.delete(key)
             return
         }
-        Element.set(key: key, array: value, cache: cache)
+        try Element.set(key: key, array: value, cache: cache)
     }
     
     public static func set<Cache: Cacheable>(key: String, array: [Array<Element>], cache: Cache) {

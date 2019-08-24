@@ -15,8 +15,13 @@ extension KeyChainCache: ReactiveCompatible {}
 public extension Reactive where Base: Cacheable {
     func save<T: CacheValue>(key: CacheKey<T>, value: T) -> Completable {
         return Completable.create { (observer: @escaping PrimitiveSequenceType.CompletableObserver) -> Disposable in
-                self.base.save(key, value: value)
+            do {
+                try self.base.save(key, value: value)
                 observer(CompletableEvent.completed)
+            } catch {
+                observer(CompletableEvent.error(error))
+            }
+            
             return Disposables.create()
         }
     }
@@ -32,7 +37,12 @@ public extension Reactive where Base: Cacheable {
   
     func delete<T: CacheValue>(key: CacheKey<T>) -> Completable {
         return Completable.create { (observer: @escaping PrimitiveSequenceType.CompletableObserver) -> Disposable in
-            self.base.delete(key)
+            do {
+                try self.base.delete(key)
+                observer(CompletableEvent.completed)
+            } catch {
+                observer(CompletableEvent.error(error))
+            }
             observer(CompletableEvent.completed)
             return Disposables.create()
         }
