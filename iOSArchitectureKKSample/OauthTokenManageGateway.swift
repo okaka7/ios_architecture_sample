@@ -26,6 +26,13 @@ struct OauthTokenManageGateWay: APITokenRepository {
     }
     
     func fetchToken() -> UnsplashTokenValueObject? {
-        return self.keychainStore.fetch(.token)
+        let element: UnsplashTokenValueObject?
+        do {
+            element = try self.keychainStore.fetch(.token)
+            return element
+        } catch {
+            return nil
+        }
+        
     }
 }

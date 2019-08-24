@@ -11,7 +11,7 @@ import KeychainAccess
 
 public protocol Cacheable {
     func save<T: CacheValue>(_ key: CacheKey<T>, value: T) throws
-    func fetch<T: CacheValue>(_ key: CacheKey<T>) -> T?
+    func fetch<T: CacheValue>(_ key: CacheKey<T>) throws -> T?
     func delete<T: CacheValue>(_ key: CacheKey<T>) throws
 }
 
@@ -27,8 +27,8 @@ extension Cacheable {
         try T.set(key: key.rawValue, value: value, cache: self)
     }
     
-    public func fetch<T: CacheValue>(_ key: CacheKey<T>) -> T? {
-        return T.get(key: key.rawValue, cache: self) ?? key.defaultValue
+    public func fetch<T: CacheValue>(_ key: CacheKey<T>) throws -> T? {
+        return try T.get(key: key.rawValue, cache: self) ?? key.defaultValue
     }
     
     public func delete<T: CacheValue>(_ key: CacheKey<T>) throws {
@@ -115,8 +115,8 @@ public protocol CacheSettable {
 }
 
 public protocol LocalCacheGettable {
-    static func get<Cache: Cacheable>(key: String, cache: Cache) -> Self?
-    static func getArray<Cache: Cacheable>(key: String, cache: Cache) -> [Self]?
+    static func get<Cache: Cacheable>(key: String, cache: Cache) throws -> Self?
+    static func getArray<Cache: Cacheable>(key: String, cache: Cache) throws -> [Self]?
 }
 
 public typealias CacheValue = LocalCacheGettable & CacheSettable
@@ -152,28 +152,28 @@ extension CacheSettable where Self: Encodable {
 }
 
 extension LocalCacheGettable where Self: Decodable {
-    static func get<Cache: Cacheable>(key: String, cache: Cache) -> Self? {
+    static func get<Cache: Cacheable>(key: String, cache: Cache) throws -> Self? {
         guard let data = cache.store.fetch(key) else {
             return nil
         }
-        return decode(Self.self, from: data)
+        return try decode(Self.self, from: data)
     }
     
-    static func getArray<Cache: Cacheable>(key: String, cache: Cache) -> [Self]? {
+    static func getArray<Cache: Cacheable>(key: String, cache: Cache) throws -> [Self]? {
         guard let data = cache.store.fetch(key) else {
             return nil
         }
-        return decode([Self].self, from: data)
+        return try decode([Self].self, from: data)
     }
     
-    private static func decode<T: Decodable>(_ type: T.Type, from data: Data) -> T? {
-        return try? JSONDecoder().decode(type, from: data)
+    private static func decode<T: Decodable>(_ type: T.Type, from data: Data) throws -> T? {
+        return try JSONDecoder().decode(type, from: data)
     }
 }
 
 extension Array: CacheValue where Element: CacheValue {
-    public static func get<Cache: Cacheable>(key: String, cache: Cache) -> Array<Element>? {
-        return Element.getArray(key: key, cache: cache)
+    public static func get<Cache: Cacheable>(key: String, cache: Cache) throws -> Array<Element>? {
+        return try Element.getArray(key: key, cache: cache)
     }
     
     public static func getArray<Cache : Cacheable>(key: String, cache: Cache) -> [Array<Element>]? {
