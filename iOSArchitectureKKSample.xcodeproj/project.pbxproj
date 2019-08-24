@@ -286,6 +286,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E513C7132311A8CD005B0EC5 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Rx;
+			sourceTree = "<group>";
+		};
 		E516490722CD0E6200D3D2D7 /* Web */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +402,7 @@
 				E57826DB22D8D070002499A9 /* UIApplication+openURL.swift */,
 				E57826DF22D8DA01002499A9 /* NSObject+ClassName.swift */,
 				E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift */,
+				E513C7132311A8CD005B0EC5 /* Rx */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
