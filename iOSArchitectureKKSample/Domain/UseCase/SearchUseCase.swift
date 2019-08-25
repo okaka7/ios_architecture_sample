@@ -17,7 +17,6 @@ enum Category: Int {
 protocol SearchUsecaseInputPort: PhotoSelectable {
     func slideCategoryView(up: Bool)
     func fetchCategoryPhotos()
-    func searchPhotos(query: String)
 }
 
 protocol SearchUsecaseOutputPort: PhotoTransitionable {
