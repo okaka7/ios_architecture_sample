@@ -13,7 +13,7 @@ import UIKit
 final class Builder {
     static func buildAppCoordinator(window: UIWindow) -> AppCoordinator {
         let vc: SplashViewController = .init()
-        let viewAdapter: SplashViewInput = SplashViewAdapter.init(output: vc)
+        let viewAdapter: SplashViewInput = SplashViewAdapter.init(useCase: <#PhotoPrepareUseCaseInputPort#>, output: vc)
         vc.inject(controller: viewAdapter)
         
         let coordinator: AppCoordinator = .init(window: window,

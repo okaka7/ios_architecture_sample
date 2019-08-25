@@ -11,10 +11,8 @@ import Foundation
 // MARK: Photo
 protocol FetchPhotoRepository {
     func fetchPhoto(id: String) -> PhotoObject
-}
-
-protocol FetchPhotosRepository {
     func fetchPhots() -> [PhotoObject]
+    func fetchPhotos(query: String) -> SearchPhotoResultObject
 }
 
 protocol LikePhotoRepository {
@@ -24,10 +22,6 @@ protocol LikePhotoRepository {
 
 protocol DownloadPhotoRepository {
     func downloadPhoto(id: String) -> PhotoDownloadURLObject
-}
-
-protocol SearchPhotoRepository {
-    func searchPhotos(query: String) -> SearchPhotoResultObject
 }
 
 // MARK: Collection
