@@ -45,8 +45,6 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
                     if photoEntities.count < 20 {
                         self?.fetchPopularPhotos(page: page + 1, photoEntities: photoEntities)
                     } else {
-                        print("回数:\(self?.count)")
-                        print("数は\(photoEntities.count)個")
                         self?.output.setTopImages(photoEntities)
                     }
                 },
