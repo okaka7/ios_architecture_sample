@@ -14,9 +14,7 @@ protocol SplashViewInput: class {
     func fetchCategoryImages()
 }
 
-protocol SplashViewPresenter: class {
-    
-}
+
 
 protocol SplashControllerInjectable: class {
     func inject(controller: SplashViewInput)
@@ -28,10 +26,10 @@ final class SplashViewAdapter: SplashViewInput {
     var start: Date?
     
     private let useCase: PhotoPrepareUseCaseInputPort!
-    let output: SplashViewPresenter
+    let output: SplashViewModelProtocol
     
     init (useCase: PhotoPrepareUseCaseInputPort,
-          output: SplashViewPresenter) {
+          output: SplashViewModelProtocol) {
         self.useCase = useCase
         self.output = output
         self.useCase.output = self
