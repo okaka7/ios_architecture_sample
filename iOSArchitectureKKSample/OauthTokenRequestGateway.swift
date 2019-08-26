@@ -22,7 +22,7 @@ extension CodeGettable {
 protocol TokenRequestEmitter: class {
     var presenter: TokenRequestEmitAcceptable { get set }
     func tokenRequest(with urlComponents: URLComponents,
-                      completion:((UnsplashTokenValueObject) -> Void)?)
+                      completion:( (UnsplashTokenValueObject) -> Void)?)
 }
 
 protocol TokenRequestEmitAcceptable: class, CodeGettable {
@@ -32,7 +32,9 @@ protocol TokenRequestEmitAcceptable: class, CodeGettable {
 
 extension TokenRequestEmitAcceptable {
     func tokenRequest(with urlComponents: URLComponents) {
-        guard let code = self.getCode(from: urlComponents) else { return }
+        guard let code = self.getCode(from: urlComponents) else {
+            return
+        }
         tokenRequestUseCase.requestToken(code: code)
     }
 }
