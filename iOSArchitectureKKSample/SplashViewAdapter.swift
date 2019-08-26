@@ -31,4 +31,8 @@ final class SplashViewAdapter: SplashViewInput {
         self.useCase = useCase
         self.output = output
     }
+    
+    func fetchTopImages() {
+        
+    }
 }
