@@ -30,4 +30,10 @@ final class Builder {
     static func buildMainTabCoordinator() -> MainTabCoordinator {
         return MainTabCoordinator()
     }
+    
+    static func buildHomeVCCoordinator() -> HomeVCCoordinator {
+        return HomeVCCoordinator()
+    }
+    
+    
 }
