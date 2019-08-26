@@ -12,7 +12,9 @@ import RxSwift
 typealias UnsplashClient = UnsplashPhotoClient & UnsplashCollectionClient & UnsplashUserAccountClient
 
 protocol UnsplashPhotoClient {
-    func requestPhotos() -> Single<UnsplashPhotosTarget.Response>
+    func requestPhotos(page: Int,
+                       perPage: Int,
+                       orderBy: OrderBy) -> Single<UnsplashPhotosTarget.Response>
     func requestLikePhoto(id: String, isLike: Bool) -> Single<UnsplashLikePhotoTarget.Response>
     
     func requestDownloadPhotoURL(id: String) -> Single<UnsplashDownloadPhotoTarget.Response>

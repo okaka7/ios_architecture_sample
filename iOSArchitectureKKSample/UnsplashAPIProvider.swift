@@ -72,8 +72,12 @@ final class UnsplashAPIProvider {
 
 // MARK: Photo
 extension UnsplashAPIProvider: UnsplashPhotoClient {
-    func requestPhotos() -> Single<UnsplashPhotosTarget.Response> {
-        let target: UnsplashPhotosTarget = .init()
+    func requestPhotos(page: Int = 1,
+                       perPage: Int = 20,
+                       orderBy: OrderBy = .popular) -> Single<UnsplashPhotosTarget.Response> {
+        let target: UnsplashPhotosTarget = .init(page: page,
+                                                 perPage: perPage,
+                                                 orderBy: orderBy)
         return request(target)
     }
     

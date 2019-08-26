@@ -24,10 +24,9 @@ struct UnsplashPhotosTarget: UnsplashAPITargetType {
             case orderBy = "order_by"
         }
         
-        init(page: String = "1",
-             perPage: String = "20",
-             orderBy: OrderBy = .latest
-            ) {
+        init(page: String,
+             perPage: String,
+             orderBy: OrderBy) {
             
             self.page = page
             self.perPage = perPage
@@ -47,9 +46,9 @@ struct UnsplashPhotosTarget: UnsplashAPITargetType {
     let method: Moya.Method = .get
     let task: Task
     
-    init(page: Int = 1,
-         perPage: Int = 20,
-         orderBy: OrderBy = .popular) {
+    init(page: Int,
+         perPage: Int,
+         orderBy: OrderBy) {
         let parameter = Parameter(page: String(page),
                                   perPage: String(perPage),
                                   orderBy: orderBy)
