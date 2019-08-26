@@ -369,6 +369,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E576E31F23141F9C007446B8 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		E577379E22FECA8200559D37 /* Unsplash */ = {
 			isa = PBXGroup;
 			children = (
@@ -622,6 +629,7 @@
 			isa = PBXGroup;
 			children = (
 				E57C82EC230A8E2000F8F15C /* Common */,
+				E576E31F23141F9C007446B8 /* Splash */,
 				E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */,
 				E5B8A2372309CEF600AE29E8 /* TokenRequestUseCaseInputPort.swift */,
 				E579509A2307CB1E00000FD8 /* WarpingPhotoUseCase.swift */,
