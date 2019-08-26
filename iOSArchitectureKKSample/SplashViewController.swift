@@ -42,24 +42,26 @@ class SplashViewController: UIViewController, SplashViewPresenter {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+
+    }
+    
+    func fetchTopImage() {
+        controller.fetchTopImages()
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: { [weak self] in
             guard let self = self else {
                 return
             }
             self.transitioner?.transition()
             //note: splash画面でのトークン処理が必要ではならなくなったのでコメントアウト。ただどこかの画面で流用する可能性もあるのでコメントアウトで削除はしない
-//            if let token = KeychainStore.unsplashToken {
-//                #if DEBUG
-//                log.debug(token)
-//                #endif
-//            } else {
-//                let authentication = OauthAuthenticationGateway(outputView: self)
-//                authentication.authenticate()
-//            }
-
+            //            if let token = KeychainStore.unsplashToken {
+            //                #if DEBUG
+            //                log.debug(token)
+            //                #endif
+            //            } else {
+            //                let authentication = OauthAuthenticationGateway(outputView: self)
+            //                authentication.authenticate()
+            //            }
         })
-
     }
 }
 

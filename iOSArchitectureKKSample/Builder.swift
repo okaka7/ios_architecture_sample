@@ -15,13 +15,15 @@ final class Builder {
         
         let webAPIClient: UnsplashPhotoClient = UnsplashAPIProvider.shared
         let repository: FetchPhotoRepository = FetchPhotoGateWay.init(client: webAPIClient)
-        let viewAdapter: SplashViewInput = SplashViewAdapter.init(useCase: PhotoPrepareUseCase.init(repository: repository),
-                                                                  output: vc)
+        let viewAdapter: SplashViewInput = SplashViewAdapter.init(
+                useCase: PhotoPrepareUseCase.init(repository: repository),
+                output: vc)
         vc.inject(controller: viewAdapter)
         
         let coordinator: AppCoordinator = .init(window: window,
                                                 rootVC: vc)
         vc.inject(transitioner: coordinator)
+        vc.fetchTopImage()
         
         return  coordinator
     }
