@@ -44,6 +44,7 @@
 		E571E6F822B8325B0032A748 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */; };
 		E574CF5922C642DD009CF8CD /* SwiftyBeaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574CF5822C642DD009CF8CD /* SwiftyBeaver.swift */; };
 		E574CF6B22C64D5B009CF8CD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E574CF6D22C64D5B009CF8CD /* Localizable.strings */; };
+		E576E31B2313DAC6007446B8 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E576E31A2313DAC6007446B8 /* SplashViewModel.swift */; };
 		E57737A022FECEE400559D37 /* UnsplashErrorValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E577379F22FECEE400559D37 /* UnsplashErrorValueObject.swift */; };
 		E577D5C022C56B0000588A38 /* MainTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E577D5BF22C56B0000588A38 /* MainTabCoordinator.swift */; };
 		E57826CF22D8AB20002499A9 /* UnsplashRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57826CE22D8AB20002499A9 /* UnsplashRepository.swift */; };
@@ -176,6 +177,7 @@
 		E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		E574CF5822C642DD009CF8CD /* SwiftyBeaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyBeaver.swift; sourceTree = "<group>"; };
 		E574CF6C22C64D5B009CF8CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E576E31A2313DAC6007446B8 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		E577379F22FECEE400559D37 /* UnsplashErrorValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashErrorValueObject.swift; sourceTree = "<group>"; };
 		E577D5BF22C56B0000588A38 /* MainTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabCoordinator.swift; sourceTree = "<group>"; };
 		E57826CE22D8AB20002499A9 /* UnsplashRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRepository.swift; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 			children = (
 				E592297D22AE65E8003EC30C /* SplashViewController.swift */,
 				E55E19C4230998DD007C1C57 /* SplashViewAdapter.swift */,
+				E576E31A2313DAC6007446B8 /* SplashViewModel.swift */,
 			);
 			name = Splash;
 			sourceTree = "<group>";
@@ -1118,6 +1121,7 @@
 				E57DEECE22C48CB300B0AAA1 /* R.generated.swift in Sources */,
 				E5B8A2442309EC7200AE29E8 /* UserUIValueObject.swift in Sources */,
 				E5B8A2322309C81100AE29E8 /* UIViewController.Extension.swift in Sources */,
+				E576E31B2313DAC6007446B8 /* SplashViewModel.swift in Sources */,
 				E5713F1F230B0B900033AF21 /* HomeViewAdapter.swift in Sources */,
 				E55E19C72309A5F1007C1C57 /* Builder.swift in Sources */,
 				E54151C1231057E30036BA0F /* SearchViewAdapter.swift in Sources */,
