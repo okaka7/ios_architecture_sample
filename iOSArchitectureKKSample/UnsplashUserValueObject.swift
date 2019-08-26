@@ -12,7 +12,7 @@ protocol UserObject {}
 
 struct UnsplashUserValueObject: UserObject, Codable {
     let id: String
-    let updatedAt: Date
+   // let updatedAt: Date
     let username, name, firstName, lastName: String
     let twitterUsername: String?
     let portfolioURL: String?
@@ -32,7 +32,7 @@ struct UnsplashUserValueObject: UserObject, Codable {
     
     enum CodingKeys: String, CodingKey {
         case id
-        case updatedAt = "updated_at"
+      //  case updatedAt = "updated_at"
         case username, name
         case firstName = "first_name"
         case lastName = "last_name"

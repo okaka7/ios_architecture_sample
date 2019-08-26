@@ -38,6 +38,7 @@ final class AppCoordinator: Coordinator, SplashTransitioner {
     func start() {
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
+        rootViewController.fetchTopImage()
     }
     
     func transition() {

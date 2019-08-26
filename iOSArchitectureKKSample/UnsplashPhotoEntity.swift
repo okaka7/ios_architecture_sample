@@ -11,34 +11,35 @@ import Foundation
 protocol PhotoObject {}
 
 struct UnsplashPhotoEntity: PhotoObject, Codable {
-    let id, createdAt, updatedAt: String
+    let id: String
+    //, createdAt, updatedAt
     let width, height: Int
-    let color, description, altDescription: String
+    let color, description, altDescription: String?
     let urls: Urls
     let links: UnsplashPhotoVOLinks
     let categories: [String?]
-    let sponsored: Bool
-    let sponsoredBy: UnsplashUserValueObject
-    let sponsoredImpressionsID: String
+//    let sponsored: Bool
+//    let sponsoredBy: UnsplashUserValueObject
+//    let sponsoredImpressionsID: String
     let likes: Int
     let likedByUser: Bool
     let currentUserCollections: [String?]
-    let user: UnsplashUserValueObject
-    let sponsorship: Sponsorship
+   // let user: UnsplashUserValueObject
+   // let sponsorship: Sponsorship
 
     enum CodingKeys: String, CodingKey {
         case id
-        case createdAt = "created_at"
-        case updatedAt = "updated_at"
+//        case createdAt = "created_at"
+//        case updatedAt = "updated_at"
         case width, height, color, description
         case altDescription = "alt_description"
-        case urls, links, categories, sponsored
-        case sponsoredBy = "sponsored_by"
-        case sponsoredImpressionsID = "sponsored_impressions_id"
+        case urls, links, categories//, sponsored
+//        case sponsoredBy = "sponsored_by"
+//        case sponsoredImpressionsID = "sponsored_impressions_id"
         case likes
         case likedByUser = "liked_by_user"
         case currentUserCollections = "current_user_collections"
-        case user, sponsorship
+      //  case user//, sponsorship
     }
 }
 

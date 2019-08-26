@@ -26,7 +26,8 @@ extension UnsplashAPITargetType {
     }
     
     var headers: [String: String]? {
-        return ["Accept-Version" : "v1"]
+        return ["Accept-Version": "v1",
+                "Authorization": "Bearer 6f3071aecb8ab60ee788b6202a67cc078d35bcd68e8a690bc200a1eaccf0f05b"]
     }
     
     // TODO: あとでテストコードの際に具体的な返り値を設定

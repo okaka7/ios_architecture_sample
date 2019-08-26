@@ -26,7 +26,7 @@ final class UnsplashAPIProvider {
         }
     }
     
-    var token: UnsplashTokenValueObject?
+    var token: String = "6f3071aecb8ab60ee788b6202a67cc078d35bcd68e8a690bc200a1eaccf0f05b"
     
     private lazy var provider: MoyaProvider<MultiTarget> = {
         let plugins: [Moya.PluginType] = {
@@ -48,10 +48,10 @@ final class UnsplashAPIProvider {
             
             let accessTokenPlugin: AccessTokenPlugin = .init(tokenClosure: { [weak self] in
                 if let token = self?.token {
-                    return token.rawValue
-                } else if let token = self?.tokenClosure() {
-                    self?.token = token
-                    return token.rawValue
+                    return token
+                } else if let tokenValue = self?.tokenClosure() {
+                    self?.token = tokenValue.rawValue
+                    return tokenValue.rawValue
                 } else {
                     return R.string.localizable.unsplashAPIClientID()
                 }

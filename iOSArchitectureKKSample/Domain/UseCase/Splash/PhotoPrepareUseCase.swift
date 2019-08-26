@@ -25,7 +25,7 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
     let repository: FetchPhotoRepository
     weak var output: PhotoPrepareUseCaseOutputPort!
     let disposeBag: DisposeBag
-    
+    var count = 0
     init(repository: FetchPhotoRepository) {
         self.repository = repository
         self.disposeBag = DisposeBag()
@@ -34,10 +34,10 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
                             photoEntities: [UnsplashPhotoEntity] = [UnsplashPhotoEntity]())
                              {
         var photoEntities = photoEntities
-                                
-        repository.fetchPhotos(page: page, perPage: 30, orderBy: .popular)
+                  count += 1
+        repository.fetchPhotos(page: page, perPage: 50, orderBy: .popular)
             .subscribe(
-                onSuccess: {[weak self]elements in
+                onSuccess: {[weak self] elements in
                     let passingElements = elements.filter {
                         $0.heightRatioToWidth <= 1.6 && $0.heightRatioToWidth >= 1.4
                     }
@@ -45,6 +45,8 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
                     if photoEntities.count < 20 {
                         self?.fetchPopularPhotos(page: page + 1, photoEntities: photoEntities)
                     } else {
+                        print("回数:\(self?.count)")
+                        print("数は\(photoEntities.count)個")
                         self?.output.setTopImages(photoEntities)
                     }
                 },

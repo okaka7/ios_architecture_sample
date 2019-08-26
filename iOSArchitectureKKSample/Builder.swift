@@ -23,7 +23,7 @@ final class Builder {
         let coordinator: AppCoordinator = .init(window: window,
                                                 rootVC: vc)
         vc.inject(transitioner: coordinator)
-        vc.fetchTopImage()
+        
         
         return  coordinator
     }

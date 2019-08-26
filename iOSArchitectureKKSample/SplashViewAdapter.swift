@@ -22,6 +22,7 @@ protocol SplashControllerInjectable: class {
 }
 
 final class SplashViewAdapter: SplashViewInput {
+    var start: Date?
     
     private let useCase: PhotoPrepareUseCaseInputPort!
     let output: SplashViewPresenter
@@ -34,14 +35,18 @@ final class SplashViewAdapter: SplashViewInput {
     }
     
     func fetchTopImages() {
+        start = Date()
         useCase.fetchPopularPhotos(page: 1, photoEntities: [UnsplashPhotoEntity]())
+        
     }
 }
-
-
 extension SplashViewAdapter: PhotoPrepareUseCaseOutputPort {
     func setTopImages(_ images: [UnsplashPhotoEntity]) {
-        print(images)
+        #if DEBUG
+        log.debug("🖌yay")
+        let elapsed = Date().timeIntervalSince(start!)
+        print("時間は\(elapsed)")
+        #endif
     }
     
     func setCategoryImage(_ image: UnsplashPhotoEntity, category: Category) {
