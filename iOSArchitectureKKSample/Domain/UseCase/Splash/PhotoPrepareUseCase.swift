@@ -57,7 +57,7 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
         var photos: [UnsplashPhotoEntity] = [UnsplashPhotoEntity]()
         repository.searchPhotos(query: query,
                                 page: 1,
-                                perPage: 30,
+                                perPage: 10,
                                 orientation: .portraint)
             .subscribe(onSuccess: { result in
                 photos.append(contentsOf: result.results)
