@@ -15,7 +15,18 @@ final class UnsplashAPIProvider {
     
     typealias tokenClosure = () -> UnsplashTokenValueObject
     
-    let tokenClosure: tokenClosure
+    let tokenClosure: tokenClosure = {
+        let element: UnsplashTokenValueObject?
+        do {
+            let keychainStore = KeyChainCache.shared
+            let element = try self.keychainStore.fetch(.token)
+            return element
+        } catch {
+            return nil
+        }
+    }
+    
+    
     
     private lazy var provider: MoyaProvider<MultiTarget> = {
         let plugins: [Moya.PluginType] = {
@@ -62,8 +73,8 @@ final class UnsplashAPIProvider {
         return provider
     }()
     
-    init(tokenClosure: @escaping tokenClosure) {
-        self.tokenClosure = tokenClosure
+    init() {
+        
     }
     
     private func request<R>(_ target: R) -> Single<R.Response> where R: UnsplashAPITargetType {
