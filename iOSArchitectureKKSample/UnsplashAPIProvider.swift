@@ -13,7 +13,9 @@ import RxMoya
 
 final class UnsplashAPIProvider {
     
-    let tokenRepository: APITokenRepository
+    typealias tokenClosure = () -> UnsplashTokenValueObject
+    
+    let tokenClosure: tokenClosure
     
     private lazy var provider: MoyaProvider<MultiTarget> = {
         let plugins: [Moya.PluginType] = {
@@ -33,8 +35,8 @@ final class UnsplashAPIProvider {
                 }
             })
             
-            let accessTokenPlugin: AccessTokenPlugin = .init(tokenClosure: { [tokenRepository] () -> String in
-                if let token = tokenRepository.fetchToken() {
+            let accessTokenPlugin: AccessTokenPlugin = .init(tokenClosure: { [weak self] in
+                if let token = self?.tokenClosure() {
                     return token.rawValue
                 } else {
                     return R.string.localizable.unsplashAPIClientID()
@@ -60,8 +62,8 @@ final class UnsplashAPIProvider {
         return provider
     }()
     
-    init(tokenRepository: APITokenRepository) {
-        self.tokenRepository = tokenRepository
+    init(tokenClosure: @escaping tokenClosure) {
+        self.tokenClosure = tokenClosure
     }
     
     private func request<R>(_ target: R) -> Single<R.Response> where R: UnsplashAPITargetType {
@@ -72,6 +74,11 @@ final class UnsplashAPIProvider {
 
 // MARK: Photo
 extension UnsplashAPIProvider: UnsplashPhotoClient {
+    func requestPhoto(id: String) -> Single<UnsplashPhotoTarget.Response> {
+        let target: UnsplashPhotoTarget = .init(id: id)
+        return request(target)
+    }
+    
     func requestPhotos(page: Int = 1,
                        perPage: Int = 20,
                        orderBy: OrderBy = .popular) -> Single<UnsplashPhotosTarget.Response> {

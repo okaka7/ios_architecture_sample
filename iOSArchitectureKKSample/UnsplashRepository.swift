@@ -7,12 +7,19 @@
 //
 
 import Foundation
+import RxSwift
 
 // MARK: Photo
 protocol FetchPhotoRepository {
-    func fetchPhoto(id: String) -> PhotoObject
-    func fetchPhots() -> [PhotoObject]
-    func fetchPhotos(query: String) -> SearchPhotoResultObject
+    
+    func fetchPhoto(id: String) -> Single<UnsplashPhotoTarget.Response>
+    func fetchPhotos(page: Int,
+                     perPage: Int,
+                     orderBy: OrderBy) -> Single<UnsplashPhotosTarget.Response>
+    func searchPhotos(query: String,
+                      page: Int,
+                      perPage: Int,
+                      orientation: PhotoOrientation) -> Single<UnsplashSearchPhotosTarget.Response>
 }
 
 protocol LikePhotoRepository {

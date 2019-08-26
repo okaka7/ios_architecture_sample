@@ -12,6 +12,9 @@ import RxSwift
 typealias UnsplashClient = UnsplashPhotoClient & UnsplashCollectionClient & UnsplashUserAccountClient
 
 protocol UnsplashPhotoClient {
+    
+    func requestPhoto(id: String) -> Single<UnsplashPhotoTarget.Response>
+    
     func requestPhotos(page: Int,
                        perPage: Int,
                        orderBy: OrderBy) -> Single<UnsplashPhotosTarget.Response>
@@ -24,6 +27,8 @@ protocol UnsplashPhotoClient {
                             perPage: Int,
                             orientation: PhotoOrientation) -> Single<UnsplashSearchPhotosTarget.Response>
 }
+
+
 
 protocol UnsplashCollectionClient {
     func requestCollection(id : String) -> Single<UnsplashCollectionTarget.Response>
@@ -49,6 +54,3 @@ protocol UnsplashUserAccountClient {
     func requestUserCollections(userName name: String) -> Single<UnsplashUserCollectionsTarget.Response> 
 }
 
-func requestSearchPhotos(query: String, page: Int, perPage: Int, orderBy: OrderBy) -> Single<UnsplashSearchPhotosTarget.Response> {
-    <#code#>
-}
