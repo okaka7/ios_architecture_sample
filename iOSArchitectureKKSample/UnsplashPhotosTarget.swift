@@ -25,7 +25,7 @@ struct UnsplashPhotosTarget: UnsplashAPITargetType {
         }
         
         init(page: String = "1",
-             perPage: String = "10",
+             perPage: String = "20",
              orderBy: OrderBy = .latest
             ) {
             
@@ -45,8 +45,16 @@ struct UnsplashPhotosTarget: UnsplashAPITargetType {
     
     let path: String = "/photos"
     let method: Moya.Method = .get
-    var task: Task {
-        return .requestPlain
+    let task: Task
+    
+    init(page: Int = 1,
+         perPage: Int = 20,
+         orderBy: OrderBy = .popular) {
+        let parameter = Parameter(page: String(page),
+                                  perPage: String(perPage),
+                                  orderBy: orderBy)
+        self.task = .requestParameters(parameters: parameter.parameter,
+                                       encoding: URLEncoding.default)
     }
 }
 
