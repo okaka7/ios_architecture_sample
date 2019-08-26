@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct PhotoUIValueObject {
     let id: String
     //let width, height: Int

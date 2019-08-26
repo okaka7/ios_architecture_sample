@@ -1,4 +1,3 @@
-
 //  UnsplashTokenResposne.swift
 //  iOSArchitectureKKSample
 //

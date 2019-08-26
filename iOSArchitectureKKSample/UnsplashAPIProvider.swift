@@ -28,8 +28,6 @@ final class UnsplashAPIProvider {
     
     var token: UnsplashTokenValueObject?
     
-    
-    
     private lazy var provider: MoyaProvider<MultiTarget> = {
         let plugins: [Moya.PluginType] = {
             #if DEBUG

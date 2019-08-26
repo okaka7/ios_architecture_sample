@@ -27,7 +27,7 @@ public extension Reactive where Base: Cacheable {
     }
     
     func fetch<T: CacheValue>(key: CacheKey<T>) -> Maybe<T?> {
-        return Maybe.create{ observer in
+        return Maybe.create{observer in
             do {
                 let element = try self.base.fetch(key)
                 observer(MaybeEvent.success(element))

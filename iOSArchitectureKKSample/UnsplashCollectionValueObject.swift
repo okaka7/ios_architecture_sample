@@ -92,18 +92,28 @@ struct Tag: Codable {
 
 extension UnsplashCollectionValueObject {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(UnsplashCollectionValueObject.self, from: data) else { return nil }
+        guard let me = try? JSONDecoder()
+            .decode(UnsplashCollectionValueObject.self,
+                    from: data) else {
+                return nil
+            }
         self = me
     }
 
     init?(_ json: String, using encoding: String.Encoding = .utf8) {
-        guard let data = json.data(using: encoding) else { return nil }
+        guard let data = json.data(using: encoding) else {
+            return nil
+        }
         self.init(data: data)
     }
 
     init?(fromURL url: String) {
-        guard let url = URL(string: url) else { return nil }
-        guard let data = try? Data(contentsOf: url) else { return nil }
+        guard let url = URL(string: url) else {
+            return nil
+        }
+        guard let data = try? Data(contentsOf: url) else {
+            return nil
+        }
         self.init(data: data)
     }
 
@@ -112,25 +122,38 @@ extension UnsplashCollectionValueObject {
     }
 
     var json: String? {
-        guard let data = self.jsonData else { return nil }
+        guard let data = self.jsonData else {
+            return nil
+        }
         return String(data: data, encoding: .utf8)
     }
 }
 
 extension CoverPhoto {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(CoverPhoto.self, from: data) else { return nil }
+        guard let me = try? JSONDecoder()
+            .decode(CoverPhoto.self,
+                    from: data)
+            else {
+                    return nil
+                    }
         self = me
     }
 
     init?(_ json: String, using encoding: String.Encoding = .utf8) {
-        guard let data = json.data(using: encoding) else { return nil }
+        guard let data = json.data(using: encoding) else {
+            return nil
+        }
         self.init(data: data)
     }
 
     init?(fromURL url: String) {
-        guard let url = URL(string: url) else { return nil }
-        guard let data = try? Data(contentsOf: url) else { return nil }
+        guard let url = URL(string: url) else {
+            return nil
+        }
+        guard let data = try? Data(contentsOf: url) else {
+            return nil
+        }
         self.init(data: data)
     }
 
@@ -139,7 +162,9 @@ extension CoverPhoto {
     }
 
     var json: String? {
-        guard let data = self.jsonData else { return nil }
+        guard let data = self.jsonData else {
+            return nil
+        }
         return String(data: data, encoding: .utf8)
     }
 }

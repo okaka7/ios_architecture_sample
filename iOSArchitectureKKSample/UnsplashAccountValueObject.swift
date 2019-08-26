@@ -64,9 +64,6 @@ struct UnsplashAccountValueObject: AccountObject, Codable {
         case email
     }
 }
-
-
-
 // MARK: - Tags
 struct Tags: Codable {
     let custom, aggregated: [Aggregated]

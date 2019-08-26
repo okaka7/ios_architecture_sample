@@ -15,7 +15,6 @@ public protocol CacheKeys {
     var defaultValue: Value? { get }
 }
 
-
 public class CacheKey<Value: CacheValue>: CacheKeys {
     public let rawValue: String
     public let defaultValue: Value?

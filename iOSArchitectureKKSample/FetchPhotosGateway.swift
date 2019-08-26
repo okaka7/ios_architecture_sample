@@ -17,8 +17,6 @@ struct FetchPhotoGateWay: FetchPhotoRepository {
         self.client = client
     }
     
-    
-    
     func fetchPhoto(id: String) -> Single<UnsplashPhotoTarget.Response> {
         return client.requestPhoto(id: id)
     }
