@@ -58,9 +58,6 @@ struct UnsplashPhotoVOLinks: Codable {
     }
 }
 
-
-
-
 struct ProfileImage: Codable {
     let small, medium, large: String
 }

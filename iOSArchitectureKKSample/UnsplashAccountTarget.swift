@@ -13,7 +13,6 @@ struct UnsplashAccountTarget: UnsplashAPITargetType {
     typealias Account = UnsplashAccountValueObject
     typealias Response = Account
     
-    
     let path: String = "/me"
     var method: Moya.Method {
         return .get

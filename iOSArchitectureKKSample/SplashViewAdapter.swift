@@ -21,13 +21,12 @@ protocol SplashControllerInjectable: class {
     func inject(controller: SplashViewInput)
 }
 
-
 final class SplashViewAdapter: SplashViewInput {
     private let useCase: PhotoPrepareUseCaseInputPort
     let output: SplashViewPresenter
     
     init (useCase: PhotoPrepareUseCaseInputPort,
-        output: SplashViewPresenter) {
+          output: SplashViewPresenter) {
         self.useCase = useCase
         self.output = output
     }

@@ -24,4 +24,3 @@ protocol SearchUsecaseOutputPort: PhotoTransitionable {
     func slideCategoryView(up: Bool)
     func showSearchResult(photos: [PhotoObject])
 }
-

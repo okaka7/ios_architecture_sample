@@ -18,5 +18,3 @@ protocol TopImageUseCaseOutputPort: PhotoTransitionable {
     func switchImage(_ image: PhotoObject)
     func showImages(_ image: [PhotoObject])
 }
-
-

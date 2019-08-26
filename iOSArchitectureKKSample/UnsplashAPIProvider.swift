@@ -127,24 +127,24 @@ extension UnsplashAPIProvider: UnsplashPhotoClient {
 
 // MARK: Collection
 extension UnsplashAPIProvider: UnsplashCollectionClient {
-    func requestCollection(id : String) -> Single<UnsplashCollectionTarget.Response> {
+    func requestCollection(id: String) -> Single<UnsplashCollectionTarget.Response> {
         let target: UnsplashCollectionTarget = .init(id: id)
         return request(target)
     }
     
-    func requestCollectionPhotos(id : String) -> Single<UnsplashCollectionPhotosTarget.Response> {
+    func requestCollectionPhotos(id: String) -> Single<UnsplashCollectionPhotosTarget.Response> {
         let target: UnsplashCollectionPhotosTarget = .init(id: id)
         return request(target)
     }
     
-    func requestRelatedCollections(id : String) -> Single<UnsplashRelatedCollectionsTarget.Response> {
+    func requestRelatedCollections(id: String) -> Single<UnsplashRelatedCollectionsTarget.Response> {
         let target: UnsplashRelatedCollectionsTarget = .init(id: id)
         return request(target)
     }
     
     func requestEditPhotoInCollection(isAdding: Bool,
-                                             collectionID: String,
-                                             photoID: String) -> Single<UnsplashEditPhotoInCollectionTarget.Response> {
+                                      collectionID: String,
+                                      photoID: String) -> Single<UnsplashEditPhotoInCollectionTarget.Response> {
         let target: UnsplashEditPhotoInCollectionTarget = .init(isAdding: isAdding,
                                                                 collectionID: collectionID,
                                                                 photoID: photoID)
@@ -179,6 +179,3 @@ extension UnsplashAPIProvider: UnsplashUserAccountClient {
         return request(target)
     }
 }
-
-
-

@@ -22,7 +22,7 @@ extension CodeGettable {
 protocol TokenRequestEmitter: class {
     var presenter: TokenRequestEmitAcceptable { get set }
     func tokenRequest(with urlComponents: URLComponents,
-                      completion: ((UnsplashTokenValueObject)->())?)
+                      completion:((UnsplashTokenValueObject) -> Void)?)
 }
 
 protocol TokenRequestEmitAcceptable: class, CodeGettable {
@@ -43,7 +43,7 @@ struct OauthTokenRequestGateway: TokenRequestReposiotry {
     
     func requestToken(code: String) {
         tokenRequestClient.request(code: code,
-                                   onSuccess: { tokenObject in
+                                   onSuccess: {tokenObject in
                                         #if DEBUG
                                         log.debug("saveToken!!!!")
                                         #endif
@@ -54,7 +54,6 @@ struct OauthTokenRequestGateway: TokenRequestReposiotry {
                                         #endif
                                     })
     }
-    
     
     init(tokenRequestClient: TokenRequestClient) {
         self.tokenRequestClient = tokenRequestClient

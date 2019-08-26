@@ -17,5 +17,3 @@ protocol PhotoLikeUpdatale {
     func likePhoto(id: String)
     func unlikePhoto(id: String)
 }
-
-

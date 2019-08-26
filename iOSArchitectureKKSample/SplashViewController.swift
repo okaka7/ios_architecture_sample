@@ -13,7 +13,6 @@ import KeychainAccess
 //    func openAuthenticationURL(_ url: URL, completionHandler completion: ((Bool) -> Void)?)
 //}
 
-
 class SplashViewController: UIViewController, SplashViewPresenter {
     
     lazy private var label: UILabel = {

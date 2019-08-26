@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 final class Builder {
     static func buildAppCoordinator(window: UIWindow) -> AppCoordinator {
         let vc: SplashViewController = .init()
@@ -34,6 +33,5 @@ final class Builder {
     static func buildHomeVCCoordinator() -> HomeVCCoordinator {
         return HomeVCCoordinator()
     }
-    
     
 }

@@ -23,23 +23,20 @@ protocol UnsplashPhotoClient {
     func requestDownloadPhotoURL(id: String) -> Single<UnsplashDownloadPhotoTarget.Response>
     
     func requestSearchPhotos(query: String,
-                            page: Int,
-                            perPage: Int,
-                            orientation: PhotoOrientation) -> Single<UnsplashSearchPhotosTarget.Response>
+                             page: Int,
+                             perPage: Int,
+                             orientation: PhotoOrientation) -> Single<UnsplashSearchPhotosTarget.Response>
 }
-
-
-
 protocol UnsplashCollectionClient {
-    func requestCollection(id : String) -> Single<UnsplashCollectionTarget.Response>
+    func requestCollection(id: String) -> Single<UnsplashCollectionTarget.Response>
     
-    func requestCollectionPhotos(id : String) -> Single<UnsplashCollectionPhotosTarget.Response>
+    func requestCollectionPhotos(id: String) -> Single<UnsplashCollectionPhotosTarget.Response>
     
-    func requestRelatedCollections(id : String) -> Single<UnsplashRelatedCollectionsTarget.Response>
+    func requestRelatedCollections(id: String) -> Single<UnsplashRelatedCollectionsTarget.Response>
     
     func requestEditPhotoInCollection(isAdding: Bool,
-                                             collectionID: String,
-                                             photoID: String) -> Single<UnsplashEditPhotoInCollectionTarget.Response> 
+                                      collectionID: String,
+                                      photoID: String) -> Single<UnsplashEditPhotoInCollectionTarget.Response>
 }
 
 protocol UnsplashUserAccountClient {
@@ -53,4 +50,3 @@ protocol UnsplashUserAccountClient {
     
     func requestUserCollections(userName name: String) -> Single<UnsplashUserCollectionsTarget.Response> 
 }
-

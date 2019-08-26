@@ -60,12 +60,10 @@ struct UnsplashAuthorizeURL: AuthorizableURL {
         // self.authenticationView = outputView
     }
     
-    
-    
-    func authenticate(){
-        guard let unsplashOauthURL = self.url else {
-            return
-        }
+    func authenticate() {
+//        guard let unsplashOauthURL = self.url else {
+//            return
+//        }
         
         // self.authenticationView?.openAuthenticationURL(unsplashOauthURL)
     }
