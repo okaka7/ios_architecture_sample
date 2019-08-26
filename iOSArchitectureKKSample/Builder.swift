@@ -14,9 +14,9 @@ final class Builder {
     static func buildAppCoordinator(window: UIWindow) -> AppCoordinator {
         let vc: SplashViewController = .init()
         
-        let webAPIClient: UnsplashPhotoClient = UnsplashAPIProvider.init(tokenClosure: <#T##UnsplashAPIProvider.tokenClosure##UnsplashAPIProvider.tokenClosure##() -> UnsplashTokenValueObject#>)
-        let repository: FetchPhotoRepository = FetchPhotoGateWay.init(client: <#T##UnsplashPhotoClient#>)
-        let viewAdapter: SplashViewInput = SplashViewAdapter.init(useCase: PhotoPrepareUseCase.init(repository: <#FetchPhotoRepository#>),
+        let webAPIClient: UnsplashPhotoClient = UnsplashAPIProvider.shared
+        let repository: FetchPhotoRepository = FetchPhotoGateWay.init(client: webAPIClient)
+        let viewAdapter: SplashViewInput = SplashViewAdapter.init(useCase: PhotoPrepareUseCase.init(repository: repository),
                                                                   output: vc)
         vc.inject(controller: viewAdapter)
         

@@ -54,13 +54,13 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
     }
     
     func searchPhotos(query: String) -> [UnsplashPhotoEntity] {
-        var photos: [UnsplashPhotoEntity]
+        var photos: [UnsplashPhotoEntity] = [UnsplashPhotoEntity]()
         repository.searchPhotos(query: query,
                                 page: 1,
                                 perPage: 30,
                                 orientation: .portraint)
             .subscribe(onSuccess: { result in
-                photos = result.results
+                photos.append(contentsOf: result.results)
             },
             onError: { error in
                 

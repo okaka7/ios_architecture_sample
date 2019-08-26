@@ -55,14 +55,13 @@ struct UnsplashSearchPhotosTarget: UnsplashAPITargetType {
         return "/search/photos"
     }
     let method: Moya.Method = .get
-    let query: String
     let task: Task
     
     init(query: String,
          page: Int,
          perPage: Int,
          orientation: PhotoOrientation) {
-        self.task = .requestParameters(parameters: Parameter(query: self.query,
+        self.task = .requestParameters(parameters: Parameter(query: query,
                                                              page: String(page),
                                                              perPage: String(perPage),
                                                              orientation: .portraint).parameter,

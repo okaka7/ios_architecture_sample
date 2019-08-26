@@ -13,18 +13,20 @@ import RxMoya
 
 final class UnsplashAPIProvider {
     
-    typealias tokenClosure = () -> UnsplashTokenValueObject
+    typealias TokenClosure = () -> UnsplashTokenValueObject?
     
-    let tokenClosure: tokenClosure = {
+    let tokenClosure: TokenClosure = {
         let element: UnsplashTokenValueObject?
         do {
             let keychainStore = KeyChainCache.shared
-            let element = try self.keychainStore.fetch(.token)
+            let element = try keychainStore.fetch(.token)
             return element
         } catch {
             return nil
         }
     }
+    
+    var token: UnsplashTokenValueObject?
     
     
     
@@ -47,7 +49,10 @@ final class UnsplashAPIProvider {
             })
             
             let accessTokenPlugin: AccessTokenPlugin = .init(tokenClosure: { [weak self] in
-                if let token = self?.tokenClosure() {
+                if let token = self?.token {
+                    return token.rawValue
+                } else if let token = self?.tokenClosure() {
+                    self?.token = token
                     return token.rawValue
                 } else {
                     return R.string.localizable.unsplashAPIClientID()
@@ -67,13 +72,13 @@ final class UnsplashAPIProvider {
             
         }()
         
-        
-        
         let provider = MoyaProvider<MultiTarget>(plugins: plugins)
         return provider
     }()
     
-    init() {
+    static let shared = UnsplashAPIProvider.init()
+    
+    private init() {
         
     }
     
