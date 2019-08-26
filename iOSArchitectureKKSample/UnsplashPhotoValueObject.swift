@@ -42,6 +42,12 @@ struct UnsplashPhotoValueObject: PhotoObject, Codable {
     }
 }
 
+extension UnsplashPhotoValueObject {
+    var heightRatioToWidth: Float {
+        return Float(height) / Float(width)
+    }
+}
+
 struct UnsplashPhotoVOLinks: Codable {
     let purpleSelf, html, download, downloadLocation: String
 
