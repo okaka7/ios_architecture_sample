@@ -12,7 +12,7 @@ import RxSwift
 
 protocol PhotoPrepareUseCaseInputPort: class {
     func fetchPopularPhotos(page:Int, photoEntities: [UnsplashPhotoEntity]) -> [UnsplashPhotoEntity]
-    func searchPhotos(query: String) -> [PhotoObject]
+    func searchPhotos(query: String) -> [UnsplashPhotoEntity]
 }
 
 protocol PhotoPrepareUseCaseOutputPort {
@@ -28,9 +28,12 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
         self.repository = repository
         self.disposeBag = DisposeBag()
     }
-    func fetchPopularPhotos(page:Int = 1, photoEntities: [UnsplashPhotoEntity] = [UnsplashPhotoEntity]()) -> [UnsplashPhotoEntity] {
+    func fetchPopularPhotos(page:Int = 1,
+                            photoEntities: [UnsplashPhotoEntity] = [UnsplashPhotoEntity]())
+                            ->
+                            [UnsplashPhotoEntity] {
         var photoEntities = photoEntities
-        repository.fetchPhotos(page: page, perPage: 20, orderBy: .popular)
+        repository.fetchPhotos(page: page, perPage: 30, orderBy: .popular)
             .subscribe(
                 onSuccess: {elements in
                     let passingElements = elements.filter {
@@ -50,8 +53,20 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
         }
     }
     
-    func searchPhotos(query: String) -> [PhotoObject] {
-        <#code#>
+    func searchPhotos(query: String) -> [UnsplashPhotoEntity] {
+        var photos: [UnsplashPhotoEntity]
+        repository.searchPhotos(query: query,
+                                page: 1,
+                                perPage: 30,
+                                orientation: .portraint)
+            .subscribe(onSuccess: { result in
+                photos = result.results
+            },
+            onError: { error in
+                
+            })
+        .disposed(by: disposeBag)
+        return photos
     }
     
     
