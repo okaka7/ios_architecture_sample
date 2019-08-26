@@ -38,7 +38,6 @@ final class SplashViewAdapter: SplashViewInput {
     func fetchTopImages() {
         start = Date()
         useCase.fetchPopularPhotos(page: 1, photoEntities: [UnsplashPhotoEntity]())
-        
     }
 }
 extension SplashViewAdapter: PhotoPrepareUseCaseOutputPort {
@@ -51,7 +50,7 @@ extension SplashViewAdapter: PhotoPrepareUseCaseOutputPort {
     }
     
     func fetchCategoryImages() {
-        <#code#>
+        
     }
     
     func setCategoryImage(_ image: UnsplashPhotoEntity, category: Category) {

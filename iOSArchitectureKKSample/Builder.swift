@@ -11,14 +11,16 @@ import UIKit
 
 final class Builder {
     static func buildAppCoordinator(window: UIWindow) -> AppCoordinator {
-        let vc: SplashViewController = .init()
         
-        let webAPIClient: UnsplashPhotoClient = UnsplashAPIProvider.shared
-        let repository: FetchPhotoRepository = FetchPhotoGateWay.init(client: webAPIClient)
+        let webAPIClient: UnsplashAPIProvider = UnsplashAPIProvider.shared
+        let repository: FetchPhotoGateWay = .init(client: webAPIClient)
+        let useCase: PhotoPrepareUseCase = .init(repository: repository)
+        let viewModel: SplashViewModel = .init()
         let viewAdapter: SplashViewInput = SplashViewAdapter.init(
-                useCase: PhotoPrepareUseCase.init(repository: repository),
-                output: vc)
-        vc.inject(controller: viewAdapter)
+            useCase: useCase,
+            output: viewModel)
+        let vc: SplashViewController = .init(controller: viewAdapter)
+        
         
         let coordinator: AppCoordinator = .init(window: window,
                                                 rootVC: vc)

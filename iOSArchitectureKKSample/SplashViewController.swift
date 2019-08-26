@@ -13,7 +13,7 @@ import KeychainAccess
 //    func openAuthenticationURL(_ url: URL, completionHandler completion: ((Bool) -> Void)?)
 //}
 
-class SplashViewController: UIViewController, SplashViewPresenter {
+class SplashViewController: UIViewController {
     
     lazy private var label: UILabel = {
         let label: UILabel = .init(frame: .zero)
@@ -26,9 +26,10 @@ class SplashViewController: UIViewController, SplashViewPresenter {
     weak private var transitioner: SplashTransitioner! 
     private var controller: SplashViewInput!
 
-    init() {
+    init(controller: SplashViewInput) {
         super.init(nibName: nil, bundle: nil)
         self.view.backgroundColor = .white
+        self.controller = controller
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -61,11 +62,6 @@ extension SplashViewController: SplashTransitionerInjectable {
     }
 }
 
-extension SplashViewController: SplashControllerInjectable{
-    func inject(controller: SplashViewInput) {
-        self.controller = controller
-    }
-}
 
 //extension SplashViewController: UnsplashAuthenticationOutput { }
 //
