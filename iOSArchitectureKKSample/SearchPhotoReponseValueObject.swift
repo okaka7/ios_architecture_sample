@@ -12,7 +12,7 @@ protocol SearchPhotoResultObject {}
 
 struct SearchPhotoReponseValueObject: SearchPhotoResultObject, Codable {
     let total, totalPages: Int
-    let results: [UnsplashPhotoValueObject]
+    let results: [UnsplashPhotoEntity]
 
     enum CodingKeys: String, CodingKey {
         case total

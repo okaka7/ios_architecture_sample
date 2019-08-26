@@ -10,7 +10,7 @@ import Foundation
 
 protocol PhotoObject {}
 
-struct UnsplashPhotoValueObject: PhotoObject, Codable {
+struct UnsplashPhotoEntity: PhotoObject, Codable {
     let id, createdAt, updatedAt: String
     let width, height: Int
     let color, description, altDescription: String
@@ -42,7 +42,7 @@ struct UnsplashPhotoValueObject: PhotoObject, Codable {
     }
 }
 
-extension UnsplashPhotoValueObject {
+extension UnsplashPhotoEntity {
     var heightRatioToWidth: Float {
         return Float(height) / Float(width)
     }
@@ -82,9 +82,9 @@ struct Urls: Codable {
 
 // MARK: Convenience initializers
 
-extension UnsplashPhotoValueObject {
+extension UnsplashPhotoEntity {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(UnsplashPhotoValueObject.self, from: data) else {
+        guard let me = try? JSONDecoder().decode(UnsplashPhotoEntity.self, from: data) else {
             return nil
         }
         self = me

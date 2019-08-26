@@ -11,7 +11,7 @@ import Moya
 
 struct UnsplashCollectionPhotosTarget: UnsplashAPITargetType {
     
-    typealias Response = [UnsplashPhotoValueObject]
+    typealias Response = [UnsplashPhotoEntity]
     
     var path: String {
         return "/collections/\(id)/photos"
