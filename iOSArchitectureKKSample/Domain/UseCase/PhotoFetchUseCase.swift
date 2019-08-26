@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PhotoPrepareUseCaseInputPort {
+protocol PhotoPrepareUseCaseInputPort: class {
     func fetchPopularPhotos() -> [PhotoObject]
     func searchPhotos(query: String) -> [PhotoObject]
 }
@@ -16,4 +16,17 @@ protocol PhotoPrepareUseCaseInputPort {
 protocol PhotoPrepareUseCaseOutputPort {
     func setTopImages(_ images: [PhotoObject])
     func setCategoryImage(_ image: [PhotoObject], category: Category)
+}
+
+final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
+    
+    func fetchPopularPhotos() -> [PhotoObject] {
+        <#code#>
+    }
+    
+    func searchPhotos(query: String) -> [PhotoObject] {
+        <#code#>
+    }
+    
+    
 }
