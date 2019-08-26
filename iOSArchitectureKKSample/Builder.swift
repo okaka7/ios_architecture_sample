@@ -26,4 +26,8 @@ final class Builder {
         
         return  coordinator
     }
+    
+    static func buildMainTabCoordinator() -> MainTabCoordinator {
+        return MainTabCoordinator()
+    }
 }
