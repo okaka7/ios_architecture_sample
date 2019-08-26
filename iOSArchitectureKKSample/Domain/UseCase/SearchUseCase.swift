@@ -8,10 +8,14 @@
 
 import Foundation
 
-enum Category: Int {
-    case animal
+enum Category: String, CaseIterable {
+    case people
     case travel
+    case animal
     case fashion
+    case nature
+    case architecture
+    case experimental
 }
 
 protocol SearchUsecaseInputPort: PhotoSelectable {
