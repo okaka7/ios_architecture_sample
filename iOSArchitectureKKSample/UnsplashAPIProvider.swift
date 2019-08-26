@@ -80,6 +80,16 @@ extension UnsplashAPIProvider: UnsplashPhotoClient {
                                                  orderBy: orderBy)
         return request(target)
     }
+    func requestSearchPhotos(query: String,
+                             page: Int = 1,
+                             perPage: Int = 20,
+                             orientation: PhotoOrientation = .portraint) -> Single<UnsplashSearchPhotosTarget.Response> {
+        let target: UnsplashSearchPhotosTarget = .init(query: query,
+                                                       page: page,
+                                                       perPage: perPage,
+                                                       orientation: orientation)
+        return request(target)
+    }
     
     func requestLikePhoto(id: String, isLike: Bool) -> Single<UnsplashLikePhotoTarget.Response> {
         let target: UnsplashLikePhotoTarget = .init(id: id, like: isLike)
@@ -88,11 +98,6 @@ extension UnsplashAPIProvider: UnsplashPhotoClient {
     
     func requestDownloadPhotoURL(id: String) -> Single<UnsplashDownloadPhotoTarget.Response> {
         let target: UnsplashDownloadPhotoTarget = .init(id: id)
-        return request(target)
-    }
-    
-    func requestSearchPhots(query: String) -> Single<UnsplashSearchPhotosTarget.Response> {
-        let target: UnsplashSearchPhotosTarget = .init(query: query)
         return request(target)
     }
 }

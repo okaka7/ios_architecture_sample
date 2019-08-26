@@ -22,7 +22,7 @@ protocol UnsplashPhotoClient {
     func requestSearchPhotos(query: String,
                             page: Int,
                             perPage: Int,
-                            orderBy: OrderBy) -> Single<UnsplashSearchPhotosTarget.Response>
+                            orientation: PhotoOrientation) -> Single<UnsplashSearchPhotosTarget.Response>
 }
 
 protocol UnsplashCollectionClient {
@@ -47,4 +47,8 @@ protocol UnsplashUserAccountClient {
     func requestUserPortfolio(userName name: String) -> Single<UnsplashUserPortfolioTarget.Response>
     
     func requestUserCollections(userName name: String) -> Single<UnsplashUserCollectionsTarget.Response> 
+}
+
+func requestSearchPhotos(query: String, page: Int, perPage: Int, orderBy: OrderBy) -> Single<UnsplashSearchPhotosTarget.Response> {
+    <#code#>
 }

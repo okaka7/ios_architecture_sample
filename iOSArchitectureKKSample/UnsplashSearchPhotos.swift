@@ -31,9 +31,9 @@ struct UnsplashSearchPhotosTarget: UnsplashAPITargetType {
         }
         
         init(query: String,
-             page: String = "1",
-             perPage: String = "10",
-             orientation: PhotoOrientation = .portraint
+             page: String,
+             perPage: String,
+             orientation: PhotoOrientation
             ) {
             self.query = query
             self.page = page
@@ -56,12 +56,17 @@ struct UnsplashSearchPhotosTarget: UnsplashAPITargetType {
     }
     let method: Moya.Method = .get
     let query: String
-    var task: Task {
-        return .requestParameters(parameters: Parameter(query: self.query).parameter, encoding: URLEncoding.default)
-    }
+    let task: Task
     
-    init(query: String) {
-        self.query = query
+    init(query: String,
+         page: Int,
+         perPage: Int,
+         orientation: PhotoOrientation) {
+        self.task = .requestParameters(parameters: Parameter(query: self.query,
+                                                             page: String(page),
+                                                             perPage: String(perPage),
+                                                             orientation: .portraint).parameter,
+                                       encoding: URLEncoding.default)
     }
 }
 
