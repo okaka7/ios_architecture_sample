@@ -19,7 +19,10 @@ protocol UnsplashPhotoClient {
     
     func requestDownloadPhotoURL(id: String) -> Single<UnsplashDownloadPhotoTarget.Response>
     
-    func requestSearchPhots(query: String) -> Single<UnsplashSearchPhotosTarget.Response> 
+    func requestSearchPhotos(query: String,
+                            page: Int,
+                            perPage: Int,
+                            orderBy: OrderBy) -> Single<UnsplashSearchPhotosTarget.Response>
 }
 
 protocol UnsplashCollectionClient {
