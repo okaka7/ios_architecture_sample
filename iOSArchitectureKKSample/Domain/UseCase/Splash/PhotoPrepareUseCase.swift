@@ -65,7 +65,9 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
                 photos.append(contentsOf: result.results)
             },
             onError: { error in
-                
+                #if DEBUG
+                    log.debug(error)
+                #endif
             })
         .disposed(by: disposeBag)
         return photos
