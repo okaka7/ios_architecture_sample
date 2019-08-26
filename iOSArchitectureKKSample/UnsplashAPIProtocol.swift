@@ -17,15 +17,19 @@ protocol UnsplashPhotoClient {
     
     func requestPhotos(page: Int,
                        perPage: Int,
-                       orderBy: OrderBy) -> Single<UnsplashPhotosTarget.Response>
-    func requestLikePhoto(id: String, isLike: Bool) -> Single<UnsplashLikePhotoTarget.Response>
+                       orderBy: OrderBy)
+                        -> Single<UnsplashPhotosTarget.Response>
+    func requestLikePhoto(id: String,
+                          isLike: Bool)
+                            -> Single<UnsplashLikePhotoTarget.Response>
     
-    func requestDownloadPhotoURL(id: String) -> Single<UnsplashDownloadPhotoTarget.Response>
+    func requestDownloadPhotoURL(id: String)-> Single<UnsplashDownloadPhotoTarget.Response>
     
     func requestSearchPhotos(query: String,
                              page: Int,
                              perPage: Int,
-                             orientation: PhotoOrientation) -> Single<UnsplashSearchPhotosTarget.Response>
+                             orientation: PhotoOrientation)
+                                -> Single<UnsplashSearchPhotosTarget.Response>
 }
 protocol UnsplashCollectionClient {
     func requestCollection(id: String) -> Single<UnsplashCollectionTarget.Response>

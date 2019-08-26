@@ -8,6 +8,6 @@
 
 import Foundation
 
-class SplashViewModel {
+final class SplashViewModel {
     
 }

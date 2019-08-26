@@ -20,6 +20,7 @@ struct FetchPhotoGateWay: FetchPhotoRepository {
     func fetchPhoto(id: String) -> Single<UnsplashPhotoTarget.Response> {
         return client.requestPhoto(id: id)
     }
+    
     func fetchPhotos(page: Int,
                      perPage: Int,
                      orderBy: OrderBy) -> Single<UnsplashPhotosTarget.Response> {
