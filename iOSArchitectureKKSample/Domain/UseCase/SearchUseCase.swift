@@ -15,7 +15,6 @@ enum Category: String, CaseIterable {
     case fashion
     case nature
     case architecture
-    case experimental
 }
 
 protocol SearchUsecaseInputPort: PhotoSelectable {
