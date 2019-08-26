@@ -43,7 +43,9 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
                     
                 },
                 onError: { error in
-                    
+                    #if DEBUG
+                        log.debug(error)
+                    #endif
                 })
             .disposed(by: disposeBag)
         if photoEntities.count < 20 {
