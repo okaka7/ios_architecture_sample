@@ -23,7 +23,7 @@ protocol SplashControllerInjectable: class {
 
 final class SplashViewAdapter: SplashViewInput {
     
-    private weak var useCase: PhotoPrepareUseCaseInputPort!
+    private let useCase: PhotoPrepareUseCaseInputPort!
     let output: SplashViewPresenter
     
     init (useCase: PhotoPrepareUseCaseInputPort,
@@ -34,8 +34,7 @@ final class SplashViewAdapter: SplashViewInput {
     }
     
     func fetchTopImages() {
-        let images = useCase.fetchPopularPhotos(page: 1, photoEntities: [UnsplashPhotoEntity]())
-        print(images)
+        useCase.fetchPopularPhotos(page: 1, photoEntities: [UnsplashPhotoEntity]())
     }
 }
 

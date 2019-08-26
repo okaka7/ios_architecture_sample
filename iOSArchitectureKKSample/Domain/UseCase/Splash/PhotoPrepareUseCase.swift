@@ -16,14 +16,14 @@ protocol PhotoPrepareUseCaseInputPort: class {
     func searchPhotos(query: String, page: Int)
 }
 
-protocol PhotoPrepareUseCaseOutputPort {
+protocol PhotoPrepareUseCaseOutputPort: class {
     func setTopImages(_ images: [UnsplashPhotoEntity])
     func setCategoryImage(_ image: UnsplashPhotoEntity, category: Category)
 }
 
 final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
     let repository: FetchPhotoRepository
-    var output: PhotoPrepareUseCaseOutputPort!
+    weak var output: PhotoPrepareUseCaseOutputPort!
     let disposeBag: DisposeBag
     
     init(repository: FetchPhotoRepository) {

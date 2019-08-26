@@ -58,18 +58,17 @@ final class UnsplashAPIProvider {
             })
             
             #if DEBUG
-            return [loggerPlugin,
-                    fetchPaginationLinksPlugin,
-                    accessTokenPlugin
+            return [accessTokenPlugin,
+                    loggerPlugin,
+                    fetchPaginationLinksPlugin
             ]
             #else
             return [fetchPaginationLinksPlugin,
                     accessTokenPlugin
-            ]
+                ]
             #endif
             
         }()
-        
         let provider = MoyaProvider<MultiTarget>(plugins: plugins)
         return provider
     }()

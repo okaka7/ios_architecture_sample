@@ -19,7 +19,6 @@ enum OrderBy: String, Encodable {
     case popular
 }
 
-
 extension UnsplashAPITargetType {
     
     public var baseURL: URL {
