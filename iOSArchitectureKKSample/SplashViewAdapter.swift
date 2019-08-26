@@ -11,6 +11,7 @@ import Foundation
 
 protocol SplashViewInput: class {
     func fetchTopImages()
+    func fetchCategoryImages()
 }
 
 protocol SplashViewPresenter: class {
@@ -22,6 +23,8 @@ protocol SplashControllerInjectable: class {
 }
 
 final class SplashViewAdapter: SplashViewInput {
+    
+    
     var start: Date?
     
     private let useCase: PhotoPrepareUseCaseInputPort!
@@ -47,6 +50,10 @@ extension SplashViewAdapter: PhotoPrepareUseCaseOutputPort {
         let elapsed = Date().timeIntervalSince(start!)
         print("時間は\(elapsed)")
         #endif
+    }
+    
+    func fetchCategoryImages() {
+        <#code#>
     }
     
     func setCategoryImage(_ image: UnsplashPhotoEntity, category: Category) {
