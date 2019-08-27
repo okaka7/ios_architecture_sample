@@ -12,8 +12,6 @@ protocol SearchViewInputPort: class {
     
 }
 
-
-
 final class SearchController: SearchViewInputPort{
     
 }

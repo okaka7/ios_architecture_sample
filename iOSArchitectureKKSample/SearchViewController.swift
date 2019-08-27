@@ -10,6 +10,16 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    lazy private var searchController: UISearchController = {
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        self.navigationItem.searchController = searchController
+
+        return searchController
+    }()
+    
     lazy private var label: UILabel = {
         let label: UILabel = .init(frame: .zero)
         label.text = "search"
@@ -35,6 +45,10 @@ class SearchViewController: UIViewController {
         
         self.view.addSubview(label)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        _ = self.searchController
+    }
 
     /*
     // MARK: - Navigation
@@ -46,4 +60,18 @@ class SearchViewController: UIViewController {
     }
     */
 
+}
+
+extension SearchViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        // SearchBarに入力したテキストを使って表示データをフィルタリングする。
+        let text = searchController.searchBar.text ?? ""
+        if text.isEmpty {
+           // filteredTitles = titles
+        } else {
+           // filteredTitles = titles.filter { $0.contains(text) }
+        }
+        //tableView.reloadData()
+    }
 }
