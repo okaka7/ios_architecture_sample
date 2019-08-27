@@ -81,7 +81,7 @@
 		E57C82FA230AA29900F8F15C /* CollectionSelectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C82F9230AA29900F8F15C /* CollectionSelectable.swift */; };
 		E57DEECE22C48CB300B0AAA1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DEECD22C48CB300B0AAA1 /* R.generated.swift */; };
 		E581FBA522D346B400754098 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E581FBA422D346B400754098 /* KeychainAccess.framework */; };
-		E5867C0422C4831E009E9EF8 /* ColourWorkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5867C0322C4831E009E9EF8 /* ColourWorkDetailViewController.swift */; };
+		E5867C0422C4831E009E9EF8 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5867C0322C4831E009E9EF8 /* PhotoViewController.swift */; };
 		E58A2CB623126185008C66BA /* PhotoPrepareUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58A2CB523126185008C66BA /* PhotoPrepareUseCase.swift */; };
 		E58A2CB8231265CA008C66BA /* FetchPhotosGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58A2CB7231265CA008C66BA /* FetchPhotosGateway.swift */; };
 		E592297C22AE65E8003EC30C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592297B22AE65E8003EC30C /* AppDelegate.swift */; };
@@ -217,7 +217,7 @@
 		E57C82F9230AA29900F8F15C /* CollectionSelectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSelectable.swift; sourceTree = "<group>"; };
 		E57DEECD22C48CB300B0AAA1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E581FBA422D346B400754098 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
-		E5867C0322C4831E009E9EF8 /* ColourWorkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourWorkDetailViewController.swift; sourceTree = "<group>"; };
+		E5867C0322C4831E009E9EF8 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		E58A2CB523126185008C66BA /* PhotoPrepareUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPrepareUseCase.swift; sourceTree = "<group>"; };
 		E58A2CB7231265CA008C66BA /* FetchPhotosGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhotosGateway.swift; sourceTree = "<group>"; };
 		E592297822AE65E8003EC30C /* iOSArchitectureKKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSArchitectureKKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -327,7 +327,7 @@
 		E55E19C22309959C007C1C57 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
-				E5867C0322C4831E009E9EF8 /* ColourWorkDetailViewController.swift */,
+				E5867C0322C4831E009E9EF8 /* PhotoViewController.swift */,
 			);
 			name = Photo;
 			sourceTree = "<group>";
@@ -1116,7 +1116,7 @@
 				E5521F5022F1E18A00D38F02 /* UnsplashPhotoEntity.swift in Sources */,
 				E57915D022F8621C009BCE95 /* UnsplashAccountTarget.swift in Sources */,
 				E57826CF22D8AB20002499A9 /* UnsplashRepository.swift in Sources */,
-				E5867C0422C4831E009E9EF8 /* ColourWorkDetailViewController.swift in Sources */,
+				E5867C0422C4831E009E9EF8 /* PhotoViewController.swift in Sources */,
 				E592E73422FF02E500AECEC4 /* UnsplashRelatedCollections.swift in Sources */,
 				E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */,
 				E5B8A23C2309E4A600AE29E8 /* AuthenticationPresenter.swift in Sources */,

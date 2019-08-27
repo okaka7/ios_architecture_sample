@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ColourWorkDetailViewController: UIViewController {
+class PhotoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
