@@ -33,7 +33,7 @@
 		E5521F5222F1E30100D38F02 /* UnsplashPhotosTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5521F5122F1E30100D38F02 /* UnsplashPhotosTarget.swift */; };
 		E55E19BF2308E066007C1C57 /* UnsplashAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19BE2308E066007C1C57 /* UnsplashAPIProtocol.swift */; };
 		E55E19C1230991BC007C1C57 /* OauthTokenManageGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C0230991BC007C1C57 /* OauthTokenManageGateway.swift */; };
-		E55E19C5230998DD007C1C57 /* SplashViewInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C4230998DD007C1C57 /* SplashViewInputController.swift */; };
+		E55E19C5230998DD007C1C57 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C4230998DD007C1C57 /* SplashController.swift */; };
 		E55E19C72309A5F1007C1C57 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C62309A5F1007C1C57 /* Builder.swift */; };
 		E55E19C92309ACAB007C1C57 /* AuthorizableURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C82309ACAB007C1C57 /* AuthorizableURL.swift */; };
 		E55E19CB2309B149007C1C57 /* TokenRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19CA2309B149007C1C57 /* TokenRequestClient.swift */; };
@@ -167,7 +167,7 @@
 		E5521F5122F1E30100D38F02 /* UnsplashPhotosTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhotosTarget.swift; sourceTree = "<group>"; };
 		E55E19BE2308E066007C1C57 /* UnsplashAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPIProtocol.swift; sourceTree = "<group>"; };
 		E55E19C0230991BC007C1C57 /* OauthTokenManageGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthTokenManageGateway.swift; sourceTree = "<group>"; };
-		E55E19C4230998DD007C1C57 /* SplashViewInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewInputController.swift; sourceTree = "<group>"; };
+		E55E19C4230998DD007C1C57 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		E55E19C62309A5F1007C1C57 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		E55E19C82309ACAB007C1C57 /* AuthorizableURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizableURL.swift; sourceTree = "<group>"; };
 		E55E19CA2309B149007C1C57 /* TokenRequestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequestClient.swift; sourceTree = "<group>"; };
@@ -503,7 +503,7 @@
 			isa = PBXGroup;
 			children = (
 				E592297D22AE65E8003EC30C /* SplashViewController.swift */,
-				E55E19C4230998DD007C1C57 /* SplashViewInputController.swift */,
+				E55E19C4230998DD007C1C57 /* SplashController.swift */,
 				E576E31A2313DAC6007446B8 /* SplashViewModel.swift */,
 			);
 			name = Splash;
@@ -1077,7 +1077,7 @@
 				E54D3664230DB6C000C6476B /* DataStore.swift in Sources */,
 				E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */,
 				E57BD4FF22C4B4DD00FE44D4 /* HomeVCCoordinator.swift in Sources */,
-				E55E19C5230998DD007C1C57 /* SplashViewInputController.swift in Sources */,
+				E55E19C5230998DD007C1C57 /* SplashController.swift in Sources */,
 				E57826E022D8DA01002499A9 /* NSObject+ClassName.swift in Sources */,
 				E57C82EE230A8E3700F8F15C /* PhotoSelectable.swift in Sources */,
 				E57915DE22F8A3B2009BCE95 /* UnsplashLikePhotoTarget.swift in Sources */,

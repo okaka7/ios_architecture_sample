@@ -8,45 +8,38 @@
 
 import Foundation
 
-
 protocol SplashViewInput: class {
     func fetchTopImages()
     func fetchCategoryImages()
 }
 
-protocol SplashControllerInjectable: class {
-    func inject(controller: SplashViewInput)
-}
-
-final class SplashViewInputController: SplashViewInput {
+final class SplashController: SplashViewInput {
+    func fetchCategoryImages() {
+    }
+    
     var start: Date?
     
     private let useCase: PhotoPrepareUseCaseInputPort!
-    let output: SplashViewModelProtocol
     
-    init (useCase: PhotoPrepareUseCaseInputPort,
-          output: SplashViewModelProtocol) {
+    init (useCase: PhotoPrepareUseCaseInputPort) {
         self.useCase = useCase
-        self.output = output
-        self.useCase.output = self
     }
     
     func fetchTopImages() {
-        start = Date()
         useCase.fetchPopularPhotos(page: 1, photoEntities: [UnsplashPhotoEntity]())
     }
 }
-extension SplashViewInputController: PhotoPrepareUseCaseOutputPort {
+
+final class SplashViewPresenter: PhotoPrepareUseCaseOutputPort {
+    let viewModel: SplashViewModelProtocol
+    
+    init(viewModel: SplashViewModelProtocol) {
+        self.viewModel = viewModel
+    }
     func setTopImages(_ images: [UnsplashPhotoEntity]) {
         #if DEBUG
         log.debug("🖌yay")
-        let elapsed = Date().timeIntervalSince(start!)
-        print("時間は\(elapsed)")
         #endif
-    }
-    
-    func fetchCategoryImages() {
-        
     }
     
     func setCategoryImage(_ image: UnsplashPhotoEntity, category: Category) {

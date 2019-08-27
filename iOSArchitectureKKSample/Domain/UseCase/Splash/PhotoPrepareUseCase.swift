@@ -11,7 +11,7 @@ import Moya
 import RxSwift
 
 protocol PhotoPrepareUseCaseInputPort: class {
-    var output: PhotoPrepareUseCaseOutputPort! { get set }
+    var output: PhotoPrepareUseCaseOutputPort { get }
     func fetchPopularPhotos(page: Int, photoEntities: [UnsplashPhotoEntity])
     func searchPhotos(query: String, page: Int)
 }
@@ -23,12 +23,15 @@ protocol PhotoPrepareUseCaseOutputPort: class {
 
 final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
     let repository: FetchPhotoRepository
-    weak var output: PhotoPrepareUseCaseOutputPort!
+    let output: PhotoPrepareUseCaseOutputPort
     let disposeBag: DisposeBag
     var count = 0
-    init(repository: FetchPhotoRepository) {
+    
+    init(repository: FetchPhotoRepository,
+         output: PhotoPrepareUseCaseOutputPort) {
         self.repository = repository
         self.disposeBag = DisposeBag()
+        self.output = output
     }
     func fetchPopularPhotos(page: Int = 1,
                             photoEntities: [UnsplashPhotoEntity] = [UnsplashPhotoEntity]())

@@ -24,12 +24,16 @@ class SplashViewController: UIViewController {
     }()
     
     weak private var transitioner: SplashTransitioner! 
-    private var controller: SplashViewInput!
+    private let controller: SplashViewInput!
+    let viewModel: SplashViewModelProtocol
 
-    init(controller: SplashViewInput) {
+    init(controller: SplashViewInput,
+         viewModel: SplashViewModelProtocol) {
+        self.controller = controller
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         self.view.backgroundColor = .white
-        self.controller = controller
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -48,7 +52,6 @@ class SplashViewController: UIViewController {
     
     func fetchTopImage() {
         controller.fetchTopImages()
-        
         self.transitioner?.transition()
         
     }
