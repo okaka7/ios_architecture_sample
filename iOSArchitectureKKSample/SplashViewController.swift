@@ -47,8 +47,6 @@ class SplashViewController: UIViewController {
     }
     
     func fetchTopImage() {
-        
-        
         controller.fetchTopImages()
         
         self.transitioner?.transition()

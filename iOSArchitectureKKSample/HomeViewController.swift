@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         #if DEBUG
-        log.debug("ColourCategoryViewController.init()!!!")
+            log.debug("ColourCategoryViewController.init()!!!")
         #endif
         self.view.backgroundColor = .white
         

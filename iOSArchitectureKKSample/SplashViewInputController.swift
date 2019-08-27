@@ -14,15 +14,11 @@ protocol SplashViewInput: class {
     func fetchCategoryImages()
 }
 
-
-
 protocol SplashControllerInjectable: class {
     func inject(controller: SplashViewInput)
 }
 
-final class SplashViewAdapter: SplashViewInput {
-    
-    
+final class SplashViewInputController: SplashViewInput {
     var start: Date?
     
     private let useCase: PhotoPrepareUseCaseInputPort!
@@ -40,7 +36,7 @@ final class SplashViewAdapter: SplashViewInput {
         useCase.fetchPopularPhotos(page: 1, photoEntities: [UnsplashPhotoEntity]())
     }
 }
-extension SplashViewAdapter: PhotoPrepareUseCaseOutputPort {
+extension SplashViewInputController: PhotoPrepareUseCaseOutputPort {
     func setTopImages(_ images: [UnsplashPhotoEntity]) {
         #if DEBUG
         log.debug("🖌yay")
