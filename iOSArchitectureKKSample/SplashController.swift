@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol SplashViewInput: class {
+protocol SplashViewInputPort: class {
     func fetchTopImages()
     func fetchCategoryImages()
 }
 
-final class SplashController: SplashViewInput {
+final class SplashController: SplashViewInputPort {
     func fetchCategoryImages() {
     }
     

@@ -11,7 +11,6 @@ import UIKit
 
 final class Builder {
     static func buildAppCoordinator(window: UIWindow) -> AppCoordinator {
-        
         let webAPIClient: UnsplashAPIProvider = UnsplashAPIProvider.shared
         let repository: FetchPhotoGateWay = .init(client: webAPIClient)
         let viewModel: SplashViewModel = .init()

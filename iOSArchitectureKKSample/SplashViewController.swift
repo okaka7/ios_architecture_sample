@@ -24,10 +24,10 @@ class SplashViewController: UIViewController {
     }()
     
     weak private var transitioner: SplashTransitioner! 
-    private let controller: SplashViewInput!
+    private let controller: SplashViewInputPort!
     let viewModel: SplashViewModelProtocol
 
-    init(controller: SplashViewInput,
+    init(controller: SplashViewInputPort,
          viewModel: SplashViewModelProtocol) {
         self.controller = controller
         self.viewModel = viewModel
