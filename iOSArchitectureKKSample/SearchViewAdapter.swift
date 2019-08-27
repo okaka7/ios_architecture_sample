@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol SearchViewInput: class {
+protocol SearchViewInputPort: class {
     
 }
 
 
 
-class SearchViewAdapter: {
+final class SearchController: SearchViewInputPort{
     
 }
