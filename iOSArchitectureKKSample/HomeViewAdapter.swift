@@ -11,6 +11,6 @@ protocol HomeViewInput {
     
 }
 
-struct HomeViewAdapter: HomeViewInput, HomeViewPresenter {
+struct HomeViewAdapter: HomeViewInput {
     
 }
