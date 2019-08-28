@@ -12,27 +12,28 @@ protocol UserObject {}
 
 struct UnsplashUserEntity: UserObject, Codable {
     let id: String
-   // let updatedAt: Date
-    let username, name, firstName, lastName: String
-    let twitterUsername: String?
+    let updatedAt: String
+    let username, name, firstName: String
+    let lastName: String?
+    let twitterUsername, instagramUsername: String?
     let portfolioURL: String?
     let bio, location: String?
     let links: Links
     let profileImage: ProfileImage
-    let instagramUsername: String?
     let totalCollections, totalLikes, totalPhotos: Int
-    let acceptedTos, followedByUser: Bool
-    let photos: [Photo]
-    let badge: Badge
-    let downloads: Int
+    let acceptedTos: Bool
+    let followedByUser: Bool?
+    let photos: [Photo]?
+    let badge: Badge?
+    let downloads: Int?
     let tags: Tags?
-    let followersCount, followingCount: Int
-    let allowMessages: Bool
-    let numericID: Int
+    let followersCount, followingCount: Int?
+    let allowMessages: Bool?
+    let numericID: Int?
     
     enum CodingKeys: String, CodingKey {
         case id
-      //  case updatedAt = "updated_at"
+        case updatedAt = "updated_at"
         case username, name
         case firstName = "first_name"
         case lastName = "last_name"

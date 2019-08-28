@@ -26,7 +26,7 @@ struct UnsplashAccountValueObject: AccountObject, Codable {
     let acceptedTos: Bool
     let followedByUser: Bool
     let photos: [Photo]
-    let badge: Badge?
+    //let badge: Badge?
     let downloads: Int
     let tags: Tags
     let followersCount, followingCount: Int
@@ -53,7 +53,7 @@ struct UnsplashAccountValueObject: AccountObject, Codable {
         case totalPhotos = "total_photos"
         case acceptedTos = "accepted_tos"
         case followedByUser = "followed_by_user"
-        case photos, badge, downloads, tags
+        case photos, downloads, tags
         case followersCount = "followers_count"
         case followingCount = "following_count"
         case allowMessages = "allow_messages"
