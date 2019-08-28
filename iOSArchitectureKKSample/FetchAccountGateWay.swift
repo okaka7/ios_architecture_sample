@@ -10,8 +10,15 @@ import Foundation
 import RxSwift
 
 struct FetchAccountGateWay: AccountRepository {
+    
+    let client: UnsplashUserAccountClient
+    
+    init(client: UnsplashUserAccountClient) {
+        self.client = client
+    }
+    
     func fetchAccount() -> Single<UnsplashAccountTarget.Response> {
-        <#code#>
+        self.client.re
     }
     
     func fetchPhotos() -> Single<UnsplashUserPhotosTarget.Response> {

@@ -111,6 +111,8 @@ extension UnsplashAPIProvider: UnsplashPhotoClient {
         return request(target)
     }
     
+    
+    
     func requestLikePhoto(id: String, isLike: Bool) -> Single<UnsplashLikePhotoTarget.Response> {
         let target: UnsplashLikePhotoTarget = .init(id: id, like: isLike)
         return request(target)
