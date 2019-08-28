@@ -8,13 +8,12 @@
 
 import Foundation
 
-
-protocol TopImageUseCaseInputPort: PhotoSelectable {
+protocol HomeUseCaseInputPort: PhotoSelectable {
     func showImages()
     func switchImage(id: String)
 }
 
-protocol TopImageUseCaseOutputPort: PhotoTransitionable {
+protocol HomeUseCaseOutputPort: PhotoTransitionable {
     func switchImage(_ image: PhotoObject)
     func showImages(_ image: [PhotoObject])
 }
