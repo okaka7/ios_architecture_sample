@@ -24,7 +24,7 @@ struct UnsplashPhotoEntity: PhotoObject, Codable {
     let likes: Int
     let likedByUser: Bool
     let currentUserCollections: [String?]
-   // let user: UnsplashUserValueObject
+    let user: UnsplashUserEntity
    // let sponsorship: Sponsorship
 
     enum CodingKeys: String, CodingKey {
@@ -65,7 +65,7 @@ struct ProfileImage: Codable {
 
 struct Sponsorship: Codable {
     let impressionsID, tagline: String
-    let sponsor: UnsplashUserValueObject
+    let sponsor: UnsplashUserEntity
 
     enum CodingKeys: String, CodingKey {
         case impressionsID = "impressions_id"

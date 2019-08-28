@@ -111,7 +111,7 @@
 		E5B8A2402309EB6000AE29E8 /* CollectionUIValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A23F2309EB6000AE29E8 /* CollectionUIValueObject.swift */; };
 		E5B8A2442309EC7200AE29E8 /* UserUIValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2432309EC7200AE29E8 /* UserUIValueObject.swift */; };
 		E5B8A2462309ED4C00AE29E8 /* AccountUIValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2452309ED4C00AE29E8 /* AccountUIValueObject.swift */; };
-		E5C5646D22F18EDC00DD9401 /* UnsplashUserValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */; };
+		E5C5646D22F18EDC00DD9401 /* UnsplashUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */; };
 		E5C5647322F1947C00DD9401 /* OauthTokenRequestGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */; };
 		E5C5647522F1BAB100DD9401 /* UnsplashOauthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647422F1BAB100DD9401 /* UnsplashOauthAPI.swift */; };
 		E5C5647922F1BB8F00DD9401 /* UnsplashAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5647822F1BB8F00DD9401 /* UnsplashAPI.swift */; };
@@ -254,7 +254,7 @@
 		E5B8A23F2309EB6000AE29E8 /* CollectionUIValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionUIValueObject.swift; sourceTree = "<group>"; };
 		E5B8A2432309EC7200AE29E8 /* UserUIValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUIValueObject.swift; sourceTree = "<group>"; };
 		E5B8A2452309ED4C00AE29E8 /* AccountUIValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUIValueObject.swift; sourceTree = "<group>"; };
-		E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserValueObject.swift; sourceTree = "<group>"; };
+		E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserEntity.swift; sourceTree = "<group>"; };
 		E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthTokenRequestGateway.swift; sourceTree = "<group>"; };
 		E5C5647422F1BAB100DD9401 /* UnsplashOauthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashOauthAPI.swift; sourceTree = "<group>"; };
 		E5C5647822F1BB8F00DD9401 /* UnsplashAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPI.swift; sourceTree = "<group>"; };
@@ -582,7 +582,7 @@
 		E57950AE2307FA4A00000FD8 /* Account&User */ = {
 			isa = PBXGroup;
 			children = (
-				E5C5646C22F18EDC00DD9401 /* UnsplashUserValueObject.swift */,
+				E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */,
 				E57915D122F865AD009BCE95 /* UnsplashAccountValueObject.swift */,
 				E592E72322FEDEAB00AECEC4 /* UnsplashPortfolioValueObject.swift */,
 			);
@@ -1145,7 +1145,7 @@
 				E5713F1F230B0B900033AF21 /* HomeViewAdapter.swift in Sources */,
 				E55E19C72309A5F1007C1C57 /* Builder.swift in Sources */,
 				E54151C1231057E30036BA0F /* SearchViewAdapter.swift in Sources */,
-				E5C5646D22F18EDC00DD9401 /* UnsplashUserValueObject.swift in Sources */,
+				E5C5646D22F18EDC00DD9401 /* UnsplashUserEntity.swift in Sources */,
 				E57737A022FECEE400559D37 /* UnsplashErrorValueObject.swift in Sources */,
 				E592E73222FF026300AECEC4 /* UnsplashCollectionPhotos.swift in Sources */,
 				E54151C323106FDD0036BA0F /* DataStore+Rx.swift in Sources */,

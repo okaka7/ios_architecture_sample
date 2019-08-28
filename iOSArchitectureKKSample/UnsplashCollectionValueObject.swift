@@ -21,7 +21,7 @@ struct UnsplashCollectionValueObject: CollectionObject, Codable {
     let shareKey: String
     let tags: [Tag]
     let links: UnsplashCollectionVOLinks
-    let user: UnsplashUserValueObject
+    let user: UnsplashUserEntity
     let coverPhoto: CoverPhoto
     let previewPhotos: [Photo]
 
@@ -50,7 +50,7 @@ struct CoverPhoto: Codable {
     let likes: Int
     let likedByUser: Bool
     let currentUserCollections: [String?]
-    let user: UnsplashUserValueObject
+    let user: UnsplashUserEntity
 
     enum CodingKeys: String, CodingKey {
         case id

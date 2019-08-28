@@ -19,6 +19,6 @@ struct PhotoUIValueObject {
     let likes: Int
     let likedByUser: Bool
     let currentUserCollections: [String?]
-    let user: UnsplashUserValueObject
+    let user: UnsplashUserEntity
     //let sponsorship: Sponsorship
 }

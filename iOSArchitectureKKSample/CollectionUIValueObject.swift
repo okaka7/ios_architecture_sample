@@ -19,7 +19,7 @@ struct CollectionUIValueObject {
     let shareKey: String
     //let tags: [Tag]
     //let links: UnsplashCollectionVOLinks
-    let user: UnsplashUserValueObject
+    let user: UnsplashUserEntity
     let coverPhoto: CoverPhoto
     let previewPhotos: [Photo]
 }

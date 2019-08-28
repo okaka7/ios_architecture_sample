@@ -10,7 +10,7 @@ import Foundation
 
 protocol UserObject {}
 
-struct UnsplashUserValueObject: UserObject, Codable {
+struct UnsplashUserEntity: UserObject, Codable {
     let id: String
    // let updatedAt: Date
     let username, name, firstName, lastName: String
@@ -56,9 +56,9 @@ struct UnsplashUserValueObject: UserObject, Codable {
 
 // MARK: Convenience initializers
 
-extension UnsplashUserValueObject {
+extension UnsplashUserEntity {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(UnsplashUserValueObject.self, from: data) else {
+        guard let me = try? JSONDecoder().decode(UnsplashUserEntity.self, from: data) else {
             return nil
         }
         self = me
