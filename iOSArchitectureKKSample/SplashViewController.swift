@@ -44,6 +44,7 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.addSubview(label)
+        fetchTopImage()
     }
     
     override func viewDidAppear(_ animated: Bool) {
