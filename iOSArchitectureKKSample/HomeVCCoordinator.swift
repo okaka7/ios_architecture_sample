@@ -9,7 +9,6 @@
 import UIKit
 
 final class HomeVCCoordinator: Coordinator {
-    
     lazy var naviVC: UINavigationController = {
         let naviVC: UINavigationController = .init(rootViewController: self.homeVC)
         naviVC.navigationBar.barStyle = .black

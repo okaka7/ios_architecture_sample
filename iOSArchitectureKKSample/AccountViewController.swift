@@ -21,7 +21,7 @@ class AccountViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         #if DEBUG
-        log.debug("ColourSettingViewController.init()!!!")
+            log.debug("AccountViewController.init()!!!")
         #endif
         self.view.backgroundColor = .white
     }

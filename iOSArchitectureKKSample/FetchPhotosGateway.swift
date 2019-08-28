@@ -10,7 +10,6 @@ import Foundation
 import RxSwift
 
 struct FetchPhotoGateWay: FetchPhotoRepository {
-    
     let client: UnsplashPhotoClient
     
     init(client: UnsplashPhotoClient) {
