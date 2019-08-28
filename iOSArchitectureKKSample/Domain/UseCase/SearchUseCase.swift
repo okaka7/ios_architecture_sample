@@ -20,6 +20,7 @@ enum Category: String, CaseIterable {
 protocol SearchUsecaseInputPort: PhotoSelectable {
     func slideCategoryView(up: Bool)
     func fetchCategoryPhotos()
+    func searchUseCase(query: String)
 }
 
 protocol SearchUsecaseOutputPort: PhotoTransitionable {
