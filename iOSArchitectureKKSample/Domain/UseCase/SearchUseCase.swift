@@ -17,7 +17,7 @@ enum Category: String, CaseIterable {
     case architecture
 }
 
-protocol SearchUsecaseInputPort: PhotoSelectable {
+protocol SearchUseCaseInputPort: PhotoSelectable {
     func slideCategoryView(up: Bool)
     func fetchCategoryPhotos()
     func searchUseCase(query: String)

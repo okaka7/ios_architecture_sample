@@ -14,9 +14,9 @@ protocol SearchViewInputPort: class {
 
 final class SearchController: SearchViewInputPort {
     
-    let useCase: SearchUsecaseInputPort
+    let useCase: SearchUseCaseInputPort
     
-    init(useCase: SearchUsecaseInputPort) {
+    init(useCase: SearchUseCaseInputPort) {
         self.useCase = useCase
     }
     
