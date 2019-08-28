@@ -655,10 +655,10 @@
 				E576E31F23141F9C007446B8 /* Splash */,
 				E59994842316CAC200CAFC11 /* Home */,
 				E59994832316C6D700CAFC11 /* Search */,
+				E59994852316CCDB00CAFC11 /* Account */,
 				E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */,
 				E5B8A2372309CEF600AE29E8 /* TokenRequestUseCaseInputPort.swift */,
 				E57950A42307EBCF00000FD8 /* PhotoUseCase.swift */,
-				E57C82F3230A9ABC00F8F15C /* UserAccountUseCase.swift */,
 				E57C82F5230A9F2700F8F15C /* PhotoDetailUseCase.swift */,
 				E57C82EA230A85CF00F8F15C /* CollectionUseCase.swift */,
 			);
@@ -750,6 +750,14 @@
 				E579509A2307CB1E00000FD8 /* HomeUseCase.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		E59994852316CCDB00CAFC11 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				E57C82F3230A9ABC00F8F15C /* UserAccountUseCase.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		E5C5647622F1BADA00DD9401 /* OauthEndpoint */ = {
