@@ -10,7 +10,6 @@ import Foundation
 import RxSwift
 
 struct FetchAccountGateWay: AccountRepository {
-    
     let client: UnsplashUserAccountClient
     
     init(client: UnsplashUserAccountClient) {
@@ -18,21 +17,18 @@ struct FetchAccountGateWay: AccountRepository {
     }
     
     func fetchAccount() -> Single<UnsplashAccountTarget.Response> {
-        self.client.re
+        return self.client.requestAccount()
     }
     
-    func fetchPhotos() -> Single<UnsplashUserPhotosTarget.Response> {
-        <#code#>
+    func fetchUserPhotos(userName name: String) -> Single<UnsplashUserPhotosTarget.Response> {
+        return self.client.requestUserPhotos(userName: name)
     }
     
-    func fetchCollection() -> Single<UnsplashUserCollectionsTarget.Response> {
-        <#code#>
+    func fetchUserCollections(userName name: String) -> Single<UnsplashUserCollectionsTarget.Response> {
+        return self.client.requestUserCollections(userName: name)
     }
     
-    func fetchPortfolioURL() -> Single<UnsplashUserPortfolioTarget.Response> {
-        <#code#>
+    func fetchPortfolioURL(userName name: String) -> Single<UnsplashUserPortfolioTarget.Response> {
+        return self.client.requestUserPortfolio(userName: name)
     }
-    
-    
-
 }

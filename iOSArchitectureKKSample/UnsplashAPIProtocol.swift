@@ -48,9 +48,11 @@ protocol UnsplashUserAccountClient {
     
     func requestUser(userName name: String) -> Single<UnsplashUserTarget.Response>
     
+    func requestUserPhotos(userName name: String) -> Single<UnsplashUserPhotosTarget.Response>
+    
     func requestUserLikes(userName name: String) -> Single<UnsplashUserLikesTarget.Response>
     
-    func requestUserPortfolio(userName name: String) -> Single<UnsplashUserPortfolioTarget.Response>
+    func requestUserCollections(userName name: String) -> Single<UnsplashUserCollectionsTarget.Response>
     
-    func requestUserCollections(userName name: String) -> Single<UnsplashUserCollectionsTarget.Response> 
+    func requestUserPortfolio(userName name: String) -> Single<UnsplashUserPortfolioTarget.Response>
 }

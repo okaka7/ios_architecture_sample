@@ -40,9 +40,9 @@ protocol CollectionRepository {
 
 protocol AccountRepository {
     func fetchAccount() -> Single<UnsplashAccountTarget.Response>
-    func fetchPhotos() -> Single<UnsplashUserPhotosTarget.Response>
-    func fetchCollection() -> Single<UnsplashUserCollectionsTarget.Response>
-    func fetchPortfolioURL() -> Single<UnsplashUserPortfolioTarget.Response>
+    func fetchUserPhotos(userName name: String) -> Single<UnsplashUserPhotosTarget.Response>
+    func fetchUserCollections(userName name: String) -> Single<UnsplashUserCollectionsTarget.Response>
+    func fetchPortfolioURL(userName name: String) -> Single<UnsplashUserPortfolioTarget.Response>
 }
 
 protocol UserRepository {

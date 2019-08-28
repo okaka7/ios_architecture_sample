@@ -62,7 +62,8 @@ struct UnsplashUserPhotosTarget: UnsplashAPITargetType {
     }
     let userName: String
     var task: Task {
-        return .requestParameters(parameters: Parameter().parameter, encoding: URLEncoding.default)
+        return .requestParameters(parameters: Parameter().parameter,
+                                  encoding: URLEncoding.default)
     }
     
     init(userName: String) {

@@ -163,6 +163,11 @@ extension UnsplashAPIProvider: UnsplashUserAccountClient {
         return request(target)
     }
     
+    func requestUserPhotos(userName name: String) -> Single<UnsplashUserPhotosTarget.Response> {
+        let target: UnsplashUserPhotosTarget = .init(userName: name)
+        return request(target)
+    }
+    
     func requestUserLikes(userName name: String) -> Single<UnsplashUserLikesTarget.Response> {
         let target: UnsplashUserLikesTarget = .init(userName: name)
         return request(target)
