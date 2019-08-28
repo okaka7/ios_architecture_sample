@@ -103,6 +103,7 @@
 		E592E73622FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73522FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift */; };
 		E599947C2316996800CAFC11 /* AccountViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E599947B2316996800CAFC11 /* AccountViewAdapter.swift */; };
 		E599947E23169B6B00CAFC11 /* FetchAccountGateWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E599947D23169B6B00CAFC11 /* FetchAccountGateWay.swift */; };
+		E59994802316C48200CAFC11 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E599947F2316C48200CAFC11 /* SearchViewModel.swift */; };
 		E5B8A2302309C7A900AE29E8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A22F2309C7A900AE29E8 /* Extension.swift */; };
 		E5B8A2322309C81100AE29E8 /* UIViewController.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2312309C81100AE29E8 /* UIViewController.Extension.swift */; };
 		E5B8A2362309C8A800AE29E8 /* ViewControlelrGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2352309C8A800AE29E8 /* ViewControlelrGettable.swift */; };
@@ -248,6 +249,7 @@
 		E592E73522FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashEditPhotoInCollectionTarget.swift; sourceTree = "<group>"; };
 		E599947B2316996800CAFC11 /* AccountViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewAdapter.swift; sourceTree = "<group>"; };
 		E599947D23169B6B00CAFC11 /* FetchAccountGateWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAccountGateWay.swift; sourceTree = "<group>"; };
+		E599947F2316C48200CAFC11 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		E5B8A22F2309C7A900AE29E8 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		E5B8A2312309C81100AE29E8 /* UIViewController.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.Extension.swift; sourceTree = "<group>"; };
 		E5B8A2352309C8A800AE29E8 /* ViewControlelrGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControlelrGettable.swift; sourceTree = "<group>"; };
@@ -355,8 +357,8 @@
 				E577D5BF22C56B0000588A38 /* MainTabCoordinator.swift */,
 				E57BD4FE22C4B4DD00FE44D4 /* HomeVCCoordinator.swift */,
 				E57BD50022C4B55700FE44D4 /* SearchVCCoordinator.swift */,
-				E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */,
 				E57BD50422C4B58B00FE44D4 /* AccountCoordinator.swift */,
+				E57BD50222C4B57900FE44D4 /* ColourFavoritesCoordinator.swift */,
 				E57BD50622C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift */,
 			);
 			name = Coordinator;
@@ -535,6 +537,7 @@
 			children = (
 				E53F1DFB22C0B63000F81CAA /* SearchViewController.swift */,
 				E54151C0231057E30036BA0F /* SearchViewAdapter.swift */,
+				E599947F2316C48200CAFC11 /* SearchViewModel.swift */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -1086,6 +1089,7 @@
 				E55E19C1230991BC007C1C57 /* OauthTokenManageGateway.swift in Sources */,
 				E5B8A2382309CEF600AE29E8 /* TokenRequestUseCaseInputPort.swift in Sources */,
 				E57915CE22F85AD4009BCE95 /* UnsplashAPIProvider.swift in Sources */,
+				E59994802316C48200CAFC11 /* SearchViewModel.swift in Sources */,
 				E5B8A2362309C8A800AE29E8 /* ViewControlelrGettable.swift in Sources */,
 				E5B8A23E2309E8E000AE29E8 /* PhotoUIValueObject.swift in Sources */,
 				E54D3664230DB6C000C6476B /* DataStore.swift in Sources */,
