@@ -104,6 +104,7 @@
 		E599947C2316996800CAFC11 /* AccountViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E599947B2316996800CAFC11 /* AccountViewAdapter.swift */; };
 		E599947E23169B6B00CAFC11 /* FetchAccountGateWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E599947D23169B6B00CAFC11 /* FetchAccountGateWay.swift */; };
 		E59994802316C48200CAFC11 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E599947F2316C48200CAFC11 /* SearchViewModel.swift */; };
+		E59994822316C4DD00CAFC11 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59994812316C4DD00CAFC11 /* AccountViewModel.swift */; };
 		E5B8A2302309C7A900AE29E8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A22F2309C7A900AE29E8 /* Extension.swift */; };
 		E5B8A2322309C81100AE29E8 /* UIViewController.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2312309C81100AE29E8 /* UIViewController.Extension.swift */; };
 		E5B8A2362309C8A800AE29E8 /* ViewControlelrGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2352309C8A800AE29E8 /* ViewControlelrGettable.swift */; };
@@ -250,6 +251,7 @@
 		E599947B2316996800CAFC11 /* AccountViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewAdapter.swift; sourceTree = "<group>"; };
 		E599947D23169B6B00CAFC11 /* FetchAccountGateWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAccountGateWay.swift; sourceTree = "<group>"; };
 		E599947F2316C48200CAFC11 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		E59994812316C4DD00CAFC11 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		E5B8A22F2309C7A900AE29E8 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		E5B8A2312309C81100AE29E8 /* UIViewController.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.Extension.swift; sourceTree = "<group>"; };
 		E5B8A2352309C8A800AE29E8 /* ViewControlelrGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControlelrGettable.swift; sourceTree = "<group>"; };
@@ -547,6 +549,7 @@
 			children = (
 				E53F1DFF22C0B6BB00F81CAA /* AccountViewController.swift */,
 				E599947B2316996800CAFC11 /* AccountViewAdapter.swift */,
+				E59994812316C4DD00CAFC11 /* AccountViewModel.swift */,
 			);
 			name = "Account(User)";
 			sourceTree = "<group>";
@@ -1174,6 +1177,7 @@
 				E578C2BF230E6BD60040DF7B /* DataStoreKey.swift in Sources */,
 				E57BD50722C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift in Sources */,
 				E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */,
+				E59994822316C4DD00CAFC11 /* AccountViewModel.swift in Sources */,
 				E592E72422FEDEAB00AECEC4 /* UnsplashPortfolioValueObject.swift in Sources */,
 				E57915D222F865AD009BCE95 /* UnsplashAccountValueObject.swift in Sources */,
 				E57950A22307E2C800000FD8 /* SearchUseCase.swift in Sources */,
