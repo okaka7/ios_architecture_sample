@@ -35,5 +35,4 @@ class AccountViewController: UIViewController {
 
         self.view.addSubview(label)
     }
-
 }
