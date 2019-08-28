@@ -13,5 +13,5 @@ protocol PhotoSelectable {
 }
 
 protocol PhotoTransitionable {
-    func transition(to photo: PhotoUIValueObject)
+    func transition(to photo: PhotoUIEntity)
 }

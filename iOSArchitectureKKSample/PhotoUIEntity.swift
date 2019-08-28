@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PhotoUIValueObject {
+struct PhotoUIEntity {
     let id: String
     //let width, height: Int
     let ratioOfWidthToHeight: Float
