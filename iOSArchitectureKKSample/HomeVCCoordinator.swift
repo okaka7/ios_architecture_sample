@@ -26,5 +26,4 @@ final class HomeVCCoordinator: Coordinator {
     func start() {
         return
     }
-    
 }
