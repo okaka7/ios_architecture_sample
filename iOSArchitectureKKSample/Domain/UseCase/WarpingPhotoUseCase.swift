@@ -11,6 +11,7 @@ import Foundation
 protocol HomeUseCaseInputPort: PhotoSelectable {
     func showImages()
     func switchImage(id: String)
+    func selectPhoto(_ photo: PhotoUIEntity)
 }
 
 protocol HomeUseCaseOutputPort: PhotoTransitionable {
