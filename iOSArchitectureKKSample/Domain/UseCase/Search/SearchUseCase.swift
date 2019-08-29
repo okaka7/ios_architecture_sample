@@ -29,3 +29,25 @@ protocol SearchUsecaseOutputPort: PhotoTransitionable {
     func slideCategoryView(up: Bool)
     func showSearchResult(photos: [PhotoObject])
 }
+
+final class SearchUseCase:SearchUseCaseInputPort {
+    func slideCategoryView(up: Bool) {
+        
+    }
+    
+    func fetchCategoryPhotos() {
+        
+    }
+    
+    func searchUseCase(query: String) {
+        
+    }
+    
+    func selectPhoto(_ photo: PhotoUIEntity) {
+        
+    }
+    
+    func selectImage(id: String) {
+        
+    }
+}
