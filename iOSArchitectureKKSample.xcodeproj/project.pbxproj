@@ -661,11 +661,19 @@
 				E59994852316CCDB00CAFC11 /* UserAccount */,
 				E5C0DC342318371B00B9CA4C /* Photo */,
 				E5C0DC35231837A200B9CA4C /* PhotoDetail */,
+				E57B70BA231850A90091AB42 /* Collection */,
 				E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */,
 				E5B8A2372309CEF600AE29E8 /* TokenRequestUseCaseInputPort.swift */,
-				E57C82EA230A85CF00F8F15C /* CollectionUseCase.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		E57B70BA231850A90091AB42 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				E57C82EA230A85CF00F8F15C /* CollectionUseCase.swift */,
+			);
+			path = Collection;
 			sourceTree = "<group>";
 		};
 		E57C82EC230A8E2000F8F15C /* Common */ = {
