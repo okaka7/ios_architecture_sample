@@ -39,6 +39,7 @@
 		E55E19CB2309B149007C1C57 /* TokenRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19CA2309B149007C1C57 /* TokenRequestClient.swift */; };
 		E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68322B28B8400AE6940 /* Coordinator.swift */; };
 		E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68522B28BC400AE6940 /* AppCoordinator.swift */; };
+		E570C2E82317D9C700F12208 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = E570C2E72317D9C700F12208 /* Pagination.swift */; };
 		E5713F1F230B0B900033AF21 /* HomeViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5713F1E230B0B900033AF21 /* HomeViewAdapter.swift */; };
 		E5713F21230B0FF20033AF21 /* UserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5713F20230B0FF20033AF21 /* UserProtocol.swift */; };
 		E571E6F822B8325B0032A748 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */; };
@@ -179,6 +180,7 @@
 		E55E19CA2309B149007C1C57 /* TokenRequestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequestClient.swift; sourceTree = "<group>"; };
 		E56FD68322B28B8400AE6940 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E56FD68522B28BC400AE6940 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		E570C2E72317D9C700F12208 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		E5713F1E230B0B900033AF21 /* HomeViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewAdapter.swift; sourceTree = "<group>"; };
 		E5713F20230B0FF20033AF21 /* UserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProtocol.swift; sourceTree = "<group>"; };
 		E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				E55E19C82309ACAB007C1C57 /* AuthorizableURL.swift */,
+				E570C2E72317D9C700F12208 /* Pagination.swift */,
 				E57950B5230858F100000FD8 /* API Token */,
 				E57950AE2307FA4A00000FD8 /* Account&User */,
 				E57950AF2307FA7100000FD8 /* Photo&Collection */,
@@ -1160,6 +1163,7 @@
 				E57826CF22D8AB20002499A9 /* UnsplashRepository.swift in Sources */,
 				E5867C0422C4831E009E9EF8 /* PhotoViewController.swift in Sources */,
 				E592E73422FF02E500AECEC4 /* UnsplashRelatedCollections.swift in Sources */,
+				E570C2E82317D9C700F12208 /* Pagination.swift in Sources */,
 				E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */,
 				E5B8A23C2309E4A600AE29E8 /* AuthenticationPresenter.swift in Sources */,
 				E5521F4C22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift in Sources */,
