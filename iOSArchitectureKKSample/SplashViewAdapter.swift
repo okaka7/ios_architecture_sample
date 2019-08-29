@@ -14,9 +14,6 @@ protocol SplashViewInputPort: class {
 }
 
 final class SplashController: SplashViewInputPort {
-    func fetchCategoryImages() {
-    }
-    
     private let useCase: PhotoPrepareUseCaseInputPort!
     
     init (useCase: PhotoPrepareUseCaseInputPort) {
@@ -26,9 +23,15 @@ final class SplashController: SplashViewInputPort {
     func fetchTopImages() {
         useCase.fetchPopularPhotos(page: 1, photoEntities: [UnsplashPhotoEntity]())
     }
+    
+    func fetchCategoryImages() {
+        useCase.searchPhotos(query: Category.allCases, page: 1)
+    }
 }
 
 final class SplashViewPresenter: PhotoPrepareUseCaseOutputPort {
+    
+    
     let viewModel: SplashViewModelProtocol
     
     init(viewModel: SplashViewModelProtocol) {
@@ -38,7 +41,7 @@ final class SplashViewPresenter: PhotoPrepareUseCaseOutputPort {
         
     }
     
-    func setCategoryImage(_ image: UnsplashPhotoEntity, category: Category) {
-        print(image)
+    func setCategoryImage(_ image: [Category : UnsplashPhotoEntity]) {
+        
     }
 }
