@@ -42,7 +42,6 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
                              {
         
         var photoEntities = photoEntities
-                  count += 1
         repository.fetchPhotos(page: page, perPage: 50, orderBy: .popular)
             .map { $0.filter { $0.heightRatioToWidth <= 1.6
                                 && $0.heightRatioToWidth >= 1.4 }}
