@@ -13,6 +13,12 @@ protocol AccountViewInputPort: class {
 }
 
 final class AccountController: AccountViewInputPort {
+    let useCase: UserAccountUseCaseInputPort
+    
+    init(useCase: UserAccountUseCaseInputPort) {
+        self.useCase = useCase
+    }
+    
     func getAccount() {
         
     }
