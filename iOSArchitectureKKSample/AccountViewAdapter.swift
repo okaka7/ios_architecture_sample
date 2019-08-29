@@ -9,10 +9,14 @@
 import Foundation
 
 protocol AccountViewInputPort: class {
-   
+    func getAccount()
 }
 
 final class AccountController: AccountViewInputPort {
+    func getAccount() {
+        
+    }
+    
    
 }
 
