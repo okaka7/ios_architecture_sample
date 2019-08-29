@@ -660,9 +660,9 @@
 				E59994832316C6D700CAFC11 /* Search */,
 				E59994852316CCDB00CAFC11 /* UserAccount */,
 				E5C0DC342318371B00B9CA4C /* Photo */,
+				E5C0DC35231837A200B9CA4C /* PhotoDetail */,
 				E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */,
 				E5B8A2372309CEF600AE29E8 /* TokenRequestUseCaseInputPort.swift */,
-				E57C82F5230A9F2700F8F15C /* PhotoDetailUseCase.swift */,
 				E57C82EA230A85CF00F8F15C /* CollectionUseCase.swift */,
 			);
 			path = UseCase;
@@ -769,6 +769,14 @@
 				E57950A42307EBCF00000FD8 /* PhotoUseCase.swift */,
 			);
 			path = Photo;
+			sourceTree = "<group>";
+		};
+		E5C0DC35231837A200B9CA4C /* PhotoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E57C82F5230A9F2700F8F15C /* PhotoDetailUseCase.swift */,
+			);
+			path = PhotoDetail;
 			sourceTree = "<group>";
 		};
 		E5C5647622F1BADA00DD9401 /* OauthEndpoint */ = {
