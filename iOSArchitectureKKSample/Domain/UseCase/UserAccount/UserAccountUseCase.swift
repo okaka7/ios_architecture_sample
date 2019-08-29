@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol UserAccountUseCaseInputPort: PhotoSelectable, CollectionSelectable {
     func getAccount()
@@ -25,6 +26,7 @@ protocol UserAccountUseCaseOutputPort: CollectionTransitionable {
 
 final class UserAccountUseCase: UserAccountUseCaseInputPort {
     let repository: AccountRepository
+    let disposeBag: DisposeBag = .init()
     
     init(repository: AccountRepository) {
         self.repository = repository
