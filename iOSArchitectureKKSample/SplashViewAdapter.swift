@@ -37,9 +37,7 @@ final class SplashViewPresenter: PhotoPrepareUseCaseOutputPort {
         self.viewModel = viewModel
     }
     func setTopImages(_ images: [UnsplashPhotoEntity]) {
-        #if DEBUG
-        log.debug("🖌yay")
-        #endif
+        
     }
     
     func setCategoryImage(_ image: UnsplashPhotoEntity, category: Category) {
