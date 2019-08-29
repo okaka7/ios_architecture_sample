@@ -8,9 +8,11 @@
 import Foundation
 
 protocol HomeViewInput {
-    
+    func selectPhoto(_ photo: PhotoUIEntity)
 }
 
 struct HomeViewAdapter: HomeViewInput {
-    
+    func selectPhoto(_ photo: PhotoUIEntity) {
+        
+    }
 }

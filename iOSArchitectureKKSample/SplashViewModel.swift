@@ -16,9 +16,11 @@ protocol SplashViewModelProtocol: class {
 
 final class SplashViewModel: SplashViewModelProtocol {
     private let topImagesSubject = PublishRelay<[UnsplashPhotoEntity]>()
+    
     lazy var setTopImages: Observable<[UnsplashPhotoEntity]> = {
         return topImagesSubject.asObservable()
     }()
+    
     func setTopImages(_ images: [UnsplashPhotoEntity]) {
         topImagesSubject.accept(images)
     }
