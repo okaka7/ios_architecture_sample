@@ -9,6 +9,7 @@
 import Foundation
 
 protocol UserAccountUseCaseInputPort: PhotoSelectable, CollectionSelectable {
+    func getAccount()
     func selectPhotos()
     func selectCollections()
     func selectLikes()
@@ -23,6 +24,10 @@ protocol UserAccountUseCaseOutputPort: CollectionTransitionable {
 }
 
 final class UserAccountUseCase: UserAccountUseCaseInputPort {
+    func getAccount() {
+        <#code#>
+    }
+    
     func selectPhotos() {
         <#code#>
     }
