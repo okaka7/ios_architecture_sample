@@ -17,8 +17,6 @@ final class SplashController: SplashViewInputPort {
     func fetchCategoryImages() {
     }
     
-    var start: Date?
-    
     private let useCase: PhotoPrepareUseCaseInputPort!
     
     init (useCase: PhotoPrepareUseCaseInputPort) {
