@@ -20,7 +20,7 @@ final class AccountController: AccountViewInputPort {
     }
     
     func getAccount() {
-        
+        self.useCase.getAccount()
     }
     
    
