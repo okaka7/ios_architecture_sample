@@ -10,6 +10,10 @@ import Foundation
 import Moya
 import RxSwift
 
+enum FetchTopImagesError: Error {
+    case deficientPhotos
+}
+
 protocol PhotoPrepareUseCaseInputPort: class {
     var output: PhotoPrepareUseCaseOutputPort { get }
     func fetchPopularPhotos(page: Int, photoEntities: [UnsplashPhotoEntity])
