@@ -30,7 +30,13 @@ protocol SearchUsecaseOutputPort: PhotoTransitionable {
     func showSearchResult(photos: [PhotoObject])
 }
 
-final class SearchUseCase:SearchUseCaseInputPort {
+final class SearchUseCase: SearchUseCaseInputPort {
+    
+    let repository: FetchPhotoRepository
+    
+    init(repository: FetchPhotoRepository) {
+        self.repository = repository    }
+    
     func slideCategoryView(up: Bool) {
         
     }
