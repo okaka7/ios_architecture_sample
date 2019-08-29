@@ -46,9 +46,9 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
         repository.fetchPhotos(page: page, perPage: 50, orderBy: .popular)
             .map { $0.filter { $0.heightRatioToWidth <= 1.6
                                 && $0.heightRatioToWidth >= 1.4 }}
+            .do(onSuccess: { photoEntities.append(contentsOf: $0) })
             .subscribe(
                 onSuccess: {[weak self] elements in
-                    photoEntities.append(contentsOf: elements)
                     if photoEntities.count < 20 {
                         self?.fetchPopularPhotos(page: page + 1,
                                                  photoEntities: photoEntities)
