@@ -13,7 +13,11 @@ protocol HomeViewInput {
 }
 
 struct HomeViewAdapter: HomeViewInput {
+    let useCase: HomeUseCaseInputPort
     
+    init(useCase: HomeUseCaseInputPort) {
+        self.useCase = useCase
+    }
     
     func selectPhoto(_ photo: PhotoUIEntity) {
         
