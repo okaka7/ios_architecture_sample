@@ -21,3 +21,31 @@ protocol UserAccountUseCaseOutputPort: CollectionTransitionable {
     func selectLikes()
     func createCollection()
 }
+
+final class UserAccountUseCase: UserAccountUseCaseInputPort {
+    func selectPhotos() {
+        <#code#>
+    }
+    
+    func selectCollections() {
+        <#code#>
+    }
+    
+    func selectLikes() {
+        <#code#>
+    }
+    
+    func createCollection() {
+        <#code#>
+    }
+    
+    func selectImage(id: String) {
+        <#code#>
+    }
+    
+    func selectCollection(id: String) {
+        <#code#>
+    }
+    
+    
+}
