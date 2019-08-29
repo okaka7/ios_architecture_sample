@@ -24,6 +24,12 @@ protocol UserAccountUseCaseOutputPort: CollectionTransitionable {
 }
 
 final class UserAccountUseCase: UserAccountUseCaseInputPort {
+    let repository: AccountRepository
+    
+    init(repository: AccountRepository) {
+        self.repository = repository
+    }
+    
     func getAccount() {
         <#code#>
     }
