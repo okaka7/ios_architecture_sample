@@ -69,14 +69,13 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
                                 page: page,
                                 perPage: 10,
                                 orientation: .portraint)
+            .map { $0.results.filter { $0.heightRatioToWidth <= 1.6
+                && $0.heightRatioToWidth >= 1.4 }}
             .subscribe(onSuccess: {[weak self] result in
-                let passingElements = result.results.filter {
-                    $0.heightRatioToWidth <= 1.6 && $0.heightRatioToWidth >= 1.4
-                }
-                if passingElements.isEmpty {
+                if result.isEmpty {
                     self?.searchPhotos(query: query, page: page + 1)
                 } else {
-                    self?.output.setCategoryImage( passingElements.first!, category: .animal)
+                    self?.output.setCategoryImage( result.first!, category: .animal)
                 }
             },
             onError: { error in
