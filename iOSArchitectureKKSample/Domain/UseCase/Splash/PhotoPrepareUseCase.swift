@@ -73,10 +73,10 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
                                                                 orientation: .portraint)
                                                                 .asObservable()}
         Observable.combineLatest(combineSingles)
-            .map{ $0.map{ $0.results } }
-            .map{ $0.map{ $0.filter{ $0.heightRatioToWidth <= 1.6 && $0.heightRatioToWidth >= 1.4 }}}
-            .map{ $0.map{ $0.first} }
-            .map{
+            .map { $0.map{ $0.results } }
+            .map { $0.map{ $0.filter{ $0.heightRatioToWidth <= 1.6 && $0.heightRatioToWidth >= 1.4 }}}
+            .map { $0.map{ $0.first} }
+            .map {
                 zip(query, $0).reduce(into: Dictionary<Category, UnsplashPhotoEntity?>(),
                                       { result, elements in
                                         result[elements.0] = elements.1
@@ -95,7 +95,6 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
                     log.debug(error)
                     #endif
             }).disposed(by: disposeBag)
-        
         
     }
 }
