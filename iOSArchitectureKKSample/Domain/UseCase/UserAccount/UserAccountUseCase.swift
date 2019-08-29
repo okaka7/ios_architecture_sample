@@ -33,27 +33,30 @@ final class UserAccountUseCase: UserAccountUseCaseInputPort {
     }
     
     func getAccount() {
-        <#code#>
+        self.repository
+            .fetchAccount()
+            .subscribe(onSuccess: ,
+                    onError: )
     }
     
     func selectPhotos() {
-        <#code#>
+        
     }
     
     func selectCollections() {
-        <#code#>
+        
     }
     
     func selectLikes() {
-        <#code#>
+        
     }
     
     func createCollection() {
-        <#code#>
+        
     }
     
     func selectImage(id: String) {
-        <#code#>
+        
     }
     
     func selectCollection(id: String) {
