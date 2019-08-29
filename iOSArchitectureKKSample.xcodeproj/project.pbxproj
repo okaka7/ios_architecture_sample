@@ -662,7 +662,6 @@
 				E5C0DC342318371B00B9CA4C /* Photo */,
 				E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */,
 				E5B8A2372309CEF600AE29E8 /* TokenRequestUseCaseInputPort.swift */,
-				E57950A42307EBCF00000FD8 /* PhotoUseCase.swift */,
 				E57C82F5230A9F2700F8F15C /* PhotoDetailUseCase.swift */,
 				E57C82EA230A85CF00F8F15C /* CollectionUseCase.swift */,
 			);
@@ -767,6 +766,7 @@
 		E5C0DC342318371B00B9CA4C /* Photo */ = {
 			isa = PBXGroup;
 			children = (
+				E57950A42307EBCF00000FD8 /* PhotoUseCase.swift */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
