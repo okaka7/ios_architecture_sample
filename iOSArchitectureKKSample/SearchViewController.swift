@@ -20,13 +20,7 @@ class SearchViewController: UIViewController {
         return searchController
     }()
     
-//    lazy private var label: UILabel = {
-//        let label: UILabel = .init(frame: .zero)
-//        label.text = "search"
-//        label.sizeToFit()
-//        label.center = self.view.center
-//        return label
-//    }()
+
     
     lazy private var button: UIButton = {
         let button: UIButton = .init(frame: .zero)
