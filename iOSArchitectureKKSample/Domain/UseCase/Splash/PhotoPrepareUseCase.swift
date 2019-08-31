@@ -18,6 +18,7 @@ protocol PhotoPrepareUseCaseInputPort: class {
     var output: PhotoPrepareUseCaseOutputPort { get }
     func fetchPopularPhotos(page: Int, photoEntities: [UnsplashPhotoEntity])
     func searchPhotos(query: [Category], page: Int)
+    func fetchAccount()
 }
 
 protocol PhotoPrepareUseCaseOutputPort: class {
@@ -96,5 +97,8 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
                     #endif
             }).disposed(by: disposeBag)
         
+    }
+    
+    func fetchAccount() {
     }
 }
