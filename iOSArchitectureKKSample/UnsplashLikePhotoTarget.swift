@@ -30,8 +30,4 @@ struct UnsplashLikePhotoTarget: UnsplashAPITargetType {
     }
 }
 
-extension UnsplashLikePhotoTarget: AccessTokenAuthorizable {
-    var authorizationType: AuthorizationType {
-        return .bearer
-    }
-}
+extension UnsplashLikePhotoTarget: UnsplashAccessTokenAuthorizable {}

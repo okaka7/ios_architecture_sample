@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-public protocol UnspalshAccessTokenAuthorizable { }
+public protocol UnsplashAccessTokenAuthorizable { }
 
 public struct LightAccessTokenPlugin: PluginType {
     let repository: APITokenRepository
@@ -30,7 +30,6 @@ public struct LightAccessTokenPlugin: PluginType {
     
         guard let _ = target as? UnspalshAccessTokenAuthorizable else { return request }
         
-      
         var request = request
         
         if let token = repository.fetchToken()?.rawValue {

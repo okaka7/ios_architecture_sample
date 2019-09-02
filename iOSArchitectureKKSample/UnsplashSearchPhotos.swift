@@ -69,8 +69,4 @@ struct UnsplashSearchPhotosTarget: UnsplashAPITargetType {
     }
 }
 
-extension UnsplashSearchPhotosTarget: AccessTokenAuthorizable {
-    var authorizationType: AuthorizationType {
-        return .bearer
-    }
-}
+extension UnsplashSearchPhotosTarget: UnsplashAccessTokenAuthorizable {}

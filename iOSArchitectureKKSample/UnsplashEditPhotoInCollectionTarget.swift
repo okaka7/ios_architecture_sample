@@ -49,8 +49,4 @@ struct UnsplashEditPhotoInCollectionTarget: UnsplashAPITargetType {
     }
 }
 
-extension UnsplashEditPhotoInCollectionTarget: AccessTokenAuthorizable {
-    var authorizationType: AuthorizationType {
-        return .bearer
-    }
-}
+extension UnsplashEditPhotoInCollectionTarget: UnsplashAccessTokenAuthorizable {}

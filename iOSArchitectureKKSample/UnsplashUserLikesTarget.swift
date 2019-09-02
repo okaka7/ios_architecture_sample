@@ -56,8 +56,4 @@ struct UnsplashUserLikesTarget: UnsplashAPITargetType {
     }
 }
 
-extension UnsplashUserLikesTarget: AccessTokenAuthorizable {
-    var authorizationType: AuthorizationType {
-        return .bearer
-    }
-}
+extension UnsplashUserLikesTarget: UnsplashAccessTokenAuthorizable {}

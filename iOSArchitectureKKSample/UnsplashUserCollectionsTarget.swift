@@ -58,8 +58,4 @@ struct UnsplashUserCollectionsTarget: UnsplashAPITargetType {
     }
 }
 
-extension UnsplashUserCollectionsTarget: AccessTokenAuthorizable {
-    var authorizationType: AuthorizationType {
-        return .bearer
-    }
-}
+extension UnsplashUserCollectionsTarget: UnsplashAccessTokenAuthorizable {}
