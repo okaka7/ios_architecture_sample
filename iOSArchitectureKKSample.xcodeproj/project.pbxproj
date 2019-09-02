@@ -316,6 +316,7 @@
 				E55E19BE2308E066007C1C57 /* UnsplashAPIProtocol.swift */,
 				E57950B12308536A00000FD8 /* Provider */,
 				E5C5647722F1BB6000DD9401 /* Target */,
+				E5E53B78231D69EB00831DF8 /* PlugIn */,
 			);
 			name = Web;
 			sourceTree = "<group>";
@@ -814,6 +815,13 @@
 				E57950AD2307F9B400000FD8 /* Collection */,
 			);
 			name = EndPoint;
+			sourceTree = "<group>";
+		};
+		E5E53B78231D69EB00831DF8 /* PlugIn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PlugIn;
 			sourceTree = "<group>";
 		};
 		EFBD7F67D6E3C2F7FF40E41B /* Pods */ = {
