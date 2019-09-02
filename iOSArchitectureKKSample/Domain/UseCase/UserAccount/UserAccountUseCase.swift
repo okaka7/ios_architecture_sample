@@ -60,7 +60,6 @@ final class UserAccountUseCase: UserAccountUseCaseInputPort {
     }
     
     func selectCollection(id: String) {
-        <#code#>
     }
     
     

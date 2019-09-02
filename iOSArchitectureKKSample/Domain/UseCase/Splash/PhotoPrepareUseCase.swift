@@ -14,7 +14,7 @@ enum FetchTopImagesError: Error {
     case deficientPhotos
 }
 
-protocol PhotoPrepareUseCaseInputPort: class {
+protocol PrepareAppUseCaseInputPort: class {
     var output: PhotoPrepareUseCaseOutputPort { get }
     func fetchPopularPhotos(page: Int, photoEntities: [UnsplashPhotoEntity])
     func searchPhotos(query: [Category], page: Int)
@@ -26,7 +26,7 @@ protocol PhotoPrepareUseCaseOutputPort: class {
     func setCategoryImage(_ image: [Category : UnsplashPhotoEntity])
 }
 
-final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
+final class PhotoPrepareUseCase: PrepareAppUseCaseInputPort {
     let repository: FetchPhotoRepository
     let output: PhotoPrepareUseCaseOutputPort
     let disposeBag: DisposeBag
@@ -41,7 +41,6 @@ final class PhotoPrepareUseCase: PhotoPrepareUseCaseInputPort {
     func fetchPopularPhotos(page: Int = 1,
                             photoEntities: [UnsplashPhotoEntity] = [UnsplashPhotoEntity]())
                              {
-        
         var photoEntities = photoEntities
         repository.fetchPhotos(page: page, perPage: 50, orderBy: .popular)
             .map { $0.filter { $0.heightRatioToWidth <= 1.6

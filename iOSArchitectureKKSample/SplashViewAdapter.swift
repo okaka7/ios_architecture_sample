@@ -14,9 +14,9 @@ protocol SplashViewInputPort: class {
 }
 
 final class SplashController: SplashViewInputPort {
-    private let useCase: PhotoPrepareUseCaseInputPort!
+    private let useCase: PrepareAppUseCaseInputPort!
     
-    init (useCase: PhotoPrepareUseCaseInputPort) {
+    init (useCase: PrepareAppUseCaseInputPort) {
         self.useCase = useCase
     }
     
