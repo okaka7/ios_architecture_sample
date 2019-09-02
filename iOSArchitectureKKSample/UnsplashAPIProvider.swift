@@ -13,26 +13,10 @@ import RxMoya
 
 final class UnsplashAPIProvider {
     
-    typealias TokenClosure = () -> UnsplashTokenValueObject?
-    
-    let tokenClosure: TokenClosure = {
-        let element: UnsplashTokenValueObject?
-        do {
-            let keychainStore = KeyChainCache.shared
-            let element = try keychainStore.fetch(.token)
-            return element
-        } catch {
-            return nil
-        }
-    }
-    
-    var token: String = "6f3071aecb8ab60ee788b6202a67cc078d35bcd68e8a690bc200a1eaccf0f05b"
     
     private lazy var provider: MoyaProvider<MultiTarget> = {
         let plugins: [Moya.PluginType] = {
-            #if DEBUG
-            let loggerPlugin: NetworkLoggerPlugin = .init(verbose: true)
-            #endif
+            
             //  Note: this plugin is for fetching Pagination links in photo items response header.
             let fetchPaginationLinksPlugin: NetworkActivityPlugin = .init(networkActivityClosure: {
                 (change: NetworkActivityChangeType, target: TargetType) in
@@ -46,27 +30,16 @@ final class UnsplashAPIProvider {
                 }
             })
             
-            let accessTokenPlugin: AccessTokenPlugin = .init(tokenClosure: { [weak self] in
-                if let token = self?.token {
-                    return token
-                } else if let tokenValue = self?.tokenClosure() {
-                    self?.token = tokenValue.rawValue
-                    return tokenValue.rawValue
-                } else {
-                    return R.string.localizable.unsplashAPIClientID()
-                }
-            })
+            let accessTokenPlugin: LightAccessTokenPlugin = .init()
             
+            var plugins: [Moya.PluginType] = [fetchPaginationLinksPlugin,
+                           accessTokenPlugin]
             #if DEBUG
-            return [accessTokenPlugin,
-                    loggerPlugin,
-                    fetchPaginationLinksPlugin
-            ]
-            #else
-            return [fetchPaginationLinksPlugin,
-                    accessTokenPlugin
-                ]
+            let loggerPlugin: NetworkLoggerPlugin = .init(verbose: true)
+            plugins.append(loggerPlugin)
             #endif
+            
+            return plugins
             
         }()
         let provider = MoyaProvider<MultiTarget>(plugins: plugins)
