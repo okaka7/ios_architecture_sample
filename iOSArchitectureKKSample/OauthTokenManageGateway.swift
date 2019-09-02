@@ -33,6 +33,5 @@ struct OauthTokenManageGateWay: APITokenRepository {
         } catch {
             return nil
         }
-        
     }
 }
