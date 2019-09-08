@@ -26,7 +26,7 @@ protocol PhotoPrepareUseCaseOutputPort: class {
     func setCategoryImage(_ image: [Category : UnsplashPhotoEntity])
 }
 
-final class PhotoPrepareUseCase: PrepareAppUseCaseInputPort {
+final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
     let repository: FetchPhotoRepository
     let output: PhotoPrepareUseCaseOutputPort
     let disposeBag: DisposeBag

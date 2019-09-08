@@ -15,7 +15,7 @@ final class Builder {
         let repository: FetchPhotoGateWay = .init(client: webAPIClient)
         let viewModel: SplashViewModel = .init()
         let presenter: SplashViewPresenter = .init(viewModel: viewModel)
-        let useCase: PhotoPrepareUseCase = .init(repository: repository,
+        let useCase: AppPrepareUseCase = .init(repository: repository,
                                                  output: presenter)
         
         let controller: SplashController = .init(useCase: useCase)
