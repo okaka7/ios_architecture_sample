@@ -12,6 +12,7 @@ protocol SplashViewInputPort: class {
     func fetchTopImages()
     func fetchCategoryImages()
     func fetchPopularPhotos()
+    func fetchAccount()
 }
 
 final class SplashController: SplashViewInputPort {
@@ -30,6 +31,10 @@ final class SplashController: SplashViewInputPort {
     }
     
     func fetchPopularPhotos() {
+        
+    }
+    
+    func fetchAccount() {
         
     }
 }

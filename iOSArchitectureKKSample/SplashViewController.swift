@@ -66,7 +66,6 @@ class SplashViewController: UIViewController {
     private func prepareForAccountView() {
         
     }
-    
 }
 
 extension SplashViewController: SplashTransitionerInjectable {
