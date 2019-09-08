@@ -16,7 +16,7 @@ protocol SplashViewInputPort: class {
 }
 
 final class SplashController: SplashViewInputPort {
-    private let useCase: PrepareAppUseCaseInputPort!
+    private let useCase: PrepareAppUseCaseInputPort
     
     init (useCase: PrepareAppUseCaseInputPort) {
         self.useCase = useCase
