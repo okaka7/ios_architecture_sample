@@ -51,7 +51,7 @@ class SplashViewController: UIViewController {
         
     }
     
-    func prepareForHomeView() {
+    private func prepareForHomeView() {
         controller.fetchTopImages()
         self.transitioner?.transition()
     }
