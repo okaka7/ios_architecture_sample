@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SplashControllerProtocol: class {
-    func fetchPopularPhotos() 
+    func fetchPopularPhotos()
     func fetchCategoryImages()
     func fetchAccount()
 }
@@ -18,7 +18,7 @@ protocol SpalashPresenterProtocol: class {
     var viewModel: SplashViewModelProtocol { get }
 }
 
-final class SplashController: SplashControllerProtocol {
+final class SplashViewAdapter: SplashControllerProtocol {
     private let useCase: PrepareAppUseCaseInputPort
     
     init (useCase: PrepareAppUseCaseInputPort) {

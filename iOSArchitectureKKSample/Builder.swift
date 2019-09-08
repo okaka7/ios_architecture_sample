@@ -17,7 +17,7 @@ final class Builder {
         let presenter: SplashViewPresenter = .init(viewModel: viewModel)
         let useCase: AppPrepareUseCase = .init(repository: repository,
                                                  output: presenter)
-        let controller: SplashController = .init(useCase: useCase)
+        let controller: SplashViewAdapter = .init(useCase: useCase)
         let vc: SplashViewController = .init(controller: controller,
                                              viewModel: viewModel)
         
