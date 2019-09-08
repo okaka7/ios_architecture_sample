@@ -10,7 +10,6 @@ import Foundation
 import Moya
 
 struct UnsplashDownloadPhotoTarget: UnsplashAPITargetType {
-    
     typealias Response = UnsplashPhotoDownloadURLValueObject
     
     var path: String {
