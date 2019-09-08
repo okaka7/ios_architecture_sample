@@ -23,7 +23,7 @@ class SplashViewController: UIViewController {
         return label
     }()
     
-    weak private var transitioner: SplashTransitioner! 
+    weak private var transitioner: SplashTransitioner!
     private let controller: SplashViewInputPort!
     let viewModel: SplashViewModelProtocol
 
@@ -54,6 +54,11 @@ class SplashViewController: UIViewController {
     private func prepareForHomeView() {
         controller.fetchTopImages()
         self.transitioner?.transition()
+    }
+    
+    private func prepareForSearchView() {
+        controller.fetchCategoryImages()
+        controller.fetchPo
     }
 }
 

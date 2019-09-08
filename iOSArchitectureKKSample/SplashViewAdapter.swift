@@ -11,6 +11,7 @@ import Foundation
 protocol SplashViewInputPort: class {
     func fetchTopImages()
     func fetchCategoryImages()
+    func fetchPopularPhotos()
 }
 
 final class SplashController: SplashViewInputPort {
@@ -26,6 +27,10 @@ final class SplashController: SplashViewInputPort {
     
     func fetchCategoryImages() {
         useCase.searchPhotos(query: Category.allCases, page: 1)
+    }
+    
+    func fetchPopularPhotos() {
+        
     }
 }
 
