@@ -14,15 +14,17 @@ protocol SplashControllerProtocol: class {
     func fetchAccount()
 }
 
-protocol SpalashPresenterProtocol: class {
-    var viewModel: SplashViewModelProtocol { get }
+protocol SplashPresenterProtocol: class {
 }
 
-final class SplashViewAdapter: SplashControllerProtocol {
+final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol {
     private let useCase: PrepareAppUseCaseInputPort
+    let viewModel: SplashViewModelProtocol
     
-    init (useCase: PrepareAppUseCaseInputPort) {
+    init (useCase: PrepareAppUseCaseInputPort,
+          viewModel: SplashViewModelProtocol) {
         self.useCase = useCase
+        self.viewModel = viewModel
     }
     
     func fetchPopularPhotos() {
@@ -34,21 +36,6 @@ final class SplashViewAdapter: SplashControllerProtocol {
     }
     
     func fetchAccount() {
-        
-    }
-}
-
-final class SplashViewPresenter: PhotoPrepareUseCaseOutputPort {
-    let viewModel: SplashViewModelProtocol
-    
-    init(viewModel: SplashViewModelProtocol) {
-        self.viewModel = viewModel
-    }
-    func setTopImages(_ images: [UnsplashPhotoEntity]) {
-        
-    }
-    
-    func setCategoryImage(_ image: [Category : UnsplashPhotoEntity]) {
         
     }
 }

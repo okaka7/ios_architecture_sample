@@ -14,12 +14,11 @@ final class Builder {
         let webAPIClient: UnsplashAPIProvider = .shared
         let repository: FetchPhotoGateWay = .init(client: webAPIClient)
         let viewModel: SplashViewModel = .init()
-        let presenter: SplashViewPresenter = .init(viewModel: viewModel)
         let useCase: AppPrepareUseCase = .init(repository: repository,
                                                  output: presenter)
-        let controller: SplashViewAdapter = .init(useCase: useCase)
-        let vc: SplashViewController = .init(controller: controller,
-                                             viewModel: viewModel)
+        let controller: SplashControllerProtocol = .init(useCase: useCase,
+                                                         viewModel: viewModel)
+        let vc: SplashViewController = .init(controller: controller)
         
         let coordinator: AppCoordinator = .init(window: window,
                                                 rootVC: vc)
