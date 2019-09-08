@@ -28,7 +28,7 @@ public struct LightAccessTokenPlugin: PluginType {
      */
     public func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
     
-        guard let _ = target as? UnspalshAccessTokenAuthorizable else { return request }
+        guard let _ = target as? UnsplashAccessTokenAuthorizable else { return request }
         
         var request = request
         

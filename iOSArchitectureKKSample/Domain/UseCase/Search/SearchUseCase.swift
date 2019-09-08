@@ -50,13 +50,13 @@ final class SearchUseCase: SearchUseCaseInputPort {
     }
     
     func searchUseCase(query: String) {
-        repository.searchPhotos(query: query,
-                                page: 1,
-                                perPage: 50,
-                                orientation: .portraint)
-        .subscribe(onSuccess: <#T##((SearchPhotoReponseValueObject) -> Void)?##((SearchPhotoReponseValueObject) -> Void)?##(SearchPhotoReponseValueObject) -> Void#>,
-                   onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>)
-        .disposed(by: disposeBag)
+//        repository.searchPhotos(query: query,
+//                                page: 1,
+//                                perPage: 50,
+//                                orientation: .portraint)
+//        .subscribe(onSuccess: <#T##((SearchPhotoReponseValueObject) -> Void)?##((SearchPhotoReponseValueObject) -> Void)?##(SearchPhotoReponseValueObject) -> Void#>,
+//                   onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>)
+//        .disposed(by: disposeBag)
     }
     
     func selectPhoto(_ photo: PhotoUIEntity) {

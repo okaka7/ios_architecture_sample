@@ -33,10 +33,10 @@ final class UserAccountUseCase: UserAccountUseCaseInputPort {
     }
     
     func getAccount() {
-        self.repository
-            .fetchAccount()
-            .subscribe(onSuccess: ,
-                    onError: )
+//        self.repository
+//            .fetchAccount()
+//            .subscribe(onSuccess: ,
+//                    onError: )
     }
     
     func selectPhotos() {
