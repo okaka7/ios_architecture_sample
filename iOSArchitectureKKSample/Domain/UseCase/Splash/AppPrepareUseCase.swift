@@ -38,6 +38,7 @@ final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
         self.disposeBag = DisposeBag()
         self.output = output
     }
+    
     func fetchPopularPhotos(page: Int = 1,
                             photoEntities: [UnsplashPhotoEntity] = [UnsplashPhotoEntity]())
                              {

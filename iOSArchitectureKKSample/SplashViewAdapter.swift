@@ -8,13 +8,17 @@
 
 import Foundation
 
-protocol SplashViewInputPort: class {
-    func fetchPopularPhotos()
+protocol SplashControllerProtocol: class {
+    func fetchPopularPhotos() 
     func fetchCategoryImages()
     func fetchAccount()
 }
 
-final class SplashController: SplashViewInputPort {
+protocol SpalashPresenterProtocol: class {
+    var viewModel: SplashViewModelProtocol { get }
+}
+
+final class SplashController: SplashControllerProtocol {
     private let useCase: PrepareAppUseCaseInputPort
     
     init (useCase: PrepareAppUseCaseInputPort) {
