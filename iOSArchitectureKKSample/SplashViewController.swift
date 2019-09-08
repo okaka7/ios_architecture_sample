@@ -54,7 +54,7 @@ class SplashViewController: UIViewController {
     }
     
     private func prepareForDisplayingPhotos() {
-        controller.fetchTopImages()
+        controller.fetchPopularPhotos()
         self.transitioner?.transition()
     }
     

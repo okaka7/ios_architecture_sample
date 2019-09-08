@@ -9,9 +9,8 @@
 import Foundation
 
 protocol SplashViewInputPort: class {
-    func fetchTopImages()
-    func fetchCategoryImages()
     func fetchPopularPhotos()
+    func fetchCategoryImages()
     func fetchAccount()
 }
 
@@ -22,16 +21,12 @@ final class SplashController: SplashViewInputPort {
         self.useCase = useCase
     }
     
-    func fetchTopImages() {
+    func fetchPopularPhotos() {
         useCase.fetchPopularPhotos(page: 1, photoEntities: [UnsplashPhotoEntity]())
     }
     
     func fetchCategoryImages() {
         useCase.searchPhotos(query: Category.allCases, page: 1)
-    }
-    
-    func fetchPopularPhotos() {
-        
     }
     
     func fetchAccount() {
