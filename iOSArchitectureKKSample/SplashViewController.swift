@@ -44,8 +44,8 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.addSubview(label)
-        self.prepareForHomeView()
-        self.prepareForSearchView()
+        self.prepareForDisplayingPhotos()
+        self.prepareForCategoryPhotos()
         self.prepareForAccountView()
     }
     
@@ -53,12 +53,12 @@ class SplashViewController: UIViewController {
         
     }
     
-    private func prepareForHomeView() {
+    private func prepareForDisplayingPhotos() {
         controller.fetchTopImages()
         self.transitioner?.transition()
     }
     
-    private func prepareForSearchView() {
+    private func prepareForCategoryPhotos() {
         controller.fetchCategoryImages()
         controller.fetchPopularPhotos()
     }
