@@ -15,6 +15,11 @@ protocol SplashViewModelProtocol: class {
 }
 
 final class SplashViewModel: SplashViewModelProtocol {
+    private let presenter: SplashPresenterProtocol
+    
+    init(presenter: SplashPresenterProtocol) {
+        self.presenter = presenter
+    }
     private let topImagesSubject = PublishRelay<[UnsplashPhotoEntity]>()
     
     lazy var setTopImages: Observable<[UnsplashPhotoEntity]> = {

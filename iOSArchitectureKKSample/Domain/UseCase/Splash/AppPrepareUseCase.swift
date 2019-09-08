@@ -15,7 +15,6 @@ enum FetchTopImagesError: Error {
 }
 
 protocol PrepareAppUseCaseInputPort: class {
-    var output: PhotoPrepareUseCaseOutputPort { get }
     func fetchPopularPhotos(page: Int, photoEntities: [UnsplashPhotoEntity])
     func searchPhotos(query: [Category], page: Int)
     func fetchAccount()
@@ -28,15 +27,12 @@ protocol PhotoPrepareUseCaseOutputPort: class {
 
 final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
     let repository: FetchPhotoRepository
-    let output: PhotoPrepareUseCaseOutputPort
     let disposeBag: DisposeBag
     var count = 0
     
-    init(repository: FetchPhotoRepository,
-         output: PhotoPrepareUseCaseOutputPort) {
+    init(repository: FetchPhotoRepository) {
         self.repository = repository
         self.disposeBag = DisposeBag()
-        self.output = output
     }
     
     func fetchPopularPhotos(page: Int = 1,
@@ -53,7 +49,7 @@ final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
                         self?.fetchPopularPhotos(page: page + 1,
                                                  photoEntities: photoEntities)
                     } else {
-                        self?.output.setTopImages(photoEntities)
+                        //self?.output.setTopImages(photoEntities)
                     }
                 },
                 onError: { error in
@@ -89,7 +85,7 @@ final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
                     self?.searchPhotos(query: query, page: page + 1)
                     return
                 }
-                    self?.output.setCategoryImage(result)
+                    //self?.output.setCategoryImage(result)
                 },
                 onError: { error in
                     #if DEBUG
