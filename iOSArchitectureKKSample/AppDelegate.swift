@@ -18,10 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // アプリウィンドウを設定します。
-        let window = UIWindow(frame: UIScreen.main.bounds)
+        let window: UIWindow = .init(frame: UIScreen.main.bounds)
         self.window = window
         
-        let appCoordinator = Builder.buildAppCoordinator(window: window)
+        let appCoordinator: AppCoordinator = Builder.buildAppCoordinator(window: window)
         appCoordinator.start()
         self.appCoordinator = appCoordinator
         #if DEBUG
