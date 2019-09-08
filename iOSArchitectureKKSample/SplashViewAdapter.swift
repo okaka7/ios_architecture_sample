@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol SplashControllerProtocol: class {
     func fetchPopularPhotos()
@@ -19,12 +20,9 @@ protocol SplashPresenterProtocol: class {
 
 final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol {
     private let useCase: PrepareAppUseCaseInputPort
-    let viewModel: SplashViewModelProtocol
     
-    init (useCase: PrepareAppUseCaseInputPort,
-          viewModel: SplashViewModelProtocol) {
+    init (useCase: PrepareAppUseCaseInputPort) {
         self.useCase = useCase
-        self.viewModel = viewModel
     }
     
     func fetchPopularPhotos() {
