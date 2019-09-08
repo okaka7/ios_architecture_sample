@@ -14,6 +14,7 @@ enum Category: String, CaseIterable {
     case travel
     case animal
     case fashion
+    case art
     case nature
     case architecture
 }
