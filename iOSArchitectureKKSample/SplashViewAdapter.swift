@@ -30,8 +30,6 @@ final class SplashController: SplashViewInputPort {
 }
 
 final class SplashViewPresenter: PhotoPrepareUseCaseOutputPort {
-    
-    
     let viewModel: SplashViewModelProtocol
     
     init(viewModel: SplashViewModelProtocol) {
