@@ -24,7 +24,7 @@ class SplashViewController: UIViewController {
     }()
     
     weak private var transitioner: SplashTransitioner!
-    private let controller: SplashViewInputPort!
+    private let controller: SplashViewInputPort
     let viewModel: SplashViewModelProtocol
 
     init(controller: SplashViewInputPort,
