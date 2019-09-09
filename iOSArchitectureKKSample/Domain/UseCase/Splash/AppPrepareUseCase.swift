@@ -46,8 +46,8 @@ final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
         return repository.fetchPhotos(page: page, perPage: 50, orderBy: .popular)
     }
     
-    func loadCategoryPhoto(_ category: Category) -> Single<UnsplashPhotoEntity> {
-        return cache.rx.fetch(key: )
+    func loadCategoryPhoto(_ category: Category) -> Single<UnsplashPhotoEntity?> {
+        return cache.rx.fetch(key: category.cacheKey)
     }
     
     func fetchCategoryPhoto(_ category: Category) -> Single<UnsplashPhotoEntity> {

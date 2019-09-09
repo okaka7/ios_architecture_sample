@@ -18,8 +18,23 @@ enum Category: String, CaseIterable {
     case nature
     case architecture
     
-    func cacheKey() -> CacheKey<UnsplashPhotoEntity> {
-        
+    var cacheKey: CacheKey<UnsplashPhotoEntity> {
+        switch self {
+        case .people:
+            return .peopleCategory
+        case .travel:
+            return .travelCategory
+        case .animal:
+            return .animalCategory
+        case .fashion:
+            return .fashionCategory
+        case .art:
+            return .artCategory
+        case .nature:
+            return .natureCategory
+        case .architecture:
+            return .artCategory
+        }
     }
 }
 
