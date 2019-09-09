@@ -15,7 +15,7 @@ enum FetchTopImagesError: Error {
 }
 
 protocol PrepareAppUseCaseInputPort: class {
-    func fetchPopularPhotos(page: Int, photoEntities: [UnsplashPhotoEntity])
+    func fetchPopularPhotos(page: Int) -> Single<UnsplashPhotosTarget.Response>
     func searchPhotos(query: [Category], page: Int)
     func fetchAccount()
 }
@@ -26,7 +26,7 @@ protocol PhotoPrepareUseCaseOutputPort: class {
 }
 
 final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
-    let repository: FetchPhotoRepository
+    private let repository: FetchPhotoRepository
     let disposeBag: DisposeBag
     var count = 0
     
@@ -35,30 +35,8 @@ final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
         self.disposeBag = DisposeBag()
     }
     
-    func fetchPopularPhotos(page: Int = 1,
-                            photoEntities: [UnsplashPhotoEntity] = [UnsplashPhotoEntity]())
-                             {
-        var photoEntities = photoEntities
-        repository.fetchPhotos(page: page, perPage: 50, orderBy: .popular)
-            .map { $0.filter { $0.heightRatioToWidth <= 1.6
-                                && $0.heightRatioToWidth >= 1.4 }}
-            .subscribe(
-                onSuccess: {[weak self] elements in
-                    photoEntities.append(contentsOf: elements)
-                    if photoEntities.count < 20 {
-                        self?.fetchPopularPhotos(page: page + 1,
-                                                 photoEntities: photoEntities)
-                    } else {
-                        //self?.output.setTopImages(photoEntities)
-                    }
-                },
-                onError: { error in
-                    #if DEBUG
-                        log.debug(error)
-                    #endif
-                })
-            .disposed(by: disposeBag)
-        
+    func fetchPopularPhotos(page: Int = 1) -> Single<UnsplashPhotosTarget.Response> {
+        return repository.fetchPhotos(page: page, perPage: 50, orderBy: .popular)
     }
     
     func searchPhotos(query: [Category], page: Int = 1) {
