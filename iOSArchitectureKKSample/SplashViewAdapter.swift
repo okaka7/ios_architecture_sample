@@ -12,7 +12,7 @@ import RxCocoa
 
 protocol SplashControllerProtocol: class {
     func fetchPopularPhotos(page: Int)
-    func fetchCategoryImages()
+    func fetchCategoryPhotos()
     func fetchAccount()
 }
 
@@ -53,7 +53,7 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
             .subscribe(onSuccess: { [weak self] photos in
                 guard let self = self else { return }
                 popularPhotos.append(contentsOf: photos)
-                let appendedTopPhotos: UnsplashPhotosTarget.Response = photos.filter { $0.heightRatioToWidth <= 1.6
+                let appendedTopPhotos: UnsplashPhotosTarget.Response = photos.filter { $0.heightRatioToWidth <= 1.5
                     && $0.heightRatioToWidth >= 1.4 }
                 topPhotos.append(contentsOf: appendedTopPhotos)
                 if topPhotos.count >= 20 {
@@ -71,8 +71,10 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
             .disposed(by: disposeBag)
     }
     
-    func fetchCategoryImages() {
-        useCase.searchPhotos(query: Category.allCases, page: 1)
+    func fetchCategoryPhotos() {
+        Category.allCases.forEach {
+            self.useCase.loadCategoryPhoto(<#T##category: Category##Category#>)
+        }
     }
     
     func fetchAccount() {

@@ -58,7 +58,7 @@ class SplashViewController: UIViewController {
     }
     
     private func prepareForCategoryPhotos() {
-        controller.fetchCategoryImages()
+        controller.fetchCategoryPhotos()
         controller.fetchPopularPhotos()
     }
     
