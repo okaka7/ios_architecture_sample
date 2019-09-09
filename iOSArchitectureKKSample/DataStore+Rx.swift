@@ -9,10 +9,10 @@
 import Foundation
 import RxSwift
 
-extension LocalCache: ReactiveCompatible {}
-extension KeyChainCache: ReactiveCompatible {}
+extension Cache: ReactiveCompatible {}
 
-public extension Reactive where Base: LocalCache {
+
+extension Reactive where Base: Cache {
     func save<T: CacheValue>(key: CacheKey<T>, value: T) -> Completable {
         return Completable.create { observer in
             do {

@@ -16,10 +16,9 @@ public protocol Cacheable {
 }
 
 public protocol DataStorable {
-    
-    func save(_ key: String, value: Data)
-    func fetch(_ key: String) -> Data?
-    func delete(_ key: String)
+    static func save(_ key: String, value: Data)
+    static func fetch(_ key: String) -> Data?
+    static func delete(_ key: String)
 }
 
 extension Cacheable {
@@ -35,7 +34,7 @@ extension Cacheable {
         try T.set(key: key.rawValue, value: nil, cache: self)
     }
     // Note: You need to override this method
-    fileprivate var store: DataStorable { fatalError("abstract class instance") }
+    fileprivate var store: DataStorable.Type { fatalError("abstract class instance") }
     
     fileprivate func save(_ key: String, value: Data) {
         store.save(key, value: value)
@@ -50,63 +49,52 @@ extension Cacheable {
     }
 }
 
-fileprivate class LocalDataStore: DataStorable {
-    static let shared = LocalDataStore()
-    private let store: UserDefaults = .standard
-    func save(_ key: String, value: Data) {
+
+class Cache: Cacheable {}
+
+final class LocalCache: Cache {
+    fileprivate let store: LocalDataStore.Type = LocalDataStore.self
+}
+
+final class KeychainCache: Cache {
+    fileprivate let store: KeychainCache.Type = KeychainCache.self
+}
+
+class LocalDataStore: DataStorable {
+    private static let store: UserDefaults = .standard
+    static func save(_ key: String, value: Data) {
         store.set(value, forKey: key)
     }
     
-    func fetch(_ key: String) -> Data? {
+    static func fetch(_ key: String) -> Data? {
         guard let data = store.data(forKey: key) else {
             return nil
         }
         return data
     }
     
-    func delete(_ key: String) {
+    static func delete(_ key: String) {
         store.set(nil, forKey: key)
     }
-    
-    private init() {}
 }
 
-public final class LocalCache: Cacheable {
-    static let shared = LocalCache()
-    private init() {}
-    
-    fileprivate var store: LocalDataStore {
-        return LocalDataStore.shared
-    }
-}
 
-fileprivate class KeyChainDataStore: DataStorable {
-    static let shared = KeyChainDataStore()
-    
-    private let store: Keychain = Keychain(service: Bundle.main.bundleIdentifier!)
-    func save(_ key: String, value: Data) {
+
+class KeyChainDataStore: DataStorable {
+    private static let store: Keychain = Keychain(service: Bundle.main.bundleIdentifier!)
+    static func save(_ key: String, value: Data) {
         store[data: key] = value
     }
     
-    public func fetch(_ key: String) -> Data? {
+    static public func fetch(_ key: String) -> Data? {
         return store[data: key]
     }
     
-    public func delete(_ key: String) {
+    static public func delete(_ key: String) {
         store[data: key] = nil
     }
-    
-    private init() {}
 }
 
-public final class KeyChainCache: Cacheable {
-    static let shared = KeyChainCache()
-    private init() {}
-    
-    fileprivate var store: KeyChainDataStore {
-        return KeyChainDataStore.shared
-    }
-}
 
 // MARK: LocalCacheValue
 public protocol CacheSettable {
@@ -114,12 +102,12 @@ public protocol CacheSettable {
     static func set<Cache: Cacheable>(key: String, array: [Self], cache: Cache) throws
 }
 
-public protocol LocalCacheGettable {
+public protocol CacheGettable {
     static func get<Cache: Cacheable>(key: String, cache: Cache) throws -> Self?
     static func getArray<Cache: Cacheable>(key: String, cache: Cache) throws -> [Self]?
 }
 
-public typealias CacheValue = LocalCacheGettable & CacheSettable
+public typealias CacheValue = CacheGettable & CacheSettable
 
 extension CacheSettable where Self: Encodable {
     static func set<Cache: Cacheable>(key: String, value: Self?, cache: Cache) throws {
@@ -151,7 +139,7 @@ extension CacheSettable where Self: Encodable {
     }
 }
 
-extension LocalCacheGettable where Self: Decodable {
+extension CacheGettable where Self: Decodable {
     static func get<Cache: Cacheable>(key: String, cache: Cache) throws -> Self? {
         guard let data = cache.store.fetch(key) else {
             return nil
