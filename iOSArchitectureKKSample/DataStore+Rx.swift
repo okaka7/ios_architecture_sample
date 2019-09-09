@@ -12,7 +12,7 @@ import RxSwift
 extension LocalCache: ReactiveCompatible {}
 extension KeyChainCache: ReactiveCompatible {}
 
-public extension Reactive where Base: Cacheable {
+public extension Reactive where Base: LocalCache {
     func save<T: CacheValue>(key: CacheKey<T>, value: T) -> Completable {
         return Completable.create { observer in
             do {
@@ -26,19 +26,59 @@ public extension Reactive where Base: Cacheable {
         }
     }
     
-    func fetch<T: CacheValue>(key: CacheKey<T>) -> Maybe<T?> {
-        return Maybe.create{observer in
+    func fetch<T: CacheValue>(key: CacheKey<T>) -> Single<T?> {
+        return Single.create{observer in
             do {
                 let element = try self.base.fetch(key)
-                observer(MaybeEvent.success(element))
+                observer(SingleEvent.success(element))
             } catch {
-                observer(MaybeEvent.error(error))
+                observer(SingleEvent.error(error))
             }
             
             return Disposables.create()
         }
     }
   
+    func delete<T: CacheValue>(key: CacheKey<T>) -> Completable {
+        return Completable.create { observer in
+            do {
+                try self.base.delete(key)
+                observer(CompletableEvent.completed)
+            } catch {
+                observer(CompletableEvent.error(error))
+            }
+            return Disposables.create()
+        }
+    }
+}
+
+public extension Reactive where Base: KeyChainCache {
+    func save<T: CacheValue>(key: CacheKey<T>, value: T) -> Completable {
+        return Completable.create { observer in
+            do {
+                try self.base.save(key, value: value)
+                observer(CompletableEvent.completed)
+            } catch {
+                observer(CompletableEvent.error(error))
+            }
+            
+            return Disposables.create()
+        }
+    }
+    
+    func fetch<T: CacheValue>(key: CacheKey<T>) -> Single<T?> {
+        return Single.create{observer in
+            do {
+                let element = try self.base.fetch(key)
+                observer(SingleEvent.success(element))
+            } catch {
+                observer(SingleEvent.error(error))
+            }
+            
+            return Disposables.create()
+        }
+    }
+    
     func delete<T: CacheValue>(key: CacheKey<T>) -> Completable {
         return Completable.create { observer in
             do {

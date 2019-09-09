@@ -33,7 +33,6 @@ class SplashViewController: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         self.view.backgroundColor = .white
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

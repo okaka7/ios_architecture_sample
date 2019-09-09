@@ -17,6 +17,8 @@ enum FetchTopImagesError: Error {
 protocol PrepareAppUseCaseInputPort: class {
     func fetchPopularPhotos(page: Int) -> Single<UnsplashPhotosTarget.Response>
     func searchPhotos(query: [Category], page: Int)
+    func loadCategoryPhoto(_ category: Category)
+    func fetchCategoryPhoto(_ category: Category)
     func fetchAccount()
 }
 
@@ -26,17 +28,29 @@ protocol PhotoPrepareUseCaseOutputPort: class {
 }
 
 final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
+    private let dataStore: LocalCache
     private let repository: FetchPhotoRepository
     let disposeBag: DisposeBag
     var count = 0
     
-    init(repository: FetchPhotoRepository) {
+    init(repository: FetchPhotoRepository,
+         dataStore: LocalCache,
+        disposeBag: DisposeBag = DisposeBag()) {
         self.repository = repository
-        self.disposeBag = DisposeBag()
+        self.dataStore = dataStore
+        self.disposeBag = disposeBag
     }
     
     func fetchPopularPhotos(page: Int = 1) -> Single<UnsplashPhotosTarget.Response> {
         return repository.fetchPhotos(page: page, perPage: 50, orderBy: .popular)
+    }
+    
+    func loadCategoryPhoto(_ category: Category) -> Single<UnsplashPhotoEntity> {
+        return dataStore.rx.fetch(key: <#T##CacheKey<CacheSettable & LocalCacheGettable>#>)
+    }
+    
+    func fetchCategoryPhoto(_ category: Category) -> Single<UnsplashPhotoTarget.Response> {
+        return repository.fetchPhoto(id: <#T##String#>)
     }
     
     func searchPhotos(query: [Category], page: Int = 1) {
