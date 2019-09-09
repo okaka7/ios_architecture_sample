@@ -16,9 +16,7 @@ enum FetchTopImagesError: Error {
 
 protocol PrepareAppUseCaseInputPort: class {
     func fetchPopularPhotos(page: Int) -> Single<UnsplashPhotosTarget.Response>
-    func searchPhotos(query: [Category], page: Int)
-    func loadCategoryPhoto(key: CacheKey<UnsplashPhotoEntity>) -> Single<UnsplashPhotoEntity?>
-    func fetchCategoryPhoto(id: String) -> Single<UnsplashPhotoEntity>
+   
     func fetchAccount()
 }
 
@@ -28,7 +26,6 @@ protocol PhotoPrepareUseCaseOutputPort: class {
 }
 
 final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
-    private let cache: Cache
     private let repository: FetchPhotoRepository
     let disposeBag: DisposeBag
     var count = 0
@@ -37,54 +34,11 @@ final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
          cache: Cache,
         disposeBag: DisposeBag = DisposeBag()) {
         self.repository = repository
-        self.cache = cache
         self.disposeBag = disposeBag
     }
     
     func fetchPopularPhotos(page: Int = 1) -> Single<UnsplashPhotosTarget.Response> {
         return repository.fetchPhotos(page: page, perPage: 50, orderBy: .popular)
-    }
-    
-    func loadCategoryPhoto(key: CacheKey<UnsplashPhotoEntity>) -> Single<UnsplashPhotoEntity?> {
-        return cache.rx.fetch(key: key)
-    }
-    
-    func fetchCategoryPhoto(id: String) -> Single<UnsplashPhotoEntity> {
-        return repository.fetchPhoto(id: <#T##String#>)
-    }
-    
-    func searchPhotos(query: [Category], page: Int = 1) {
-        var page = page
-        let combineSingles: [Observable<UnsplashSearchPhotosTarget.Response>] = query.map {
-                                                                repository.searchPhotos(query: $0.rawValue,
-                                                                page: 1,
-                                                                perPage: 10,
-                                                                orientation: .portraint)
-                                                                .asObservable()}
-        Observable.combineLatest(combineSingles)
-            .map { $0.map{ $0.results } }
-            .map { $0.map{ $0.filter{ $0.heightRatioToWidth <= 1.6 && $0.heightRatioToWidth >= 1.4 }}}
-            .map { $0.map{ $0.first} }
-            .map {
-                zip(query, $0).reduce(into: Dictionary<Category, UnsplashPhotoEntity?>(),
-                                      { result, elements in
-                                        result[elements.0] = elements.1
-                })}
-            .take(1)
-            .asSingle()
-            .subscribe(onSuccess: {[weak self]  in
-                guard let result = $0 as? [Category : UnsplashPhotoEntity] else {
-                    self?.searchPhotos(query: query, page: page + 1)
-                    return
-                }
-                    //self?.output.setCategoryImage(result)
-                },
-                onError: { error in
-                    #if DEBUG
-                    log.debug(error)
-                    #endif
-            }).disposed(by: disposeBag)
-        
     }
     
     func fetchAccount() {

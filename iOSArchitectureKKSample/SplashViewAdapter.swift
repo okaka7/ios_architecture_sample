@@ -12,7 +12,6 @@ import RxCocoa
 
 protocol SplashControllerProtocol: class {
     func fetchPopularPhotos(page: Int)
-    func loadCategoryPhotos()
     func fetchAccount()
 }
 
@@ -77,24 +76,6 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
             .disposed(by: disposeBag)
     }
     
-    func loadCategoryPhotos() {
-        Observable.merge(<#T##sources: [Observable<_>]##[Observable<_>]#>)
-        let categoryPhotos: (Category, UnsplashPhotoEntity?) = Category.allCases.map {
-            self.useCase.loadCategoryPhoto(key: $0.cacheKey)
-                .subscribe(onSuccess: { [weak self] photoEntity in
-                    guard let self = self else {
-                        return
-                    }
-                    if let photo = photoEntity {
-                        return ($0,)
-                    } else {
-                        
-                    }
-                    
-                    },
-                           onError: )
-        }
-    }
     
     func fetchAccount() {
         
