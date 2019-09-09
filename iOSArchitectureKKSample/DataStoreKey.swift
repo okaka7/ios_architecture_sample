@@ -29,6 +29,37 @@ extension CacheKeys {
     static var token: CacheKey<UnsplashTokenValueObject> {
         return CacheKey("token", defaultValue: nil)
     }
+    
+    static var peopleCategory: CacheKey<UnsplashPhotoEntity> {
+        return CacheKey("people", defaultValue: nil)
+    }
+    
+    static var travelCategory: CacheKey<UnsplashPhotoEntity> {
+        return CacheKey("travel", defaultValue: nil)
+    }
+    
+    static var animalCategory: CacheKey<UnsplashPhotoEntity> {
+        return CacheKey("animal", defaultValue: nil)
+    }
+    
+    static var fashionCategory: CacheKey<UnsplashPhotoEntity> {
+        return CacheKey("fashion", defaultValue: nil)
+    }
+    
+    static var artCategory: CacheKey<UnsplashPhotoEntity> {
+        return CacheKey("art", defaultValue: nil)
+    }
+    
+    static var natureCategory: CacheKey<UnsplashPhotoEntity> {
+        return CacheKey("nature", defaultValue: nil)
+    }
+    
+    static var architectureCategory: CacheKey<UnsplashPhotoEntity> {
+        return CacheKey("architecture", defaultValue: nil)
+    }
+    
+    
 }
 
 extension UnsplashTokenValueObject: CacheValue {}
+extension UnsplashPhotoEntity: CacheValue {}

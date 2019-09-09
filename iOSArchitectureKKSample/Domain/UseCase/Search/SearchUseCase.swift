@@ -17,6 +17,10 @@ enum Category: String, CaseIterable {
     case art
     case nature
     case architecture
+    
+    func cacheKey() -> CacheKey<UnsplashPhotoEntity> {
+        
+    }
 }
 
 protocol SearchUseCaseInputPort: PhotoSelectable {

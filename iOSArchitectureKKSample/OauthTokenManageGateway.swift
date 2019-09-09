@@ -12,7 +12,7 @@ struct OauthTokenManageGateWay: APITokenRepository {
    
     let keychainStore: Cacheable
     
-    init(keychainStorable: Cacheable = KeyChainCache.shared) {
+    init(keychainStorable: Cacheable = KeyChainCache()) {
         self.keychainStore = keychainStorable
     }
     

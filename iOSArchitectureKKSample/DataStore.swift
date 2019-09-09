@@ -56,8 +56,8 @@ final class LocalCache: Cache {
     fileprivate let store: LocalDataStore.Type = LocalDataStore.self
 }
 
-final class KeychainCache: Cache {
-    fileprivate let store: KeychainCache.Type = KeychainCache.self
+final class KeyChainCache: Cache {
+    fileprivate let store: KeyChainCache.Type = KeyChainCache.self
 }
 
 class LocalDataStore: DataStorable {

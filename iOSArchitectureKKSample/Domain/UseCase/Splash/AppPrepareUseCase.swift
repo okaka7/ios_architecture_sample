@@ -29,16 +29,16 @@ protocol PhotoPrepareUseCaseOutputPort: class {
 
 final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
   
-    private let dataStore: LocalCache
+    private let cache: Cache
     private let repository: FetchPhotoRepository
     let disposeBag: DisposeBag
     var count = 0
     
     init(repository: FetchPhotoRepository,
-         dataStore: LocalCache,
+         cache: Cache,
         disposeBag: DisposeBag = DisposeBag()) {
         self.repository = repository
-        self.dataStore = dataStore
+        self.cache = cache
         self.disposeBag = disposeBag
     }
     
@@ -47,7 +47,7 @@ final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
     }
     
     func loadCategoryPhoto(_ category: Category) -> Single<UnsplashPhotoEntity> {
-        return dataStore.rx.fetch(key: <#T##CacheKey<CacheSettable & LocalCacheGettable>#>)
+        return cache.rx.fetch(key: )
     }
     
     func fetchCategoryPhoto(_ category: Category) -> Single<UnsplashPhotoEntity> {
