@@ -10,18 +10,18 @@ import Foundation
 import RxSwift
 
 enum Category: String, CaseIterable {
-    case people
+    
+    case nature
     case travel
     case animal
     case fashion
     case art
-    case nature
     case architecture
     
     var cacheKey: CacheKey<UnsplashPhotoEntity> {
         switch self {
-        case .people:
-            return .peopleCategory
+        case .nature:
+            return .natureCategory
         case .travel:
             return .travelCategory
         case .animal:
@@ -30,10 +30,25 @@ enum Category: String, CaseIterable {
             return .fashionCategory
         case .art:
             return .artCategory
-        case .nature:
-            return .natureCategory
         case .architecture:
             return .artCategory
+        }
+    }
+    
+    var id: String {
+        switch self {
+        case .nature:
+            return "T2l1NxKOsjY"
+        case .travel:
+            return "hFXZ5cNfkOk"
+        case .animal:
+            return "8kA9TKg6DKw"
+        case .fashion:
+            return "1GwsEHtkhVg"
+        case .art:
+            return "o3NLIY0_Qhc"
+        case .architecture:
+            return "16f8y0DswPc"
         }
     }
 }

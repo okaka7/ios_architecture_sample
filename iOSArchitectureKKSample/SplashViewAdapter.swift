@@ -12,7 +12,7 @@ import RxCocoa
 
 protocol SplashControllerProtocol: class {
     func fetchPopularPhotos(page: Int)
-    func fetchCategoryPhotos()
+    func loadCategoryPhotos()
     func fetchAccount()
 }
 
@@ -38,6 +38,12 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
         return self.topPhotosSubject.asObservable()
     }()
     private let topPhotosSubject: PublishRelay<UnsplashPhotosTarget.Response> = .init()
+
+    
+    lazy private(set) var categoryPhotosObservable: Observable<(Category, UnsplashPhotoEntity)> = {
+        return self.categoryPhotosSubject.asObservable()
+    }()
+    private let categoryPhotosSubject: PublishRelay<(Category, UnsplashPhotoEntity)> = .init()
 
     
     init (useCase: PrepareAppUseCaseInputPort,
@@ -71,9 +77,22 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
             .disposed(by: disposeBag)
     }
     
-    func fetchCategoryPhotos() {
-        Category.allCases.forEach {
-            self.useCase.loadCategoryPhoto(<#T##category: Category##Category#>)
+    func loadCategoryPhotos() {
+        Observable.merge(<#T##sources: [Observable<_>]##[Observable<_>]#>)
+        let categoryPhotos: (Category, UnsplashPhotoEntity?) = Category.allCases.map {
+            self.useCase.loadCategoryPhoto(key: $0.cacheKey)
+                .subscribe(onSuccess: { [weak self] photoEntity in
+                    guard let self = self else {
+                        return
+                    }
+                    if let photo = photoEntity {
+                        return ($0,)
+                    } else {
+                        
+                    }
+                    
+                    },
+                           onError: )
         }
     }
     
