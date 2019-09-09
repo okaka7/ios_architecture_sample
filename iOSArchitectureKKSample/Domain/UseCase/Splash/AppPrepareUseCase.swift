@@ -41,6 +41,7 @@ final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
         return repository.fetchPhotos(page: page, perPage: 50, orderBy: .popular)
     }
     
+
     func fetchAccount() {
     }
 }
