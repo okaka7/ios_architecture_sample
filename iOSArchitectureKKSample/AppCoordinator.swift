@@ -43,7 +43,8 @@ final class AppCoordinator: Coordinator, SplashTransitioner {
     
     func transition() {
         self.mainTabCoordinator.start()
-        self.rootViewController.present(self.mainTabCoordinator.mainTabBarController,
-                                        animated: false)
+        self.rootViewController
+            .present(self.mainTabCoordinator.mainTabBarController,
+                    animated: false)
     }
 }

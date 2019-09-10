@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 import KeychainAccess
 
 //protocol UnsplashAuthenticationOutput where Self: UIViewController {
@@ -26,11 +27,14 @@ class SplashViewController: UIViewController {
     weak private var transitioner: SplashTransitioner!
     private let controller: SplashControllerProtocol
     let viewModel: SplashViewModelProtocol
+    private let disposeBag: DisposeBag
 
     init(controller: SplashControllerProtocol,
-         viewModel: SplashViewModelProtocol) {
+         viewModel: SplashViewModelProtocol,
+         disposeBag: DisposeBag = DisposeBag()) {
         self.controller = controller
         self.viewModel = viewModel
+        self.disposeBag = disposeBag
         super.init(nibName: nil, bundle: nil)
         self.view.backgroundColor = .white
     }
@@ -69,12 +73,26 @@ class SplashViewController: UIViewController {
     
     private func subscribeRx() {
         
-        viewModel.prepareObservable.subscribe(onNext: { assets in
-            switch assets {
-                case is
-            }
+        var popularPhotos: PopularPhotoList? = nil
+        var topPhotos: TopPhotoList? = nil
+        var account: UnsplashAccountValueObject? = nil
+        viewModel.prepareObservable
+            .subscribe(onNext: { asset in
+                switch asset {
+                case let list as PopularPhotoList:
+                    popularPhotos = list
+                case let list as TopPhotoList:
+                    topPhotos = list
+                case let ac as UnsplashAccountValueObject:
+                    account = ac
+                default:
+                    break
+                }
         },
-            onCompleted: )
+                       onCompleted:{
+                        
+                                                
+        }).disposed(by: self.disposeBag)
     }
   
 }
