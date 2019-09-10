@@ -28,14 +28,11 @@ protocol PhotoPrepareUseCaseOutputPort: class {
 final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
     private let photoRepository: PhotoRepository
     private let accountRepository: AccountRepository
-    let disposeBag: DisposeBag
     
     init(photoRepository: PhotoRepository,
-         accountRepository: AccountRepository,
-         disposeBag: DisposeBag = DisposeBag()) {
+         accountRepository: AccountRepository) {
         self.photoRepository = photoRepository
         self.accountRepository = accountRepository
-        self.disposeBag = disposeBag
     }
     
     func fetchPopularPhotos(page: Int = 1) -> Single<UnsplashPhotosTarget.Response> {
