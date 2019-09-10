@@ -39,7 +39,7 @@ enum Category: String, CaseIterable {
 final class AppBuilder {
     static func buildAppCoordinator(window: UIWindow) -> AppCoordinator {
         let webAPIClient: UnsplashAPIProvider = .shared
-        let repository: FetchPhotoGateWay = .init(client: webAPIClient)
+        let repository: PhotoGateWay = .init(client: webAPIClient)
         let localCache: LocalCache = .init()
         let useCase: AppPrepareUseCase = .init(repository: repository,
                                                cache: localCache)
