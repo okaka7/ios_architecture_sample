@@ -15,3 +15,4 @@ extension CacheKeys {
 }
 
 extension UnsplashTokenValueObject: CacheValue {}
+extension LogIn: CacheValue {}

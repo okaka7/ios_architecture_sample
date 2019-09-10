@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum LogIn: Int {
+enum LogIn: Int, Codable {
     case noAccessKey
     case logIn
     case logOut
