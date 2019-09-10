@@ -22,8 +22,8 @@ extension SplashControllerProtocol {
 }
 
 protocol SplashPresenterProtocol: class {
-    var popularPhotosObservable: Observable<UnsplashPhotosTarget.Response?> { get }
-    var topPhotosObservable: Observable<UnsplashPhotosTarget.Response?> { get }
+    var popularPhotosObservable: Observable<PopularPhotoList?> { get }
+    var topPhotosObservable: Observable<TopPhotoList?> { get }
     var accountObservable: Observable<UnsplashAccountTarget.Response?> { get }
     
 }
@@ -32,15 +32,15 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
     private let useCase: PrepareAppUseCaseInputPort
     private let disposeBag: DisposeBag
     
-    lazy private(set) var popularPhotosObservable: Observable<UnsplashPhotosTarget.Response?> = {
+    lazy private(set) var popularPhotosObservable: Observable<PopularPhotoList?> = {
         return self.popularPhotosSubject.asObservable()
     }()
-    private let popularPhotosSubject: PublishRelay<UnsplashPhotosTarget.Response?> = .init()
+    private let popularPhotosSubject: PublishRelay<PopularPhotoList?> = .init()
     
-    lazy private(set) var topPhotosObservable: Observable<UnsplashPhotosTarget.Response?> = {
+    lazy private(set) var topPhotosObservable: Observable<TopPhotoList?> = {
         return self.topPhotosSubject.asObservable()
     }()
-    private let topPhotosSubject: PublishRelay<UnsplashPhotosTarget.Response?> = .init()
+    private let topPhotosSubject: PublishRelay<TopPhotoList?> = .init()
 
     private let accountSubject: PublishRelay<UnsplashAccountTarget.Response?> = .init()
     
@@ -66,8 +66,8 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
                 let appendedTopPhotos: UnsplashPhotosTarget.Response = photos.filter { $0.isSuitableForTopImage }
                 topPhotos.append(contentsOf: appendedTopPhotos)
                 if topPhotos.count >= 20 {
-                    self.topPhotosSubject.accept(topPhotos)
-                    self.popularPhotosSubject.accept(popularPhotos)
+                    self.topPhotosSubject.accept(TopPhotoList(photos: topPhotos))
+                    self.popularPhotosSubject.accept(PopularPhotoList(photos: popularPhotos))
                 } else {
                     self.fetchPopularPhotos(page: page + 1)
                 }

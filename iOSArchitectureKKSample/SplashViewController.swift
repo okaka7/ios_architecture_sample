@@ -67,6 +67,15 @@ class SplashViewController: UIViewController {
         controller.fetchAccount()
     }
     
+    private func subscribeRx() {
+        
+        viewModel.prepareObservable.subscribe(onNext: { assets in
+            switch assets {
+                case is
+            }
+        },
+            onCompleted: )
+    }
   
 }
 
@@ -77,13 +86,3 @@ extension SplashViewController: SplashTransitionerInjectable {
 }
 
 
-//extension SplashViewController: UnsplashAuthenticationOutput { }
-//
-//extension UnsplashAuthenticationOutput {
-//    func openAuthenticationURL(_ url: URL, completionHandler completion: ((Bool) -> Void)? = nil) {
-//        UIApplication.shared.openURLIfPossible(url,
-//                                               options: [:],
-//                                               completionHandler: completion)
-//
-//    }
-//}
