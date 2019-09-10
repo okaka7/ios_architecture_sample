@@ -51,6 +51,7 @@
 		E574B86E2327C5000076C078 /* KeychainCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B86D2327C5000076C078 /* KeychainCache.swift */; };
 		E574B8702327C5110076C078 /* DataStoreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B86F2327C5110076C078 /* DataStoreKey.swift */; };
 		E574B8722327C5220076C078 /* DataStore+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B8712327C5210076C078 /* DataStore+Rx.swift */; };
+		E574B8752327C99E0076C078 /* KeyChainCache+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B8742327C99E0076C078 /* KeyChainCache+Key.swift */; };
 		E574CF5922C642DD009CF8CD /* SwiftyBeaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574CF5822C642DD009CF8CD /* SwiftyBeaver.swift */; };
 		E574CF6B22C64D5B009CF8CD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E574CF6D22C64D5B009CF8CD /* Localizable.strings */; };
 		E576E31B2313DAC6007446B8 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E576E31A2313DAC6007446B8 /* SplashViewModel.swift */; };
@@ -218,6 +219,7 @@
 		E574B86D2327C5000076C078 /* KeychainCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainCache.swift; sourceTree = "<group>"; };
 		E574B86F2327C5110076C078 /* DataStoreKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStoreKey.swift; sourceTree = "<group>"; };
 		E574B8712327C5210076C078 /* DataStore+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataStore+Rx.swift"; sourceTree = "<group>"; };
+		E574B8742327C99E0076C078 /* KeyChainCache+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyChainCache+Key.swift"; sourceTree = "<group>"; };
 		E574CF5822C642DD009CF8CD /* SwiftyBeaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyBeaver.swift; sourceTree = "<group>"; };
 		E574CF6C22C64D5B009CF8CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E576E31A2313DAC6007446B8 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
@@ -534,6 +536,7 @@
 				E57950BC23085D8300000FD8 /* Gateway */,
 				E516490722CD0E6200D3D2D7 /* Web */,
 				E57826EF22D8E21C002499A9 /* Entity */,
+				E574B8742327C99E0076C078 /* KeyChainCache+Key.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -1274,6 +1277,7 @@
 				E5B8A2302309C7A900AE29E8 /* Extension.swift in Sources */,
 				E55E19C1230991BC007C1C57 /* OauthTokenManageGateway.swift in Sources */,
 				E5B8A2382309CEF600AE29E8 /* TokenRequestUseCaseInputPort.swift in Sources */,
+				E574B8752327C99E0076C078 /* KeyChainCache+Key.swift in Sources */,
 				E57915CE22F85AD4009BCE95 /* UnsplashAPIProvider.swift in Sources */,
 				E59994802316C48200CAFC11 /* SearchViewModel.swift in Sources */,
 				E5B8A2362309C8A800AE29E8 /* ViewControlelrGettable.swift in Sources */,
@@ -1434,7 +1438,7 @@
 				);
 				INFOPLIST_FILE = DataCache/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1442,6 +1446,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kota.DataCache;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1469,7 +1474,7 @@
 				);
 				INFOPLIST_FILE = DataCache/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1477,6 +1482,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kota.DataCache;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

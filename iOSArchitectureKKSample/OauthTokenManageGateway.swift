@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import DataCache
 
 struct OauthTokenManageGateWay: APITokenRepository {
    
-    let keychainStore: Cacheable
+    let keychainStore: Cache
     
-    init(keychainStorable: Cacheable = KeyChainCache()) {
+    init(keychainStorable: Cache = KeychainCache.init(serviceName: Bundle.main.bundleIdentifier!)) {
         self.keychainStore = keychainStorable
     }
     

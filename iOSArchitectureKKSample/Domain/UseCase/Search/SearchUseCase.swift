@@ -18,23 +18,6 @@ enum Category: String, CaseIterable {
     case art
     case architecture
     
-    var cacheKey: CacheKey<UnsplashPhotoEntity> {
-        switch self {
-        case .nature:
-            return .natureCategory
-        case .travel:
-            return .travelCategory
-        case .animal:
-            return .animalCategory
-        case .fashion:
-            return .fashionCategory
-        case .art:
-            return .artCategory
-        case .architecture:
-            return .artCategory
-        }
-    }
-    
     var id: String {
         switch self {
         case .nature:

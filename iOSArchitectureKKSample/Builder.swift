@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import DataCache
 
 final class Builder {
     static func buildAppCoordinator(window: UIWindow) -> AppCoordinator {

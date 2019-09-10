@@ -9,6 +9,7 @@
 import Foundation
 import Moya
 import RxSwift
+import DataCache
 
 enum FetchTopImagesError: Error {
     case deficientPhotos

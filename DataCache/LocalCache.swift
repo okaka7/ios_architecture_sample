@@ -28,10 +28,10 @@ class LocalDataStore: DataStorable {
         store.set(nil, forKey: key)
     }
    
-    private init() {}
+    internal required  init() {}
 }
 
-final class LocalCache: Cache {
+final public class LocalCache: Cache {
     let store: DataStorable = LocalDataStore.shared
 }
 

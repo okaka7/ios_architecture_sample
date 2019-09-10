@@ -21,6 +21,7 @@ public protocol DataStorable: class {
 }
 
 extension Cacheable {
+    
     public func save<T: CacheValue>(_ key: CacheKey<T>, value: T) throws {
         try T.set(key: key.rawValue, value: value, cache: self)
     }
@@ -49,7 +50,11 @@ extension Cacheable {
 }
 
 
-public class Cache: Cacheable {}
+public class Cache: Cacheable {
+    public init() {
+        
+    }
+}
 
 // MARK: LocalCacheValue
 public protocol CacheSettable {
@@ -65,7 +70,7 @@ public protocol CacheGettable {
 public typealias CacheValue = CacheGettable & CacheSettable
 
 extension CacheSettable where Self: Encodable {
-    static func set<Cache: Cacheable>(key: String, value: Self?, cache: Cache) throws {
+    public static func set<Cache: Cacheable>(key: String, value: Self?, cache: Cache) throws {
         guard let value = value else {
             cache.store.delete(key)
             return
@@ -76,7 +81,7 @@ extension CacheSettable where Self: Encodable {
         
         cache.store.save(key, value: data)
     }
-    static func set<Cache: Cacheable>(key: String, array: [Self], cache: Cache) throws {
+    public static func set<Cache: Cacheable>(key: String, array: [Self], cache: Cache) throws {
         guard array.isEmpty else {
             cache.store.delete(key)
             return
@@ -95,14 +100,14 @@ extension CacheSettable where Self: Encodable {
 }
 
 extension CacheGettable where Self: Decodable {
-    static func get<Cache: Cacheable>(key: String, cache: Cache) throws -> Self? {
+    public static func get<Cache: Cacheable>(key: String, cache: Cache) throws -> Self? {
         guard let data = cache.store.fetch(key) else {
             return nil
         }
         return try decode(Self.self, from: data)
     }
     
-    static func getArray<Cache: Cacheable>(key: String, cache: Cache) throws -> [Self]? {
+    public static func getArray<Cache: Cacheable>(key: String, cache: Cache) throws -> [Self]? {
         guard let data = cache.store.fetch(key) else {
             return nil
         }

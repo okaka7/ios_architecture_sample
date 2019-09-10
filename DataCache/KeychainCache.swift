@@ -10,6 +10,7 @@ import Foundation
 import KeychainAccess
 
 class KeyChainDataStore: DataStorable {
+    
     private let store: Keychain
     func save(_ key: String, value: Data) {
         store[data: key] = value
@@ -29,10 +30,10 @@ class KeyChainDataStore: DataStorable {
 }
 
 
-final class KeychainCache: Cache {
+final public class KeychainCache: Cache {
     let store: DataStorable
     
-    init(serviceName: String) {
+    public init(serviceName: String) {
         self.store = KeyChainDataStore.init(serviceName: serviceName)
     }
 }
