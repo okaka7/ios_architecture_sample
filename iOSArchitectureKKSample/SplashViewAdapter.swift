@@ -22,29 +22,32 @@ extension SplashControllerProtocol {
 }
 
 protocol SplashPresenterProtocol: class {
+    var popularPhotosObservable: Observable<UnsplashPhotosTarget.Response?> { get }
+    var topPhotosObservable: Observable<UnsplashPhotosTarget.Response?> { get }
+    var accountObservable: Observable<UnsplashAccountTarget.Response?> { get }
+    
 }
 
 final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol {
     private let useCase: PrepareAppUseCaseInputPort
     private let disposeBag: DisposeBag
     
-    lazy private(set) var popularPhotosObservable: Observable<UnsplashPhotosTarget.Response> = {
+    lazy private(set) var popularPhotosObservable: Observable<UnsplashPhotosTarget.Response?> = {
         return self.popularPhotosSubject.asObservable()
     }()
-    private let popularPhotosSubject: PublishRelay<UnsplashPhotosTarget.Response> = .init()
+    private let popularPhotosSubject: PublishRelay<UnsplashPhotosTarget.Response?> = .init()
     
-    lazy private(set) var topPhotosObservable: Observable<UnsplashPhotosTarget.Response> = {
+    lazy private(set) var topPhotosObservable: Observable<UnsplashPhotosTarget.Response?> = {
         return self.topPhotosSubject.asObservable()
     }()
-    private let topPhotosSubject: PublishRelay<UnsplashPhotosTarget.Response> = .init()
+    private let topPhotosSubject: PublishRelay<UnsplashPhotosTarget.Response?> = .init()
 
     private let accountSubject: PublishRelay<UnsplashAccountTarget.Response?> = .init()
     
     lazy private(set) var accountObservable: Observable<UnsplashAccountTarget.Response?> = {
         return self.accountSubject.asObservable()
     }()
-    private let categoryPhotosSubject: PublishRelay<(Category, UnsplashPhotoEntity)> = .init()
-
+    
     init (useCase: PrepareAppUseCaseInputPort,
           disposeBag: DisposeBag = DisposeBag()) {
         self.useCase = useCase
@@ -73,6 +76,8 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
                         #if DEBUG
                         log.debug(error)
                         #endif
+                        self.topPhotosSubject.accept(nil)
+                        self.popularPhotosSubject.accept(nil)
             })
             .disposed(by: disposeBag)
     }

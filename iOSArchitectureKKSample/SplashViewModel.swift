@@ -11,22 +11,19 @@ import RxSwift
 import RxCocoa
 
 protocol SplashViewModelProtocol: class {
-    func setTopImages(_ images: [UnsplashPhotoEntity])
+    var prepareObservable: Observable<Any> { get }
 }
 
 final class SplashViewModel: SplashViewModelProtocol {
     private let presenter: SplashPresenterProtocol
     
-    init(presenter: SplashPresenterProtocol) {
-        self.presenter = presenter
-    }
-    private let topImagesSubject = PublishRelay<[UnsplashPhotoEntity]>()
-    
-    lazy var setTopImages: Observable<[UnsplashPhotoEntity]> = {
-        return topImagesSubject.asObservable()
+    lazy var prepareObservable: Observable<Any> = {
+        return Observable.merge(self.presenter.accountObservable.map { $0 as Any},
+                                self.presenter.popularPhotosObservable.map { $0 as Any},
+                                self.presenter.topPhotosObservable.map { $0 as Any})
     }()
     
-    func setTopImages(_ images: [UnsplashPhotoEntity]) {
-        topImagesSubject.accept(images)
+    init(presenter: SplashPresenterProtocol) {
+        self.presenter = presenter
     }
 }
