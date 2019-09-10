@@ -53,6 +53,7 @@
 		E574B8722327C5220076C078 /* DataStore+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B8712327C5210076C078 /* DataStore+Rx.swift */; };
 		E574B8752327C99E0076C078 /* KeyChainCache+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B8742327C99E0076C078 /* KeyChainCache+Key.swift */; };
 		E574B8772327EA250076C078 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B8762327EA250076C078 /* LogIn.swift */; };
+		E574B8792327EE760076C078 /* AccountGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B8782327EE760076C078 /* AccountGateway.swift */; };
 		E574CF5922C642DD009CF8CD /* SwiftyBeaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574CF5822C642DD009CF8CD /* SwiftyBeaver.swift */; };
 		E574CF6B22C64D5B009CF8CD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E574CF6D22C64D5B009CF8CD /* Localizable.strings */; };
 		E576E31B2313DAC6007446B8 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E576E31A2313DAC6007446B8 /* SplashViewModel.swift */; };
@@ -222,6 +223,7 @@
 		E574B8712327C5210076C078 /* DataStore+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataStore+Rx.swift"; sourceTree = "<group>"; };
 		E574B8742327C99E0076C078 /* KeyChainCache+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyChainCache+Key.swift"; sourceTree = "<group>"; };
 		E574B8762327EA250076C078 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
+		E574B8782327EE760076C078 /* AccountGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountGateway.swift; sourceTree = "<group>"; };
 		E574CF5822C642DD009CF8CD /* SwiftyBeaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyBeaver.swift; sourceTree = "<group>"; };
 		E574CF6C22C64D5B009CF8CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E576E31A2313DAC6007446B8 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
@@ -698,6 +700,7 @@
 			children = (
 				E5C5647222F1947C00DD9401 /* OauthTokenRequestGateway.swift */,
 				E55E19C0230991BC007C1C57 /* OauthTokenManageGateway.swift */,
+				E574B8782327EE760076C078 /* AccountGateway.swift */,
 				E58A2CB7231265CA008C66BA /* FetchPhotosGateway.swift */,
 				E599947D23169B6B00CAFC11 /* FetchAccountGateWay.swift */,
 			);
@@ -1336,6 +1339,7 @@
 				E57915D822F89743009BCE95 /* UnsplashUserLikesTarget.swift in Sources */,
 				E592E73022FF01E800AECEC4 /* UnsplashCollection.swift in Sources */,
 				E57826DC22D8D070002499A9 /* UIApplication+openURL.swift in Sources */,
+				E574B8792327EE760076C078 /* AccountGateway.swift in Sources */,
 				E5521F4E22F1CC6F00D38F02 /* UnsplashOauthAPIProvider.swift in Sources */,
 				E5C5647C22F1BC6600DD9401 /* UnsplashTokenTarget.swift in Sources */,
 				E57915DA22F8A093009BCE95 /* UnsplashUserCollectionsTarget.swift in Sources */,

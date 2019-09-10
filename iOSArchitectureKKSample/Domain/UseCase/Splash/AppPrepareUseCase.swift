@@ -17,7 +17,6 @@ enum FetchTopImagesError: Error {
 
 protocol PrepareAppUseCaseInputPort: class {
     func fetchPopularPhotos(page: Int) -> Single<UnsplashPhotosTarget.Response>
-   
     func fetchAccount()
 }
 
@@ -33,7 +32,7 @@ final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
     
     init(repository: FetchPhotoRepository,
          cache: Cache,
-        disposeBag: DisposeBag = DisposeBag()) {
+         disposeBag: DisposeBag = DisposeBag()) {
         self.repository = repository
         self.disposeBag = disposeBag
     }
@@ -42,7 +41,7 @@ final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
         return repository.fetchPhotos(page: page, perPage: 50, orderBy: .popular)
     }
     
-
     func fetchAccount() {
+        
     }
 }
