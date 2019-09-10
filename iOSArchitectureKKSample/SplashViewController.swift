@@ -43,9 +43,11 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.addSubview(label)
+     //   self.
         self.prepareForDisplayingPhotos()
         self.prepareForCategoryPhotos()
         self.prepareForAccountView()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,8 +64,10 @@ class SplashViewController: UIViewController {
     }
     
     private func prepareForAccountView() {
-        
+        controller.fetchAccount()
     }
+    
+  
 }
 
 extension SplashViewController: SplashTransitionerInjectable {
