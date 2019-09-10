@@ -38,8 +38,10 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
     }()
     private let topPhotosSubject: PublishRelay<UnsplashPhotosTarget.Response> = .init()
 
-    lazy private(set) var categoryPhotosObservable: Observable<(Category, UnsplashPhotoEntity)> = {
-        return self.categoryPhotosSubject.asObservable()
+    private let accountSubject: PublishRelay<UnsplashAccountTarget.Response?> = .init()
+    
+    lazy private(set) var accountObservable: Observable<UnsplashAccountTarget.Response?> = {
+        return self.accountSubject.asObservable()
     }()
     private let categoryPhotosSubject: PublishRelay<(Category, UnsplashPhotoEntity)> = .init()
 
@@ -58,7 +60,7 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
                     return
                 }
                 popularPhotos.append(contentsOf: photos)
-                let appendedTopPhotos: UnsplashPhotosTarget.Response = photos.filter{ $0.isSuitableForTopImage }
+                let appendedTopPhotos: UnsplashPhotosTarget.Response = photos.filter { $0.isSuitableForTopImage }
                 topPhotos.append(contentsOf: appendedTopPhotos)
                 if topPhotos.count >= 20 {
                     self.topPhotosSubject.accept(topPhotos)
@@ -76,5 +78,22 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
     }
     
     func fetchAccount() {
+        useCase.fetchAccount()
+            .subscribe(onSuccess: { [weak self] account in
+                    guard let self = self else {
+                        return
+                    }
+                    self.accountSubject.accept(account)
+                },
+                       onError: { [weak self] error in
+                        guard let self = self else {
+                            return
+                        }
+                        #if DEBUG
+                        log.debug(error)
+                        #endif
+                        self.accountSubject.accept(nil)
+            })
+            .disposed(by: disposeBag)
     }
 }
