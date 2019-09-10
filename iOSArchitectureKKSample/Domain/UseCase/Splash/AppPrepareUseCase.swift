@@ -30,15 +30,12 @@ final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
     private let accountRepository: AccountRepository
     let disposeBag: DisposeBag
     var count = 0
-    let cache: Cache
     
     init(repository: FetchPhotoRepository,
          accountRepository: AccountRepository,
-         cache: Cache,
          disposeBag: DisposeBag = DisposeBag()) {
         self.repository = repository
         self.accountRepository = accountRepository
-        self.cache = cache
         self.disposeBag = disposeBag
     }
     

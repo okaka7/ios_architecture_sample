@@ -41,10 +41,8 @@ final class AppBuilder {
         let webAPIClient: UnsplashAPIProvider = .shared
         let photoRepository: PhotoGateWay = .init(client: webAPIClient)
         let accountRepository: AccountGateWay = .init(client: webAPIClient)
-        let localCache: LocalCache = .init()
         let useCase: AppPrepareUseCase = .init(repository: photoRepository,
-                                               accountRepository: accountRepository,
-                                               cache: localCache)
+                                               accountRepository: accountRepository)
         let viewAdapter: SplashViewAdapter = .init(useCase: useCase)
         let viewModel: SplashViewModel = .init(presenter: viewAdapter)
         let vc: SplashViewController = .init(controller: viewAdapter,
