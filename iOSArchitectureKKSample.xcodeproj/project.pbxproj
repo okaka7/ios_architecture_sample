@@ -52,6 +52,7 @@
 		E574B8702327C5110076C078 /* DataStoreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B86F2327C5110076C078 /* DataStoreKey.swift */; };
 		E574B8722327C5220076C078 /* DataStore+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B8712327C5210076C078 /* DataStore+Rx.swift */; };
 		E574B8752327C99E0076C078 /* KeyChainCache+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B8742327C99E0076C078 /* KeyChainCache+Key.swift */; };
+		E574B8772327EA250076C078 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B8762327EA250076C078 /* LogIn.swift */; };
 		E574CF5922C642DD009CF8CD /* SwiftyBeaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574CF5822C642DD009CF8CD /* SwiftyBeaver.swift */; };
 		E574CF6B22C64D5B009CF8CD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E574CF6D22C64D5B009CF8CD /* Localizable.strings */; };
 		E576E31B2313DAC6007446B8 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E576E31A2313DAC6007446B8 /* SplashViewModel.swift */; };
@@ -220,6 +221,7 @@
 		E574B86F2327C5110076C078 /* DataStoreKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStoreKey.swift; sourceTree = "<group>"; };
 		E574B8712327C5210076C078 /* DataStore+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataStore+Rx.swift"; sourceTree = "<group>"; };
 		E574B8742327C99E0076C078 /* KeyChainCache+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyChainCache+Key.swift"; sourceTree = "<group>"; };
+		E574B8762327EA250076C078 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		E574CF5822C642DD009CF8CD /* SwiftyBeaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyBeaver.swift; sourceTree = "<group>"; };
 		E574CF6C22C64D5B009CF8CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E576E31A2313DAC6007446B8 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
@@ -516,6 +518,7 @@
 		E57826EF22D8E21C002499A9 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				E574B8762327EA250076C078 /* LogIn.swift */,
 				E577379E22FECA8200559D37 /* Unsplash */,
 			);
 			name = Entity;
@@ -1350,6 +1353,7 @@
 				E5C5646D22F18EDC00DD9401 /* UnsplashUserEntity.swift in Sources */,
 				E57737A022FECEE400559D37 /* UnsplashErrorValueObject.swift in Sources */,
 				E592E73222FF026300AECEC4 /* UnsplashCollectionPhotos.swift in Sources */,
+				E574B8772327EA250076C078 /* LogIn.swift in Sources */,
 				E5C5647922F1BB8F00DD9401 /* UnsplashAPI.swift in Sources */,
 				E58A2CB8231265CA008C66BA /* FetchPhotosGateway.swift in Sources */,
 				E57C82F0230A8FD000F8F15C /* PhotoLikeable.swift in Sources */,
