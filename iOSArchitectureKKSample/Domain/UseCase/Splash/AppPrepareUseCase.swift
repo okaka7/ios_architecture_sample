@@ -33,13 +33,13 @@ final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
     init(photoRepository: PhotoRepository,
          accountRepository: AccountRepository,
          disposeBag: DisposeBag = DisposeBag()) {
-        self.photoRepository = repository
+        self.photoRepository = photoRepository
         self.accountRepository = accountRepository
         self.disposeBag = disposeBag
     }
     
     func fetchPopularPhotos(page: Int = 1) -> Single<UnsplashPhotosTarget.Response> {
-        return repository.fetchPhotos(page: page, perPage: 50, orderBy: .popular)
+        return photoRepository.fetchPhotos(page: page, perPage: 50, orderBy: .popular)
     }
     
     func fetchAccount() -> Single<UnsplashAccountTarget.Response> {
