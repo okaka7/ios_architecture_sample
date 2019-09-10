@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-struct PhotoGateWay: FetchPhotoRepository {
+struct PhotoGateWay: PhotoRepository {
     let client: UnsplashPhotoClient
     
     init(client: UnsplashPhotoClient) {

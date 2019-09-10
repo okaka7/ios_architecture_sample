@@ -26,15 +26,14 @@ protocol PhotoPrepareUseCaseOutputPort: class {
 }
 
 final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
-    private let repository: FetchPhotoRepository
+    private let photoRepository: PhotoRepository
     private let accountRepository: AccountRepository
     let disposeBag: DisposeBag
-    var count = 0
     
-    init(repository: FetchPhotoRepository,
+    init(photoRepository: PhotoRepository,
          accountRepository: AccountRepository,
          disposeBag: DisposeBag = DisposeBag()) {
-        self.repository = repository
+        self.photoRepository = repository
         self.accountRepository = accountRepository
         self.disposeBag = disposeBag
     }

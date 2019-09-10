@@ -24,10 +24,10 @@ protocol SearchUsecaseOutputPort: PhotoTransitionable {
 
 final class SearchUseCase: SearchUseCaseInputPort {
     
-    let repository: FetchPhotoRepository
+    let repository: PhotoRepository
     let disposeBag: DisposeBag = DisposeBag()
     
-    init(repository: FetchPhotoRepository) {
+    init(repository: PhotoRepository) {
         self.repository = repository
         
     }

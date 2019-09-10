@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 // MARK: Photo
-protocol FetchPhotoRepository {
+protocol PhotoRepository {
     
     func fetchPhoto(id: String) -> Single<UnsplashPhotoTarget.Response>
     func fetchPhotos(page: Int,
