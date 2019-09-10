@@ -19,7 +19,7 @@ public class CacheKey<Value: CacheValue>: CacheKeys {
     public let rawValue: String
     public let defaultValue: Value?
     
-    public init(_ rawValue: String, defaultValue: Value?) {
+    public init(_ rawValue: String, defaultValue: Value? = nil) {
         self.rawValue = rawValue
         self.defaultValue = defaultValue
     }

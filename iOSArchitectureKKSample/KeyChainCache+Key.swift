@@ -8,7 +8,6 @@
 
 import DataCache
 
-
 extension CacheKeys {
     static var token: CacheKey<UnsplashTokenValueObject> {
         return CacheKey("token", defaultValue: nil)
