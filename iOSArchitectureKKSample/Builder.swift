@@ -10,6 +10,32 @@ import Foundation
 import UIKit
 import DataCache
 
+enum Category: String, CaseIterable {
+    case nature
+    case travel
+    case animal
+    case fashion
+    case art
+    case architecture
+    
+    var image: UIImage {
+        switch self {
+        case .nature:
+            return #imageLiteral(resourceName: "nature")
+        case .travel:
+            return #imageLiteral(resourceName: "travel")
+        case .animal:
+            return #imageLiteral(resourceName: "animal")
+        case .fashion:
+            return #imageLiteral(resourceName: "fashion")
+        case .art:
+            return #imageLiteral(resourceName: "art")
+        case .architecture:
+            return #imageLiteral(resourceName: "architecture")
+        }
+    }
+}
+
 final class Builder {
     static func buildAppCoordinator(window: UIWindow) -> AppCoordinator {
         let webAPIClient: UnsplashAPIProvider = .shared

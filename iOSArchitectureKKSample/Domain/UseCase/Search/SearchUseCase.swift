@@ -9,33 +9,6 @@
 import Foundation
 import RxSwift
 
-enum Category: String, CaseIterable {
-    
-    case nature
-    case travel
-    case animal
-    case fashion
-    case art
-    case architecture
-    
-    var id: String {
-        switch self {
-        case .nature:
-            return "T2l1NxKOsjY"
-        case .travel:
-            return "hFXZ5cNfkOk"
-        case .animal:
-            return "8kA9TKg6DKw"
-        case .fashion:
-            return "1GwsEHtkhVg"
-        case .art:
-            return "o3NLIY0_Qhc"
-        case .architecture:
-            return "16f8y0DswPc"
-        }
-    }
-}
-
 protocol SearchUseCaseInputPort: PhotoSelectable {
     func slideCategoryView(up: Bool)
     func fetchCategoryPhotos()
