@@ -44,7 +44,10 @@ struct UnsplashPhotoEntity: PhotoObject, Codable {
 }
 
 extension UnsplashPhotoEntity {
-    var heightRatioToWidth: Float {
+    var isSuitableForTopImage: Bool {
+        return self.heightRatioToWidth <= 1.5 && self.heightRatioToWidth >= 1.4
+    }
+    private var heightRatioToWidth: Float {
         return Float(height) / Float(width)
     }
 }

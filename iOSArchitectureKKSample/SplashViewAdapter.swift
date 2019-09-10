@@ -58,8 +58,7 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
                     return
                 }
                 popularPhotos.append(contentsOf: photos)
-                let appendedTopPhotos: UnsplashPhotosTarget.Response = photos.filter { $0.heightRatioToWidth <= 1.5
-                    && $0.heightRatioToWidth >= 1.4 }
+                let appendedTopPhotos: UnsplashPhotosTarget.Response = photos.filter{ $0.isSuitableForTopImage }
                 topPhotos.append(contentsOf: appendedTopPhotos)
                 if topPhotos.count >= 20 {
                     self.topPhotosSubject.accept(topPhotos)
@@ -77,6 +76,5 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
     }
     
     func fetchAccount() {
-        
     }
 }
