@@ -8,22 +8,17 @@
 
 import Foundation
 import RxSwift
-import RxCocoa
 
 protocol SplashViewModelProtocol: class {
     var prepareObservable: Observable<Any> { get }
 }
 
 final class SplashViewModel: SplashViewModelProtocol {
-    private let presenter: SplashPresenterProtocol
-    
-    lazy var prepareObservable: Observable<Any> = {
-        return Observable.merge(self.presenter.accountObservable.map { $0 as Any},
-                                self.presenter.popularPhotosObservable.map { $0 as Any},
-                                self.presenter.topPhotosObservable.map { $0 as Any})
-    }()
+    let prepareObservable: Observable<Any>
     
     init(presenter: SplashPresenterProtocol) {
-        self.presenter = presenter
+        self.prepareObservable = Observable.merge(presenter.accountObservable.map { $0 as Any },
+                                                  presenter.popularPhotosObservable.map { $0 as Any },
+                                                  presenter.topPhotosObservable.map { $0 as Any })
     }
 }
