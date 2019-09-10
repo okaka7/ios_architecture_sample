@@ -38,13 +38,11 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
     }()
     private let topPhotosSubject: PublishRelay<UnsplashPhotosTarget.Response> = .init()
 
-    
     lazy private(set) var categoryPhotosObservable: Observable<(Category, UnsplashPhotoEntity)> = {
         return self.categoryPhotosSubject.asObservable()
     }()
     private let categoryPhotosSubject: PublishRelay<(Category, UnsplashPhotoEntity)> = .init()
 
-    
     init (useCase: PrepareAppUseCaseInputPort,
           disposeBag: DisposeBag = DisposeBag()) {
         self.useCase = useCase
@@ -56,7 +54,9 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
         var topPhotos: UnsplashPhotosTarget.Response = .init()
         useCase.fetchPopularPhotos(page: 1)
             .subscribe(onSuccess: { [weak self] photos in
-                guard let self = self else { return }
+                guard let self = self else {
+                    return
+                }
                 popularPhotos.append(contentsOf: photos)
                 let appendedTopPhotos: UnsplashPhotosTarget.Response = photos.filter { $0.heightRatioToWidth <= 1.5
                     && $0.heightRatioToWidth >= 1.4 }
@@ -75,7 +75,6 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
             })
             .disposed(by: disposeBag)
     }
-    
     
     func fetchAccount() {
         
