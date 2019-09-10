@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window: UIWindow = .init(frame: UIScreen.main.bounds)
         self.window = window
         
-        let appCoordinator: AppCoordinator = Builder.buildAppCoordinator(window: window)
+        let appCoordinator: AppCoordinator = AppBuilder.buildAppCoordinator(window: window)
         appCoordinator.start()
         self.appCoordinator = appCoordinator
         #if DEBUG

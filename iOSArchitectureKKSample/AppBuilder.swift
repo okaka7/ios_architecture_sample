@@ -36,7 +36,7 @@ enum Category: String, CaseIterable {
     }
 }
 
-final class Builder {
+final class AppBuilder {
     static func buildAppCoordinator(window: UIWindow) -> AppCoordinator {
         let webAPIClient: UnsplashAPIProvider = .shared
         let repository: FetchPhotoGateWay = .init(client: webAPIClient)
