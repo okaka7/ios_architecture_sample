@@ -60,7 +60,7 @@ final class AppBuilder {
     
     static func buildMainTabCoordinator() -> MainTabCoordinator {
         let homeCoordinator: HomeVCCoordinator = buildHomeVCCoordinator()
-        return MainTabCoordinator(homeCoodinator: homeCoordinator)
+        return MainTabCoordinator(homeCoordinator: homeCoordinator)
     }
     
     static func buildHomeVCCoordinator() -> HomeVCCoordinator {
