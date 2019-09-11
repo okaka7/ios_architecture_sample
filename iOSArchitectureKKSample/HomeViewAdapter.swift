@@ -8,15 +8,13 @@
 import Foundation
 
 protocol HomeViewInputPort {
-    func fetchTopPhotos()
+    func fetchTopPhotos(page: Int)
     func selectPhoto(_ photo: PhotoUIEntity)
     func switchPhoto(_ photo: PhotoUIEntity)
 }
 
 extension HomeViewInputPort {
-    func fetchTopPhotos(page: Int = 1) {
-        
-    }
+    func fetchTopPhotos(page: Int = 1) { }
 }
 
 struct HomeViewAdapter: HomeViewInputPort {

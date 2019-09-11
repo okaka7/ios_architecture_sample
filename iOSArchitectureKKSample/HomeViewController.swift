@@ -62,7 +62,7 @@ class HomeViewController: UIViewController {
     }
 
     func fetchTopPhotos() {
-        
+        adapter.fetchTopPhotos()
     }
     /*
     // MARK: - Navigation
