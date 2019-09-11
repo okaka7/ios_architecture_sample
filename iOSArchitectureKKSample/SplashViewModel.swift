@@ -10,15 +10,15 @@ import Foundation
 import RxSwift
 
 protocol SplashViewModelProtocol: class {
-    var prepareObservable: Observable<Any> { get }
+    //var prepareObservable: Observable<Any> { get }
 }
 
 final class SplashViewModel: SplashViewModelProtocol {
-    let prepareObservable: Observable<Any>
+  //  let prepareObservable: Observable<Any>
     
-    init(presenter: SplashPresenterProtocol) {
-//        self.prepareObservable = Observable.merge(presenter.accountObservable.map { $0 as Any },
-//                                                  presenter.popularPhotosObservable.map { $0 as Any },
-//                                                  presenter.topPhotosObservable.map { $0 as Any })
-    }
+//    init(presenter: SplashPresenterProtocol) {
+////        self.prepareObservable = Observable.merge(presenter.accountObservable.map { $0 as Any },
+////                                                  presenter.popularPhotosObservable.map { $0 as Any },
+////                                                  presenter.topPhotosObservable.map { $0 as Any })
+//    }
 }

@@ -44,7 +44,7 @@ final class AppBuilder {
         let useCase: AppPrepareUseCase = .init(photoRepository: photoRepository,
                                                accountRepository: accountRepository)
         let viewAdapter: SplashViewAdapter = .init(useCase: useCase)
-        let viewModel: SplashViewModel = .init(presenter: viewAdapter)
+        let viewModel: SplashViewModel = .init()
         let vc: SplashViewController = .init(controller: viewAdapter,
                                              viewModel: viewModel)
         

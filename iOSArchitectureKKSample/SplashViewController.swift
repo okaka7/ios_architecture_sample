@@ -76,23 +76,23 @@ class SplashViewController: UIViewController {
         var popularPhotos: PopularPhotoList? = nil
         var topPhotos: TopPhotoList? = nil
         var account: UnsplashAccountValueObject? = nil
-        viewModel.prepareObservable
-            .subscribe(onNext: { asset in
-                switch asset {
-                case let list as PopularPhotoList:
-                    popularPhotos = list
-                case let list as TopPhotoList:
-                    topPhotos = list
-                case let ac as UnsplashAccountValueObject:
-                    account = ac
-                default:
-                    break
-                }
-        },
-                       onCompleted:{
-                        
-                                                
-        }).disposed(by: self.disposeBag)
+//        viewModel.prepareObservable
+//            .subscribe(onNext: { asset in
+//                switch asset {
+//                case let list as PopularPhotoList:
+//                    popularPhotos = list
+//                case let list as TopPhotoList:
+//                    topPhotos = list
+//                case let ac as UnsplashAccountValueObject:
+//                    account = ac
+//                default:
+//                    break
+//                }
+//        },
+//                       onCompleted:{
+//                        
+//                                                
+//        }).disposed(by: self.disposeBag)
     }
   
 }

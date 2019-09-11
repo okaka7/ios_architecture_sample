@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol HomeUseCaseInputPort: PhotoSelectable {
+    func fetchTopPhotos(page: Int) -> Single<UnsplashPhotosTarget.Response>
     func showImages()
     func switchImage(id: String)
     func selectPhoto(_ photo: PhotoUIEntity)
@@ -17,4 +19,36 @@ protocol HomeUseCaseInputPort: PhotoSelectable {
 protocol HomeUseCaseOutputPort: PhotoTransitionable {
     func switchImage(_ image: PhotoObject)
     func showImages(_ image: [PhotoObject])
+}
+
+final class HomeUseCase: HomeUseCaseInputPort {
+    private let photoRepository: PhotoRepository
+    
+    init(photoRepository: PhotoRepository) {
+        self.photoRepository = photoRepository
+       
+    }
+    
+    func fetchTopPhotos(page: Int = 1) -> Single<UnsplashPhotosTarget.Response> {
+        return photoRepository.fetchPhotos(page: page, perPage: 50, orderBy: .popular)
+    }
+    
+    func showImages() {
+        
+    }
+    
+    func switchImage(id: String) {
+        
+    }
+    
+    func selectPhoto(_ photo: PhotoUIEntity) {
+        
+    }
+    
+    func selectImage(id: String) {
+        
+    }
+    
+    
+
 }
