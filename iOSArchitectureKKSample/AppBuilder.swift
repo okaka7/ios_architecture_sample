@@ -61,8 +61,9 @@ final class AppBuilder {
     static func buildMainTabCoordinator() -> MainTabCoordinator {
         let homeCoordinator: HomeVCCoordinator = buildHomeVCCoordinator()
         let searchCoordinator: SearchVCCoordinator = buildSearchVCCoordinator()
+        let accountCoordinator: AccountVCCoordinator = buildAccountVCCoordinator()
         return MainTabCoordinator(homeCoordinator: homeCoordinator,
-                                  searchCoordinator: searchCoordinator)
+                                  searchCoordinator: searchCoordinator, accountCoordinator: accountCoordinator)
     }
     
     static func buildHomeVCCoordinator() -> HomeVCCoordinator {
@@ -81,6 +82,15 @@ final class AppBuilder {
         let searchViewAdapter: SearchViewAdapter = .init(useCase: searchUseCase)
         let searchVC: SearchViewController = .init(adapter: searchViewAdapter)
         return SearchVCCoordinator.init(searchVC: searchVC)
+    }
+    
+    static func buildAccountVCCoordinator() -> AccountVCCoordinator {
+        let webAPIClient: UnsplashAPIProvider = .shared
+        let repository: AccountGateWay = .init(client: webAPIClient)
+        let accountUseCase: AccountUseCase = .init(repository: repository)
+        let accountViewAdapter: AccountViewAdapter = .init(useCase: accountUseCase)
+        let accountVC: AccountViewController = .init(adapter: accountViewAdapter)
+        return AccountVCCoordinator.init(accountVC: accountVC)
     }
     
 }

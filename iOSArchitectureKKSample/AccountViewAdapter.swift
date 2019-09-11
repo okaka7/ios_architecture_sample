@@ -12,7 +12,7 @@ protocol AccountViewInputPort: class {
     func getAccount()
 }
 
-final class AccountController: AccountViewInputPort {
+final class AccountViewAdapter: AccountViewInputPort {
     let useCase: UserAccountUseCaseInputPort
     
     init(useCase: UserAccountUseCaseInputPort) {
@@ -22,8 +22,6 @@ final class AccountController: AccountViewInputPort {
     func getAccount() {
         self.useCase.getAccount()
     }
-    
-   
 }
 
 final class AccountViewPresenter {

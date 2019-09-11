@@ -16,18 +16,20 @@ final class MainTabCoordinator: Coordinator {
     }()
     private let homeCoordinator: HomeVCCoordinator
     private let searchCoordinator: SearchVCCoordinator
-    private let settingCoordinator: AccountCoordinator = .init()
+    private let accountCoordinator: AccountVCCoordinator
     
     init(homeCoordinator: HomeVCCoordinator,
-         searchCoordinator: SearchVCCoordinator) {
+         searchCoordinator: SearchVCCoordinator,
+         accountCoordinator: AccountVCCoordinator) {
         self.homeCoordinator = homeCoordinator
         self.searchCoordinator = searchCoordinator
+        self.accountCoordinator = accountCoordinator
     }
     
     func start() {
         let tabBarControllers: [UIViewController] = [ homeCoordinator.naviVC,
             searchCoordinator.naviVC,
-            settingCoordinator.naviVC]
+            accountCoordinator.naviVC]
         
         mainTabBarController.setViewControllers( tabBarControllers, animated: false)
         

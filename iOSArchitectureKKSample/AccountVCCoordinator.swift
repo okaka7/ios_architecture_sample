@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class AccountCoordinator: Coordinator {
+final class AccountVCCoordinator: Coordinator {
     lazy var naviVC: UINavigationController = {
         let naviVC: UINavigationController = .init(rootViewController: self.accountVC)
         naviVC.navigationBar.barStyle = .black
@@ -17,11 +17,12 @@ final class AccountCoordinator: Coordinator {
         return naviVC
     }()
     
-    private let accountVC: AccountViewController = {
-        let settingVC: AccountViewController = .init()
-        settingVC.navigationItem.title = R.string.localizable.account()
-        return settingVC
-    }()
+    private let accountVC: AccountViewController
+    
+    init(accountVC: AccountViewController) {
+        accountVC.navigationItem.title = R.string.localizable.account()
+        self.accountVC = accountVC
+    }
     
     func start() {
         return

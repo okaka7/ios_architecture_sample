@@ -18,7 +18,10 @@ class AccountViewController: UIViewController {
         return label
     }()
     
-    init() {
+    private let adapter: AccountViewAdapter
+    
+    init(adapter: AccountViewAdapter) {
+        self.adapter = adapter
         super.init(nibName: nil, bundle: nil)
         #if DEBUG
             log.debug("AccountViewController.init()!!!")

@@ -24,7 +24,7 @@ protocol UserAccountUseCaseOutputPort: CollectionTransitionable {
     func createCollection()
 }
 
-final class UserAccountUseCase: UserAccountUseCaseInputPort {
+final class AccountUseCase: UserAccountUseCaseInputPort {
     let repository: AccountRepository
     let disposeBag: DisposeBag = .init()
     
