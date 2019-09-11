@@ -47,52 +47,11 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.addSubview(label)
-     //   self.
-        self.prepareForDisplayingPhotos()
-        self.prepareForCategoryPhotos()
-        self.prepareForAccountView()
-        
+      
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
-    }
-    
-    private func prepareForDisplayingPhotos() {
-        controller.fetchPopularPhotos()
-        self.transitioner?.transition()
-    }
-    
-    private func prepareForCategoryPhotos() {
-        controller.fetchPopularPhotos()
-    }
-    
-    private func prepareForAccountView() {
-        //controller.fetchAccount()
-    }
-    
-    private func subscribeRx() {
-        
-        var popularPhotos: PopularPhotoList? = nil
-        var topPhotos: TopPhotoList? = nil
-        var account: UnsplashAccountValueObject? = nil
-//        viewModel.prepareObservable
-//            .subscribe(onNext: { asset in
-//                switch asset {
-//                case let list as PopularPhotoList:
-//                    popularPhotos = list
-//                case let list as TopPhotoList:
-//                    topPhotos = list
-//                case let ac as UnsplashAccountValueObject:
-//                    account = ac
-//                default:
-//                    break
-//                }
-//        },
-//                       onCompleted:{
-//                        
-//                                                
-//        }).disposed(by: self.disposeBag)
     }
   
 }
