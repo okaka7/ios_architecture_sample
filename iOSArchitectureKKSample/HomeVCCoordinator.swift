@@ -17,11 +17,12 @@ final class HomeVCCoordinator: Coordinator {
         return naviVC
     }()
     
-    private let homeVC: HomeViewController = {
-        let categoryVC: HomeViewController = .init()
-        categoryVC.navigationItem.title = "Home"
-        return categoryVC
-    }()
+    private let homeVC: HomeViewController
+    
+    init(homeVC: HomeViewController) {
+        homeVC.navigationItem.title = "Home"
+        self.homeVC = homeVC
+    }
     
     func start() {
         return

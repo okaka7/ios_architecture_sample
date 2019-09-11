@@ -28,7 +28,7 @@ final class AppCoordinator: Coordinator, SplashTransitioner {
  
     init(window: UIWindow,
          rootVC: SplashViewController,
-         mainTabCoordinator mainTab: MainTabCoordinator = MainTabCoordinator()
+         mainTabCoordinator mainTab: MainTabCoordinator
         ) {
         self.window = window
         self.rootViewController = rootVC

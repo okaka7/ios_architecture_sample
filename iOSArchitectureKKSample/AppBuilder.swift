@@ -48,19 +48,28 @@ final class AppBuilder {
         let vc: SplashViewController = .init(controller: viewAdapter,
                                              viewModel: viewModel)
         
+        let mainTabCoordinator: MainTabCoordinator = buildMainTabCoordinator()
+        
         let coordinator: AppCoordinator = .init(window: window,
-                                                rootVC: vc)
+                                                rootVC: vc,
+                                                mainTabCoordinator: mainTabCoordinator)
         vc.inject(transitioner: coordinator)
         
         return  coordinator
     }
     
     static func buildMainTabCoordinator() -> MainTabCoordinator {
-        return MainTabCoordinator()
+        let homeCoordinator: HomeVCCoordinator = buildHomeVCCoordinator()
+        return MainTabCoordinator(homeCoodinator: homeCoordinator)
     }
     
     static func buildHomeVCCoordinator() -> HomeVCCoordinator {
-        return HomeVCCoordinator()
+        let webAPIClient: UnsplashAPIProvider = .shared
+        let photoRepository: PhotoGateWay = .init(client: webAPIClient)
+        let homeUseCase: HomeUseCase = .init(photoRepository: photoRepository)
+        let homeViewAdapter: HomeViewAdapter = .init(useCase: homeUseCase)
+        let homeVC: HomeViewController = .init(adapter: homeViewAdapter)
+        return HomeVCCoordinator(homeVC: homeVC)
     }
     
 }

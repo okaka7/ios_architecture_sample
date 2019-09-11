@@ -14,12 +14,12 @@ final class MainTabCoordinator: Coordinator {
         tab.tabBar.isTranslucent = false
         return tab
     }()
-    private let categoryCoordinator: HomeVCCoordinator = .init()
+    private let homeCoordinator: HomeVCCoordinator
     private let searchCoordinator: SearchVCCoordinator = .init()
     private let settingCoordinator: AccountCoordinator = .init()
     
-    init() {
-        
+    init(homeCoodinator: HomeVCCoordinator) {
+        self.homeCoordinator = homeCoordinator
     }
     
     func start() {

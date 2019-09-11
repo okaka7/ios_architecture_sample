@@ -35,7 +35,10 @@ class HomeViewController: UIViewController {
         return label
     }()
     
-    init() {
+    let adapter: HomeViewInputPort
+    
+    init(adapter: HomeViewInputPort) {
+        self.adapter = adapter
         super.init(nibName: nil, bundle: nil)
         #if DEBUG
             log.debug("ColourCategoryViewController.init()!!!")
