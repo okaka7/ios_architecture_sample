@@ -8,6 +8,7 @@
 import Foundation
 
 protocol HomeViewInput {
+    func fetchTopPhotos()
     func selectPhoto(_ photo: PhotoUIEntity)
     func switchPhoto(_ photo: PhotoUIEntity)
 }
@@ -24,6 +25,10 @@ struct HomeViewAdapter: HomeViewInput {
     }
     
     func switchPhoto(_ photo: PhotoUIEntity) {
+        
+    }
+    
+    func fetchTopPhotos() {
         
     }
 }

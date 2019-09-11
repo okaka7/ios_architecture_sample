@@ -47,7 +47,6 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
       //  self.view.addSubview(label)
         self.view.addSubview(button)
     }
