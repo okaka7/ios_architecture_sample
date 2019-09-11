@@ -9,12 +9,15 @@
 import Foundation
 
 protocol SearchViewInputPort: class {
-    func fetchPopularPhotos()
+    func fetchPopularPhotos(page: Int)
     func searchPhotos(query: String)
 }
 
-final class SearchViewAdapter: SearchViewInputPort {
+extension SearchViewInputPort {
+    func fetchPopularPhotos(page: Int = 1) { }
+}
 
+final class SearchViewAdapter: SearchViewInputPort {
     let useCase: SearchUseCaseInputPort
     
     init(useCase: SearchUseCaseInputPort) {
@@ -25,7 +28,8 @@ final class SearchViewAdapter: SearchViewInputPort {
         useCase.searchUseCase(query: query)
     }
     
-    func fetchPopularPhotos() {
-        
+    
+    func fetchPopularPhotos(page: Int) {
+        useCase
     }
 }

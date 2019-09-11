@@ -18,11 +18,12 @@ final class SearchVCCoordinator: Coordinator {
         return naviVC
     }()
     
-    private let searchVC: SearchViewController = {
-        let searchVC: SearchViewController = .init()
+    private let searchVC: SearchViewController
+    
+    init(searchVC: SearchViewController) {
         searchVC.navigationItem.title = R.string.localizable.search()
-        return searchVC
-    }()
+        self.searchVC = searchVC
+    }
     func start() {
         
     }

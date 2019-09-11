@@ -60,7 +60,9 @@ final class AppBuilder {
     
     static func buildMainTabCoordinator() -> MainTabCoordinator {
         let homeCoordinator: HomeVCCoordinator = buildHomeVCCoordinator()
-        return MainTabCoordinator(homeCoordinator: homeCoordinator)
+        let searchCoordinator: SearchVCCoordinator = buildSearchVCCoordinator()
+        return MainTabCoordinator(homeCoordinator: homeCoordinator,
+                                  searchCoordinator: searchCoordinator)
     }
     
     static func buildHomeVCCoordinator() -> HomeVCCoordinator {
@@ -70,6 +72,15 @@ final class AppBuilder {
         let homeViewAdapter: HomeViewAdapter = .init(useCase: homeUseCase)
         let homeVC: HomeViewController = .init(adapter: homeViewAdapter)
         return HomeVCCoordinator(homeVC: homeVC)
+    }
+    
+    static func buildSearchVCCoordinator() -> SearchVCCoordinator {
+        let webAPIClient: UnsplashAPIProvider = .shared
+        let photoRepository: PhotoGateWay = .init(client: webAPIClient)
+        let searchUseCase: SearchUseCase = .init(repository: photoRepository)
+        let searchViewAdapter: SearchViewAdapter = .init(useCase: searchUseCase)
+        let searchVC: SearchViewController = .init(adapter: searchViewAdapter)
+        return SearchVCCoordinator.init(searchVC: searchVC)
     }
     
 }

@@ -15,11 +15,13 @@ final class MainTabCoordinator: Coordinator {
         return tab
     }()
     private let homeCoordinator: HomeVCCoordinator
-    private let searchCoordinator: SearchVCCoordinator = .init()
+    private let searchCoordinator: SearchVCCoordinator
     private let settingCoordinator: AccountCoordinator = .init()
     
-    init(homeCoordinator: HomeVCCoordinator) {
+    init(homeCoordinator: HomeVCCoordinator,
+         searchCoordinator: SearchVCCoordinator) {
         self.homeCoordinator = homeCoordinator
+        self.searchCoordinator = searchCoordinator
     }
     
     func start() {
