@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 protocol SearchViewInputPort: class {
     func fetchPopularPhotos(page: Int)
@@ -19,17 +21,38 @@ extension SearchViewInputPort {
 
 final class SearchViewAdapter: SearchViewInputPort {
     let useCase: SearchUseCaseInputPort
+    private let disposeBag: DisposeBag
     
-    init(useCase: SearchUseCaseInputPort) {
+    lazy private(set) var popularPhotosObservable: Observable<PopularPhotoList?> = {
+        return self.popularPhotosSubject.asObservable()
+    }()
+    private let popularPhotosSubject: PublishRelay<PopularPhotoList?> = .init()
+    
+    init(useCase: SearchUseCaseInputPort,
+         disposeBag: DisposeBag = DisposeBag()) {
         self.useCase = useCase
+        self.disposeBag = disposeBag
     }
     
     func searchPhotos(query: String) {
         useCase.searchUseCase(query: query)
     }
     
-    
     func fetchPopularPhotos(page: Int) {
-        useCase
+        useCase.fetchPopularPhotos(page: page)
+            .subscribe(onSuccess: { [weak self] photos in
+                guard let self = self else {
+                    return
+                }
+               
+                self.popularPhotosSubject.accept(PopularPhotoList(photos: photos))
+            },
+                       onError: { error in
+                        #if DEBUG
+                        log.debug(error)
+                        #endif
+                        self.popularPhotosSubject.accept(nil)
+            })
+            .disposed(by: disposeBag)
     }
 }
