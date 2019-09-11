@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol AccountViewInputPort: class {
     func getAccount()
@@ -14,13 +15,21 @@ protocol AccountViewInputPort: class {
 
 final class AccountViewAdapter: AccountViewInputPort {
     let useCase: UserAccountUseCaseInputPort
+    private let disposeBag: DisposeBag
     
-    init(useCase: UserAccountUseCaseInputPort) {
+    init(useCase: UserAccountUseCaseInputPort,
+         disposeBag: DisposeBag = DisposeBag()) {
         self.useCase = useCase
+        self.disposeBag = disposeBag
     }
     
     func getAccount() {
-        self.useCase.getAccount()
+        self.useCase
+            .getAccount()
+            .subscribe(onSuccess: {_ in},
+                        onError: {_ in })
+            .disposed(by: disposeBag)
+        
     }
 }
 

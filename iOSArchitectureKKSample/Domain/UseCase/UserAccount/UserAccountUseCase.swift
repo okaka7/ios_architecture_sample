@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol UserAccountUseCaseInputPort: PhotoSelectable, CollectionSelectable {
-    func getAccount()
+    func getAccount() -> Single<UnsplashAccountTarget.Response>
     func selectPhotos()
     func selectCollections()
     func selectLikes()
@@ -32,11 +32,8 @@ final class AccountUseCase: UserAccountUseCaseInputPort {
         self.repository = repository
     }
     
-    func getAccount() {
-//        self.repository
-//            .fetchAccount()
-//            .subscribe(onSuccess: ,
-//                    onError: )
+    func getAccount() -> Single<UnsplashAccountTarget.Response> {
+        return repository.fetchAccount()
     }
     
     func selectPhotos() {
@@ -61,6 +58,4 @@ final class AccountUseCase: UserAccountUseCaseInputPort {
     
     func selectCollection(id: String) {
     }
-    
-    
 }
