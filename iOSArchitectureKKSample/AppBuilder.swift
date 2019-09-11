@@ -38,11 +38,7 @@ enum Category: String, CaseIterable {
 
 final class AppBuilder {
     static func buildAppCoordinator(window: UIWindow) -> AppCoordinator {
-        let webAPIClient: UnsplashAPIProvider = .shared
-        let photoRepository: PhotoGateWay = .init(client: webAPIClient)
-        let accountRepository: AccountGateWay = .init(client: webAPIClient)
-        let useCase: AppPrepareUseCase = .init(photoRepository: photoRepository,
-                                               accountRepository: accountRepository)
+        let useCase: AppPrepareUseCase = .init()
         let viewAdapter: SplashViewAdapter = .init(useCase: useCase)
         let viewModel: SplashViewModel = .init()
         let vc: SplashViewController = .init(controller: viewAdapter,

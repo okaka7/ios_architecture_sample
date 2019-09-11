@@ -48,7 +48,4 @@ final class HomeUseCase: HomeUseCaseInputPort {
     func selectImage(id: String) {
         
     }
-    
-    
-
 }
