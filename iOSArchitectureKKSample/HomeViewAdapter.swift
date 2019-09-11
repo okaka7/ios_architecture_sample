@@ -7,13 +7,13 @@
 //
 import Foundation
 
-protocol HomeViewInput {
+protocol HomeViewInputPort {
     func fetchTopPhotos()
     func selectPhoto(_ photo: PhotoUIEntity)
     func switchPhoto(_ photo: PhotoUIEntity)
 }
 
-struct HomeViewAdapter: HomeViewInput {
+struct HomeViewAdapter: HomeViewInputPort {
     let useCase: HomeUseCaseInputPort
     
     init(useCase: HomeUseCaseInputPort) {
