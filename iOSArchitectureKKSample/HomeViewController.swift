@@ -58,6 +58,9 @@ class HomeViewController: UIViewController {
         _ = self.collectionView
     }
 
+    func fetchTopPhotos() {
+        
+    }
     /*
     // MARK: - Navigation
 
