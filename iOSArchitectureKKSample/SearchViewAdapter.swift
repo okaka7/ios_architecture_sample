@@ -13,7 +13,7 @@ protocol SearchViewInputPort: class {
     func searchPhotos(query: String)
 }
 
-final class SearchController: SearchViewInputPort {
+final class SearchViewAdapter: SearchViewInputPort {
 
     let useCase: SearchUseCaseInputPort
     
@@ -26,6 +26,6 @@ final class SearchController: SearchViewInputPort {
     }
     
     func fetchPopularPhotos() {
-        <#code#>
+        
     }
 }
