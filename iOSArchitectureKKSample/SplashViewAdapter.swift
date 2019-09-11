@@ -12,7 +12,7 @@ import RxCocoa
 
 protocol SplashControllerProtocol: class {
     func fetchPopularPhotos(page: Int)
-    func fetchAccount()
+    //func fetchAccount()
 }
 
 extension SplashControllerProtocol {
@@ -24,7 +24,7 @@ extension SplashControllerProtocol {
 protocol SplashPresenterProtocol: class {
     var popularPhotosObservable: Observable<PopularPhotoList?> { get }
     var topPhotosObservable: Observable<TopPhotoList?> { get }
-    var accountObservable: Observable<UnsplashAccountTarget.Response?> { get }
+    //var accountObservable: Observable<UnsplashAccountTarget.Response?> { get }
     
 }
 
@@ -42,11 +42,11 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
     }()
     private let topPhotosSubject: PublishRelay<TopPhotoList?> = .init()
 
-    private let accountSubject: PublishRelay<UnsplashAccountTarget.Response?> = .init()
-    
-    lazy private(set) var accountObservable: Observable<UnsplashAccountTarget.Response?> = {
-        return self.accountSubject.asObservable()
-    }()
+//    private let accountSubject: PublishRelay<UnsplashAccountTarget.Response?> = .init()
+//
+//    lazy private(set) var accountObservable: Observable<UnsplashAccountTarget.Response?> = {
+//        return self.accountSubject.asObservable()
+//    }()
     
     init (useCase: PrepareAppUseCaseInputPort,
           disposeBag: DisposeBag = DisposeBag()) {
@@ -82,23 +82,23 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
             .disposed(by: disposeBag)
     }
     
-    func fetchAccount() {
-        useCase.fetchAccount()
-            .subscribe(onSuccess: { [weak self] account in
-                    guard let self = self else {
-                        return
-                    }
-                    self.accountSubject.accept(account)
-                },
-                       onError: { [weak self] error in
-                        guard let self = self else {
-                            return
-                        }
-                        #if DEBUG
-                        log.debug(error)
-                        #endif
-                        self.accountSubject.accept(nil)
-            })
-            .disposed(by: disposeBag)
-    }
+//    func fetchAccount() {
+//        useCase.fetchAccount()
+//            .subscribe(onSuccess: { [weak self] account in
+//                    guard let self = self else {
+//                        return
+//                    }
+//                    self.accountSubject.accept(account)
+//                },
+//                       onError: { [weak self] error in
+//                        guard let self = self else {
+//                            return
+//                        }
+//                        #if DEBUG
+//                        log.debug(error)
+//                        #endif
+//                        self.accountSubject.accept(nil)
+//            })
+//            .disposed(by: disposeBag)
+//    }
 }
