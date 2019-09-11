@@ -17,8 +17,8 @@ final class SplashViewModel: SplashViewModelProtocol {
     let prepareObservable: Observable<Any>
     
     init(presenter: SplashPresenterProtocol) {
-        self.prepareObservable = Observable.merge(presenter.accountObservable.map { $0 as Any },
-                                                  presenter.popularPhotosObservable.map { $0 as Any },
-                                                  presenter.topPhotosObservable.map { $0 as Any })
+//        self.prepareObservable = Observable.merge(presenter.accountObservable.map { $0 as Any },
+//                                                  presenter.popularPhotosObservable.map { $0 as Any },
+//                                                  presenter.topPhotosObservable.map { $0 as Any })
     }
 }

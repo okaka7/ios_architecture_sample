@@ -68,7 +68,7 @@ class SplashViewController: UIViewController {
     }
     
     private func prepareForAccountView() {
-        controller.fetchAccount()
+        //controller.fetchAccount()
     }
     
     private func subscribeRx() {
