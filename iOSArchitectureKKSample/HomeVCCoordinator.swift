@@ -10,11 +10,11 @@ import UIKit
 import RxSwift
 
 protocol TransitionPreparationNotifiCation: class {
-    var preparationObsevable: Single<Void> { get }
+    var preparationObsevable: Observable<Void> { get }
 }
 
 protocol TransitionPreparationNotifiCationTransmitter: class {
-    var notification: Single<Void> { get }
+    var notification: Observable<Void> { get }
 }
 
 final class HomeVCCoordinator: Coordinator {
@@ -38,10 +38,13 @@ final class HomeVCCoordinator: Coordinator {
         return
     }
     
+    func prepare() {
+        self.homeVC.fetchTopPhotos()
+    }
 }
 
 extension HomeVCCoordinator: TransitionPreparationNotifiCationTransmitter {
-    var notification: Single<Void> {
+    var notification: Observable<Void> {
         return homeVC.preparationObsevable
     }
 }

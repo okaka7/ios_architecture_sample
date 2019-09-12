@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 protocol AccountViewModelType: class {
     var inputs: AccountViewModelInputs { get }
@@ -27,10 +28,15 @@ protocol AccountViewModelInputs: class {
 }
 
 protocol AccountViewModelOutputs: class {
-    
+    var accountObservable: Single<UnsplashAccountValueObject?> { get }
 }
 
 final class AccountViewModel: AccountViewModelType, AccountViewModelInputs, AccountViewModelOutputs {
+    lazy private(set) var accountObservable: Single<UnsplashAccountValueObject?> = {
+        self.accountRelay.take(1).asSingle()
+    }()
+    
+    let accountRelay: PublishRelay<UnsplashAccountValueObject?> = .init()
         
     let useCase: UserAccountUseCaseInputPort
     private let disposeBag: DisposeBag

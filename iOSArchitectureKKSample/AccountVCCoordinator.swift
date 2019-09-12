@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class AccountVCCoordinator: Coordinator {
     lazy var naviVC: UINavigationController = {
@@ -28,4 +29,14 @@ final class AccountVCCoordinator: Coordinator {
         return
     }
     
+    func prepare() {
+        
+    }
+    
+}
+
+extension AccountVCCoordinator: TransitionPreparationNotifiCationTransmitter {
+    var notification: Observable<Void> {
+        return accountVC.preparationObsevable
+    }
 }

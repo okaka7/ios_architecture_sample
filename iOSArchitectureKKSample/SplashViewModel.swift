@@ -35,15 +35,11 @@ protocol SplashViewModelOutputs: class {
 final class SplashViewModel: SplashViewModelType,
                                 SplashViewModelInputs,
 SplashViewModelOutputs {
-    
-    
-    
     private var readyForTransitonSubject: PublishRelay<Void> = .init()
     
     lazy private(set) var transitionObservableRelay: Single<Void> = {
         self.readyForTransitonSubject.take(1).asSingle()
     }()
-    
     
     private let useCase: SplashUseCaseInputs
     private let disposeBag: DisposeBag

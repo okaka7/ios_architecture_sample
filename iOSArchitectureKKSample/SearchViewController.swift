@@ -10,8 +10,16 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, TransitionPreparationNotifiCation {
     
+    lazy private(set) var preparationObsevable: Observable<Void> = {
+        self.viewModel
+            .outputs
+            .popluarPhotosObservable
+            .map({ _ in () })
+            .asObservable()
+    }()
+
     lazy private var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
@@ -38,6 +46,8 @@ class SearchViewController: UIViewController {
         log.debug("ColourSearchViewController.init()!!!")
         #endif
         self.view.backgroundColor = .white
+        self.setupSubscribe()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -61,15 +71,17 @@ class SearchViewController: UIViewController {
         }).disposed(by: disposeBag)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func fetchPopluarPhoto() {
+        viewModel.inputs.fetchPopularPhotos()
     }
-    */
+    
+    private func setupSubscribe() {
+        self.viewModel
+            .outputs
+            .popluarPhotosObservable
+            .subscribe(onSuccess: <#T##((PopularPhotoList?) -> Void)?##((PopularPhotoList?) -> Void)?##(PopularPhotoList?) -> Void#>,
+                       onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>)
+    }
 
 }
 

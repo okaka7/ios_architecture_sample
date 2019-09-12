@@ -12,7 +12,8 @@ import RxCocoa
 
 protocol SplashTransitioner: class {
     func transition()
-    var transitionPreparationDoneObservable: Single<Void> { get }
+    func prepareForMainTab()
+    var transitionPreparationSingle: Single<Void> { get }
 }
 
 protocol SplashTransitionerInjectable: class {
@@ -30,7 +31,7 @@ final class AppCoordinator: Coordinator, SplashTransitioner {
     private var mainTabCoordinator: MainTabCoordinator
     private let readyForTransitionRelaySubject: PublishRelay<Void> = .init()
     
-    var transitionPreparationDoneObservable: Single<Void> {
+    var transitionPreparationSingle: Single<Void> {
         return readyForTransitionRelaySubject.take(1).asSingle()
     }
  
@@ -49,8 +50,8 @@ final class AppCoordinator: Coordinator, SplashTransitioner {
         //rootViewController.fetchTopImage()
     }
     
-    func prepareForMainTabCoordination() {
-        
+    func prepareForMainTab() {
+        mainTabCoordinator.prepare()
     }
     
     func transition() {

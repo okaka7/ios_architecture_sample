@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class SearchVCCoordinator: Coordinator {
     
@@ -26,5 +27,15 @@ final class SearchVCCoordinator: Coordinator {
     }
     func start() {
         
+    }
+    
+    func prepare() {
+        self.searchVC.fetchPopluarPhoto()
+    }
+}
+
+extension SearchVCCoordinator: TransitionPreparationNotifiCationTransmitter {
+    var notification: Observable<Void> {
+        return searchVC.preparationObsevable
     }
 }

@@ -33,15 +33,15 @@ extension SearchViewModelInputs {
 }
 
 protocol SearchViewModelOutputs: class {
-    
+    var popluarPhotosObservable: Single<PopularPhotoList?> { get }
 }
 
 final class SearchViewModel: SearchViewModelType, SearchViewModelInputs, SearchViewModelOutputs {
     let useCase: SearchUseCaseInputPort
     private let disposeBag: DisposeBag
     
-    lazy private(set) var popularPhotosObservable: Observable<PopularPhotoList?> = {
-        return self.popularPhotosSubject.asObservable()
+    lazy private(set) var popluarPhotosObservable: Single<PopularPhotoList?> = {
+        return self.popularPhotosSubject.take(1).asSingle()
     }()
     private let popularPhotosSubject: PublishRelay<PopularPhotoList?> = .init()
     

@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import RxSwift
 
-class AccountViewController: UIViewController {
+class AccountViewController: UIViewController, TransitionPreparationNotifiCation {
+    
+    lazy private(set) var preparationObsevable: Observable<Void> = {
+        self.viewModel
+            .outputs
+            .accountObservable
+            .map({ _ in () })
+            .asObservable()
+        }()
     
     lazy private var label: UILabel = {
         let label: UILabel = .init(frame: .zero)
@@ -19,7 +28,7 @@ class AccountViewController: UIViewController {
     }()
     
     private let viewModel: AccountViewModelType
-    
+    private let disposeBag = DisposeBag()
     init(viewModel: AccountViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -27,6 +36,7 @@ class AccountViewController: UIViewController {
             log.debug("AccountViewController.init()!!!")
         #endif
         self.view.backgroundColor = .white
+         self.setupSubscribe()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,5 +47,15 @@ class AccountViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.addSubview(label)
+    }
+    
+    func fetchAccount() {
+        self.viewModel.inputs.getAccount()
+    }
+    
+    private func setupSubscribe() {
+        self.viewModel
+            .outputs
+            .accountObservable.subscribe(onSuccess: <#T##((UnsplashAccountValueObject?) -> Void)?##((UnsplashAccountValueObject?) -> Void)?##(UnsplashAccountValueObject?) -> Void#>, onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>).disposed(by: disposeBag)
     }
 }

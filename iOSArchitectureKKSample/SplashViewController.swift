@@ -10,9 +10,9 @@ import UIKit
 import RxSwift
 import KeychainAccess
 
-//protocol UnsplashAuthenticationOutput where Self: UIViewController {
-//    func openAuthenticationURL(_ url: URL, completionHandler completion: ((Bool) -> Void)?)
-//}
+extension Notification.Name {
+    static let transitionToMainTab = Notification.Name(rawValue: "toMainTab")
+}
 
 class SplashViewController: UIViewController {
     
@@ -33,6 +33,7 @@ class SplashViewController: UIViewController {
         self.disposeBag = disposeBag
         super.init(nibName: nil, bundle: nil)
         self.view.backgroundColor = .white
+        self.addObserverForTransition()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -42,25 +43,26 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(label)
-        self.setup()
-    }
-    
-    private func setup() {
-        viewModel.outputs
-            .transitionObservableRelay
-            .subscribe(onSuccess: transition)
-            .disposed(by: disposeBag)
+        self.prepareForMainTab()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
     }
     
+    private func addObserverForTransition() {
+        _ = NotificationCenter.default
+            .addObserver(forName: .transitionToMainTab,
+                         object: nil,
+                         queue: nil,
+                         using: transition(_:))
+    }
+    
     private func prepareForMainTab() {
         viewModel.inputs.prepareForMainTab()
     }
     
-    private func transition() {
+    private func transition(_ : Notification) {
         viewModel.inputs.transition()
     }
   

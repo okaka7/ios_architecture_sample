@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+
 
 
 final class MainTabCoordinator: Coordinator {
@@ -18,17 +20,21 @@ final class MainTabCoordinator: Coordinator {
     private let homeCoordinator: HomeVCCoordinator
     private let searchCoordinator: SearchVCCoordinator
     private let accountCoordinator: AccountVCCoordinator
+    private let disposeBag: DisposeBag
     
     init(homeCoordinator: HomeVCCoordinator,
          searchCoordinator: SearchVCCoordinator,
-         accountCoordinator: AccountVCCoordinator) {
+         accountCoordinator: AccountVCCoordinator,
+         disposeBag: DisposeBag = DisposeBag()) {
         self.homeCoordinator = homeCoordinator
         self.searchCoordinator = searchCoordinator
         self.accountCoordinator = accountCoordinator
+        self.setupWaitForPreparationDone()
     }
     
     func prepare() {
-        
+        self.homeCoordinator.prepare()
+        self.searchCoordinator.prepare()
     }
     
     func start() {
@@ -39,5 +45,17 @@ final class MainTabCoordinator: Coordinator {
         mainTabBarController.setViewControllers( tabBarControllers, animated: false)
         
         return
+    }
+    
+    func setupWaitForPreparationDone() {
+        Observable
+            .merge([self.homeCoordinator.notification,
+                    self.searchCoordinator.notification,
+                    self.accountCoordinator.notification])
+            .subscribe(onCompleted: {
+                NotificationCenter.default.post(name: .transitionToMainTab, object: nil)
+            })
+            .disposed(by: disposeBag)
+       
     }
 }

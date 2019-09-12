@@ -11,15 +11,17 @@ import RxCocoa
 import RxSwift
 
 class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
-    lazy private(set) var preparationObsevable: Single<Void> = {
-        self.transitionRelay.take(1).asSingle()
+    
+    lazy private(set) var preparationObsevable: Observable<Void> = {
+        self.viewModel
+            .outputs
+            .topPhotosObservable
+            .map({ _ in () })
+            .asObservable()
     }()
    
-    private let transitionRelay: PublishRelay<Void> = .init()
-    
     lazy private(set) var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 15
@@ -65,6 +67,12 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
     
     override func viewWillAppear(_ animated: Bool) {
         _ = self.collectionView
+    }
+    
+    private func setupSubscrible() {
+        self.viewModel.outputs
+            .topPhotosObservable.subscribe(onSuccess: <#T##((TopPhotoList?) -> Void)?##((TopPhotoList?) -> Void)?##(TopPhotoList?) -> Void#>,
+                                           onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>)
     }
 
     func fetchTopPhotos() {

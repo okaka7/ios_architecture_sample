@@ -34,15 +34,15 @@ extension HomeViewModelInputs {
 }
 
 protocol HomeViewModelOutputs: class {
-    
+    var topPhotosObservable: Single<TopPhotoList?> { get }
 }
 
 final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutputs {
     let useCase: HomeUseCaseInputPort
     private let disposeBag: DisposeBag
     
-    lazy private(set) var topPhotosObservable: Observable<TopPhotoList?> = {
-        return self.topPhotosSubject.asObservable()
+    lazy private(set) var topPhotosObservable: Single<TopPhotoList?> = {
+        return self.topPhotosSubject.take(1).asSingle()
     }()
     private let topPhotosSubject: PublishRelay<TopPhotoList?> = .init()
     
@@ -63,6 +63,7 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
     func fetchTopPhotos(page: Int = 1) {
         var topPhotos: UnsplashPhotosTarget.Response = .init()
         useCase.fetchTopPhotos(page: page)
+            .retry(1)
             .subscribe(onSuccess: { [weak self] photos in
                 guard let self = self else {
                     return
