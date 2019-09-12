@@ -30,6 +30,6 @@ protocol HomeViewModelOutputs: class {
     
 }
 
-final class HomeViewModel {
+final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutputs {
     
 }
