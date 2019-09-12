@@ -26,6 +26,10 @@ final class MainTabCoordinator: Coordinator {
         self.accountCoordinator = accountCoordinator
     }
     
+    func prepare() {
+        
+    }
+    
     func start() {
         let tabBarControllers: [UIViewController] = [ homeCoordinator.naviVC,
             searchCoordinator.naviVC,

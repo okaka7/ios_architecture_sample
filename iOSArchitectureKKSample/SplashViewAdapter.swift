@@ -36,3 +36,4 @@ final class SplashViewAdapter: SplashControllerProtocol, SplashPresenterProtocol
         self.disposeBag = disposeBag
     }
 }
+

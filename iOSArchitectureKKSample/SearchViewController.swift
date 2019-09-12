@@ -19,9 +19,7 @@ class SearchViewController: UIViewController {
         self.navigationItem.searchController = searchController
         return searchController
     }()
-    
 
-    
     lazy private var button: UIButton = {
         let button: UIButton = .init(frame: .zero)
         button.setTitle("button", for: .normal)

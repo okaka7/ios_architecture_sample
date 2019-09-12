@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import RxSwift
 
 protocol SplashTransitioner: class {
     func transition()
+    var transitionPreparationObservable: Observable<Void> { get }
 }
 
 protocol SplashTransitionerInjectable: class {
@@ -17,7 +19,6 @@ protocol SplashTransitionerInjectable: class {
 }
 
 final class AppCoordinator: Coordinator, SplashTransitioner {
-    
     enum LaunchType {
         
     }
@@ -25,6 +26,10 @@ final class AppCoordinator: Coordinator, SplashTransitioner {
     private let window: UIWindow
     private let rootViewController: SplashViewController
     private var mainTabCoordinator: MainTabCoordinator
+    
+    var transitionPreparationObservable: Observable<Void> {
+        return Observable.just(Void())
+    }
  
     init(window: UIWindow,
          rootVC: SplashViewController,
@@ -39,6 +44,10 @@ final class AppCoordinator: Coordinator, SplashTransitioner {
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
         //rootViewController.fetchTopImage()
+    }
+    
+    func prepareForMainTabCoordination() {
+        
     }
     
     func transition() {
