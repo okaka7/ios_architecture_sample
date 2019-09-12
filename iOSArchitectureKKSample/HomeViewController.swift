@@ -45,6 +45,7 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
     }()
     
     let viewModel: HomeViewModelType
+    let disposeBag: DisposeBag = .init()
     
     init(viewModel: HomeViewModelType) {
         self.viewModel = viewModel
@@ -71,8 +72,7 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
     
     private func setupSubscrible() {
         self.viewModel.outputs
-            .topPhotosObservable.subscribe(onSuccess: <#T##((TopPhotoList?) -> Void)?##((TopPhotoList?) -> Void)?##(TopPhotoList?) -> Void#>,
-                                           onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>)
+            .topPhotosObservable.subscribe(onSuccess: {_ in }).disposed(by: disposeBag)
     }
 
     func fetchTopPhotos() {

@@ -79,8 +79,7 @@ class SearchViewController: UIViewController, TransitionPreparationNotifiCation 
         self.viewModel
             .outputs
             .popluarPhotosObservable
-            .subscribe(onSuccess: <#T##((PopularPhotoList?) -> Void)?##((PopularPhotoList?) -> Void)?##(PopularPhotoList?) -> Void#>,
-                       onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>)
+            .subscribe(onSuccess: {_ in }).disposed(by: disposeBag)
     }
 
 }

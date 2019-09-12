@@ -20,12 +20,11 @@ final class MainTabCoordinator: Coordinator {
     private let homeCoordinator: HomeVCCoordinator
     private let searchCoordinator: SearchVCCoordinator
     private let accountCoordinator: AccountVCCoordinator
-    private let disposeBag: DisposeBag
+    private let disposeBag: DisposeBag = .init()
     
     init(homeCoordinator: HomeVCCoordinator,
          searchCoordinator: SearchVCCoordinator,
-         accountCoordinator: AccountVCCoordinator,
-         disposeBag: DisposeBag = DisposeBag()) {
+         accountCoordinator: AccountVCCoordinator) {
         self.homeCoordinator = homeCoordinator
         self.searchCoordinator = searchCoordinator
         self.accountCoordinator = accountCoordinator

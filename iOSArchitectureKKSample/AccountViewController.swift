@@ -56,6 +56,6 @@ class AccountViewController: UIViewController, TransitionPreparationNotifiCation
     private func setupSubscribe() {
         self.viewModel
             .outputs
-            .accountObservable.subscribe(onSuccess: <#T##((UnsplashAccountValueObject?) -> Void)?##((UnsplashAccountValueObject?) -> Void)?##(UnsplashAccountValueObject?) -> Void#>, onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>).disposed(by: disposeBag)
+            .accountObservable.subscribe(onSuccess: {_ in}).disposed(by: disposeBag)
     }
 }
