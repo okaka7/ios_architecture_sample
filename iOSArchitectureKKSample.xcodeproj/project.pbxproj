@@ -109,7 +109,6 @@
 		E592E73222FF026300AECEC4 /* UnsplashCollectionPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73122FF026300AECEC4 /* UnsplashCollectionPhotos.swift */; };
 		E592E73422FF02E500AECEC4 /* UnsplashRelatedCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73322FF02E500AECEC4 /* UnsplashRelatedCollections.swift */; };
 		E592E73622FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73522FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift */; };
-		E599947C2316996800CAFC11 /* AccountViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E599947B2316996800CAFC11 /* AccountViewAdapter.swift */; };
 		E599947E23169B6B00CAFC11 /* FetchAccountGateWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E599947D23169B6B00CAFC11 /* FetchAccountGateWay.swift */; };
 		E59994802316C48200CAFC11 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E599947F2316C48200CAFC11 /* SearchViewModel.swift */; };
 		E59994822316C4DD00CAFC11 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59994812316C4DD00CAFC11 /* AccountViewModel.swift */; };
@@ -285,7 +284,6 @@
 		E592E73122FF026300AECEC4 /* UnsplashCollectionPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashCollectionPhotos.swift; sourceTree = "<group>"; };
 		E592E73322FF02E500AECEC4 /* UnsplashRelatedCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRelatedCollections.swift; sourceTree = "<group>"; };
 		E592E73522FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashEditPhotoInCollectionTarget.swift; sourceTree = "<group>"; };
-		E599947B2316996800CAFC11 /* AccountViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewAdapter.swift; sourceTree = "<group>"; };
 		E599947D23169B6B00CAFC11 /* FetchAccountGateWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAccountGateWay.swift; sourceTree = "<group>"; };
 		E599947F2316C48200CAFC11 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		E59994812316C4DD00CAFC11 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
@@ -600,7 +598,6 @@
 			isa = PBXGroup;
 			children = (
 				E53F1DFF22C0B6BB00F81CAA /* AccountViewController.swift */,
-				E599947B2316996800CAFC11 /* AccountViewAdapter.swift */,
 				E59994812316C4DD00CAFC11 /* AccountViewModel.swift */,
 			);
 			name = "Account(User)";
@@ -1353,7 +1350,6 @@
 				E58A2CB8231265CA008C66BA /* FetchPhotosGateway.swift in Sources */,
 				E574B87B23280B780076C078 /* PhotoList.swift in Sources */,
 				E57C82F0230A8FD000F8F15C /* PhotoLikeable.swift in Sources */,
-				E599947C2316996800CAFC11 /* AccountViewAdapter.swift in Sources */,
 				E592E72A22FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift in Sources */,
 				E5713F21230B0FF20033AF21 /* UserProtocol.swift in Sources */,
 				E5291A9F22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift in Sources */,

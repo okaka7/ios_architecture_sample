@@ -7,11 +7,46 @@
 //
 
 import Foundation
+import RxSwift
 
-protocol AccountViewModelProtocol {
+protocol AccountViewModelType: class {
+    var inputs: AccountViewModelInputs { get }
+    var outputs: AccountViewModelOutputs { get }
+}
+
+extension AccountViewModelType where Self: AccountViewModelInputs {
+    var inputs: AccountViewModelInputs { return self }
+}
+
+extension AccountViewModelType where Self: AccountViewModelOutputs {
+    var outputs: AccountViewModelOutputs { return self }
+}
+
+protocol AccountViewModelInputs: class {
+    func getAccount()
+}
+
+protocol AccountViewModelOutputs: class {
     
 }
 
-final class AccountViewModel: AccountViewModelProtocol {
+final class AccountViewModel: AccountViewModelType, AccountViewModelInputs, AccountViewModelOutputs {
+        
+    let useCase: UserAccountUseCaseInputPort
+    private let disposeBag: DisposeBag
     
+    init(useCase: UserAccountUseCaseInputPort,
+         disposeBag: DisposeBag = DisposeBag()) {
+        self.useCase = useCase
+        self.disposeBag = disposeBag
+    }
+    
+    func getAccount() {
+        self.useCase
+            .getAccount()
+            .subscribe(onSuccess: {_ in},
+                       onError: {_ in })
+            .disposed(by: disposeBag)
+        
+    }
 }

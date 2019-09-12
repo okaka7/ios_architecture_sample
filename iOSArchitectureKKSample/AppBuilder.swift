@@ -80,10 +80,10 @@ final class AppBuilder {
     static func buildAccountVCCoordinator() -> AccountVCCoordinator {
         let webAPIClient: UnsplashAPIProvider = .shared
         let repository: AccountGateWay = .init(client: webAPIClient)
-        let accountUseCase: AccountUseCase = .init(repository: repository)
-        let accountViewAdapter: AccountViewAdapter = .init(useCase: accountUseCase)
-        let accountVC: AccountViewController = .init(adapter: accountViewAdapter)
-        return AccountVCCoordinator.init(accountVC: accountVC)
+        let useCase: AccountUseCase = .init(repository: repository)
+        let viewModel: AccountViewModel = .init(useCase: useCase)
+        let vc: AccountViewController = .init(viewModel: viewModel)
+        return AccountVCCoordinator.init(accountVC: vc)
     }
     
 }

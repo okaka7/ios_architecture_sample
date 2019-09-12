@@ -18,10 +18,10 @@ class AccountViewController: UIViewController {
         return label
     }()
     
-    private let adapter: AccountViewAdapter
+    private let viewModel: AccountViewModelType
     
-    init(adapter: AccountViewAdapter) {
-        self.adapter = adapter
+    init(viewModel: AccountViewModelType) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         #if DEBUG
             log.debug("AccountViewController.init()!!!")

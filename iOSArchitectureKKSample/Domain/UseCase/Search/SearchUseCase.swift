@@ -16,8 +16,6 @@ protocol SearchUseCaseInputPort: PhotoSelectable {
     func selectPhoto(_ photo: PhotoUIEntity)
 }
 
-
-
 protocol SearchUsecaseOutputPort: PhotoTransitionable {
     func setupCategoryPhotos(photos: [PhotoObject])
     func slideCategoryView(up: Bool)
