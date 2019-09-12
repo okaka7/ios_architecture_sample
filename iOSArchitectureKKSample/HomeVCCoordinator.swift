@@ -7,8 +7,18 @@
 //
 
 import UIKit
+import RxSwift
+
+protocol TransitionPreparationNotifiCation: class {
+    var preparationObsevable: Single<Void> { get }
+}
+
+protocol TransitionPreparationNotifiCationTransmitter: class {
+    var notification: Single<Void> { get }
+}
 
 final class HomeVCCoordinator: Coordinator {
+    
     lazy var naviVC: UINavigationController = {
         let naviVC: UINavigationController = .init(rootViewController: self.homeVC)
         naviVC.navigationBar.barStyle = .black
@@ -26,5 +36,12 @@ final class HomeVCCoordinator: Coordinator {
     
     func start() {
         return
+    }
+    
+}
+
+extension HomeVCCoordinator: TransitionPreparationNotifiCationTransmitter {
+    var notification: Single<Void> {
+        return homeVC.preparationObsevable
     }
 }

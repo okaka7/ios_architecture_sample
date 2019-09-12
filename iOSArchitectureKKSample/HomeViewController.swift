@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
+    lazy private(set) var preparationObsevable: Single<Void> = {
+        self.transitionRelay.take(1).asSingle()
+    }()
+   
+    private let transitionRelay: PublishRelay<Void> = .init()
     
     lazy private(set) var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
