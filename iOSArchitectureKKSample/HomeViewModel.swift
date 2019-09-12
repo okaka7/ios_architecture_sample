@@ -31,5 +31,12 @@ protocol HomeViewModelOutputs: class {
 }
 
 final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutputs {
+    let useCase: HomeUseCaseInputPort
+    private let disposeBag: DisposeBag
     
+    init(useCase: HomeUseCaseInputPort,
+         disposeBag: DisposeBag = DisposeBag()) {
+        self.useCase = useCase
+        self.disposeBag = disposeBag
+    }
 }
