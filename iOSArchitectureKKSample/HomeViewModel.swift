@@ -24,7 +24,13 @@ extension HomeViewModelType where Self: HomeViewModelOutputs {
 }
 
 protocol HomeViewModelInputs: class {
-    
+    func fetchTopPhotos(page: Int)
+    func selectPhoto(_ photo: PhotoUIEntity)
+    func switchPhoto(_ photo: PhotoUIEntity)
+}
+
+extension HomeViewModelInputs {
+    func fetchTopPhotos(page: Int = 1) { }
 }
 
 protocol HomeViewModelOutputs: class {
@@ -39,7 +45,6 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
         return self.topPhotosSubject.asObservable()
     }()
     private let topPhotosSubject: PublishRelay<TopPhotoList?> = .init()
-    
     
     init(useCase: HomeUseCaseInputPort,
          disposeBag: DisposeBag = DisposeBag()) {

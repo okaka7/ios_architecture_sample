@@ -35,10 +35,10 @@ class HomeViewController: UIViewController {
         return label
     }()
     
-    let adapter: HomeViewInputPort
+    let viewModel: HomeViewModelType
     
-    init(adapter: HomeViewInputPort) {
-        self.adapter = adapter
+    init(viewModel: HomeViewModelType) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         #if DEBUG
             log.debug("ColourCategoryViewController.init()!!!")
@@ -62,16 +62,7 @@ class HomeViewController: UIViewController {
     }
 
     func fetchTopPhotos() {
-        adapter.fetchTopPhotos()
+        viewModel.inputs.fetchTopPhotos()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

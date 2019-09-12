@@ -61,11 +61,11 @@ final class AppBuilder {
     
     static func buildHomeVCCoordinator() -> HomeVCCoordinator {
         let webAPIClient: UnsplashAPIProvider = .shared
-        let photoRepository: PhotoGateWay = .init(client: webAPIClient)
-        let homeUseCase: HomeUseCase = .init(photoRepository: photoRepository)
-        let homeViewAdapter: HomeViewAdapter = .init(useCase: homeUseCase)
-        let homeVC: HomeViewController = .init(adapter: homeViewAdapter)
-        return HomeVCCoordinator(homeVC: homeVC)
+        let repository: PhotoGateWay = .init(client: webAPIClient)
+        let useCase: HomeUseCase = .init(photoRepository: repository)
+        let viewModel: HomeViewModel = .init(useCase: useCase)
+        let vc: HomeViewController = .init(viewModel: viewModel)
+        return HomeVCCoordinator(homeVC: vc)
     }
     
     static func buildSearchVCCoordinator() -> SearchVCCoordinator {
