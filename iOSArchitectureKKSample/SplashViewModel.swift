@@ -9,11 +9,28 @@
 import Foundation
 import RxSwift
 
-protocol SplashViewModelProtocol: class {
-    //var prepareObservable: Observable<Any> { get }
+protocol SplashViewModelType: class {
+    var inputs: SplashViewModelInputs { get }
+    var outputs: SplashViewModelOutputs { get }
 }
 
-final class SplashViewModel: SplashViewModelProtocol {
+extension SplashViewModelType where Self: SplashViewModelInputs {
+    var inputs: SplashViewModelInputs { return self }
+}
+
+extension SplashViewModelType where Self: SplashViewModelOutputs {
+    var outputs: SplashViewModelOutputs { return self }
+}
+
+protocol SplashViewModelInputs: class {
+    
+}
+
+protocol SplashViewModelOutputs: class {
+    
+}
+
+final class SplashViewModel: SplashViewModelType, SplashViewModelInputs, SplashViewModelOutputs {
   //  let prepareObservable: Observable<Any>
     
 //    init(presenter: SplashPresenterProtocol) {
