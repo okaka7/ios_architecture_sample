@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 protocol SplashViewModelType: class {
     var inputs: SplashViewModelInputs { get }
@@ -23,18 +24,43 @@ extension SplashViewModelType where Self: SplashViewModelOutputs {
 }
 
 protocol SplashViewModelInputs: class {
-    
+    func prepareForMainTab()
+    func transition()
 }
 
 protocol SplashViewModelOutputs: class {
-    
+    var transitionObservableRelay: Single<Void> { get }
 }
 
-final class SplashViewModel: SplashViewModelType, SplashViewModelInputs, SplashViewModelOutputs {
+final class SplashViewModel: SplashViewModelType,
+                                SplashViewModelInputs,
+SplashViewModelOutputs {
     
-    private let useCase: PrepareAppUseCaseInputPort
     
-    init(useCase: PrepareAppUseCaseInputPort) {
+    
+    private var readyForTransitonSubject: PublishRelay<Void> = .init()
+    
+    lazy private(set) var transitionObservableRelay: Single<Void> = {
+        self.readyForTransitonSubject.take(1).asSingle()
+    }()
+    
+    
+    private let useCase: SplashUseCaseInputs
+    private let disposeBag: DisposeBag
+    let prepareForMainTabSubject: PublishRelay<Void> = .init()
+    
+    init(useCase: SplashUseCaseInputs,
+         disposeBag: DisposeBag = DisposeBag()) {
         self.useCase = useCase
+        self.disposeBag = disposeBag
     }
+    
+    func prepareForMainTab() {
+        useCase.prepareForMainTab()
+    }
+    
+    func transition() {
+        useCase.transtion()
+    }
+   
 }

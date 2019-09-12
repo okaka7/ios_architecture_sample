@@ -8,10 +8,11 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 protocol SplashTransitioner: class {
     func transition()
-    var transitionPreparationObservable: Observable<Void> { get }
+    var transitionPreparationDoneObservable: Single<Void> { get }
 }
 
 protocol SplashTransitionerInjectable: class {
@@ -19,6 +20,7 @@ protocol SplashTransitionerInjectable: class {
 }
 
 final class AppCoordinator: Coordinator, SplashTransitioner {
+    
     enum LaunchType {
         
     }
@@ -26,9 +28,10 @@ final class AppCoordinator: Coordinator, SplashTransitioner {
     private let window: UIWindow
     private let rootViewController: SplashViewController
     private var mainTabCoordinator: MainTabCoordinator
+    private let readyForTransitionRelaySubject: PublishRelay<Void> = .init()
     
-    var transitionPreparationObservable: Observable<Void> {
-        return Observable.just(Void())
+    var transitionPreparationDoneObservable: Single<Void> {
+        return readyForTransitionRelaySubject.take(1).asSingle()
     }
  
     init(window: UIWindow,

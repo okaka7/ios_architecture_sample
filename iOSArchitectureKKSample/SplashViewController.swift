@@ -41,13 +41,27 @@ class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         self.view.addSubview(label)
-      
+        self.setup()
+    }
+    
+    private func setup() {
+        viewModel.outputs
+            .transitionObservableRelay
+            .subscribe(onSuccess: transition)
+            .disposed(by: disposeBag)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
+    }
+    
+    private func prepareForMainTab() {
+        viewModel.inputs.prepareForMainTab()
+    }
+    
+    private func transition() {
+        viewModel.inputs.transition()
     }
   
 }

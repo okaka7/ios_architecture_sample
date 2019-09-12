@@ -47,7 +47,6 @@ final class AppBuilder {
                                                 rootVC: vc,
                                                 mainTabCoordinator: mainTabCoordinator)
         
-        
         return  coordinator
     }
     
@@ -85,5 +84,4 @@ final class AppBuilder {
         let vc: AccountViewController = .init(viewModel: viewModel)
         return AccountVCCoordinator.init(accountVC: vc)
     }
-    
 }
