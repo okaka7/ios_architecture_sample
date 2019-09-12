@@ -70,11 +70,11 @@ final class AppBuilder {
     
     static func buildSearchVCCoordinator() -> SearchVCCoordinator {
         let webAPIClient: UnsplashAPIProvider = .shared
-        let photoRepository: PhotoGateWay = .init(client: webAPIClient)
-        let searchUseCase: SearchUseCase = .init(repository: photoRepository)
-        let searchViewAdapter: SearchViewAdapter = .init(useCase: searchUseCase)
-        let searchVC: SearchViewController = .init(adapter: searchViewAdapter)
-        return SearchVCCoordinator.init(searchVC: searchVC)
+        let repository: PhotoGateWay = .init(client: webAPIClient)
+        let useCase: SearchUseCase = .init(repository: repository)
+        let viewModel: SearchViewModel = .init(useCase: useCase)
+        let vc: SearchViewController = .init(viewModel: viewModel)
+        return SearchVCCoordinator.init(searchVC: vc)
     }
     
     static func buildAccountVCCoordinator() -> AccountVCCoordinator {

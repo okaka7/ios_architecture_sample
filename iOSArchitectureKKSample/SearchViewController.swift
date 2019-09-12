@@ -28,11 +28,11 @@ class SearchViewController: UIViewController {
         button.center = self.view.center
         return button
     }()
-    private let adapter: SearchViewAdapter
+    private let viewModel: SearchViewModelType
     private let disposeBag = DisposeBag()
     
-    init(adapter: SearchViewAdapter) {
-        self.adapter = adapter
+    init(viewModel: SearchViewModelType) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         #if DEBUG
         log.debug("ColourSearchViewController.init()!!!")
