@@ -24,7 +24,6 @@ class SplashViewController: UIViewController {
         return label
     }()
     
-    weak private var transitioner: SplashTransitioner!
     let viewModel: SplashViewModelType
     private let disposeBag: DisposeBag
 
@@ -52,11 +51,3 @@ class SplashViewController: UIViewController {
     }
   
 }
-
-extension SplashViewController: SplashTransitionerInjectable {
-    func inject(transitioner: SplashTransitioner) {
-        self.transitioner = transitioner
-    }
-}
-
-
