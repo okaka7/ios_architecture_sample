@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol SearchViewModelProtocol {
+protocol SearchViewModelType {
     
 }
 
-final class SearchViewModel: SearchViewModelProtocol {
+final class SearchViewModel: SearchViewModelType {
     
 }

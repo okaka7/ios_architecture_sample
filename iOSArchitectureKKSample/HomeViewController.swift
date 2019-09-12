@@ -54,7 +54,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(label)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
