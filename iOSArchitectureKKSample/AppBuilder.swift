@@ -39,10 +39,8 @@ enum Category: String, CaseIterable {
 final class AppBuilder {
     static func buildAppCoordinator(window: UIWindow) -> AppCoordinator {
         let useCase: AppPrepareUseCase = .init()
-        let viewAdapter: SplashViewAdapter = .init(useCase: useCase)
-        let viewModel: SplashViewModel = .init()
-        let vc: SplashViewController = .init(controller: viewAdapter,
-                                             viewModel: viewModel)
+        let viewModel: SplashViewModel = .init(useCase: useCase)
+        let vc: SplashViewController = .init(viewModel: viewModel)
         
         let mainTabCoordinator: MainTabCoordinator = buildMainTabCoordinator()
         

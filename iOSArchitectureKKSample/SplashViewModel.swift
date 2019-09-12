@@ -31,6 +31,12 @@ protocol SplashViewModelOutputs: class {
 }
 
 final class SplashViewModel: SplashViewModelType, SplashViewModelInputs, SplashViewModelOutputs {
+    
+    private let useCase: PrepareAppUseCaseInputPort
+    
+    init(useCase: PrepareAppUseCaseInputPort) {
+        self.useCase = useCase
+    }
   //  let prepareObservable: Observable<Any>
     
 //    init(presenter: SplashPresenterProtocol) {

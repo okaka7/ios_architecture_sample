@@ -25,14 +25,11 @@ class SplashViewController: UIViewController {
     }()
     
     weak private var transitioner: SplashTransitioner!
-    private let controller: SplashControllerProtocol
     let viewModel: SplashViewModelType
     private let disposeBag: DisposeBag
 
-    init(controller: SplashControllerProtocol,
-         viewModel: SplashViewModelType,
+    init(viewModel: SplashViewModelType,
          disposeBag: DisposeBag = DisposeBag()) {
-        self.controller = controller
         self.viewModel = viewModel
         self.disposeBag = disposeBag
         super.init(nibName: nil, bundle: nil)
