@@ -46,7 +46,7 @@ final class AppBuilder {
         let coordinator: AppCoordinator = .init(window: window,
                                                 rootVC: vc,
                                                 mainTabCoordinator: mainTabCoordinator)
-        vc.inject(transitioner: coordinator)
+        
         
         return  coordinator
     }
