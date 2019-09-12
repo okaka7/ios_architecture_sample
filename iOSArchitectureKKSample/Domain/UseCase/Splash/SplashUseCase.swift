@@ -26,7 +26,7 @@ protocol PhotoPrepareUseCaseOutputPort: class {
     func setCategoryImage(_ image: [Category : UnsplashPhotoEntity])
 }
 
-final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
+final class SplashUseCase: PrepareAppUseCaseInputPort {
     
     var transitioner: SplashTransitioner!
     
@@ -43,7 +43,7 @@ final class AppPrepareUseCase: PrepareAppUseCaseInputPort {
     }
 }
 
-extension AppPrepareUseCase: SplashTransitionerInjectable {
+extension SplashUseCase: SplashTransitionerInjectable {
     func inject(transitioner: SplashTransitioner) {
         self.transitioner = transitioner
     }

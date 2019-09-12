@@ -93,7 +93,7 @@
 		E57DEECE22C48CB300B0AAA1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DEECD22C48CB300B0AAA1 /* R.generated.swift */; };
 		E5867C0422C4831E009E9EF8 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5867C0322C4831E009E9EF8 /* PhotoViewController.swift */; };
 		E587B1BD2315A5FA0022722E /* PhotoViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E587B1BC2315A5FA0022722E /* PhotoViewAdapter.swift */; };
-		E58A2CB623126185008C66BA /* AppPrepareUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58A2CB523126185008C66BA /* AppPrepareUseCase.swift */; };
+		E58A2CB623126185008C66BA /* SplashUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58A2CB523126185008C66BA /* SplashUseCase.swift */; };
 		E58A2CB8231265CA008C66BA /* FetchPhotosGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58A2CB7231265CA008C66BA /* FetchPhotosGateway.swift */; };
 		E592297C22AE65E8003EC30C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592297B22AE65E8003EC30C /* AppDelegate.swift */; };
 		E592297E22AE65E8003EC30C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592297D22AE65E8003EC30C /* SplashViewController.swift */; };
@@ -265,7 +265,7 @@
 		E581FBA422D346B400754098 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		E5867C0322C4831E009E9EF8 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		E587B1BC2315A5FA0022722E /* PhotoViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewAdapter.swift; sourceTree = "<group>"; };
-		E58A2CB523126185008C66BA /* AppPrepareUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPrepareUseCase.swift; sourceTree = "<group>"; };
+		E58A2CB523126185008C66BA /* SplashUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUseCase.swift; sourceTree = "<group>"; };
 		E58A2CB7231265CA008C66BA /* FetchPhotosGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhotosGateway.swift; sourceTree = "<group>"; };
 		E592297822AE65E8003EC30C /* iOSArchitectureKKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSArchitectureKKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E592297B22AE65E8003EC30C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -455,7 +455,7 @@
 		E576E31F23141F9C007446B8 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				E58A2CB523126185008C66BA /* AppPrepareUseCase.swift */,
+				E58A2CB523126185008C66BA /* SplashUseCase.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -1333,7 +1333,7 @@
 				E5521F4C22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift in Sources */,
 				E54151B6230FFFB40036BA0F /* UnsplashTokenValueObject.swift in Sources */,
 				E57BD50522C4B58B00FE44D4 /* AccountVCCoordinator.swift in Sources */,
-				E58A2CB623126185008C66BA /* AppPrepareUseCase.swift in Sources */,
+				E58A2CB623126185008C66BA /* SplashUseCase.swift in Sources */,
 				E57C82F8230AA03000F8F15C /* PhotoDownloadable.swift in Sources */,
 				E57915D822F89743009BCE95 /* UnsplashUserLikesTarget.swift in Sources */,
 				E592E73022FF01E800AECEC4 /* UnsplashCollection.swift in Sources */,

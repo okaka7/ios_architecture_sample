@@ -37,11 +37,4 @@ final class SplashViewModel: SplashViewModelType, SplashViewModelInputs, SplashV
     init(useCase: PrepareAppUseCaseInputPort) {
         self.useCase = useCase
     }
-  //  let prepareObservable: Observable<Any>
-    
-//    init(presenter: SplashPresenterProtocol) {
-////        self.prepareObservable = Observable.merge(presenter.accountObservable.map { $0 as Any },
-////                                                  presenter.popularPhotosObservable.map { $0 as Any },
-////                                                  presenter.topPhotosObservable.map { $0 as Any })
-//    }
 }
