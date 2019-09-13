@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-final class AccountVCCoordinator: Coordinator {
+final class AccountVCCoordinator: Coordinator, PreparationProtocol {
     lazy var naviVC: UINavigationController = {
         let naviVC: UINavigationController = .init(rootViewController: self.accountVC)
         naviVC.navigationBar.barStyle = .black

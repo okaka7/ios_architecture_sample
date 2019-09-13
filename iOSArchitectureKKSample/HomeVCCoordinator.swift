@@ -17,7 +17,7 @@ protocol TransitionPreparationNotifiCationTransmitter: class {
     var notification: Observable<Void> { get }
 }
 
-final class HomeVCCoordinator: Coordinator {
+final class HomeVCCoordinator: Coordinator, PreparationProtocol {
     
     lazy var naviVC: UINavigationController = {
         let naviVC: UINavigationController = .init(rootViewController: self.homeVC)

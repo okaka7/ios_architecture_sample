@@ -20,6 +20,10 @@ protocol SplashTransitionerInjectable: class {
     func inject(transitioner: SplashTransitioner)
 }
 
+protocol PreparationProtocol: class {
+    func prepare()
+}
+
 final class AppCoordinator: Coordinator, SplashTransitioner {
     
     enum LaunchType {

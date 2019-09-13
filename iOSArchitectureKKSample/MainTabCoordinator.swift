@@ -10,8 +10,7 @@ import UIKit
 import RxSwift
 
 
-
-final class MainTabCoordinator: Coordinator {
+final class MainTabCoordinator: Coordinator, PreparationProtocol {
     let mainTabBarController: UITabBarController = {
         let tab = UITabBarController()
         tab.tabBar.isTranslucent = false
@@ -32,8 +31,12 @@ final class MainTabCoordinator: Coordinator {
     }
     
     func prepare() {
-        self.homeCoordinator.prepare()
-        self.searchCoordinator.prepare()
+        let preparations: [PreparationProtocol] = [self.homeCoordinator,
+                                                   self.searchCoordinator,
+                                                   self.accountCoordinator]
+        preparations.forEach {
+            $0.prepare()
+        }
     }
     
     func start() {

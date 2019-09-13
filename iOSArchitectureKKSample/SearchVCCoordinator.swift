@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-final class SearchVCCoordinator: Coordinator {
+final class SearchVCCoordinator: Coordinator, PreparationProtocol {
     
     lazy var naviVC: UINavigationController = {
         let naviVC: UINavigationController = .init(rootViewController: self.searchVC)

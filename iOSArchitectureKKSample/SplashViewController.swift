@@ -47,7 +47,6 @@ class SplashViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
     }
     
     private func addObserverForTransition() {
