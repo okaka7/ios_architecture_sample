@@ -10,16 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
-    
-    lazy private(set) var preparationObsevable: Observable<Void> = {
-        self.viewModel
-            .outputs
-            .topPhotosObservable
-            .map({ _ in () })
-            .asObservable()
-    }()
-   
+class HomeViewController: UIViewController {
     lazy private(set) var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -34,14 +25,6 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
         collectionView.heightAnchor.constraint(equalToConstant: 110).isActive = true
         collectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         return collectionView
-    }()
-
-    lazy private var label: UILabel = {
-        let label: UILabel = .init(frame: .zero)
-        label.text = "category"
-        label.sizeToFit()
-        label.center = self.view.center
-        return label
     }()
     
     let viewModel: HomeViewModelType
@@ -63,7 +46,6 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(label)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,7 +54,9 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
     
     private func setupSubscrible() {
         self.viewModel.outputs
-            .topPhotosObservable.subscribe(onSuccess: {_ in }).disposed(by: disposeBag)
+            .topPhotosObservable
+            .subscribe(onSuccess: {_ in })
+            .disposed(by: disposeBag)
     }
 
     func fetchTopPhotos() {

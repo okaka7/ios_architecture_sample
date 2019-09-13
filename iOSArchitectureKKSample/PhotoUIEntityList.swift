@@ -32,7 +32,7 @@ struct PhotoUIList {
 
 extension PhotoUIList {
     var warpingPhotoFilter: PhotoUIList {
-        let list: [PhotoUIEntity] = self.list.filter{ $0.isSuitableForTopImage }
+        let list: [PhotoUIEntity] = self.list.filter { $0.isSuitableForTopImage }
         return .init(photoUIList: list)
     }
 }
