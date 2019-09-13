@@ -12,7 +12,6 @@ import RxSwift
 
 class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
 
-    
     lazy private(set) var preparationObsevable: Observable<Void> = {
         self.viewModel
             .outputs
@@ -21,7 +20,6 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
             .asObservable()
     }()
 
-    
     lazy private(set) var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal

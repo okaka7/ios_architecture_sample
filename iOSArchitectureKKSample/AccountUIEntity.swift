@@ -1,8 +1,8 @@
 //
-//  AccountUIValueObject.swift
+//  AccountUIEntity.swift
 //  iOSArchitectureKKSample
 //
-//  Created by Kota Kawanishi on 2019/08/19.
+//  Created by Kota Kawanishi on 2019/09/13.
 //  Copyright © 2019 Kota Kawanishi. All rights reserved.
 //
 
@@ -19,22 +19,22 @@ struct AccountUIEntity {
     let links: Links
     let profileImage: ProfileImage
     let totalCollections, totalPhotos: Int
-//    let totalLikes: Int
-//    let acceptedTos: Bool
-//    let followedByUser: Bool
+    //    let totalLikes: Int
+    //    let acceptedTos: Bool
+    //    let followedByUser: Bool
     let photos: [Photo]
-//    let badge: Badge?
-//    let downloads: Int
-//    let tags: Tags
-//    let followersCount, followingCount: Int
-//    let allowMessages: Bool
-//    let numericID: Int
-//    let uid: String
-//    let uploadsRemaining: Int
-//    let unlimitedUploads: Bool
-//    let email: String?
+    //    let badge: Badge?
+    //    let downloads: Int
+    //    let tags: Tags
+    //    let followersCount, followingCount: Int
+    //    let allowMessages: Bool
+    //    let numericID: Int
+    //    let uid: String
+    //    let uploadsRemaining: Int
+    //    let unlimitedUploads: Bool
+    //    let email: String?
     
-    init(_ account: UnsplashAccountValueObject) {
+    init(_ account: UnsplashAccountEntity) {
         self.id = account.id
         self.username = account.username
         self.name = account.name

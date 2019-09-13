@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 struct UnsplashAccountTarget: UnsplashAPITargetType {
-    typealias Account = UnsplashAccountValueObject
+    typealias Account = UnsplashAccountEntity
     typealias Response = Account
     
     let path: String = "/me"

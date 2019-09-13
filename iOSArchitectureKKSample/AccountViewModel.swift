@@ -28,15 +28,15 @@ protocol AccountViewModelInputs: class {
 }
 
 protocol AccountViewModelOutputs: class {
-    var accountObservable: Single<UnsplashAccountValueObject?> { get }
+    var accountObservable: Single<AccountUIEntity?> { get }
 }
 
 final class AccountViewModel: AccountViewModelType, AccountViewModelInputs, AccountViewModelOutputs {
-    lazy private(set) var accountObservable: Single<UnsplashAccountValueObject?> = {
+    lazy private(set) var accountObservable: Single<AccountUIEntity?> = {
         self.accountRelay.take(1).asSingle()
     }()
     
-    let accountRelay: PublishRelay<UnsplashAccountValueObject?> = .init()
+    let accountRelay: PublishRelay<AccountUIEntity?> = .init()
         
     let useCase: UserAccountUseCaseInputPort
     private let disposeBag: DisposeBag
@@ -53,6 +53,5 @@ final class AccountViewModel: AccountViewModelType, AccountViewModelInputs, Acco
             .subscribe(onSuccess: {_ in},
                        onError: {_ in })
             .disposed(by: disposeBag)
-        
     }
 }
