@@ -36,3 +36,12 @@ struct PhotoUIEntity {
         self.user = photo.user
     }
 }
+
+extension PhotoUIEntity {
+    var isSuitableForTopImage: Bool {
+        return self.heightRatioToWidth <= 1.5 && self.heightRatioToWidth >= 1.4
+    }
+    private var heightRatioToWidth: Float {
+        return Float(height) / Float(width)
+    }
+}

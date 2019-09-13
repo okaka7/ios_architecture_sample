@@ -34,17 +34,17 @@ extension HomeViewModelInputs {
 }
 
 protocol HomeViewModelOutputs: class {
-    var topPhotosObservable: Single<TopPhotoList?> { get }
+    var topPhotosObservable: Single<PhotoUIList?> { get }
 }
 
 final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutputs {
     let useCase: HomeUseCaseInputPort
     private let disposeBag: DisposeBag
     
-    lazy private(set) var topPhotosObservable: Single<TopPhotoList?> = {
+    lazy private(set) var topPhotosObservable: Single<PhotoUIList?> = {
         return self.topPhotosSubject.take(1).asSingle()
     }()
-    private let topPhotosSubject: PublishRelay<TopPhotoList?> = .init()
+    private let topPhotosSubject: PublishRelay<PhotoUIList?> = .init()
     
     init(useCase: HomeUseCaseInputPort,
          disposeBag: DisposeBag = DisposeBag()) {
@@ -60,21 +60,19 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
         
     }
     
-    func fetchTopPhotos(page: Int = 1) {
-        var topPhotos: UnsplashPhotosTarget.Response = .init()
+    func fetchTopPhotos(page: Int = 1, photos: PhotoUIList = .init()) {
         useCase.fetchTopPhotos(page: page)
             .retry(1)
-            .subscribe(onSuccess: { [weak self] photos in
-                guard let self = self else {
-                    return
-                }
-                let appendedPhotos: UnsplashPhotosTarget.Response = photos.filter { $0.isSuitableForTopImage }
-                topPhotos.append(contentsOf: appendedPhotos)
-                if topPhotos.count >= 20 {
-                    self.topPhotosSubject.accept(TopPhotoList(photos: topPhotos))
-                } else {
-                    self.fetchTopPhotos(page: page + 1)
-                }
+            .map(PhotoUIList.init(photoList: ))
+            .map{ $0.warpingPhotoFilter }
+            .subscribe(onSuccess: { [weak self] photoList in
+                
+                    let list: PhotoUIList = photos + photoList
+                    if list.count >= 20 {
+                        self?.topPhotosSubject.accept(list)
+                    } else {
+                        self?.fetchTopPhotos(page: page + 1, photos: list)
+                    }
                 },
                        onError: { error in
                         #if DEBUG
