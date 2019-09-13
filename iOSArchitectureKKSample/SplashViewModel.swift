@@ -58,5 +58,4 @@ SplashViewModelOutputs {
     func transition() {
         useCase.transtion()
     }
-   
 }
