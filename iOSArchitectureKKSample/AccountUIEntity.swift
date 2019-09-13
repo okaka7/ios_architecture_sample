@@ -34,7 +34,7 @@ struct AccountUIEntity {
     //    let unlimitedUploads: Bool
     //    let email: String?
     
-    init(_ account: UnsplashAccountEntity) {
+    init(account: UnsplashAccountEntity) {
         self.id = account.id
         self.username = account.username
         self.name = account.name

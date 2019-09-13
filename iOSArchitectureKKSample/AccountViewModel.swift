@@ -50,6 +50,7 @@ final class AccountViewModel: AccountViewModelType, AccountViewModelInputs, Acco
     func getAccount() {
         self.useCase
             .getAccount()
+            .map(AccountUIEntity.init(account:))
             .subscribe(onSuccess: {_ in},
                        onError: {_ in })
             .disposed(by: disposeBag)
