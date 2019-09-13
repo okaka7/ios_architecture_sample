@@ -10,7 +10,18 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
+
+    
+    lazy private(set) var preparationObsevable: Observable<Void> = {
+        self.viewModel
+            .outputs
+            .topPhotosObservable
+            .map({ _ in () })
+            .asObservable()
+    }()
+
+    
     lazy private(set) var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal

@@ -33,17 +33,17 @@ extension SearchViewModelInputs {
 }
 
 protocol SearchViewModelOutputs: class {
-    var popluarPhotosObservable: Single<PopularPhotoList?> { get }
+    var popluarPhotosObservable: Single<PhotoUIList?> { get }
 }
 
 final class SearchViewModel: SearchViewModelType, SearchViewModelInputs, SearchViewModelOutputs {
     let useCase: SearchUseCaseInputPort
     private let disposeBag: DisposeBag
     
-    lazy private(set) var popluarPhotosObservable: Single<PopularPhotoList?> = {
+    lazy private(set) var popluarPhotosObservable: Single<PhotoUIList?> = {
         return self.popularPhotosSubject.take(1).asSingle()
     }()
-    private let popularPhotosSubject: PublishRelay<PopularPhotoList?> = .init()
+    private let popularPhotosSubject: PublishRelay<PhotoUIList?> = .init()
     
     init(useCase: SearchUseCaseInputPort,
          disposeBag: DisposeBag = DisposeBag()) {
@@ -57,13 +57,12 @@ final class SearchViewModel: SearchViewModelType, SearchViewModelInputs, SearchV
     
     func fetchPopularPhotos(page: Int) {
         useCase.fetchPopularPhotos(page: page)
+            .retry(1)
+            .map(PhotoUIList.init(photoList: ))
+            .map { $0.warpingPhotoFilter }
             .subscribe(onSuccess: { [weak self] photos in
-                guard let self = self else {
-                    return
-                }
-                
-                self.popularPhotosSubject.accept(PopularPhotoList(photos: photos))
-                },
+                        self?.popularPhotosSubject.accept(photos)
+                    },
                        onError: { error in
                         #if DEBUG
                         log.debug(error)
