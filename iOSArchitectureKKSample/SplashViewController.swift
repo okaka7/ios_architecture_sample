@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import KeychainAccess
 
 extension Notification.Name {
     static let transitionToMainTab = Notification.Name(rawValue: "toMainTab")
