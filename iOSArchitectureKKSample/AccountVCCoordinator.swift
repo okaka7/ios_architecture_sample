@@ -31,6 +31,7 @@ final class AccountVCCoordinator: Coordinator, PreparationProtocol {
     
     func prepare() {
         
+        self.accountVC.fetchAccount()
     }
     
 }

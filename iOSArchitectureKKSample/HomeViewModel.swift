@@ -24,20 +24,19 @@ extension HomeViewModelType where Self: HomeViewModelOutputs {
 }
 
 protocol HomeViewModelInputs: class {
-    func fetchTopPhotos(page: Int)
+    func fetchTopPhotos(page: Int, photos: PhotoUIList)
     func selectPhoto(_ photo: PhotoUIEntity)
     func switchPhoto(_ photo: PhotoUIEntity)
 }
 
-extension HomeViewModelInputs {
-    func fetchTopPhotos(page: Int = 1) { }
-}
 
 protocol HomeViewModelOutputs: class {
     var topPhotosObservable: Single<PhotoUIList?> { get }
 }
 
 final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutputs {
+   
+    
     let useCase: HomeUseCaseInputPort
     private let disposeBag: DisposeBag
     

@@ -39,6 +39,9 @@ final class HomeVCCoordinator: Coordinator, PreparationProtocol {
     }
     
     func prepare() {
+        #if DEBUG
+        log.debug("homeVC.fetchTOpPhotos")
+        #endif
         self.homeVC.fetchTopPhotos()
     }
 }

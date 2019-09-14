@@ -42,7 +42,7 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(label)
-        self.prepareForMainTab()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,7 +56,7 @@ class SplashViewController: UIViewController {
                          using: transition(_:))
     }
     
-    private func prepareForMainTab() {
+    func prepareForMainTab() {
         viewModel.inputs.prepareForMainTab()
     }
     

@@ -51,7 +51,7 @@ final class SplashUseCase: SplashUseCaseType, SplashUseCaseInputs, SplashUseCase
     }
     
     func prepareForMainTab() {
-       // transitioner.prepareForMainTab()
+        transitioner.prepareForMainTab()
     }
     
     func prepareForMainTab() -> Single<Void> {

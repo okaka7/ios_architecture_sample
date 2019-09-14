@@ -56,6 +56,9 @@ final class AppCoordinator: Coordinator, SplashTransitioner {
     
     func prepareForMainTab() {
         mainTabCoordinator.prepare()
+        #if DEBUG
+        log.debug("prepareForMainTabInAppCoordinator")
+        #endif
     }
     
     func transition() {

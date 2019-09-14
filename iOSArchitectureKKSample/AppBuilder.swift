@@ -46,6 +46,8 @@ final class AppBuilder {
         let coordinator: AppCoordinator = .init(window: window,
                                                 rootVC: vc,
                                                 mainTabCoordinator: mainTabCoordinator)
+        useCase.inject(transitioner: coordinator)
+        vc.prepareForMainTab()
         
         return  coordinator
     }

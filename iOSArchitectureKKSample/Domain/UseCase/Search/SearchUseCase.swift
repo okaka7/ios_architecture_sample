@@ -22,6 +22,8 @@ protocol SearchUsecaseOutputPort: PhotoTransitionable {
     func showSearchResult(photos: [PhotoObject])
 }
 
+
+
 final class SearchUseCase: SearchUseCaseInputPort {
     
     let repository: PhotoRepository

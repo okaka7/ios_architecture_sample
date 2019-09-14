@@ -71,15 +71,22 @@ class SearchViewController: UIViewController, TransitionPreparationNotifiCation 
         }).disposed(by: disposeBag)
     }
 
-    func fetchPopluarPhoto() {
-        viewModel.inputs.fetchPopularPhotos()
+    func fetchPopluarPhoto(page: Int = 1) {
+        #if DEBUG
+        log.debug("homeVC.fetchPopularPhotos")
+        #endif
+        viewModel.inputs.fetchPopularPhotos(page: page)
     }
     
     private func setupSubscribe() {
         self.viewModel
             .outputs
             .popluarPhotosObservable
-            .subscribe(onSuccess: {_ in }).disposed(by: disposeBag)
+            .subscribe(onSuccess: {_ in
+                #if DEBUG
+                log.debug("getPopularPhotos")
+                #endif
+            }).disposed(by: disposeBag)
     }
 
 }

@@ -50,12 +50,19 @@ class AccountViewController: UIViewController, TransitionPreparationNotifiCation
     }
     
     func fetchAccount() {
+        #if DEBUG
+        log.debug("homeVC.fetchAccount")
+        #endif
         self.viewModel.inputs.getAccount()
     }
     
     private func setupSubscribe() {
         self.viewModel
             .outputs
-            .accountObservable.subscribe(onSuccess: {_ in}).disposed(by: disposeBag)
+            .accountObservable.subscribe(onSuccess: {_ in
+                #if DEBUG
+                log.debug("getAccount")
+                #endif
+            }).disposed(by: disposeBag)
     }
 }

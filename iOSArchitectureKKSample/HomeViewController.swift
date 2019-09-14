@@ -64,12 +64,18 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
     private func setupSubscrible() {
         self.viewModel.outputs
             .topPhotosObservable
-            .subscribe(onSuccess: {_ in })
+            .subscribe(onSuccess: {_ in
+               
+            })
             .disposed(by: disposeBag)
     }
 
-    func fetchTopPhotos() {
-        viewModel.inputs.fetchTopPhotos()
+    func fetchTopPhotos(page: Int = 1) {
+        #if DEBUG
+        log.debug("getTopPhotos")
+        #endif
+        
+        viewModel.inputs.fetchTopPhotos(page: page, photos: PhotoUIList())
     }
 
 }

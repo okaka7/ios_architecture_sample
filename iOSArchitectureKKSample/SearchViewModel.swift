@@ -28,9 +28,7 @@ protocol SearchViewModelInputs: class {
     func searchPhotos(query: String)
 }
 
-extension SearchViewModelInputs {
-    func fetchPopularPhotos(page: Int = 1) { }
-}
+
 
 protocol SearchViewModelOutputs: class {
     var popluarPhotosObservable: Single<PhotoUIList?> { get }
@@ -56,6 +54,7 @@ final class SearchViewModel: SearchViewModelType, SearchViewModelInputs, SearchV
     }
     
     func fetchPopularPhotos(page: Int) {
+        
         useCase.fetchPopularPhotos(page: page)
             .retry(1)
             .map(PhotoUIList.init(photoList: ))
