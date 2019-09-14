@@ -16,6 +16,11 @@ class AccountViewController: UIViewController, TransitionPreparationNotifiCation
             .outputs
             .accountObservable
             .map({ _ in () })
+            .do(onSuccess: {_ in
+                #if DEBUG
+                log.debug("preparationObservable📔")
+                #endif
+            })
             .asObservable()
         }()
     
@@ -59,7 +64,8 @@ class AccountViewController: UIViewController, TransitionPreparationNotifiCation
     private func setupSubscribe() {
         self.viewModel
             .outputs
-            .accountObservable.subscribe(onSuccess: {_ in
+            .accountObservable
+            .subscribe(onSuccess: {_ in
                 #if DEBUG
                 log.debug("getAccount")
                 #endif

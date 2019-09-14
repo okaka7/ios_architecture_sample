@@ -17,6 +17,11 @@ class SearchViewController: UIViewController, TransitionPreparationNotifiCation 
             .outputs
             .popluarPhotosObservable
             .map({ _ in () })
+            .do(onSuccess: {_ in
+                #if DEBUG
+                log.debug("preparationObservable📔")
+                #endif
+            })
             .asObservable()
     }()
 

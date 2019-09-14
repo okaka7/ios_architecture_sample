@@ -17,6 +17,11 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
             .outputs
             .topPhotosObservable
             .map({ _ in () })
+            .do(onSuccess: {_ in
+                #if DEBUG
+                log.debug("preparationObservable📔")
+                #endif
+            })
             .asObservable()
     }()
 

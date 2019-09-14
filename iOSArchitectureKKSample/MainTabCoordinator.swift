@@ -9,7 +9,6 @@
 import UIKit
 import RxSwift
 
-
 final class MainTabCoordinator: Coordinator, PreparationProtocol {
     let mainTabBarController: UITabBarController = {
         let tab = UITabBarController()
@@ -31,8 +30,8 @@ final class MainTabCoordinator: Coordinator, PreparationProtocol {
     }
     
     func prepare() {
-        let preparations: [PreparationProtocol] = [//self.homeCoordinator,
-                                                   //self.searchCoordinator,
+        let preparations: [PreparationProtocol] = [self.homeCoordinator,
+                                                   self.searchCoordinator,
                                                    self.accountCoordinator]
         preparations.forEach {
             $0.prepare()

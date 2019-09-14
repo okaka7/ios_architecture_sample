@@ -51,8 +51,15 @@ final class AccountViewModel: AccountViewModelType, AccountViewModelInputs, Acco
         self.useCase
             .getAccount()
             .map(AccountUIEntity.init(account:))
-            .subscribe(onSuccess: {_ in},
-                       onError: {_ in })
+            .subscribe(onSuccess: { [weak self] account in
+                                    self?.accountRelay.accept(account)
+                                },
+                       onError: { [weak self] error in
+                        #if DEBUG
+                        log.debug(error)
+                        #endif
+                        self?.accountRelay.accept(nil)
+            })
             .disposed(by: disposeBag)
     }
 }
