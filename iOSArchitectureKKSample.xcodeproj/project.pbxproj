@@ -38,6 +38,7 @@
 		E56D4017232B98C6005D5A3D /* PhotoUIEntityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D4016232B98C6005D5A3D /* PhotoUIEntityList.swift */; };
 		E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68322B28B8400AE6940 /* Coordinator.swift */; };
 		E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68522B28BC400AE6940 /* AppCoordinator.swift */; };
+		E570C076232CC9940059C5DF /* SectionOfTopImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E570C075232CC9940059C5DF /* SectionOfTopImages.swift */; };
 		E570C2E82317D9C700F12208 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = E570C2E72317D9C700F12208 /* Pagination.swift */; };
 		E5713F21230B0FF20033AF21 /* UserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5713F20230B0FF20033AF21 /* UserProtocol.swift */; };
 		E571E6F822B8325B0032A748 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */; };
@@ -210,6 +211,7 @@
 		E56D4016232B98C6005D5A3D /* PhotoUIEntityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUIEntityList.swift; sourceTree = "<group>"; };
 		E56FD68322B28B8400AE6940 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E56FD68522B28BC400AE6940 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		E570C075232CC9940059C5DF /* SectionOfTopImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfTopImages.swift; sourceTree = "<group>"; };
 		E570C2E72317D9C700F12208 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		E5713F20230B0FF20033AF21 /* UserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProtocol.swift; sourceTree = "<group>"; };
 		E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
@@ -420,6 +422,14 @@
 			name = Coordinator;
 			sourceTree = "<group>";
 		};
+		E570C072232CC94E0059C5DF /* RxDataSourceModel */ = {
+			isa = PBXGroup;
+			children = (
+				E570C075232CC9940059C5DF /* SectionOfTopImages.swift */,
+			);
+			path = RxDataSourceModel;
+			sourceTree = "<group>";
+		};
 		E571E6F422B8324B0032A748 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,6 +527,7 @@
 				E5B8A23F2309EB6000AE29E8 /* CollectionUIValueObject.swift */,
 				E5B8A2432309EC7200AE29E8 /* UserUIValueObject.swift */,
 				E5733066232BB7DB003B8AFA /* AccountUIEntity.swift */,
+				E570C072232CC94E0059C5DF /* RxDataSourceModel */,
 			);
 			name = Model;
 			path = ..;
@@ -1317,6 +1328,7 @@
 				E55E19C92309ACAB007C1C57 /* AuthorizableURL.swift in Sources */,
 				E53F1DFA22C0B60300F81CAA /* HomeViewController.swift in Sources */,
 				E53F1DFC22C0B63000F81CAA /* SearchViewController.swift in Sources */,
+				E570C076232CC9940059C5DF /* SectionOfTopImages.swift in Sources */,
 				E57915D422F86676009BCE95 /* UnsplashUserTarget.swift in Sources */,
 				E5B8A2402309EB6000AE29E8 /* CollectionUIValueObject.swift in Sources */,
 				E5521F5222F1E30100D38F02 /* UnsplashPhotosTarget.swift in Sources */,

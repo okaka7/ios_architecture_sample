@@ -64,7 +64,7 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
         useCase.fetchTopPhotos(page: page)
             .retry(1)
             .map(PhotoUIList.init(photoList: ))
-            .map { $0.warpingPhotoFilter }
+            .map { $0.warpingPhotoSizeFilter }
             .subscribe(onSuccess: { [weak self] photoList in
                     let list: PhotoUIList = photos + photoList
                     if list.count >= 20 {
