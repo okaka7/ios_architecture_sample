@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 struct UnsplashTokenTarget: UnsplashOauthTargetType {
-    typealias Response = UnsplashTokenResposneValueObject
+    typealias Response = UnsplashTokenValueObject
     
     private struct Parameter: Encodable {
         let clientID: String

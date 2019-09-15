@@ -26,7 +26,7 @@
 		E54151B6230FFFB40036BA0F /* UnsplashTokenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54151B5230FFFB40036BA0F /* UnsplashTokenEntity.swift */; };
 		E54151B823103BFF0036BA0F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54151B723103BFF0036BA0F /* PhotoCollectionViewCell.swift */; };
 		E54151BF231049AA0036BA0F /* WarpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54151BE231049AA0036BA0F /* WarpView.swift */; };
-		E5521F4C22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5521F4B22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift */; };
+		E5521F4C22F1C54D00D38F02 /* UnsplashTokenValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5521F4B22F1C54D00D38F02 /* UnsplashTokenValueObject.swift */; };
 		E5521F4E22F1CC6F00D38F02 /* UnsplashOauthAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5521F4D22F1CC6F00D38F02 /* UnsplashOauthAPIProvider.swift */; };
 		E5521F5022F1E18A00D38F02 /* UnsplashPhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5521F4F22F1E18A00D38F02 /* UnsplashPhotoEntity.swift */; };
 		E5521F5222F1E30100D38F02 /* UnsplashPhotosTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5521F5122F1E30100D38F02 /* UnsplashPhotosTarget.swift */; };
@@ -54,9 +54,7 @@
 		E574B8702327C5110076C078 /* DataStoreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B86F2327C5110076C078 /* DataStoreKey.swift */; };
 		E574B8722327C5220076C078 /* DataStore+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B8712327C5210076C078 /* DataStore+Rx.swift */; };
 		E574B8752327C99E0076C078 /* KeyChainCache+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B8742327C99E0076C078 /* KeyChainCache+Key.swift */; };
-		E574B8772327EA250076C078 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B8762327EA250076C078 /* LogIn.swift */; };
 		E574B8792327EE760076C078 /* AccountGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B8782327EE760076C078 /* AccountGateway.swift */; };
-		E574B87B23280B780076C078 /* PhotoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B87A23280B780076C078 /* PhotoList.swift */; };
 		E574CF5922C642DD009CF8CD /* SwiftyBeaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574CF5822C642DD009CF8CD /* SwiftyBeaver.swift */; };
 		E574CF6B22C64D5B009CF8CD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E574CF6D22C64D5B009CF8CD /* Localizable.strings */; };
 		E576E31B2313DAC6007446B8 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E576E31A2313DAC6007446B8 /* SplashViewModel.swift */; };
@@ -198,7 +196,7 @@
 		E54151B723103BFF0036BA0F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		E54151BE231049AA0036BA0F /* WarpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarpView.swift; sourceTree = "<group>"; };
 		E545EC3CCE7B0B70E34174AC /* Pods_iOSArchitectureKKSampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSArchitectureKKSampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5521F4B22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashTokenResposneValueObject.swift; sourceTree = "<group>"; };
+		E5521F4B22F1C54D00D38F02 /* UnsplashTokenValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashTokenValueObject.swift; sourceTree = "<group>"; };
 		E5521F4D22F1CC6F00D38F02 /* UnsplashOauthAPIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashOauthAPIProvider.swift; sourceTree = "<group>"; };
 		E5521F4F22F1E18A00D38F02 /* UnsplashPhotoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhotoEntity.swift; sourceTree = "<group>"; };
 		E5521F5122F1E30100D38F02 /* UnsplashPhotosTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhotosTarget.swift; sourceTree = "<group>"; };
@@ -224,9 +222,7 @@
 		E574B86F2327C5110076C078 /* DataStoreKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStoreKey.swift; sourceTree = "<group>"; };
 		E574B8712327C5210076C078 /* DataStore+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataStore+Rx.swift"; sourceTree = "<group>"; };
 		E574B8742327C99E0076C078 /* KeyChainCache+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyChainCache+Key.swift"; sourceTree = "<group>"; };
-		E574B8762327EA250076C078 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		E574B8782327EE760076C078 /* AccountGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountGateway.swift; sourceTree = "<group>"; };
-		E574B87A23280B780076C078 /* PhotoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoList.swift; sourceTree = "<group>"; };
 		E574CF5822C642DD009CF8CD /* SwiftyBeaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyBeaver.swift; sourceTree = "<group>"; };
 		E574CF6C22C64D5B009CF8CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E576E31A2313DAC6007446B8 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
@@ -531,8 +527,6 @@
 		E57826EF22D8E21C002499A9 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				E574B8762327EA250076C078 /* LogIn.swift */,
-				E574B87A23280B780076C078 /* PhotoList.swift */,
 				E577379E22FECA8200559D37 /* Unsplash */,
 			);
 			name = Entity;
@@ -698,7 +692,7 @@
 		E57950B5230858F100000FD8 /* API Token */ = {
 			isa = PBXGroup;
 			children = (
-				E5521F4B22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift */,
+				E5521F4B22F1C54D00D38F02 /* UnsplashTokenValueObject.swift */,
 				E54151B5230FFFB40036BA0F /* UnsplashTokenEntity.swift */,
 			);
 			name = "API Token";
@@ -1365,7 +1359,7 @@
 				E570C2E82317D9C700F12208 /* Pagination.swift in Sources */,
 				E57BD50322C4B57900FE44D4 /* ColourFavoritesCoordinator.swift in Sources */,
 				E5B8A23C2309E4A600AE29E8 /* AuthenticationPresenter.swift in Sources */,
-				E5521F4C22F1C54D00D38F02 /* UnsplashTokenResposneValueObject.swift in Sources */,
+				E5521F4C22F1C54D00D38F02 /* UnsplashTokenValueObject.swift in Sources */,
 				E54151B6230FFFB40036BA0F /* UnsplashTokenEntity.swift in Sources */,
 				E57BD50522C4B58B00FE44D4 /* AccountVCCoordinator.swift in Sources */,
 				E58A2CB623126185008C66BA /* SplashUseCase.swift in Sources */,
@@ -1389,10 +1383,8 @@
 				E5C5646D22F18EDC00DD9401 /* UnsplashUserEntity.swift in Sources */,
 				E57737A022FECEE400559D37 /* UnsplashErrorValueObject.swift in Sources */,
 				E592E73222FF026300AECEC4 /* UnsplashCollectionPhotos.swift in Sources */,
-				E574B8772327EA250076C078 /* LogIn.swift in Sources */,
 				E5C5647922F1BB8F00DD9401 /* UnsplashAPI.swift in Sources */,
 				E58A2CB8231265CA008C66BA /* PhotosGateway.swift in Sources */,
-				E574B87B23280B780076C078 /* PhotoList.swift in Sources */,
 				E57C82F0230A8FD000F8F15C /* PhotoLikeable.swift in Sources */,
 				E592E72A22FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift in Sources */,
 				E5713F21230B0FF20033AF21 /* UserProtocol.swift in Sources */,

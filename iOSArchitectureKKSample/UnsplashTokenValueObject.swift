@@ -11,7 +11,7 @@ import Foundation
 
 protocol TokenValueObject {}
 
-struct UnsplashTokenResposneValueObject: Codable, TokenValueObject {
+struct UnsplashTokenValueObject: Codable, TokenValueObject {
     let accessToken, tokenType, scope: String
     let createdAt: Int
 
@@ -25,9 +25,9 @@ struct UnsplashTokenResposneValueObject: Codable, TokenValueObject {
 
 // MARK: Convenience initializers
 
-extension UnsplashTokenResposneValueObject {
+extension UnsplashTokenValueObject {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(UnsplashTokenResposneValueObject.self, from: data) else { return nil }
+        guard let me = try? JSONDecoder().decode(UnsplashTokenValueObject.self, from: data) else { return nil }
         self = me
     }
 

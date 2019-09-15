@@ -11,7 +11,7 @@ import Foundation
 struct UnsplashTokenEntity: Codable {
     let rawValue: String
 
-    init (_ value: UnsplashTokenResposneValueObject) {
+    init (_ value: UnsplashTokenValueObject) {
         self.rawValue = value.accessToken
     }
     
