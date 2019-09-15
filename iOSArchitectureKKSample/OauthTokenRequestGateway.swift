@@ -21,7 +21,7 @@ extension CodeGettable {
 
 protocol TokenRequestEmitter: class {
     func tokenRequest(with urlComponents: URLComponents,
-                      completion:( (UnsplashTokenValueObject) -> Void)?)
+                      completion:( (UnsplashTokenEntity) -> Void)?)
 }
 
 protocol TokenRequestEmitAcceptable: class, CodeGettable {

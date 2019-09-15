@@ -9,7 +9,7 @@
 import DataCache
 
 extension CacheKeys {
-    static var token: CacheKey<UnsplashTokenValueObject> {
+    static var token: CacheKey<UnsplashTokenEntity> {
         return CacheKey("token")
     }
     
@@ -18,5 +18,5 @@ extension CacheKeys {
     }
 }
 
-extension UnsplashTokenValueObject: CacheValue {}
+extension UnsplashTokenEntity: CacheValue {}
 extension LogIn: CacheValue {}

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UnsplashTokenValueObject: Codable {
+struct UnsplashTokenEntity: Codable {
     let rawValue: String
 
     init (_ value: UnsplashTokenResposneValueObject) {

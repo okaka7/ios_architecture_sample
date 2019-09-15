@@ -17,7 +17,7 @@ struct OauthTokenManageGateWay: APITokenRepository {
         self.keychainStore = keychainStorable
     }
     
-    func saveToken(token: UnsplashTokenValueObject) {
+    func saveToken(token: UnsplashTokenEntity) {
         do {
             try self.keychainStore.save(.token, value: token)
         } catch {
@@ -26,8 +26,8 @@ struct OauthTokenManageGateWay: APITokenRepository {
         
     }
     
-    func fetchToken() -> UnsplashTokenValueObject? {
-        let element: UnsplashTokenValueObject?
+    func fetchToken() -> UnsplashTokenEntity? {
+        let element: UnsplashTokenEntity?
         do {
             element = try self.keychainStore.fetch(.token)
             return element
