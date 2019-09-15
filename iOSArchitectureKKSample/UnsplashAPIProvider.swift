@@ -12,11 +12,8 @@ import RxSwift
 import RxMoya
 
 final class UnsplashAPIProvider {
-    
-    
     private lazy var provider: MoyaProvider<MultiTarget> = {
         let plugins: [Moya.PluginType] = {
-            
             //  Note: this plugin is for fetching Pagination links in photo items response header.
             let fetchPaginationLinksPlugin: NetworkActivityPlugin = .init(networkActivityClosure: {
                 (change: NetworkActivityChangeType, target: TargetType) in

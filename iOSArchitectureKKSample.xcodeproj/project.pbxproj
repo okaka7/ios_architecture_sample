@@ -365,10 +365,8 @@
 		E516490722CD0E6200D3D2D7 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				E58AC7EF232E3A4800F6CC5C /* Protocol */,
 				E57950B12308536A00000FD8 /* Client */,
-				E5C5647722F1BB6000DD9401 /* Target */,
-				E5E53B78231D69EB00831DF8 /* PlugIn */,
+				E5C5647722F1BB6000DD9401 /* Endpoint */,
 			);
 			name = Web;
 			sourceTree = "<group>";
@@ -557,7 +555,7 @@
 				E57950BC23085D8300000FD8 /* Gateway */,
 				E516490722CD0E6200D3D2D7 /* Web */,
 				E57826EF22D8E21C002499A9 /* Entity */,
-				E574B8742327C99E0076C078 /* KeyChainCache+Key.swift */,
+				E58AC7F2232E475B00F6CC5C /* Data Store */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -692,6 +690,7 @@
 		E57950B12308536A00000FD8 /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				E58AC7EF232E3A4800F6CC5C /* Protocol */,
 				E5521F4D22F1CC6F00D38F02 /* UnsplashOauthAPIProvider.swift */,
 				E57915CD22F85AD4009BCE95 /* UnsplashAPIProvider.swift */,
 			);
@@ -764,6 +763,34 @@
 				E55E19BE2308E066007C1C57 /* UnsplashAPIProtocol.swift */,
 			);
 			name = Protocol;
+			sourceTree = "<group>";
+		};
+		E58AC7F0232E45C500F6CC5C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E5C5647422F1BAB100DD9401 /* UnsplashOauthAPI.swift */,
+				E5C5647822F1BB8F00DD9401 /* UnsplashAPI.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		E58AC7F1232E472E00F6CC5C /* Path */ = {
+			isa = PBXGroup;
+			children = (
+				E5C5647622F1BADA00DD9401 /* APIToken */,
+				E57950AA2307F95200000FD8 /* Photo */,
+				E57950AC2307F96F00000FD8 /* User&Account */,
+				E57950AD2307F9B400000FD8 /* Collection */,
+			);
+			name = Path;
+			sourceTree = "<group>";
+		};
+		E58AC7F2232E475B00F6CC5C /* Data Store */ = {
+			isa = PBXGroup;
+			children = (
+				E574B8742327C99E0076C078 /* KeyChainCache+Key.swift */,
+			);
+			name = "Data Store";
 			sourceTree = "<group>";
 		};
 		E592296F22AE65E8003EC30C = {
@@ -866,33 +893,22 @@
 			path = PhotoDetail;
 			sourceTree = "<group>";
 		};
-		E5C5647622F1BADA00DD9401 /* OauthEndpoint */ = {
+		E5C5647622F1BADA00DD9401 /* APIToken */ = {
 			isa = PBXGroup;
 			children = (
 				E5C5647B22F1BC6600DD9401 /* UnsplashTokenTarget.swift */,
 			);
-			name = OauthEndpoint;
+			name = APIToken;
 			sourceTree = "<group>";
 		};
-		E5C5647722F1BB6000DD9401 /* Target */ = {
+		E5C5647722F1BB6000DD9401 /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
-				E5C5647422F1BAB100DD9401 /* UnsplashOauthAPI.swift */,
-				E5C5647822F1BB8F00DD9401 /* UnsplashAPI.swift */,
-				E5C5647622F1BADA00DD9401 /* OauthEndpoint */,
-				E5C5647A22F1BC4B00DD9401 /* EndPoint */,
+				E58AC7F0232E45C500F6CC5C /* Base */,
+				E58AC7F1232E472E00F6CC5C /* Path */,
+				E5E53B78231D69EB00831DF8 /* PlugIn */,
 			);
-			name = Target;
-			sourceTree = "<group>";
-		};
-		E5C5647A22F1BC4B00DD9401 /* EndPoint */ = {
-			isa = PBXGroup;
-			children = (
-				E57950AA2307F95200000FD8 /* Photo */,
-				E57950AC2307F96F00000FD8 /* User&Account */,
-				E57950AD2307F9B400000FD8 /* Collection */,
-			);
-			name = EndPoint;
+			name = Endpoint;
 			sourceTree = "<group>";
 		};
 		E5E53B78231D69EB00831DF8 /* PlugIn */ = {
