@@ -23,7 +23,6 @@ struct OauthTokenManageGateWay: APITokenRepository {
         } catch {
             return
         }
-        
     }
     
     func fetchToken() -> UnsplashTokenEntity? {
