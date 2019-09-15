@@ -20,7 +20,6 @@ extension CodeGettable {
 }
 
 protocol TokenRequestEmitter: class {
-    var presenter: TokenRequestEmitAcceptable { get set }
     func tokenRequest(with urlComponents: URLComponents,
                       completion:( (UnsplashTokenValueObject) -> Void)?)
 }
