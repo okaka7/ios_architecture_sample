@@ -34,7 +34,7 @@
 		E55E19C1230991BC007C1C57 /* OauthTokenManageGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C0230991BC007C1C57 /* OauthTokenManageGateway.swift */; };
 		E55E19C72309A5F1007C1C57 /* AppBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C62309A5F1007C1C57 /* AppBuilder.swift */; };
 		E55E19C92309ACAB007C1C57 /* AuthorizableURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19C82309ACAB007C1C57 /* AuthorizableURL.swift */; };
-		E55E19CB2309B149007C1C57 /* TokenRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19CA2309B149007C1C57 /* TokenRequestClient.swift */; };
+		E55E19CB2309B149007C1C57 /* TokenRequestAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19CA2309B149007C1C57 /* TokenRequestAPIProtocol.swift */; };
 		E56D4017232B98C6005D5A3D /* PhotoUIEntityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D4016232B98C6005D5A3D /* PhotoUIEntityList.swift */; };
 		E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68322B28B8400AE6940 /* Coordinator.swift */; };
 		E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68522B28BC400AE6940 /* AppCoordinator.swift */; };
@@ -207,7 +207,7 @@
 		E55E19C0230991BC007C1C57 /* OauthTokenManageGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthTokenManageGateway.swift; sourceTree = "<group>"; };
 		E55E19C62309A5F1007C1C57 /* AppBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBuilder.swift; sourceTree = "<group>"; };
 		E55E19C82309ACAB007C1C57 /* AuthorizableURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizableURL.swift; sourceTree = "<group>"; };
-		E55E19CA2309B149007C1C57 /* TokenRequestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequestClient.swift; sourceTree = "<group>"; };
+		E55E19CA2309B149007C1C57 /* TokenRequestAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequestAPIProtocol.swift; sourceTree = "<group>"; };
 		E56D4016232B98C6005D5A3D /* PhotoUIEntityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUIEntityList.swift; sourceTree = "<group>"; };
 		E56FD68322B28B8400AE6940 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E56FD68522B28BC400AE6940 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -365,9 +365,8 @@
 		E516490722CD0E6200D3D2D7 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				E55E19CA2309B149007C1C57 /* TokenRequestClient.swift */,
-				E55E19BE2308E066007C1C57 /* UnsplashAPIProtocol.swift */,
-				E57950B12308536A00000FD8 /* Provider */,
+				E58AC7EF232E3A4800F6CC5C /* Protocol */,
+				E57950B12308536A00000FD8 /* Client */,
 				E5C5647722F1BB6000DD9401 /* Target */,
 				E5E53B78231D69EB00831DF8 /* PlugIn */,
 			);
@@ -690,13 +689,13 @@
 			name = Error;
 			sourceTree = "<group>";
 		};
-		E57950B12308536A00000FD8 /* Provider */ = {
+		E57950B12308536A00000FD8 /* Client */ = {
 			isa = PBXGroup;
 			children = (
 				E5521F4D22F1CC6F00D38F02 /* UnsplashOauthAPIProvider.swift */,
 				E57915CD22F85AD4009BCE95 /* UnsplashAPIProvider.swift */,
 			);
-			name = Provider;
+			name = Client;
 			sourceTree = "<group>";
 		};
 		E57950B5230858F100000FD8 /* API Token */ = {
@@ -756,6 +755,15 @@
 				E5713F20230B0FF20033AF21 /* UserProtocol.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		E58AC7EF232E3A4800F6CC5C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E55E19CA2309B149007C1C57 /* TokenRequestAPIProtocol.swift */,
+				E55E19BE2308E066007C1C57 /* UnsplashAPIProtocol.swift */,
+			);
+			name = Protocol;
 			sourceTree = "<group>";
 		};
 		E592296F22AE65E8003EC30C = {
@@ -1309,7 +1317,7 @@
 				E57915DE22F8A3B2009BCE95 /* UnsplashLikePhotoTarget.swift in Sources */,
 				E57C82F6230A9F2700F8F15C /* PhotoDetailUseCase.swift in Sources */,
 				E592E73622FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift in Sources */,
-				E55E19CB2309B149007C1C57 /* TokenRequestClient.swift in Sources */,
+				E55E19CB2309B149007C1C57 /* TokenRequestAPIProtocol.swift in Sources */,
 				E57C82F2230A90DA00F8F15C /* CollectionEditable.swift in Sources */,
 				E592297E22AE65E8003EC30C /* SplashViewController.swift in Sources */,
 				E57C82EB230A85CF00F8F15C /* CollectionUseCase.swift in Sources */,

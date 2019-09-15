@@ -33,7 +33,7 @@ final class UnsplashAPIProvider {
             let accessTokenPlugin: LightAccessTokenPlugin = .init()
             
             var plugins: [Moya.PluginType] = [fetchPaginationLinksPlugin,
-                           accessTokenPlugin]
+                                              accessTokenPlugin]
             #if DEBUG
             let loggerPlugin: NetworkLoggerPlugin = .init(verbose: true)
             plugins.append(loggerPlugin)

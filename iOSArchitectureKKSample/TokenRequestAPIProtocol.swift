@@ -9,7 +9,7 @@
 import Foundation
 import Result
 
-protocol TokenRequestClient {
+protocol TokenRequestProtocol {
     func request(code: String,
                  onSuccess: (TokenValueObject) -> Void,
                  onError: (Swift.Error) -> Void)
