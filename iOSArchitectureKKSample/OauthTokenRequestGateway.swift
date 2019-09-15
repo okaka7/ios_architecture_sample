@@ -40,7 +40,7 @@ extension TokenRequestTransmitter {
 
 struct OauthTokenRequestGateway: TokenRequestReposiotry {
     
-    private let tokenRequestClient: TokenRequestClient
+    private let tokenRequestClient: TokenRequestProtocol
     
     func requestToken(code: String) {
         tokenRequestClient.request(code: code,
@@ -56,7 +56,7 @@ struct OauthTokenRequestGateway: TokenRequestReposiotry {
                                     })
     }
     
-    init(tokenRequestClient: TokenRequestClient) {
+    init(tokenRequestClient: TokenRequestProtocol) {
         self.tokenRequestClient = tokenRequestClient
     }
 }

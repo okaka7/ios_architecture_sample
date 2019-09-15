@@ -10,9 +10,8 @@ import Foundation
 import RxSwift
 
 typealias UnsplashClient = UnsplashPhotoClient & UnsplashCollectionClient & UnsplashUserAccountClient
-
+// Note: Protocol concerning
 protocol UnsplashPhotoClient {
-    
     func requestPhoto(id: String) -> Single<UnsplashPhotoTarget.Response>
     
     func requestPhotos(page: Int,
@@ -31,6 +30,7 @@ protocol UnsplashPhotoClient {
                              orientation: PhotoOrientation)
                                 -> Single<UnsplashSearchPhotosTarget.Response>
 }
+
 protocol UnsplashCollectionClient {
     func requestCollection(id: String) -> Single<UnsplashCollectionTarget.Response>
     
