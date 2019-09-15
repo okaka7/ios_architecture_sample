@@ -46,6 +46,8 @@ final class AppBuilder {
         let coordinator: AppCoordinator = .init(window: window,
                                                 rootVC: vc,
                                                 mainTabCoordinator: mainTabCoordinator)
+        // Note: you should call vc.prepareForMainTab() after useCase.inject(transitioner: coordinator), otherwise it will crash because transitioner property of "vc" is nil
+        // Note: useCase.inject(transitioner: coordinator)の後にvc.prepareForMainTab()を呼び出す必要あり。そうでなければvcのプロパティtransitionerがnilのためクラッシュします。
         useCase.inject(transitioner: coordinator)
         vc.prepareForMainTab()
         
