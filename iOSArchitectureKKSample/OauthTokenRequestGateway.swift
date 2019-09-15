@@ -19,22 +19,22 @@ extension CodeGettable {
     }
 }
 
-protocol TokenRequestEmitter: class {
+protocol TokenRequestable: class {
     func tokenRequest(with urlComponents: URLComponents,
                       completion:( (UnsplashTokenEntity) -> Void)?)
 }
 
-protocol TokenRequestEmitAcceptable: class, CodeGettable {
-    var tokenRequestUseCase: TokenRequestUseCaseInputPort { get set }
+protocol TokenRequestTransmitter: class, CodeGettable {
+    var useCase: TokenRequestUseCaseInputPort { get set }
     func tokenRequest(with urlComponents: URLComponents)
 }
 
-extension TokenRequestEmitAcceptable {
+extension TokenRequestTransmitter {
     func tokenRequest(with urlComponents: URLComponents) {
         guard let code = self.getCode(from: urlComponents) else {
             return
         }
-        tokenRequestUseCase.requestToken(code: code)
+        useCase.requestToken(code: code)
     }
 }
 

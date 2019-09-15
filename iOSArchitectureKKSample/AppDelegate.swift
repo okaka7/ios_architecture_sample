@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         if components.path == R.string.localizable.unsplashOauthCallBackPath(),
-            let tokenRequestEmitter = self.topViewController as? TokenRequestEmitter {
+            let tokenRequestEmitter = self.topViewController as? TokenRequestable {
             tokenRequestEmitter.tokenRequest(with: components, completion: nil)
         }
 
