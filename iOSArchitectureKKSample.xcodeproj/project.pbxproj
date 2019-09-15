@@ -16,7 +16,7 @@
 		E516490222CCDC6500D3D2D7 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490122CCDC6500D3D2D7 /* RxMoya.framework */; };
 		E516490422CCDC9B00D3D2D7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490322CCDC9B00D3D2D7 /* Alamofire.framework */; };
 		E516490622CCDCFE00D3D2D7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E516490522CCDCFE00D3D2D7 /* Result.framework */; };
-		E5291A9F22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift */; };
+		E5291A9F22D9E4FC001938BC /* Array<URLQueryItem>+getQueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>+getQueryItem.swift */; };
 		E52B09AA232AAD7F002B7255 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B09A9232AAD7E002B7255 /* Differentiator.framework */; };
 		E52B09AC232AAD90002B7255 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B09AB232AAD90002B7255 /* RxDataSources.framework */; };
 		E53F1DFA22C0B60300F81CAA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F1DF922C0B60300F81CAA /* HomeViewController.swift */; };
@@ -188,7 +188,7 @@
 		E516490122CCDC6500D3D2D7 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
 		E516490322CCDC9B00D3D2D7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		E516490522CCDCFE00D3D2D7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array<URLQueryItem>.queryItem.swift"; sourceTree = "<group>"; };
+		E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>+getQueryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array<URLQueryItem>+getQueryItem.swift"; sourceTree = "<group>"; };
 		E52B09A9232AAD7E002B7255 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		E52B09AB232AAD90002B7255 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		E53F1DF922C0B60300F81CAA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -506,7 +506,7 @@
 				E5B8A2312309C81100AE29E8 /* UIViewController.Extension.swift */,
 				E57826DB22D8D070002499A9 /* UIApplication+openURL.swift */,
 				E57826DF22D8DA01002499A9 /* NSObject+ClassName.swift */,
-				E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift */,
+				E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>+getQueryItem.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -1376,7 +1376,7 @@
 				E57C82F0230A8FD000F8F15C /* PhotoLikeable.swift in Sources */,
 				E592E72A22FEFBA900AECEC4 /* UnsplashPhotoDownloadURLValueObject.swift in Sources */,
 				E5713F21230B0FF20033AF21 /* UserProtocol.swift in Sources */,
-				E5291A9F22D9E4FC001938BC /* Array<URLQueryItem>.queryItem.swift in Sources */,
+				E5291A9F22D9E4FC001938BC /* Array<URLQueryItem>+getQueryItem.swift in Sources */,
 				E53F1E0022C0B6BB00F81CAA /* AccountViewController.swift in Sources */,
 				E574CF5922C642DD009CF8CD /* SwiftyBeaver.swift in Sources */,
 				E579509B2307CB1E00000FD8 /* HomeUseCase.swift in Sources */,

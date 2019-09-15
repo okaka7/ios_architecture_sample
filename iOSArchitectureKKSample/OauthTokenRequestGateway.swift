@@ -15,7 +15,7 @@ protocol CodeGettable {
 
 extension CodeGettable {
     func getCode(from components: URLComponents) -> String? {
-        return components.queryItems?.getFirstQueryValue("code") as? String
+        return components.queryItems?.getQueryValue("code") as? String
     }
 }
 
