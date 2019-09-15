@@ -465,19 +465,6 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
-		E577379E22FECA8200559D37 /* Unsplash */ = {
-			isa = PBXGroup;
-			children = (
-				E55E19C82309ACAB007C1C57 /* AuthorizableURL.swift */,
-				E570C2E72317D9C700F12208 /* Pagination.swift */,
-				E57950B5230858F100000FD8 /* API Token */,
-				E57950AE2307FA4A00000FD8 /* Account&User */,
-				E57950AF2307FA7100000FD8 /* Photo&Collection */,
-				E57950B02307FAB400000FD8 /* Error */,
-			);
-			name = Unsplash;
-			sourceTree = "<group>";
-		};
 		E57826CD22D8AB06002499A9 /* Repository(IF) */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,7 +514,12 @@
 		E57826EF22D8E21C002499A9 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				E577379E22FECA8200559D37 /* Unsplash */,
+				E55E19C82309ACAB007C1C57 /* AuthorizableURL.swift */,
+				E570C2E72317D9C700F12208 /* Pagination.swift */,
+				E57950B5230858F100000FD8 /* API Token */,
+				E57950AE2307FA4A00000FD8 /* Account&User */,
+				E57950AF2307FA7100000FD8 /* Photo&Collection */,
+				E57950B02307FAB400000FD8 /* Error */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
