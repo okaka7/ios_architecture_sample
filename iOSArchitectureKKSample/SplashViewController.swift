@@ -57,6 +57,57 @@ class SplashViewController: UIViewController {
     }()
     
     
+    lazy private(set) var iconSubLabel: UILabel = {
+        // Note: setting labelText
+        // Note: ラベルテキストを設定
+        let fontSize: CGFloat = 19
+        let mainFont: UIFont = UIFont.init(descriptor: .init(name: "Hoefler Text", size: 0), size: fontSize)
+        let subFont: UIFont = UIFont.init(descriptor: .init(name: "Baskerville", size: 0), size: fontSize)
+        let stringAttributes1: [NSAttributedString.Key : Any] = [
+            .foregroundColor : UIColor.white,
+            .font : subFont
+        ]
+        let string1 = NSAttributedString(string: "~ ", attributes: stringAttributes1)
+        
+        let stringAttributes2: [NSAttributedString.Key : Any] = [
+            .foregroundColor : UIColor.white,
+            .font : mainFont
+        ]
+        let string2 = NSAttributedString(string: "Photo Collection", attributes: stringAttributes2)
+        
+        let stringAttributes3: [NSAttributedString.Key : Any] = [
+            .foregroundColor : UIColor.white,
+            .font : subFont
+        ]
+        let string3 = NSAttributedString(string: " ~", attributes:stringAttributes3)
+        
+        let mutableAttributedString = NSMutableAttributedString()
+        mutableAttributedString.append(string1)
+        mutableAttributedString.append(string2)
+        mutableAttributedString.append(string3)
+        
+        // Note: setting labelSize
+        // Note: ラベルサイズを設定
+        let label: UILabel = .init()
+        label.attributedText  = mutableAttributedString
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(label)
+        label.sizeToFit()
+        let width: CGFloat = label.frame.width
+        let height: CGFloat = label.frame.height
+        
+        label.widthAnchor.constraint(equalToConstant: width).isActive = true
+        label.heightAnchor.constraint(equalToConstant: height).isActive = true
+        label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        
+        let distance: CGFloat = Const.Size.Splash.marginBetweenMainLabelAndSubLabel
+        label.topAnchor.constraint(equalTo: self.iconLabel.bottomAnchor, constant: 5).isActive = true
+        
+        return label
+    }()
+    
+    
     let viewModel: SplashViewModelType
     private let disposeBag: DisposeBag
 
@@ -85,6 +136,7 @@ class SplashViewController: UIViewController {
     private func setupViews() {
         _ = iconImageView
         _ = iconLabel
+        _ = iconSubLabel
         
     }
     
