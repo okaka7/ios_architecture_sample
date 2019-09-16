@@ -15,13 +15,23 @@ extension Notification.Name {
 
 class SplashViewController: UIViewController {
     
-    lazy private var label: UILabel = {
-        let label: UILabel = .init(frame: .zero)
-        label.text = "splash"
-        label.sizeToFit()
-        label.center = self.view.center
-        return label
+    lazy private(set) var iconImageView: UIImageView = {
+        let imageView: UIImageView = .init(image: #imageLiteral(resourceName: "splahIcon"))
+        let size: CGSize = Const.Size.Splash.iconSize
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(imageView)
+        let guide: UILayoutGuide = self.view.safeAreaLayoutGuide
+        imageView.widthAnchor.constraint(equalToConstant: size.width).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: size.height).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        
+        //Note: iconImageViewの中心YがTopから画面の高さ1/3の位置に配置されるように設定
+        //Note: set the iconImageView's centerY on the one-third screen height from the top.
+        let onethirdHeight: CGFloat = (self.view.frame.height - self.view.safeAreaInsets.bottom) / 3
+        imageView.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: onethirdHeight).isActive = true
+        return imageView
     }()
+    
     
     let viewModel: SplashViewModelType
     private let disposeBag: DisposeBag
@@ -31,7 +41,7 @@ class SplashViewController: UIViewController {
         self.viewModel = viewModel
         self.disposeBag = disposeBag
         super.init(nibName: nil, bundle: nil)
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = #colorLiteral(red: 0.08235294118, green: 0.08235294118, blue: 0.08235294118, alpha: 1)
         self.addObserverForTransition()
     }
     
@@ -41,11 +51,16 @@ class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(label)
+        self.setupViews()
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
+    }
+    
+    private func setupViews() {
+        _ = iconImageView
+        
     }
     
     private func addObserverForTransition() {
@@ -58,6 +73,10 @@ class SplashViewController: UIViewController {
     
     func prepareForMainTab() {
         viewModel.inputs.prepareForMainTab()
+    }
+    
+    private func showStars() {
+        
     }
     
     private func transition(_ : Notification) {
