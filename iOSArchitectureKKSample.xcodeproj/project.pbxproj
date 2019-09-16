@@ -45,6 +45,7 @@
 		E5733067232BB7DB003B8AFA /* AccountUIEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5733066232BB7DB003B8AFA /* AccountUIEntity.swift */; };
 		E573FA37232FF0BF002EFE47 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573FA36232FF0BF002EFE47 /* Const.swift */; };
 		E573FA39232FF107002EFE47 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573FA38232FF107002EFE47 /* Size.swift */; };
+		E573FA3B233011DF002EFE47 /* FileURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573FA3A233011DF002EFE47 /* FileURL.swift */; };
 		E574B85D2327C3660076C078 /* DataCache.h in Headers */ = {isa = PBXBuildFile; fileRef = E574B85B2327C3660076C078 /* DataCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E574B8602327C3660076C078 /* DataCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E574B8592327C3660076C078 /* DataCache.framework */; };
 		E574B8612327C3660076C078 /* DataCache.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E574B8592327C3660076C078 /* DataCache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -217,6 +218,7 @@
 		E5733066232BB7DB003B8AFA /* AccountUIEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUIEntity.swift; sourceTree = "<group>"; };
 		E573FA36232FF0BF002EFE47 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E573FA38232FF107002EFE47 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		E573FA3A233011DF002EFE47 /* FileURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileURL.swift; sourceTree = "<group>"; };
 		E574B8592327C3660076C078 /* DataCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E574B85B2327C3660076C078 /* DataCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataCache.h; sourceTree = "<group>"; };
 		E574B85C2327C3660076C078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -506,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				E574CF5822C642DD009CF8CD /* SwiftyBeaver.swift */,
+				E573FA3A233011DF002EFE47 /* FileURL.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -1371,6 +1374,7 @@
 				E57BD50522C4B58B00FE44D4 /* AccountVCCoordinator.swift in Sources */,
 				E58A2CB623126185008C66BA /* SplashUseCase.swift in Sources */,
 				E57C82F8230AA03000F8F15C /* PhotoDownloadable.swift in Sources */,
+				E573FA3B233011DF002EFE47 /* FileURL.swift in Sources */,
 				E57915D822F89743009BCE95 /* UnsplashUserLikesTarget.swift in Sources */,
 				E592E73022FF01E800AECEC4 /* UnsplashCollection.swift in Sources */,
 				E57826DC22D8D070002499A9 /* UIApplication+openURL.swift in Sources */,
