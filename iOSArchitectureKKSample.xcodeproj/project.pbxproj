@@ -443,6 +443,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E573FA35232FF02C002EFE47 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Const;
+			sourceTree = "<group>";
+		};
 		E574B85A2327C3660076C078 /* DataCache */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,6 +547,7 @@
 				E516490722CD0E6200D3D2D7 /* Web */,
 				E57826EF22D8E21C002499A9 /* Entity */,
 				E58AC7F2232E475B00F6CC5C /* Data Store */,
+				E573FA35232FF02C002EFE47 /* Const */,
 			);
 			name = Data;
 			sourceTree = "<group>";

@@ -13,10 +13,10 @@ extension CacheKeys {
         return CacheKey("token")
     }
     
-    static var logIn: CacheKey<LogIn> {
-        return CacheKey("logIn", defaultValue: .noAccessKey)
-    }
+//    static var logIn: CacheKey<LogIn> {
+//        return CacheKey("logIn", defaultValue: .noAccessKey)
+//    }
 }
 
 extension UnsplashTokenEntity: CacheValue {}
-extension LogIn: CacheValue {}
+//extension LogIn: CacheValue {}
