@@ -33,6 +33,30 @@ class SplashViewController: UIViewController {
     }()
     
     
+    lazy private(set) var iconLabel: UILabel = {
+        let label: UILabel = .init()
+        label.text = "light"
+        label.textColor = .white
+        
+        label.textAlignment = .center
+        label.font = UIFont.init(name: "Hoefler Text", size: 60)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(label)
+        label.sizeToFit()
+        let width: CGFloat = label.frame.width
+        let height: CGFloat = label.frame.height
+        
+        label.widthAnchor.constraint(equalToConstant: width).isActive = true
+        label.heightAnchor.constraint(equalToConstant: height).isActive = true
+        label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        let distance: CGFloat = Const.Size.Splash.marginBetweenIconAndMainLabel
+        label.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: distance).isActive = true
+        label.minimumScaleFactor = 0.1
+        label.adjustsFontSizeToFitWidth = true
+        return label
+    }()
+    
+    
     let viewModel: SplashViewModelType
     private let disposeBag: DisposeBag
 
@@ -60,6 +84,7 @@ class SplashViewController: UIViewController {
     
     private func setupViews() {
         _ = iconImageView
+        _ = iconLabel
         
     }
     
@@ -75,9 +100,6 @@ class SplashViewController: UIViewController {
         viewModel.inputs.prepareForMainTab()
     }
     
-    private func showStars() {
-        
-    }
     
     private func transition(_ : Notification) {
         viewModel.inputs.transition()
