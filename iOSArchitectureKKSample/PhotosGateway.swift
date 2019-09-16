@@ -36,4 +36,8 @@ struct PhotoGateWay: PhotoRepository {
                                           perPage: perPage,
                                           orientation: orientation)
     }
+    
+    func downloadPhotos(id: String) -> Single<UnsplashDownloadPhotoTarget.Response> {
+        return client.requestDownloadPhotoURL(id: id)
+    }
 }

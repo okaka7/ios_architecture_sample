@@ -11,6 +11,7 @@ import RxSwift
 
 protocol HomeUseCaseInputPort: PhotoSelectable {
     func fetchTopPhotos(page: Int) -> Single<UnsplashPhotosTarget.Response>
+    func downloadPhoto(id: String) -> Single<UnsplashDownloadPhotoTarget.Response>
     func showImages()
     func switchImage(id: String)
     func selectPhoto(_ photo: PhotoUIEntity)
@@ -31,6 +32,10 @@ final class HomeUseCase: HomeUseCaseInputPort {
     
     func fetchTopPhotos(page: Int = 1) -> Single<UnsplashPhotosTarget.Response> {
         return photoRepository.fetchPhotos(page: page, perPage: 50, orderBy: .popular)
+    }
+    
+    func downloadPhoto(id: String) -> Single<UnsplashDownloadPhotoTarget.Response> {
+        return photoRepository.downloadPhotos(id: id)
     }
     
     func showImages() {

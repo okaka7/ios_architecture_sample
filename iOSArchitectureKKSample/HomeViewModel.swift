@@ -67,7 +67,8 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
             .subscribe(onSuccess: { [weak self] photoList in
                     let list: PhotoUIList = photos + photoList
                     if list.count >= 20 {
-                        self?.topPhotosSubject.accept(list)
+                        self?.mapPhotos(list: PhotoUIList(photoUIList: [PhotoUIEntity](list.list.prefix(20))))
+                    
                     } else {
                         self?.fetchTopPhotos(page: page + 1, photos: list)
                     }
@@ -79,5 +80,10 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
                         self.topPhotosSubject.accept(nil)
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func mapPhotos(list: PhotoUIList) {
+        
+        
     }
 }

@@ -20,6 +20,7 @@ protocol PhotoRepository {
                       page: Int,
                       perPage: Int,
                       orientation: PhotoOrientation) -> Single<UnsplashSearchPhotosTarget.Response>
+    func downloadPhotos(id: String) -> Single<UnsplashDownloadPhotoTarget.Response>
 }
 
 protocol LikePhotoRepository {
