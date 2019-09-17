@@ -17,7 +17,7 @@ extension Const {
                 let iconSize: CGSize = Size.Splash.iconSize
                 return CGSize(width: iconSize.width * 1.618, height: iconSize.height)
             }()
-            static let marginBetweenIconAndMainLabel: CGFloat = 75
+            static let marginBetweenIconAndMainLabel: CGFloat = 65
             static let subLabelfontSize: CGFloat = 19
             static let marginBetweenMainLabelAndSubLabel: CGFloat = 5
         }
