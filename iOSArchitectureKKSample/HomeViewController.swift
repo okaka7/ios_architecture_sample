@@ -43,6 +43,18 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
         return collectionView
     }()
     
+    lazy private(set) var photo: [UIImage] = {
+        let images: [UIImage] = Array(1...20).compactMap {
+            if let image: UIImage = File.loadImageFromPath(path: "topImage\($0)"){
+                return image
+            } else {
+                return nil
+            }
+        }
+        
+        return images
+    }()
+    
     let viewModel: HomeViewModelType
     let disposeBag: DisposeBag = .init()
     
@@ -96,6 +108,18 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
 
 }
 
-extension HomeViewController: UICollectionViewDataSource {
-    
-}
+//extension HomeViewController: UICollectionViewDataSource {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return photo.count
+//    }
+//    
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return 1
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        indexPath.
+//    }
+//    
+//    
+//}
