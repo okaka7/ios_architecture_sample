@@ -39,7 +39,8 @@ struct File {
     }
     
     static func loadImageFromPath(path: String) -> UIImage? {
-        let image = UIImage(contentsOfFile: path)
+        let file: String = fileInDocumentsDirectory(filename: path)
+        let image = UIImage(contentsOfFile: file)
         if image == nil {
             print("missing image at: \(path)")
         }

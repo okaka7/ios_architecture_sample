@@ -40,6 +40,9 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
         self.view.widthAnchor.constraint(equalTo: collectionView.widthAnchor).isActive = true
         collectionView.heightAnchor.constraint(equalToConstant: 86.5).isActive = true
         collectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        collectionView.register(CollectionPhotoViewCell.self,
+                            forCellWithReuseIdentifier: "cell")
+        collectionView.dataSource = self
         return collectionView
     }()
     
@@ -75,11 +78,10 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubscrible()
+         _ = self.collectionView
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        _ = self.collectionView
-    }
+
     
     private func setupSubscrible() {
         self.viewModel.outputs
@@ -108,18 +110,18 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
 
 }
 
-//extension HomeViewController: UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return photo.count
-//    }
-//    
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        indexPath.
-//    }
-//    
-//    
-//}
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photo.count
+    }
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionPhotoViewCell
+        cell.configureImage(image: photo[indexPath.row])
+        return cell
+    }
+}
