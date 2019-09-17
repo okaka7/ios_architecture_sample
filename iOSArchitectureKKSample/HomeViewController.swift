@@ -60,6 +60,7 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSubscrible()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,8 +70,16 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
     private func setupSubscrible() {
         self.viewModel.outputs
             .topPhotosObservable
-            .subscribe(onSuccess: {_ in
-               
+            .subscribe(onSuccess: { list in
+                print("save")
+                list?.list.enumerated().forEach { offset, entity in
+                    let image: UIImage = .init(url: entity.urls.small)
+                    if File.saveImage(image: image, path: "topImage\(offset + 1)") {
+                        #if DEBUG
+                        log.debug("savedPhotos")
+                        #endif
+                    }
+                }
             })
             .disposed(by: disposeBag)
     }

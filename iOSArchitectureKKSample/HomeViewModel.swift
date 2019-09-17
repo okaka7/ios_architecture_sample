@@ -29,19 +29,19 @@ protocol HomeViewModelInputs: class {
     func switchPhoto(_ photo: PhotoUIEntity)
 }
 
-
 protocol HomeViewModelOutputs: class {
     var topPhotosObservable: Single<PhotoUIList?> { get }
 }
 
 final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutputs {
    
-    
     let useCase: HomeUseCaseInputPort
     private let disposeBag: DisposeBag
     
     lazy private(set) var topPhotosObservable: Single<PhotoUIList?> = {
-        return self.topPhotosSubject.take(1).asSingle()
+        return self.topPhotosSubject
+            .take(1)
+            .asSingle()
     }()
     private let topPhotosSubject: PublishRelay<PhotoUIList?> = .init()
     
@@ -67,7 +67,8 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
             .subscribe(onSuccess: { [weak self] photoList in
                     let list: PhotoUIList = photos + photoList
                     if list.count >= 20 {
-                        self?.mapPhotos(list: PhotoUIList(photoUIList: [PhotoUIEntity](list.list.prefix(20))))
+                        self?.topPhotosSubject
+                            .accept(PhotoUIList(photoUIList: [PhotoUIEntity](list.list.prefix(20))))
                     
                     } else {
                         self?.fetchTopPhotos(page: page + 1, photos: list)
@@ -82,8 +83,4 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
             .disposed(by: disposeBag)
     }
     
-    private func mapPhotos(list: PhotoUIList) {
-        
-        
-    }
 }

@@ -32,8 +32,8 @@ final class UnsplashAPIProvider {
             var plugins: [Moya.PluginType] = [fetchPaginationLinksPlugin,
                                               accessTokenPlugin]
             #if DEBUG
-            let loggerPlugin: NetworkLoggerPlugin = .init(verbose: true)
-            plugins.append(loggerPlugin)
+//            let loggerPlugin: NetworkLoggerPlugin = .init(verbose: true)
+//            plugins.append(loggerPlugin)
             #endif
             
             return plugins

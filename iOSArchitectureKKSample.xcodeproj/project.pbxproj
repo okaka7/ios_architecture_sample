@@ -46,7 +46,8 @@
 		E573FA37232FF0BF002EFE47 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573FA36232FF0BF002EFE47 /* Const.swift */; };
 		E573FA39232FF107002EFE47 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573FA38232FF107002EFE47 /* Size.swift */; };
 		E573FA3B233011DF002EFE47 /* FileURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573FA3A233011DF002EFE47 /* FileURL.swift */; };
-		E573FA3D23301591002EFE47 /* UIImage+resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573FA3C23301591002EFE47 /* UIImage+resize.swift */; };
+		E573FA3D23301591002EFE47 /* UIImage.extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573FA3C23301591002EFE47 /* UIImage.extesion.swift */; };
+		E573FA41233037E0002EFE47 /* UIImage+extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573FA40233037E0002EFE47 /* UIImage+extesion.swift */; };
 		E574B85D2327C3660076C078 /* DataCache.h in Headers */ = {isa = PBXBuildFile; fileRef = E574B85B2327C3660076C078 /* DataCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E574B8602327C3660076C078 /* DataCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E574B8592327C3660076C078 /* DataCache.framework */; };
 		E574B8612327C3660076C078 /* DataCache.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E574B8592327C3660076C078 /* DataCache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -220,7 +221,8 @@
 		E573FA36232FF0BF002EFE47 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E573FA38232FF107002EFE47 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		E573FA3A233011DF002EFE47 /* FileURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileURL.swift; sourceTree = "<group>"; };
-		E573FA3C23301591002EFE47 /* UIImage+resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+resize.swift"; sourceTree = "<group>"; };
+		E573FA3C23301591002EFE47 /* UIImage.extesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.extesion.swift; sourceTree = "<group>"; };
+		E573FA40233037E0002EFE47 /* UIImage+extesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extesion.swift"; sourceTree = "<group>"; };
 		E574B8592327C3660076C078 /* DataCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E574B85B2327C3660076C078 /* DataCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataCache.h; sourceTree = "<group>"; };
 		E574B85C2327C3660076C078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -502,7 +504,8 @@
 				E57826DB22D8D070002499A9 /* UIApplication+openURL.swift */,
 				E57826DF22D8DA01002499A9 /* NSObject+ClassName.swift */,
 				E5291A9E22D9E4FC001938BC /* Array<URLQueryItem>+getQueryItem.swift */,
-				E573FA3C23301591002EFE47 /* UIImage+resize.swift */,
+				E573FA3C23301591002EFE47 /* UIImage.extesion.swift */,
+				E573FA40233037E0002EFE47 /* UIImage+extesion.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -1408,7 +1411,8 @@
 				E579509B2307CB1E00000FD8 /* HomeUseCase.swift in Sources */,
 				E57BD50122C4B55700FE44D4 /* SearchVCCoordinator.swift in Sources */,
 				E57BD50722C4B5A000FE44D4 /* ColourWorkDetailCoordinator.swift in Sources */,
-				E573FA3D23301591002EFE47 /* UIImage+resize.swift in Sources */,
+				E573FA3D23301591002EFE47 /* UIImage.extesion.swift in Sources */,
+				E573FA41233037E0002EFE47 /* UIImage+extesion.swift in Sources */,
 				E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */,
 				E59994822316C4DD00CAFC11 /* AccountViewModel.swift in Sources */,
 				E592E72422FEDEAB00AECEC4 /* UnsplashPortfolioValueObject.swift in Sources */,

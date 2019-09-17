@@ -24,7 +24,12 @@ struct File {
     static func saveImage (image: UIImage, path: String ) -> Bool {
         let pngImageData = image.pngData()
         do {
-            try pngImageData!.write(to: URL(fileURLWithPath: path), options: .atomic)
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let fileURL = documentsURL.appendingPathComponent(path)
+            #if DEBUG
+            log.debug(fileURL)
+            #endif
+            try pngImageData!.write(to: fileURL, options: .atomic)
         } catch {
             print(error)
             return false

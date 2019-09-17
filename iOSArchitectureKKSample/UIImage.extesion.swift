@@ -11,6 +11,7 @@ import UIKit
 extension UIImage: ExtensionCompatible {}
 
 extension Extension where Base: UIImage {
+    
     func resize(size : CGSize) -> UIImage? {
         let widthRatio = size.width / base.size.width
         let heightRatio = size.height / base.size.height

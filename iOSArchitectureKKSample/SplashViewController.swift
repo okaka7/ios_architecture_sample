@@ -140,10 +140,6 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViews()
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
     }
     
     private func setupViews() {
@@ -162,7 +158,7 @@ class SplashViewController: UIViewController {
     }
     
     func prepareForMainTab() {
-        viewModel.inputs.prepareForMainTab()
+        //viewModel.inputs.prepareForMainTab()
     }
     
     
