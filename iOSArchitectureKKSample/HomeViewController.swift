@@ -28,15 +28,17 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
     lazy private(set) var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumInteritemSpacing = 10
-        layout.minimumLineSpacing = 15
+        layout.minimumInteritemSpacing = 3
+        
+        layout.itemSize = CGSize(width: 76.5 / 1.3, height: 76.5)
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .red
+        collectionView.backgroundColor = #colorLiteral(red: 0.6784313725, green: 0.6784313725, blue: 0.6784313725, alpha: 1)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(collectionView)
         self.view.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true
-        self.view.widthAnchor.constraint(equalTo: collectionView.widthAnchor, multiplier: 1).isActive = true
-        collectionView.heightAnchor.constraint(equalToConstant: 110).isActive = true
+        self.view.widthAnchor.constraint(equalTo: collectionView.widthAnchor).isActive = true
+        collectionView.heightAnchor.constraint(equalToConstant: 86.5).isActive = true
         collectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         return collectionView
     }()
@@ -92,4 +94,8 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
         viewModel.inputs.fetchTopPhotos(page: page, photos: PhotoUIList())
     }
 
+}
+
+extension HomeViewController: UICollectionViewDataSource {
+    
 }
