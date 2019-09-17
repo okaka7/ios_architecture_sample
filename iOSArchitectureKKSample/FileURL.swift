@@ -11,7 +11,7 @@ import UIKit
 struct File {
     // DocumentディレクトリのfileURLを取得
     static func getDocumentsURL() -> NSURL {
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0] as NSURL
+        let documentsURL = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0] as NSURL
         return documentsURL
     }
     
@@ -24,7 +24,8 @@ struct File {
     static func saveImage (image: UIImage, path: String ) -> Bool {
         let pngImageData = image.pngData()
         do {
-            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let documentsURL = FileManager.default.urls(for: .libraryDirectory,
+                                                        in: .userDomainMask)[0]
             let fileURL = documentsURL.appendingPathComponent(path)
             #if DEBUG
             log.debug(fileURL)
