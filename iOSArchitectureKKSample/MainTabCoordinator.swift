@@ -12,6 +12,7 @@ import RxSwift
 final class MainTabCoordinator: Coordinator, PreparationProtocol {
     let mainTabBarController: UITabBarController = {
         let tab = UITabBarController()
+        tab.tabBar.barStyle = .black
         tab.tabBar.isTranslucent = false
         return tab
     }()
