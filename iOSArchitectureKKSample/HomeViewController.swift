@@ -28,26 +28,27 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
     lazy private(set) var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumInteritemSpacing = 3
-        
-        layout.itemSize = CGSize(width: 76.5 / 1.3, height: 76.5)
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        layout.minimumInteritemSpacing = 2
+        layout.minimumLineSpacing = 3
+        layout.itemSize = CGSize(width: 82.5 / 1.3, height: 82.5)
+        layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = #colorLiteral(red: 0.6784313725, green: 0.6784313725, blue: 0.6784313725, alpha: 1)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(collectionView)
         self.view.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true
-        self.view.widthAnchor.constraint(equalTo: collectionView.widthAnchor).isActive = true
+        collectionView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         collectionView.heightAnchor.constraint(equalToConstant: 86.5).isActive = true
         collectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         collectionView.register(CollectionPhotoViewCell.self,
                             forCellWithReuseIdentifier: "cell")
         collectionView.dataSource = self
+        collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
     
     lazy private(set) var photo: [UIImage] = {
-        let images: [UIImage] = Array(1...20).compactMap {
+        let images: [UIImage] = Array(1...12).compactMap {
             if let image: UIImage = File.loadImageFromPath(path: "topImage\($0)"){
                 return image
             } else {
@@ -67,7 +68,7 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
         #if DEBUG
             log.debug("ColourCategoryViewController.init()!!!")
         #endif
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = #colorLiteral(red: 0.08235294118, green: 0.08235294118, blue: 0.08235294118, alpha: 1)
         
     }
     
@@ -79,6 +80,7 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
         super.viewDidLoad()
         setupSubscrible()
          _ = self.collectionView
+        print(collectionView.contentSize.width)
     }
     
 

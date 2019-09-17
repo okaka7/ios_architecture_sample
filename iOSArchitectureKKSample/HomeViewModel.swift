@@ -66,9 +66,9 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
             .map { $0.warpingPhotoSizeFilter }
             .subscribe(onSuccess: { [weak self] photoList in
                     let list: PhotoUIList = photos + photoList
-                    if list.count >= 20 {
+                    if list.count >= 12 {
                         self?.topPhotosSubject
-                            .accept(PhotoUIList(photoUIList: [PhotoUIEntity](list.list.prefix(20))))
+                            .accept(PhotoUIList(photoUIList: [PhotoUIEntity](list.list.prefix(12))))
                     
                     } else {
                         self?.fetchTopPhotos(page: page + 1, photos: list)
