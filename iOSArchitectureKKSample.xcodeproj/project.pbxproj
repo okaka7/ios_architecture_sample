@@ -61,6 +61,8 @@
 		E574B8792327EE760076C078 /* AccountGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574B8782327EE760076C078 /* AccountGateway.swift */; };
 		E574CF5922C642DD009CF8CD /* SwiftyBeaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574CF5822C642DD009CF8CD /* SwiftyBeaver.swift */; };
 		E574CF6B22C64D5B009CF8CD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E574CF6D22C64D5B009CF8CD /* Localizable.strings */; };
+		E575840F2331BAA300ED33BF /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E575840E2331BAA300ED33BF /* Nuke.framework */; };
+		E57584112331BAB300ED33BF /* RxNuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57584102331BAB300ED33BF /* RxNuke.framework */; };
 		E576DD172331015000F19D02 /* CollectionPhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E576DD162331015000F19D02 /* CollectionPhotoViewCell.swift */; };
 		E576E31B2313DAC6007446B8 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E576E31A2313DAC6007446B8 /* SplashViewModel.swift */; };
 		E576E32123145878007446B8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E576E32023145878007446B8 /* HomeViewModel.swift */; };
@@ -234,6 +236,8 @@
 		E574B8782327EE760076C078 /* AccountGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountGateway.swift; sourceTree = "<group>"; };
 		E574CF5822C642DD009CF8CD /* SwiftyBeaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyBeaver.swift; sourceTree = "<group>"; };
 		E574CF6C22C64D5B009CF8CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E575840E2331BAA300ED33BF /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
+		E57584102331BAB300ED33BF /* RxNuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxNuke.framework; path = Carthage/Build/iOS/RxNuke.framework; sourceTree = "<group>"; };
 		E576DD162331015000F19D02 /* CollectionPhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPhotoViewCell.swift; sourceTree = "<group>"; };
 		E576E31A2313DAC6007446B8 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		E576E32023145878007446B8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -332,6 +336,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E57584112331BAB300ED33BF /* RxNuke.framework in Frameworks */,
+				E575840F2331BAA300ED33BF /* Nuke.framework in Frameworks */,
 				E52B09AC232AAD90002B7255 /* RxDataSources.framework in Frameworks */,
 				E52B09AA232AAD7F002B7255 /* Differentiator.framework in Frameworks */,
 				E5E503A72315529A00F075E8 /* RxCocoa.framework in Frameworks */,
@@ -433,6 +439,8 @@
 		E571E6F422B8324B0032A748 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E57584102331BAB300ED33BF /* RxNuke.framework */,
+				E575840E2331BAA300ED33BF /* Nuke.framework */,
 				E52B09AB232AAD90002B7255 /* RxDataSources.framework */,
 				E52B09A9232AAD7E002B7255 /* Differentiator.framework */,
 				E5E503A62315529900F075E8 /* RxCocoa.framework */,
@@ -1242,6 +1250,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxNuke.framework",
 			);
 			name = "Carthage Script";
 			outputFileListPaths = (
