@@ -6,7 +6,7 @@
   Copyright © 2019 Kota Kawanishi. All rights reserved.
 */
 
-"appName" = "Colour";
+"appName" = "light";
 "home" = "HOME";
 "category" = "category";
 "search" = "SEARCH";
@@ -23,4 +23,6 @@
 "appHost" = "colour.com";
 "unsplashOauthCallBackPath" = "/unsplash-oauth-callback";
 "unsplashToken" = "unsplashToken";
+
+"homePhotoCell" = "homePhotoCell";
 

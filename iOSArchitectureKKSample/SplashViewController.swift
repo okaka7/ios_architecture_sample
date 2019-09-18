@@ -24,7 +24,6 @@ class SplashViewController: UIViewController {
         imageView.widthAnchor.constraint(equalToConstant: size.width).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: size.height).isActive = true
         imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        
         //Note: iconImageViewの中心YがTopから画面の高さ1/3の位置に配置されるように設定
         //Note: set the iconImageView's centerY on the one-third screen height from the top.
         let onethirdHeight: CGFloat = (self.view.frame.height - self.view.safeAreaInsets.bottom) / 3
@@ -37,7 +36,7 @@ class SplashViewController: UIViewController {
     
     lazy private(set) var iconLabel: UILabel = {
         let label: UILabel = .init()
-        label.text = "light"
+        label.text = R.string.localizable.appName()
         label.textColor = .white
         
         label.textAlignment = .center
