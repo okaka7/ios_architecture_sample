@@ -66,11 +66,11 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
     init(viewModel: HomeViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        #if DEBUG
-            log.debug("ColourCategoryViewController.init()!!!")
-        #endif
         self.view.backgroundColor = #colorLiteral(red: 0.08235294118, green: 0.08235294118, blue: 0.08235294118, alpha: 1)
         
+        #if DEBUG
+        log.debug("ColourCategoryViewController.init()🤖🤖🤖")
+        #endif
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -81,34 +81,18 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
         super.viewDidLoad()
         setupSubscrible()
          _ = self.collectionView
-        print(collectionView.contentSize.width)
-        
     }
-    
-
     
     private func setupSubscrible() {
         self.viewModel.outputs
             .topPhotosObservable
             .subscribe(onSuccess: { list in
-                print("save")
-                list?.list.enumerated().forEach { offset, entity in
-                    let image: UIImage = .init(url: entity.urls.small)
-                    if File.saveImage(image: image, path: "topImage\(offset + 1)") {
-                        #if DEBUG
-                        log.debug("savedPhotos")
-                        #endif
-                    }
-                }
+
             })
             .disposed(by: disposeBag)
     }
 
     func fetchTopPhotos(page: Int = 1) {
-        #if DEBUG
-        log.debug("getTopPhotos")
-        #endif
-        
         viewModel.inputs.fetchTopPhotos(page: page, photos: PhotoUIList())
     }
 
