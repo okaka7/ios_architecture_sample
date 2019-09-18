@@ -42,7 +42,7 @@ SplashViewModelOutputs {
 //    }()
     
     private let useCase: SplashUseCaseInputs
-    private let disposeBag: DisposeBag = DisposeBag()
+    //private let disposeBag: DisposeBag = DisposeBag()
     //let prepareForMainTabSubject: PublishRelay<Void> = .init()
     
     init(useCase: SplashUseCaseInputs) {
