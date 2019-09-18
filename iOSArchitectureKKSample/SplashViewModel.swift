@@ -29,21 +29,21 @@ protocol SplashViewModelInputs: class {
 }
 
 protocol SplashViewModelOutputs: class {
-    var transitionObservableRelay: Single<Void> { get }
+    //var transitionObservableRelay: Single<Void> { get }
 }
 
 final class SplashViewModel: SplashViewModelType,
                                 SplashViewModelInputs,
 SplashViewModelOutputs {
-    private var readyForTransitonSubject: PublishRelay<Void> = .init()
-    
-    lazy private(set) var transitionObservableRelay: Single<Void> = {
-        self.readyForTransitonSubject.take(1).asSingle()
-    }()
+//    private var readyForTransitonSubject: PublishRelay<Void> = .init()
+//
+//    lazy private(set) var transitionObservableRelay: Single<Void> = {
+//        self.readyForTransitonSubject.take(1).asSingle()
+//    }()
     
     private let useCase: SplashUseCaseInputs
     private let disposeBag: DisposeBag = DisposeBag()
-    let prepareForMainTabSubject: PublishRelay<Void> = .init()
+    //let prepareForMainTabSubject: PublishRelay<Void> = .init()
     
     init(useCase: SplashUseCaseInputs) {
         self.useCase = useCase
