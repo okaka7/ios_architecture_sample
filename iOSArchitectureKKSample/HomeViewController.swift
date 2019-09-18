@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
             .constraint(equalTo: self.view.topAnchor)
             .isActive = true
         collectionView.register(CollectionPhotoViewCell.self,
-                            forCellWithReuseIdentifier: "cell")
+                            forCellWithReuseIdentifier: R.string.localizable.homePhotoCell())
         collectionView.dataSource = self
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
@@ -118,7 +118,9 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionPhotoViewCell
+        let cell = collectionView
+                    .dequeueReusableCell(withReuseIdentifier: R.string.localizable.homePhotoCell(),
+                                         for: indexPath) as! CollectionPhotoViewCell
         cell.configureImage(image: photo[indexPath.row])
         return cell
     }
