@@ -92,7 +92,6 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
         self.viewModel.outputs
             .topPhotosObservable
             .subscribe(onSuccess: { list in
-
             })
             .disposed(by: disposeBag)
     }
@@ -106,6 +105,7 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photo.count
+        
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {

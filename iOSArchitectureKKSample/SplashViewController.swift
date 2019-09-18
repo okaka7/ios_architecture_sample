@@ -16,7 +16,7 @@ extension Notification.Name {
 class SplashViewController: UIViewController {
     
     lazy private(set) var iconImageView: UIImageView = {
-        let imageView: UIImageView = .init(image: #imageLiteral(resourceName: "splahIcon"))
+        let imageView: UIImageView = .init(image: R.image.splahIcon())
         let size: CGSize = Const.Size.Splash.iconSize
         imageView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(imageView)
@@ -31,6 +31,7 @@ class SplashViewController: UIViewController {
         imageView.centerYAnchor
             .constraint(equalTo: guide.topAnchor, constant: onethirdHeight)
             .isActive = true
+        
         return imageView
     }()
     
