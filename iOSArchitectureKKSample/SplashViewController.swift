@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import UIFontComplete
 
 extension Notification.Name {
     static let transitionToMainTab = Notification.Name(rawValue: "toMainTab")
@@ -40,7 +41,8 @@ class SplashViewController: UIViewController {
         label.textColor = .white
         
         label.textAlignment = .center
-        label.font = UIFont.init(name: "Hoefler Text", size: 60)
+        label.font = UIFont(font: .hoeflerTextRegular,
+                            size: Const.Size.Splash.mainLabelfontSize)!
         label.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(label)
         label.sizeToFit()
@@ -68,9 +70,11 @@ class SplashViewController: UIViewController {
     lazy private(set) var iconSubLabel: UILabel = {
         // Note: setting labelText
         // Note: ラベルテキストを設定
-        let fontSize: CGFloat = 19
-        let mainFont: UIFont = .init(descriptor: .init(name: "Hoefler Text", size: 0), size: fontSize)
-        let subFont: UIFont = .init(descriptor: .init(name: "Baskerville", size: 0), size: fontSize)
+       
+        let mainFont: UIFont = UIFont(font: .hoeflerTextRegular,
+                                      size: Const.Size.Splash.subLabelfontSize)!
+        let subFont: UIFont = UIFont(font: .baskerville,
+                                     size: Const.Size.Splash.subLabelfontSize)!
         let subTitleAffixesAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
             .font: subFont
@@ -85,7 +89,6 @@ class SplashViewController: UIViewController {
         ]
         let subTitle: NSAttributedString = .init(string: R.string.localizable.splashSubTitle(),
                                                  attributes: subTitleAttributes)
-        
         
         let subTitleSuffix: NSAttributedString =
             .init(string: R.string.localizable.splashSubTitleSuffix(),
@@ -214,28 +217,28 @@ extension SplashViewController {
         typealias StarRects = [(relativePosition: CGPoint, size: StarSize)]
         
         private static let starPositionAndSize: StarRects =
-            [(CGPoint(x: 0.053, y: 0.761), .large), (CGPoint(x: 0.061, y: 0.915), .extraLarge),
-             (CGPoint(x: 0.136, y: 0.829), .large), (CGPoint(x: 0.045, y: 0.667), .large),
-             (CGPoint(x: 0.331, y: 0.877), .large), (CGPoint(x: 0.859, y: 0.052), .extraLarge),
-             (CGPoint(x: 0.491, y: 0.052), .extraLarge), (CGPoint(x: 0.96, y: 0.69), .medium),
-             (CGPoint(x: 0.696, y: 0.76), .extraLarge), (CGPoint(x: 0.947, y: 0.592), .medium),
-             (CGPoint(x: 0.952, y: 0.915), .extraLarge), (CGPoint(x: 0.781, y: 0.239), .medium),
-             (CGPoint(x: 0.448, y: 0.802), .medium), (CGPoint(x: 0.643, y: 0.16), .extraLarge),
-             (CGPoint(x: 0.939, y: 0.239), .extraLarge), (CGPoint(x: 0.965, y: 0.149), .large),
-             (CGPoint(x: 0.672, y: 0.076), .medium), (CGPoint(x: 0.805, y: 0.158), .medium),
-             (CGPoint(x: 0.325, y: 0.033), .large), (CGPoint(x: 0.016, y: 0.211), .medium),
-             (CGPoint(x: 0.16, y: 0.153), .medium), (CGPoint(x: 0.021, y: 0.377), .extraLarge),
-             (CGPoint(x: 0.069, y: 0.271), .extraLarge), (CGPoint(x: 0.973, y: 0.421), .medium),
-             (CGPoint(x: 0.885, y: 0.759), .large), (CGPoint(x: 0.811, y: 0.842), .large),
-             (CGPoint(x: 0.829, y: 0.664), .large), (CGPoint(x: 0.76, y: 0.958), .extraLarge),
-             (CGPoint(x: 0.587, y: 0.89), .extraLarge), (CGPoint(x: 0.211, y: 0.97), .large),
-             (CGPoint(x: 0.544, y: 0.989), .large), (CGPoint(x: 0.896, y: 0.52), .large),
-             (CGPoint(x: 0.888, y: 0.382), .large), (CGPoint(x: 0.101, y: 0.436), .medium),
-             (CGPoint(x: 0.037, y: 0.514), .medium), (CGPoint(x: 0.379, y: 0.158), .medium),
-             (CGPoint(x: 0.147, y: 0.309), .small), (CGPoint(x: 0.144, y: 0.759), .small),
-             (CGPoint(x: 0.235, y: 0.72), .large), (CGPoint(x: 0.107, y: 0.587), .extraLarge),
-             (CGPoint(x: 0.048, y: 0.107), .large), (CGPoint(x: 0.317, y: 0.092), .large),
-             (CGPoint(x: 0.227, y: 0.216), .large), (CGPoint(x: 0.149, y: 0.057), .medium)
+            [(.init(x: 0.053, y: 0.761), .large), (.init(x: 0.061, y: 0.915), .extraLarge),
+             (.init(x: 0.136, y: 0.829), .large), (.init(x: 0.781, y: 0.239), .medium),
+             (.init(x: 0.331, y: 0.877), .large), (.init(x: 0.859, y: 0.052), .extraLarge),
+             (.init(x: 0.491, y: 0.052), .extraLarge), (.init(x: 0.96, y: 0.69), .medium),
+             (.init(x: 0.696, y: 0.76), .extraLarge), (.init(x: 0.947, y: 0.592), .medium),
+             (.init(x: 0.952, y: 0.915), .extraLarge), (.init(x: 0.045, y: 0.667), .large),
+             (.init(x: 0.448, y: 0.802), .medium), (.init(x: 0.643, y: 0.16), .extraLarge),
+             (.init(x: 0.939, y: 0.239), .extraLarge), (.init(x: 0.965, y: 0.149), .large),
+             (.init(x: 0.672, y: 0.076), .medium), (.init(x: 0.805, y: 0.158), .medium),
+            (.init(x: 0.016, y: 0.211), .medium), (.init(x: 0.973, y: 0.421), .medium),
+             (.init(x: 0.16, y: 0.153), .medium), (.init(x: 0.021, y: 0.377), .extraLarge),
+             (.init(x: 0.069, y: 0.271), .extraLarge), (.init(x: 0.325, y: 0.033), .large),
+             (.init(x: 0.885, y: 0.759), .large), (.init(x: 0.811, y: 0.842), .large),
+             (.init(x: 0.829, y: 0.664), .large), (.init(x: 0.76, y: 0.958), .extraLarge),
+             (.init(x: 0.587, y: 0.89), .extraLarge), (.init(x: 0.211, y: 0.97), .large),
+             (.init(x: 0.544, y: 0.989), .large), (.init(x: 0.896, y: 0.52), .large),
+             (.init(x: 0.888, y: 0.382), .large), (.init(x: 0.101, y: 0.436), .medium),
+             (.init(x: 0.037, y: 0.514), .medium), (.init(x: 0.379, y: 0.158), .medium),
+             (.init(x: 0.147, y: 0.309), .small), (.init(x: 0.144, y: 0.759), .small),
+             (.init(x: 0.235, y: 0.72), .large), (.init(x: 0.107, y: 0.587), .extraLarge),
+             (.init(x: 0.048, y: 0.107), .large), (.init(x: 0.317, y: 0.092), .large),
+             (.init(x: 0.227, y: 0.216), .large), (.init(x: 0.149, y: 0.057), .medium)
             ]
     }
 }
