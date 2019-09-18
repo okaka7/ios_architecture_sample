@@ -28,10 +28,11 @@ class SplashViewController: UIViewController {
         //Note: iconImageViewの中心YがTopから画面の高さ1/3の位置に配置されるように設定
         //Note: set the iconImageView's centerY on the one-third screen height from the top.
         let onethirdHeight: CGFloat = (self.view.frame.height - self.view.safeAreaInsets.bottom) / 3
-        imageView.centerYAnchor.constraint(equalTo: guide.topAnchor, constant: onethirdHeight).isActive = true
+        imageView.centerYAnchor
+            .constraint(equalTo: guide.topAnchor, constant: onethirdHeight)
+            .isActive = true
         return imageView
     }()
-    
     
     lazy private(set) var iconLabel: UILabel = {
         let label: UILabel = .init()
@@ -46,40 +47,46 @@ class SplashViewController: UIViewController {
         let width: CGFloat = label.frame.width
         let height: CGFloat = label.frame.height
         
-        label.widthAnchor.constraint(equalToConstant: width).isActive = true
-        label.heightAnchor.constraint(equalToConstant: height).isActive = true
-        label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        label.widthAnchor
+            .constraint(equalToConstant: width)
+            .isActive = true
+        label.heightAnchor
+            .constraint(equalToConstant: height)
+            .isActive = true
+        label.centerXAnchor
+            .constraint(equalTo: self.view.centerXAnchor)
+            .isActive = true
         let distance: CGFloat = Const.Size.Splash.marginBetweenIconAndMainLabel
-        label.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: distance).isActive = true
+        label.topAnchor
+            .constraint(equalTo: iconImageView.bottomAnchor, constant: distance)
+            .isActive = true
         label.minimumScaleFactor = 0.1
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
-    
     lazy private(set) var iconSubLabel: UILabel = {
         // Note: setting labelText
         // Note: ラベルテキストを設定
         let fontSize: CGFloat = 19
-        let mainFont: UIFont = UIFont.init(descriptor: .init(name: "Hoefler Text", size: 0), size: fontSize)
-        let subFont: UIFont = UIFont.init(descriptor: .init(name: "Baskerville", size: 0), size: fontSize)
-        let stringAttributes1: [NSAttributedString.Key : Any] = [
-            .foregroundColor : UIColor.white,
-            .font : subFont
+        let mainFont: UIFont = .init(descriptor: .init(name: "Hoefler Text", size: 0), size: fontSize)
+        let subFont: UIFont = .init(descriptor: .init(name: "Baskerville", size: 0), size: fontSize)
+        let stringAttributes1: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.white,
+            .font: subFont
         ]
-        let string1 = NSAttributedString(string: "~ ", attributes: stringAttributes1)
+        let string1: NSAttributedString = .init(string: "~ ", attributes: stringAttributes1)
         
-        let stringAttributes2: [NSAttributedString.Key : Any] = [
-            .foregroundColor : UIColor.white,
-            .font : mainFont
+        let stringAttributes2: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.white,
+            .font: mainFont
         ]
         let string2 = NSAttributedString(string: "Photo Collection", attributes: stringAttributes2)
         
-        let stringAttributes3: [NSAttributedString.Key : Any] = [
-            .foregroundColor : UIColor.white,
-            .font : subFont
-        ]
-        let string3 = NSAttributedString(string: " ~", attributes:stringAttributes3)
+        let stringAttributes3: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.white,
+            .font: subFont]
+        let string3: NSAttributedString = .init(string: " ~", attributes: stringAttributes3)
         
         let mutableAttributedString = NSMutableAttributedString()
         mutableAttributedString.append(string1)
@@ -89,7 +96,7 @@ class SplashViewController: UIViewController {
         // Note: setting labelSize
         // Note: ラベルサイズを設定
         let label: UILabel = .init()
-        label.attributedText  = mutableAttributedString
+        label.attributedText = mutableAttributedString
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(label)
@@ -110,7 +117,8 @@ class SplashViewController: UIViewController {
     lazy private var startLayers: [CAShapeLayer] = {
         let safeareaInsets = self.view.safeAreaInsets
         let size: CGSize = {
-            return CGSize.init(width: self.view.frame.width, height: self.view.frame.height - safeareaInsets.top - safeareaInsets.bottom)
+            let viewHeight: CGFloat = self.view.frame.height - safeareaInsets.top - safeareaInsets.bottom
+            return CGSize.init(width: self.view.frame.width, height: viewHeight)
         }()
         let stars = Star.createStars(viewSize: size, insetTop: safeareaInsets.top)
         
@@ -119,7 +127,6 @@ class SplashViewController: UIViewController {
         }
         return stars
     }()
-    
     
     private let viewModel: SplashViewModelType
     private let disposeBag: DisposeBag = DisposeBag()
@@ -178,17 +185,17 @@ extension SplashViewController {
             return starPositionAndSize.map { star in
                 let circleLayer: CAShapeLayer = .init()
                 let relativePosition = star.relativePosition
+                let starSize = star.size.rawValue
                 let frame: CGRect = .init(x: viewSize.width * relativePosition.x,
                                           y: viewSize.height * relativePosition.y + insetTop,
-                                          width: star.size.rawValue,
-                                          height: star.size.rawValue)
+                                          width: starSize,
+                                          height: starSize)
                 circleLayer.frame = frame
                 // 円の中の色
                 circleLayer.fillColor = UIColor.white.cgColor
-                
                 circleLayer.path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0,
-                                                               width: star.size.rawValue,
-                                                               height: star.size.rawValue))
+                                                               width: starSize,
+                                                               height: starSize))
                                                 .cgPath
                 return circleLayer
             }
