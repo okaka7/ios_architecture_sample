@@ -3,3 +3,4 @@ github "Moya/Moya" == 13.0.1
 github "kishikawakatsumi/KeychainAccess" == 3.2.0
 github "RxSwiftCommunity/RxDataSources" == 3.1.0
 github "kean/RxNuke" == 0.8.1
+github "Nirma/UIFontComplete" == 4.0.0
