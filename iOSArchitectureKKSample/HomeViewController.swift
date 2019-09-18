@@ -85,7 +85,12 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubscrible()
-         _ = self.collectionView
+        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        _ = self.collectionView
     }
     
     private func setupSubscrible() {
