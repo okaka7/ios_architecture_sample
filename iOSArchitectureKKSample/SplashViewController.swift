@@ -112,7 +112,7 @@ class SplashViewController: UIViewController {
         let size: CGSize = {
             return CGSize.init(width: self.view.frame.width, height: self.view.frame.height - safeareaInsets.top - safeareaInsets.bottom)
         }()
-        let stars = Star.createStars(screenSize: size, insetTop: safeareaInsets.top)
+        let stars = Star.createStars(viewSize: size, insetTop: safeareaInsets.top)
         
         stars.forEach {
             self.view.layer.addSublayer($0)
@@ -159,57 +159,66 @@ class SplashViewController: UIViewController {
         //viewModel.inputs.prepareForMainTab()
     }
     
-    
     private func transition(_ : Notification) {
         viewModel.inputs.transition()
     }
   
 }
 
-
 extension SplashViewController {
-    private enum Star: CGFloat {
+    
+    private enum StarSize: CGFloat {
         case small = 1.0
         case medium = 1.5
         case large = 2.0
         case extraLarge = 3.0
-        
-        
-        static func createStars(screenSize: CGSize, insetTop: CGFloat) -> [CAShapeLayer] {
+    }
+    private struct Star {
+        static func createStars(viewSize: CGSize, insetTop: CGFloat) -> [CAShapeLayer] {
             return starPositionAndSize.map { star in
                 let circleLayer: CAShapeLayer = .init()
-                let relativePosition = star.position
-                let frame: CGRect = .init(x: screenSize.width * relativePosition.x,
-                                          y: screenSize.height * relativePosition.y + insetTop,
+                let relativePosition = star.relativePosition
+                let frame: CGRect = .init(x: viewSize.width * relativePosition.x,
+                                          y: viewSize.height * relativePosition.y + insetTop,
                                           width: star.size.rawValue,
                                           height: star.size.rawValue)
                 circleLayer.frame = frame
                 // 円の中の色
                 circleLayer.fillColor = UIColor.white.cgColor
                 
-                circleLayer.path = UIBezierPath(ovalIn: CGRect(x: 0,
-                                                               y: 0,
+                circleLayer.path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0,
                                                                width: star.size.rawValue,
-                                                               height: star.size.rawValue)).cgPath
+                                                               height: star.size.rawValue))
+                                                .cgPath
                 return circleLayer
             }
         }
         
-        private static let starPositionAndSize: [(position:(x:CGFloat, y:CGFloat),size: Star)] = [((0.053, 0.761), .large), ((0.061, 0.915), .extraLarge),
-                                                                                                  ((0.136, 0.829), .large), ((0.045, 0.667), .large), ((0.331, 0.877), .large),
-                                                                                                  ((0.859, 0.052), .extraLarge), ((0.491, 0.052), .extraLarge),
-                                                                                                  ((0.96, 0.69), .medium), ((0.448, 0.802), .medium), ((0.947, 0.592), .medium),
-                                                                                                  ((0.973, 0.421), .medium), ((0.781, 0.239), .medium), ((0.696, 0.76), .extraLarge),
-                                                                                                  ((0.643, 0.16), .extraLarge), ((0.939, 0.239), .extraLarge),
-                                                                                                  ((0.965, 0.149), .large), ((0.672, 0.076), .medium), ((0.805, 0.158), .medium),
-                                                                                                  ((0.325, 0.033), .large), ((0.016, 0.211), .medium), ((0.16, 0.153), .medium),
-                                                                                                  ((0.021, 0.377), .extraLarge), ((0.069, 0.271), .extraLarge),
-                                                                                                  ((0.952, 0.915), .extraLarge), ((0.885, 0.759), .large), ((0.811, 0.842), .large),
-                                                                                                  ((0.829, 0.664), .large), ((0.76, 0.958), .extraLarge), ((0.587, 0.89), .extraLarge),
-                                                                                                  ((0.211, 0.97), .large), ((0.544, 0.989), .large), ((0.896, 0.52), .large),
-                                                                                                  ((0.888, 0.382), .large), ((0.101, 0.436), .medium), ((0.037, 0.514), .medium),
-                                                                                                  ((0.379, 0.158), .medium), ((0.147, 0.309), .small), ((0.144, 0.759), .small),
-                                                                                                  ((0.235, 0.72), .large), ((0.107, 0.587), .extraLarge), ((0.048, 0.107), .large),
-                                                                                                  ((0.317, 0.092), .large), ((0.227, 0.216), .large), ((0.149, 0.057), .medium)]
+        typealias StarRects = [(relativePosition: CGPoint, size: StarSize)]
+        
+        private static let starPositionAndSize: StarRects =
+            [(CGPoint(x: 0.053, y: 0.761), .large), (CGPoint(x: 0.061, y: 0.915), .extraLarge),
+             (CGPoint(x: 0.136, y: 0.829), .large), (CGPoint(x: 0.045, y: 0.667), .large),
+             (CGPoint(x: 0.331, y: 0.877), .large), (CGPoint(x: 0.859, y: 0.052), .extraLarge),
+             (CGPoint(x: 0.491, y: 0.052), .extraLarge), (CGPoint(x: 0.96, y: 0.69), .medium),
+             (CGPoint(x: 0.448, y: 0.802), .medium), (CGPoint(x: 0.947, y: 0.592), .medium),
+             (CGPoint(x: 0.952, y: 0.915), .extraLarge), (CGPoint(x: 0.781, y: 0.239), .medium),
+             (CGPoint(x: 0.696, y: 0.76), .extraLarge), (CGPoint(x: 0.643, y: 0.16), .extraLarge),
+             (CGPoint(x: 0.939, y: 0.239), .extraLarge), (CGPoint(x: 0.965, y: 0.149), .large),
+             (CGPoint(x: 0.672, y: 0.076), .medium), (CGPoint(x: 0.805, y: 0.158), .medium),
+             (CGPoint(x: 0.325, y: 0.033), .large), (CGPoint(x: 0.016, y: 0.211), .medium),
+             (CGPoint(x: 0.16, y: 0.153), .medium), (CGPoint(x: 0.021, y: 0.377), .extraLarge),
+             (CGPoint(x: 0.069, y: 0.271), .extraLarge), (CGPoint(x: 0.973, y: 0.421), .medium),
+             (CGPoint(x: 0.885, y: 0.759), .large), (CGPoint(x: 0.811, y: 0.842), .large),
+             (CGPoint(x: 0.829, y: 0.664), .large), (CGPoint(x: 0.76, y: 0.958), .extraLarge),
+             (CGPoint(x: 0.587, y: 0.89), .extraLarge), (CGPoint(x: 0.211, y: 0.97), .large),
+             (CGPoint(x: 0.544, y: 0.989), .large), (CGPoint(x: 0.896, y: 0.52), .large),
+             (CGPoint(x: 0.888, y: 0.382), .large), (CGPoint(x: 0.101, y: 0.436), .medium),
+             (CGPoint(x: 0.037, y: 0.514), .medium), (CGPoint(x: 0.379, y: 0.158), .medium),
+             (CGPoint(x: 0.147, y: 0.309), .small), (CGPoint(x: 0.144, y: 0.759), .small),
+             (CGPoint(x: 0.235, y: 0.72), .large), (CGPoint(x: 0.107, y: 0.587), .extraLarge),
+             (CGPoint(x: 0.048, y: 0.107), .large), (CGPoint(x: 0.317, y: 0.092), .large),
+             (CGPoint(x: 0.227, y: 0.216), .large), (CGPoint(x: 0.149, y: 0.057), .medium)
+            ]
     }
 }
