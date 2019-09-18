@@ -116,6 +116,7 @@ class SplashViewController: UIViewController {
     
     lazy private var startLayers: [CAShapeLayer] = {
         let safeareaInsets = self.view.safeAreaInsets
+        print(safeareaInsets)
         let size: CGSize = {
             let viewHeight: CGFloat = self.view.frame.height - safeareaInsets.top - safeareaInsets.bottom
             return CGSize.init(width: self.view.frame.width, height: viewHeight)
@@ -144,6 +145,10 @@ class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         self.setupViews()
     }
     
@@ -208,9 +213,9 @@ extension SplashViewController {
              (CGPoint(x: 0.136, y: 0.829), .large), (CGPoint(x: 0.045, y: 0.667), .large),
              (CGPoint(x: 0.331, y: 0.877), .large), (CGPoint(x: 0.859, y: 0.052), .extraLarge),
              (CGPoint(x: 0.491, y: 0.052), .extraLarge), (CGPoint(x: 0.96, y: 0.69), .medium),
-             (CGPoint(x: 0.448, y: 0.802), .medium), (CGPoint(x: 0.947, y: 0.592), .medium),
+             (CGPoint(x: 0.696, y: 0.76), .extraLarge), (CGPoint(x: 0.947, y: 0.592), .medium),
              (CGPoint(x: 0.952, y: 0.915), .extraLarge), (CGPoint(x: 0.781, y: 0.239), .medium),
-             (CGPoint(x: 0.696, y: 0.76), .extraLarge), (CGPoint(x: 0.643, y: 0.16), .extraLarge),
+             (CGPoint(x: 0.448, y: 0.802), .medium), (CGPoint(x: 0.643, y: 0.16), .extraLarge),
              (CGPoint(x: 0.939, y: 0.239), .extraLarge), (CGPoint(x: 0.965, y: 0.149), .large),
              (CGPoint(x: 0.672, y: 0.076), .medium), (CGPoint(x: 0.805, y: 0.158), .medium),
              (CGPoint(x: 0.325, y: 0.033), .large), (CGPoint(x: 0.016, y: 0.211), .medium),
