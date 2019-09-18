@@ -28,8 +28,6 @@ protocol SearchViewModelInputs: class {
     func searchPhotos(query: String)
 }
 
-
-
 protocol SearchViewModelOutputs: class {
     var popluarPhotosObservable: Single<PhotoUIList?> { get }
 }

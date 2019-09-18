@@ -116,7 +116,7 @@ class SplashViewController: UIViewController {
         
         label.topAnchor
             .constraint(equalTo: self.iconLabel.bottomAnchor,
-                                   constant: Const.Size.Splash.marginBetweenMainLabelAndSubLabel)
+                        constant: Const.Size.Splash.marginBetweenMainLabelAndSubLabel)
             .isActive = true
         
         return label
@@ -124,7 +124,6 @@ class SplashViewController: UIViewController {
     
     lazy private var startLayers: [CAShapeLayer] = {
         let safeareaInsets = self.view.safeAreaInsets
-        print(safeareaInsets)
         let size: CGSize = {
             let viewHeight: CGFloat = self.view.frame.height - safeareaInsets.top - safeareaInsets.bottom
             return CGSize.init(width: self.view.frame.width, height: viewHeight)
@@ -206,10 +205,8 @@ extension SplashViewController {
                 circleLayer.frame = frame
                 // 円の中の色
                 circleLayer.fillColor = UIColor.white.cgColor
-                circleLayer.path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0,
-                                                               width: starSize,
-                                                               height: starSize))
-                                                .cgPath
+                let circleRect: CGRect = CGRect(x: 0, y: 0, width: starSize, height: starSize)
+                circleLayer.path = UIBezierPath(ovalIn: circleRect).cgPath
                 return circleLayer
             }
         }
@@ -226,7 +223,7 @@ extension SplashViewController {
              (.init(x: 0.448, y: 0.802), .medium), (.init(x: 0.643, y: 0.16), .extraLarge),
              (.init(x: 0.939, y: 0.239), .extraLarge), (.init(x: 0.965, y: 0.149), .large),
              (.init(x: 0.672, y: 0.076), .medium), (.init(x: 0.805, y: 0.158), .medium),
-            (.init(x: 0.016, y: 0.211), .medium), (.init(x: 0.973, y: 0.421), .medium),
+             (.init(x: 0.016, y: 0.211), .medium), (.init(x: 0.973, y: 0.421), .medium),
              (.init(x: 0.16, y: 0.153), .medium), (.init(x: 0.021, y: 0.377), .extraLarge),
              (.init(x: 0.069, y: 0.271), .extraLarge), (.init(x: 0.325, y: 0.033), .large),
              (.init(x: 0.885, y: 0.759), .large), (.init(x: 0.811, y: 0.842), .large),
