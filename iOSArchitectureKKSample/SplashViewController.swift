@@ -111,8 +111,10 @@ class SplashViewController: UIViewController {
         label.heightAnchor.constraint(equalToConstant: height).isActive = true
         label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         
-        let distance: CGFloat = Const.Size.Splash.marginBetweenMainLabelAndSubLabel
-        label.topAnchor.constraint(equalTo: self.iconLabel.bottomAnchor, constant: 5).isActive = true
+        label.topAnchor
+            .constraint(equalTo: self.iconLabel.bottomAnchor,
+                                   constant: Const.Size.Splash.marginBetweenMainLabelAndSubLabel)
+            .isActive = true
         
         return label
     }()
