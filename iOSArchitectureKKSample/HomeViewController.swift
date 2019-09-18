@@ -65,7 +65,7 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
         return images
     }()
 
-    let viewModel: HomeViewModelType
+    private let viewModel: HomeViewModelType
     let disposeBag: DisposeBag = .init()
     
     init(viewModel: HomeViewModelType) {
