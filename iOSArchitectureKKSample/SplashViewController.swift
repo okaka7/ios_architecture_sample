@@ -121,13 +121,11 @@ class SplashViewController: UIViewController {
     }()
     
     
-    let viewModel: SplashViewModelType
-    private let disposeBag: DisposeBag
+    private let viewModel: SplashViewModelType
+    private let disposeBag: DisposeBag = DisposeBag()
 
-    init(viewModel: SplashViewModelType,
-         disposeBag: DisposeBag = DisposeBag()) {
+    init(viewModel: SplashViewModelType) {
         self.viewModel = viewModel
-        self.disposeBag = disposeBag
         super.init(nibName: nil, bundle: nil)
         self.view.backgroundColor = #colorLiteral(red: 0.08235294118, green: 0.08235294118, blue: 0.08235294118, alpha: 1)
         self.addObserverForTransition()

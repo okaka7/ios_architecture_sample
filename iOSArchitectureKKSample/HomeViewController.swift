@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import Nuke
 
 class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
 
@@ -81,6 +82,7 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
         setupSubscrible()
          _ = self.collectionView
         print(collectionView.contentSize.width)
+        
     }
     
 
