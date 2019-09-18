@@ -19,6 +19,10 @@
 "unsplashAPIClientSecret" = "80dd27bd466530f8993de6588144e453cf6f823d2f58639c14e41260c435a791";
 "unsplashOauthBaseURL" = "https://unsplash.com/oauth";
 
+"splashSubTitlePrefix" = "~ ";
+"splashSubTitle" = "Photo Collection";
+"splashSubTitleSuffix" = " ~";
+
 "appScheme" = "app-colour";
 "appHost" = "colour.com";
 "unsplashOauthCallBackPath" = "/unsplash-oauth-callback";

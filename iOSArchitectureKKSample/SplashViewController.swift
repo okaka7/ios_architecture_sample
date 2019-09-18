@@ -71,27 +71,30 @@ class SplashViewController: UIViewController {
         let fontSize: CGFloat = 19
         let mainFont: UIFont = .init(descriptor: .init(name: "Hoefler Text", size: 0), size: fontSize)
         let subFont: UIFont = .init(descriptor: .init(name: "Baskerville", size: 0), size: fontSize)
-        let stringAttributes1: [NSAttributedString.Key: Any] = [
+        let subTitleAffixesAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
             .font: subFont
         ]
-        let string1: NSAttributedString = .init(string: "~ ", attributes: stringAttributes1)
+        let subTitlePrefix: NSAttributedString =
+            .init(string: R.string.localizable.splashSubTitlePrefix(),
+                  attributes: subTitleAffixesAttributes)
         
-        let stringAttributes2: [NSAttributedString.Key: Any] = [
+        let subTitleAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
             .font: mainFont
         ]
-        let string2 = NSAttributedString(string: "Photo Collection", attributes: stringAttributes2)
+        let subTitle: NSAttributedString = .init(string: R.string.localizable.splashSubTitle(),
+                                                 attributes: subTitleAttributes)
         
-        let stringAttributes3: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.white,
-            .font: subFont]
-        let string3: NSAttributedString = .init(string: " ~", attributes: stringAttributes3)
+        
+        let subTitleSuffix: NSAttributedString =
+            .init(string: R.string.localizable.splashSubTitleSuffix(),
+                  attributes: subTitleAffixesAttributes)
         
         let mutableAttributedString = NSMutableAttributedString()
-        mutableAttributedString.append(string1)
-        mutableAttributedString.append(string2)
-        mutableAttributedString.append(string3)
+        mutableAttributedString.append(subTitlePrefix)
+        mutableAttributedString.append(subTitle)
+        mutableAttributedString.append(subTitleSuffix)
         
         // Note: setting labelSize
         // Note: ラベルサイズを設定
