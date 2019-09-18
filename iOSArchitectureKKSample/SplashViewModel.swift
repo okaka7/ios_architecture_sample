@@ -42,13 +42,11 @@ SplashViewModelOutputs {
     }()
     
     private let useCase: SplashUseCaseInputs
-    private let disposeBag: DisposeBag
+    private let disposeBag: DisposeBag = DisposeBag()
     let prepareForMainTabSubject: PublishRelay<Void> = .init()
     
-    init(useCase: SplashUseCaseInputs,
-         disposeBag: DisposeBag = DisposeBag()) {
+    init(useCase: SplashUseCaseInputs) {
         self.useCase = useCase
-        self.disposeBag = disposeBag
     }
     
     func prepareForMainTab() {
