@@ -33,7 +33,7 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
         layout.itemSize = Const.Size.Home.photoCollectionItemSize
         layout.sectionInset = Const.Size.Home.photoCollectionInsets
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = #colorLiteral(red: 0.6784313725, green: 0.6784313725, blue: 0.6784313725, alpha: 1)
+        collectionView.backgroundColor = R.color.homePhotoCollectionBackgroud()
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(collectionView)
         collectionView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
