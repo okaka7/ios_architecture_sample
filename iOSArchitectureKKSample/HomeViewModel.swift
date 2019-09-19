@@ -36,7 +36,7 @@ protocol HomeViewModelOutputs: class {
 final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutputs {
    
     let useCase: HomeUseCaseInputPort
-    private let disposeBag: DisposeBag
+    private let disposeBag: DisposeBag = DisposeBag()
     
     lazy private(set) var topPhotosObservable: Observable<[SectionOfTopImage]> = {
         return self.topPhotosSubject
@@ -51,10 +51,8 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
     }()
     private let topPhotosSubject: PublishRelay<[TopPhotoUIOutputData]?> = .init()
     
-    init(useCase: HomeUseCaseInputPort,
-         disposeBag: DisposeBag = DisposeBag()) {
+    init(useCase: HomeUseCaseInputPort) {
         self.useCase = useCase
-        self.disposeBag = disposeBag
     }
     
     func selectPhoto(_ photo: PhotoUIOutputData) {
