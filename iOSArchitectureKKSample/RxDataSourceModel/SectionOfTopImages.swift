@@ -12,7 +12,7 @@ struct SectionOfTopImage {
     var items: [Item]
 }
 extension SectionOfTopImage: SectionModelType {
-    typealias Item = PhotoUIOutputData
+    typealias Item = TopPhotoUIOutputData
     
     init(original: SectionOfTopImage, items: [Item]) {
         self = original

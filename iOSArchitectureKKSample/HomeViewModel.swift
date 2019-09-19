@@ -24,7 +24,7 @@ extension HomeViewModelType where Self: HomeViewModelOutputs {
 }
 
 protocol HomeViewModelInputs: class {
-    func fetchTopPhotos(page: Int, photos: [PhotoUIOutputData])
+    func fetchTopPhotos(page: Int, photos: [TopPhotoUIOutputData])
     func selectPhoto(_ photo: PhotoUIOutputData)
     func switchPhoto(_ photo: PhotoUIOutputData)
 }
@@ -42,14 +42,14 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
         return self.topPhotosSubject
             .take(1)
             .map {
-                guard let photoList: [PhotoUIOutputData] = $0 else {
+                guard let photoList: [TopPhotoUIOutputData] = $0 else {
                     return [SectionOfTopImage(items: [])]
                 }
                 return [SectionOfTopImage(items: photoList)]
             }
             .asObservable()
     }()
-    private let topPhotosSubject: PublishRelay<[PhotoUIOutputData]?> = .init()
+    private let topPhotosSubject: PublishRelay<[TopPhotoUIOutputData]?> = .init()
     
     init(useCase: HomeUseCaseInputPort,
          disposeBag: DisposeBag = DisposeBag()) {
@@ -65,13 +65,12 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
         
     }
     
-    func fetchTopPhotos(page: Int = 1, photos: [PhotoUIOutputData] = []) {
+    func fetchTopPhotos(page: Int = 1, photos: [TopPhotoUIOutputData] = []) {
         useCase.fetchTopPhotos(page: page)
             .retry(1)
-            .map { $0.map {PhotoUIOutputData(photo: $0) }}
-            .map { $0.filter{ $0.isSuitableForTopImage } }
+            .map { $0.compactMap { photo in TopPhotoUIOutputData.init(photo: photo) } }
             .subscribe(onSuccess: { [weak self] photoList in
-                    let list: [PhotoUIOutputData] = photos + photoList
+                    let list: [TopPhotoUIOutputData] = photos + photoList
                     if list.count >= 12 {
                         self?.topPhotosSubject
                             .accept(Array(list.prefix(12)))

@@ -56,7 +56,6 @@ final class SearchViewModel: SearchViewModelType, SearchViewModelInputs, SearchV
         useCase.fetchPopularPhotos(page: page)
             .retry(1)
             .map(PhotoUIList.init(photoList: ))
-            .map { $0.warpingPhotoSizeFilter }
             .subscribe(onSuccess: { [weak self] photos in
                         self?.popularPhotosSubject.accept(photos)
                     },

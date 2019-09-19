@@ -1,14 +1,14 @@
 //
-//  ImageUIValueObject.swift
+//  TopPhotoUIOutputData.swift
 //  iOSArchitectureKKSample
 //
-//  Created by Kota Kawanishi on 2019/08/19.
+//  Created by Kota Kawanishi on 2019/09/19.
 //  Copyright © 2019 Kota Kawanishi. All rights reserved.
 //
 
 import Foundation
 
-struct PhotoUIOutputData {
+struct TopPhotoUIOutputData {
     let id: String
     let width, height: Int
     let ratioOfWidthToHeight: Float
@@ -30,7 +30,11 @@ struct PhotoUIOutputData {
     private let links: UnsplashPhotoVOLinks
     //let sponsorship: Sponsorship
     
-    init(photo: UnsplashPhotoEntity) {
+    init?(photo: UnsplashPhotoEntity) {
+        let heightRatioToWidth: Float = Float(photo.height) / Float(photo.width)
+        guard  heightRatioToWidth >= 1.4 && heightRatioToWidth <= 1.5 else {
+            return nil
+        }
         self.id = photo.id
         self.width = photo.width
         self.height = photo.height
@@ -43,3 +47,4 @@ struct PhotoUIOutputData {
         self.user = photo.user
     }
 }
+

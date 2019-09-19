@@ -30,9 +30,4 @@ struct PhotoUIList {
     }
 }
 
-extension PhotoUIList {
-    var warpingPhotoSizeFilter: PhotoUIList {
-        let list: [PhotoUIOutputData] = self.list.filter { $0.isSuitableForTopImage }
-        return .init(photoUIList: list)
-    }
-}
+
