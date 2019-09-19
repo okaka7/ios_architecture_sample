@@ -36,6 +36,11 @@
 		E55E19CB2309B149007C1C57 /* TokenRequestAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E19CA2309B149007C1C57 /* TokenRequestAPIProtocol.swift */; };
 		E56D000A233387A400148BA5 /* TopPhotoUIOutputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D0009233387A400148BA5 /* TopPhotoUIOutputData.swift */; };
 		E56D000C23339D1700148BA5 /* PhotoImageLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D000B23339D1700148BA5 /* PhotoImageLoadable.swift */; };
+		E56D001623339FE700148BA5 /* WarpView.h in Headers */ = {isa = PBXBuildFile; fileRef = E56D001423339FE700148BA5 /* WarpView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E56D001923339FE700148BA5 /* WarpView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E56D001223339FE700148BA5 /* WarpView.framework */; };
+		E56D001A23339FE700148BA5 /* WarpView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E56D001223339FE700148BA5 /* WarpView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E56D001F2333A00400148BA5 /* WarpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D001E2333A00400148BA5 /* WarpView.swift */; };
+		E56D00212333A01600148BA5 /* WarpImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D00202333A01600148BA5 /* WarpImageView.swift */; };
 		E56D4017232B98C6005D5A3D /* PhotoUIEntityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D4016232B98C6005D5A3D /* PhotoUIEntityList.swift */; };
 		E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68322B28B8400AE6940 /* Coordinator.swift */; };
 		E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68522B28BC400AE6940 /* AppCoordinator.swift */; };
@@ -144,6 +149,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E56D001723339FE700148BA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E592297022AE65E8003EC30C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E56D001123339FE700148BA5;
+			remoteInfo = WarpView;
+		};
 		E574B85E2327C3660076C078 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E592297022AE65E8003EC30C /* Project object */;
@@ -175,6 +187,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				E574B8612327C3660076C078 /* DataCache.framework in Embed Frameworks */,
+				E56D001A23339FE700148BA5 /* WarpView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +230,11 @@
 		E55E19CA2309B149007C1C57 /* TokenRequestAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequestAPIProtocol.swift; sourceTree = "<group>"; };
 		E56D0009233387A400148BA5 /* TopPhotoUIOutputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPhotoUIOutputData.swift; sourceTree = "<group>"; };
 		E56D000B23339D1700148BA5 /* PhotoImageLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImageLoadable.swift; sourceTree = "<group>"; };
+		E56D001223339FE700148BA5 /* WarpView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WarpView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E56D001423339FE700148BA5 /* WarpView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WarpView.h; sourceTree = "<group>"; };
+		E56D001523339FE700148BA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E56D001E2333A00400148BA5 /* WarpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarpView.swift; sourceTree = "<group>"; };
+		E56D00202333A01600148BA5 /* WarpImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarpImageView.swift; sourceTree = "<group>"; };
 		E56D4016232B98C6005D5A3D /* PhotoUIEntityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUIEntityList.swift; sourceTree = "<group>"; };
 		E56FD68322B28B8400AE6940 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E56FD68522B28BC400AE6940 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -330,6 +348,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E56D000F23339FE700148BA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E574B8562327C3660076C078 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,6 +374,7 @@
 				E575840F2331BAA300ED33BF /* Nuke.framework in Frameworks */,
 				E52B09AC232AAD90002B7255 /* RxDataSources.framework in Frameworks */,
 				E52B09AA232AAD7F002B7255 /* Differentiator.framework in Frameworks */,
+				E56D001923339FE700148BA5 /* WarpView.framework in Frameworks */,
 				E5E503A72315529A00F075E8 /* RxCocoa.framework in Frameworks */,
 				E516490622CCDCFE00D3D2D7 /* Result.framework in Frameworks */,
 				E574B8602327C3660076C078 /* DataCache.framework in Frameworks */,
@@ -420,6 +446,17 @@
 				E53F1DFD22C0B66700F81CAA /* ColourFavoritesViewController.swift */,
 			);
 			name = Collection;
+			sourceTree = "<group>";
+		};
+		E56D001323339FE700148BA5 /* WarpView */ = {
+			isa = PBXGroup;
+			children = (
+				E56D001423339FE700148BA5 /* WarpView.h */,
+				E56D001E2333A00400148BA5 /* WarpView.swift */,
+				E56D00202333A01600148BA5 /* WarpImageView.swift */,
+				E56D001523339FE700148BA5 /* Info.plist */,
+			);
+			path = WarpView;
 			sourceTree = "<group>";
 		};
 		E56FD68222B28B2A00AE6940 /* Coordinator */ = {
@@ -834,6 +871,7 @@
 				E592298F22AE65E9003EC30C /* iOSArchitectureKKSampleTests */,
 				E592299A22AE65E9003EC30C /* iOSArchitectureKKSampleUITests */,
 				E574B85A2327C3660076C078 /* DataCache */,
+				E56D001323339FE700148BA5 /* WarpView */,
 				E592297922AE65E8003EC30C /* Products */,
 				E571E6F422B8324B0032A748 /* Frameworks */,
 				EFBD7F67D6E3C2F7FF40E41B /* Pods */,
@@ -847,6 +885,7 @@
 				E592298C22AE65E9003EC30C /* iOSArchitectureKKSampleTests.xctest */,
 				E592299722AE65E9003EC30C /* iOSArchitectureKKSampleUITests.xctest */,
 				E574B8592327C3660076C078 /* DataCache.framework */,
+				E56D001223339FE700148BA5 /* WarpView.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -969,6 +1008,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		E56D000D23339FE700148BA5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E56D001623339FE700148BA5 /* WarpView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E574B8542327C3660076C078 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -980,6 +1027,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		E56D001123339FE700148BA5 /* WarpView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E56D001B23339FE700148BA5 /* Build configuration list for PBXNativeTarget "WarpView" */;
+			buildPhases = (
+				E56D000D23339FE700148BA5 /* Headers */,
+				E56D000E23339FE700148BA5 /* Sources */,
+				E56D000F23339FE700148BA5 /* Frameworks */,
+				E56D001023339FE700148BA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WarpView;
+			productName = WarpView;
+			productReference = E56D001223339FE700148BA5 /* WarpView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		E574B8582327C3660076C078 /* DataCache */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E574B8642327C3710076C078 /* Build configuration list for PBXNativeTarget "DataCache" */;
@@ -1017,6 +1082,7 @@
 			);
 			dependencies = (
 				E574B85F2327C3660076C078 /* PBXTargetDependency */,
+				E56D001823339FE700148BA5 /* PBXTargetDependency */,
 			);
 			name = iOSArchitectureKKSample;
 			productName = iOSArchitectureKKSample;
@@ -1072,6 +1138,10 @@
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Kota Kawanishi";
 				TargetAttributes = {
+					E56D001123339FE700148BA5 = {
+						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
+					};
 					E574B8582327C3660076C078 = {
 						CreatedOnToolsVersion = 10.3;
 						LastSwiftMigration = 1030;
@@ -1106,11 +1176,19 @@
 				E592298B22AE65E9003EC30C /* iOSArchitectureKKSampleTests */,
 				E592299622AE65E9003EC30C /* iOSArchitectureKKSampleUITests */,
 				E574B8582327C3660076C078 /* DataCache */,
+				E56D001123339FE700148BA5 /* WarpView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E56D001023339FE700148BA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E574B8572327C3660076C078 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1338,6 +1416,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E56D000E23339FE700148BA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E56D00212333A01600148BA5 /* WarpImageView.swift in Sources */,
+				E56D001F2333A00400148BA5 /* WarpView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E574B8552327C3660076C078 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1479,6 +1566,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E56D001823339FE700148BA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E56D001123339FE700148BA5 /* WarpView */;
+			targetProxy = E56D001723339FE700148BA5 /* PBXContainerItemProxy */;
+		};
 		E574B85F2327C3660076C078 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E574B8582327C3660076C078 /* DataCache */;
@@ -1508,6 +1600,67 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E56D001C23339FE700148BA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FBNFNU46TG;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = WarpView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kota.WarpView;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E56D001D23339FE700148BA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FBNFNU46TG;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = WarpView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kota.WarpView;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		E574B8622327C3660076C078 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1863,6 +2016,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E56D001B23339FE700148BA5 /* Build configuration list for PBXNativeTarget "WarpView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E56D001C23339FE700148BA5 /* Debug */,
+				E56D001D23339FE700148BA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E574B8642327C3710076C078 /* Build configuration list for PBXNativeTarget "DataCache" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
