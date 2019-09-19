@@ -14,7 +14,7 @@ protocol HomeUseCaseInputPort: PhotoSelectable {
     func downloadPhoto(id: String) -> Single<UnsplashDownloadPhotoTarget.Response>
     func showImages()
     func switchImage(id: String)
-    func selectPhoto(_ photo: PhotoUIEntity)
+    func selectPhoto(_ photo: PhotoUIOutputData)
 }
 
 protocol HomeUseCaseOutputPort: PhotoTransitionable {
@@ -46,7 +46,7 @@ final class HomeUseCase: HomeUseCaseInputPort {
         
     }
     
-    func selectPhoto(_ photo: PhotoUIEntity) {
+    func selectPhoto(_ photo: PhotoUIOutputData) {
         
     }
     

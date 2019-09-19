@@ -8,14 +8,13 @@
 
 import Foundation
 
-struct PhotoUIEntity {
+struct PhotoUIOutputData {
     let id: String
     let width, height: Int
     let ratioOfWidthToHeight: Float
     //let color: String
     let description, altDescription: String?
-    let urls: Urls
-    let links: UnsplashPhotoVOLinks
+    
     //let categories: [String?]
     //let likes: Int
     //let likedByUser: Bool
@@ -24,6 +23,11 @@ struct PhotoUIEntity {
     var photoURL: URL {
         return URL(string: urls.small)!
     }
+    var downloadURL: URL {
+        return URL(string: links.download)!
+    }
+    private let urls: Urls
+    private let links: UnsplashPhotoVOLinks
     //let sponsorship: Sponsorship
     
     init(photo: UnsplashPhotoEntity) {
@@ -40,7 +44,7 @@ struct PhotoUIEntity {
     }
 }
 
-extension PhotoUIEntity {
+extension PhotoUIOutputData {
     var isSuitableForTopImage: Bool {
         return self.heightRatioToWidth <= 1.5 && self.heightRatioToWidth >= 1.4
     }

@@ -111,7 +111,7 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
     }
 
     func fetchTopPhotos(page: Int = 1) {
-        viewModel.inputs.fetchTopPhotos(page: page, photos: PhotoUIList())
+        viewModel.inputs.fetchTopPhotos(page: page, photos: [])
     }
 
 }

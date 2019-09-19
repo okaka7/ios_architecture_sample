@@ -24,9 +24,9 @@ extension HomeViewModelType where Self: HomeViewModelOutputs {
 }
 
 protocol HomeViewModelInputs: class {
-    func fetchTopPhotos(page: Int, photos: PhotoUIList)
-    func selectPhoto(_ photo: PhotoUIEntity)
-    func switchPhoto(_ photo: PhotoUIEntity)
+    func fetchTopPhotos(page: Int, photos: [PhotoUIOutputData])
+    func selectPhoto(_ photo: PhotoUIOutputData)
+    func switchPhoto(_ photo: PhotoUIOutputData)
 }
 
 protocol HomeViewModelOutputs: class {
@@ -42,12 +42,14 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
         return self.topPhotosSubject
             .take(1)
             .map {
-                guard let photoList: PhotoUIList = $0 else { return [SectionOfTopImage(items: [])] }
-                return [SectionOfTopImage(items: photoList.list)]
+                guard let photoList: [PhotoUIOutputData] = $0 else {
+                    return [SectionOfTopImage(items: [])]
+                }
+                return [SectionOfTopImage(items: photoList)]
             }
             .asObservable()
     }()
-    private let topPhotosSubject: PublishRelay<PhotoUIList?> = .init()
+    private let topPhotosSubject: PublishRelay<[PhotoUIOutputData]?> = .init()
     
     init(useCase: HomeUseCaseInputPort,
          disposeBag: DisposeBag = DisposeBag()) {
@@ -55,24 +57,24 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
         self.disposeBag = disposeBag
     }
     
-    func selectPhoto(_ photo: PhotoUIEntity) {
+    func selectPhoto(_ photo: PhotoUIOutputData) {
         
     }
     
-    func switchPhoto(_ photo: PhotoUIEntity) {
+    func switchPhoto(_ photo: PhotoUIOutputData) {
         
     }
     
-    func fetchTopPhotos(page: Int = 1, photos: PhotoUIList = .init()) {
+    func fetchTopPhotos(page: Int = 1, photos: [PhotoUIOutputData] = []) {
         useCase.fetchTopPhotos(page: page)
             .retry(1)
-            .map(PhotoUIList.init(photoList: ))
-            .map { $0.warpingPhotoSizeFilter }
+            .map { $0.map {PhotoUIOutputData(photo: $0) }}
+            .map { $0.filter{ $0.isSuitableForTopImage } }
             .subscribe(onSuccess: { [weak self] photoList in
-                    let list: PhotoUIList = photos + photoList
+                    let list: [PhotoUIOutputData] = photos + photoList
                     if list.count >= 12 {
                         self?.topPhotosSubject
-                            .accept(PhotoUIList(photoUIList: [PhotoUIEntity](list.list.prefix(12))))
+                            .accept(Array(list.prefix(12)))
                     
                     } else {
                         self?.fetchTopPhotos(page: page + 1, photos: list)

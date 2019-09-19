@@ -13,7 +13,7 @@ protocol SearchUseCaseInputPort: PhotoSelectable {
     func fetchPopularPhotos(page: Int) -> Single<UnsplashPhotosTarget.Response>
     func slideCategoryView(up: Bool)
     func searchUseCase(query: String)
-    func selectPhoto(_ photo: PhotoUIEntity)
+    func selectPhoto(_ photo: PhotoUIOutputData)
 }
 
 protocol SearchUsecaseOutputPort: PhotoTransitionable {
@@ -52,7 +52,7 @@ final class SearchUseCase: SearchUseCaseInputPort {
         return repository.fetchPhotos(page: page, perPage: 50, orderBy: .popular)
     }
     
-    func selectPhoto(_ photo: PhotoUIEntity) {
+    func selectPhoto(_ photo: PhotoUIOutputData) {
         
     }
     

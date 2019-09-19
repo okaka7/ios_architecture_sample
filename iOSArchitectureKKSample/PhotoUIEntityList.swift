@@ -9,30 +9,30 @@
 import Foundation
 
 struct PhotoUIList {
-    let list: [PhotoUIEntity]
+    let list: [PhotoUIOutputData]
     var count: Int { return list.count }
     
     init() {
-        self.list = [PhotoUIEntity]()
+        self.list = [PhotoUIOutputData]()
     }
     
-    init(photoUIList: [PhotoUIEntity]) {
+    init(photoUIList: [PhotoUIOutputData]) {
         self.list = photoUIList
     }
     
     init(photoList: [UnsplashPhotoEntity]) {
-        self.list = photoList.map(PhotoUIEntity.init(photo:))
+        self.list = photoList.map(PhotoUIOutputData.init(photo:))
     }
     
     static func +(lhs: PhotoUIList, rhs: PhotoUIList) -> PhotoUIList {
-        let list: [PhotoUIEntity] = lhs.list + rhs.list
+        let list: [PhotoUIOutputData] = lhs.list + rhs.list
         return .init(photoUIList: list)
     }
 }
 
 extension PhotoUIList {
     var warpingPhotoSizeFilter: PhotoUIList {
-        let list: [PhotoUIEntity] = self.list.filter { $0.isSuitableForTopImage }
+        let list: [PhotoUIOutputData] = self.list.filter { $0.isSuitableForTopImage }
         return .init(photoUIList: list)
     }
 }

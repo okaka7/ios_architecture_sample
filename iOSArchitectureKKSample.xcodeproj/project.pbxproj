@@ -129,7 +129,7 @@
 		E5B8A2382309CEF600AE29E8 /* TokenRequestUseCaseInputPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2372309CEF600AE29E8 /* TokenRequestUseCaseInputPort.swift */; };
 		E5B8A23A2309DC7100AE29E8 /* AuthenticateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */; };
 		E5B8A23C2309E4A600AE29E8 /* AuthenticationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A23B2309E4A600AE29E8 /* AuthenticationPresenter.swift */; };
-		E5B8A23E2309E8E000AE29E8 /* PhotoUIEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A23D2309E8E000AE29E8 /* PhotoUIEntity.swift */; };
+		E5B8A23E2309E8E000AE29E8 /* PhotoUIOutputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A23D2309E8E000AE29E8 /* PhotoUIOutputData.swift */; };
 		E5B8A2402309EB6000AE29E8 /* CollectionUIValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A23F2309EB6000AE29E8 /* CollectionUIValueObject.swift */; };
 		E5B8A2442309EC7200AE29E8 /* UserUIValueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8A2432309EC7200AE29E8 /* UserUIValueObject.swift */; };
 		E5C5646D22F18EDC00DD9401 /* UnsplashUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */; };
@@ -313,7 +313,7 @@
 		E5B8A2372309CEF600AE29E8 /* TokenRequestUseCaseInputPort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequestUseCaseInputPort.swift; sourceTree = "<group>"; };
 		E5B8A2392309DC7100AE29E8 /* AuthenticateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUseCase.swift; sourceTree = "<group>"; };
 		E5B8A23B2309E4A600AE29E8 /* AuthenticationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenter.swift; sourceTree = "<group>"; };
-		E5B8A23D2309E8E000AE29E8 /* PhotoUIEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUIEntity.swift; sourceTree = "<group>"; };
+		E5B8A23D2309E8E000AE29E8 /* PhotoUIOutputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUIOutputData.swift; sourceTree = "<group>"; };
 		E5B8A23F2309EB6000AE29E8 /* CollectionUIValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionUIValueObject.swift; sourceTree = "<group>"; };
 		E5B8A2432309EC7200AE29E8 /* UserUIValueObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUIValueObject.swift; sourceTree = "<group>"; };
 		E5C5646C22F18EDC00DD9401 /* UnsplashUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUserEntity.swift; sourceTree = "<group>"; };
@@ -543,7 +543,7 @@
 		E57826EE22D8E20E002499A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E5B8A23D2309E8E000AE29E8 /* PhotoUIEntity.swift */,
+				E5B8A23D2309E8E000AE29E8 /* PhotoUIOutputData.swift */,
 				E56D4016232B98C6005D5A3D /* PhotoUIEntityList.swift */,
 				E5B8A23F2309EB6000AE29E8 /* CollectionUIValueObject.swift */,
 				E5B8A2432309EC7200AE29E8 /* UserUIValueObject.swift */,
@@ -1357,7 +1357,7 @@
 				E57915CE22F85AD4009BCE95 /* UnsplashAPIProvider.swift in Sources */,
 				E59994802316C48200CAFC11 /* SearchViewModel.swift in Sources */,
 				E5B8A2362309C8A800AE29E8 /* ViewControlelrGettable.swift in Sources */,
-				E5B8A23E2309E8E000AE29E8 /* PhotoUIEntity.swift in Sources */,
+				E5B8A23E2309E8E000AE29E8 /* PhotoUIOutputData.swift in Sources */,
 				E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */,
 				E57BD4FF22C4B4DD00FE44D4 /* HomeVCCoordinator.swift in Sources */,
 				E57826E022D8DA01002499A9 /* NSObject+ClassName.swift in Sources */,
