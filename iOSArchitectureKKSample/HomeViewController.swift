@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RxDataSources
 import Nuke
 
 class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
@@ -18,12 +19,11 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
             .outputs
             .topPhotosObservable
             .map({ _ in () })
-            .do(onSuccess: {_ in
+            .do(onNext: { _ in
                 #if DEBUG
                 log.debug("preparationObservable📔")
                 #endif
             })
-            .asObservable()
     }()
 
     lazy private(set) var collectionView: UICollectionView = {
@@ -48,30 +48,18 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
             .isActive = true
         collectionView.register(CollectionPhotoViewCell.self,
                             forCellWithReuseIdentifier: R.string.localizable.homePhotoCell())
-        collectionView.dataSource = self
+        collectionView.allowsMultipleSelection = false
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
     
-    lazy private(set) var photo: [UIImage] = {
-        let images: [UIImage] = Array(1...12).compactMap {
-            if let image: UIImage = File.loadImageFromPath(path: "topImage\($0)"){
-                return image
-            } else {
-                return nil
-            }
-        }
-        
-        return images
-    }()
-
     private let viewModel: HomeViewModelType
     let disposeBag: DisposeBag = .init()
     
     init(viewModel: HomeViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        self.view.backgroundColor = #colorLiteral(red: 0.08235294118, green: 0.08235294118, blue: 0.08235294118, alpha: 1)
+        self.view.backgroundColor = R.color.background()
         
         #if DEBUG
         log.debug("ColourCategoryViewController.init()🤖🤖🤖")
@@ -94,34 +82,36 @@ class HomeViewController: UIViewController, TransitionPreparationNotifiCation {
     }
     
     private func setupSubscrible() {
+        
+        let configureCell: RxCollectionViewSectionedReloadDataSource<SectionOfTopImage>.ConfigureCell = { dataSource, collectionView, indexPath, item in
+            let photoIdentifier: String = R.string.localizable.homePhotoCell()
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: photoIdentifier,
+                                                          for: indexPath) as! CollectionPhotoViewCell
+            
+            cell.configureImage(imageURL: item.photoURL)
+
+            return cell
+            
+        }
+        
+         let dataSource: RxCollectionViewSectionedReloadDataSource<SectionOfTopImage> = .init(configureCell: configureCell)
+        
         self.viewModel.outputs
             .topPhotosObservable
-            .subscribe(onSuccess: { list in
+            .observeOn(MainScheduler.instance)
+            .bind(to: collectionView.rx.items(dataSource: dataSource))
+            .disposed(by: self.disposeBag)
+        
+        self.collectionView.rx.itemSelected
+            .subscribe(onNext: {
+                print($0)
             })
-            .disposed(by: disposeBag)
+            .disposed(by: self.disposeBag)
+        
     }
 
     func fetchTopPhotos(page: Int = 1) {
         viewModel.inputs.fetchTopPhotos(page: page, photos: PhotoUIList())
     }
 
-}
-
-extension HomeViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photo.count
-        
-    }
-
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView
-                    .dequeueReusableCell(withReuseIdentifier: R.string.localizable.homePhotoCell(),
-                                         for: indexPath) as! CollectionPhotoViewCell
-        cell.configureImage(image: photo[indexPath.row])
-        return cell
-    }
 }

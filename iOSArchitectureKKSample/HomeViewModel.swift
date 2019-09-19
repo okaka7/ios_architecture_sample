@@ -30,7 +30,7 @@ protocol HomeViewModelInputs: class {
 }
 
 protocol HomeViewModelOutputs: class {
-    var topPhotosObservable: Single<PhotoUIList?> { get }
+    var topPhotosObservable: Observable<[SectionOfTopImage]> { get }
 }
 
 final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutputs {
@@ -38,10 +38,14 @@ final class HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModel
     let useCase: HomeUseCaseInputPort
     private let disposeBag: DisposeBag
     
-    lazy private(set) var topPhotosObservable: Single<PhotoUIList?> = {
+    lazy private(set) var topPhotosObservable: Observable<[SectionOfTopImage]> = {
         return self.topPhotosSubject
             .take(1)
-            .asSingle()
+            .map {
+                guard let photoList: PhotoUIList = $0 else { return [SectionOfTopImage(items: [])] }
+                return [SectionOfTopImage(items: photoList.list)]
+            }
+            .asObservable()
     }()
     private let topPhotosSubject: PublishRelay<PhotoUIList?> = .init()
     

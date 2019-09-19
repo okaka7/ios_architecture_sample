@@ -7,14 +7,41 @@
 //
 
 import UIKit
+import Nuke
 
 class CollectionPhotoViewCell: UICollectionViewCell {
-    var image: UIImage?
     
-    func configureImage(image: UIImage) {
-        self.image = image
+    lazy private(set) var overlapView: UIView = {
+        let view: UIView = .init(frame: .zero)
+        self.addSubview(view)
+        self.bringSubviewToFront(view)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+            .isActive = true
+        view.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            .isActive = true
+        view.widthAnchor.constraint(equalTo: self.widthAnchor)
+            .isActive = true
+        view.heightAnchor.constraint(equalTo: self.heightAnchor)
+            .isActive = true
         
-        let imageView = UIImageView(image: image)
+        return view
+    }()
+    
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                overlapView.backgroundColor = UIColor.black.withAlphaComponent(0.0)
+            } else {
+                overlapView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+            }
+        }
+    }
+    
+    
+    lazy private(set) var imageView: UIImageView = {
+        let imageView: UIImageView = .init(frame: .zero)
         self.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
@@ -25,5 +52,16 @@ class CollectionPhotoViewCell: UICollectionViewCell {
             .isActive = true
         imageView.heightAnchor.constraint(equalTo: self.heightAnchor)
             .isActive = true
+        return imageView
+    }()
+    
+    func configureImage(image: UIImage) {
+        imageView.image = image
     }
+    func configureImage(imageURL: URL) {
+        Nuke.loadImage(with: imageURL, into: imageView)
+        _ = overlapView
+    }
+    
+    
 }

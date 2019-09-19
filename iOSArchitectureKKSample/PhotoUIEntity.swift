@@ -21,6 +21,9 @@ struct PhotoUIEntity {
     //let likedByUser: Bool
     let currentUserCollections: [String?]
     let user: UnsplashUserEntity?
+    var photoURL: URL {
+        return URL(string: urls.small)!
+    }
     //let sponsorship: Sponsorship
     
     init(photo: UnsplashPhotoEntity) {

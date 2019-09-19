@@ -142,7 +142,7 @@ class SplashViewController: UIViewController {
     init(viewModel: SplashViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        self.view.backgroundColor = #colorLiteral(red: 0.08235294118, green: 0.08235294118, blue: 0.08235294118, alpha: 1)
+        self.view.backgroundColor = R.color.background()
         self.addObserverForTransition()
     }
     
@@ -175,7 +175,7 @@ class SplashViewController: UIViewController {
     }
     
     func prepareForMainTab() {
-        //viewModel.inputs.prepareForMainTab()
+        viewModel.inputs.prepareForMainTab()
     }
     
     private func transition(_ : Notification) {

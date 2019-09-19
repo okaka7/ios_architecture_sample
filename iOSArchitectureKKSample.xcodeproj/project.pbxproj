@@ -42,6 +42,7 @@
 		E5713F21230B0FF20033AF21 /* UserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5713F20230B0FF20033AF21 /* UserProtocol.swift */; };
 		E571E6F822B8325B0032A748 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */; };
 		E5733067232BB7DB003B8AFA /* AccountUIEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5733066232BB7DB003B8AFA /* AccountUIEntity.swift */; };
+		E573D65D2333023000FB0841 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E581FBA422D346B400754098 /* KeychainAccess.framework */; };
 		E573FA37232FF0BF002EFE47 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573FA36232FF0BF002EFE47 /* Const.swift */; };
 		E573FA39232FF107002EFE47 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573FA38232FF107002EFE47 /* Size.swift */; };
 		E573FA3B233011DF002EFE47 /* FileURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573FA3A233011DF002EFE47 /* FileURL.swift */; };
@@ -338,6 +339,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E573D65D2333023000FB0841 /* KeychainAccess.framework in Frameworks */,
 				E59A789023326382009B163B /* UIFontComplete.framework in Frameworks */,
 				E57584112331BAB300ED33BF /* RxNuke.framework in Frameworks */,
 				E575840F2331BAA300ED33BF /* Nuke.framework in Frameworks */,
@@ -1257,6 +1259,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxNuke.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/UIFontComplete.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
 			);
 			name = "Carthage Script";
 			outputFileListPaths = (
@@ -1501,7 +1504,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1537,7 +1540,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
