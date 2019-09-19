@@ -10,6 +10,6 @@ import Foundation
 import RxSwift
 import Nuke
 
-protocol PhotoLoadable {
-    func loadPhoto(photoURL: URL) -> Single<ImageResponse>
+protocol PhotoImageLoadable {
+    func loadPhotoImage(imageURL: URL) -> Single<ImageResponse>
 }
