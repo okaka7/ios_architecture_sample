@@ -14,23 +14,16 @@ enum WarpGripError: Error {
     case inappropriatePosition
 }
 
-typealias WarpGrid = SKWarpGeometryGrid
-
 class WarpView: UIView {
     lazy private var skView: SKView = {
-        let skView = SKView()
+        let skView = SKView(frame: .zero)
         skView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(skView)
         skView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         skView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         skView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
         skView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
         return skView
-    }()
-    
-    lazy private var scene: SKScene = {
-        let scene = SKScene(size: self.skView.frame.size)
-        scene.backgroundColor = .clear
-        return scene
     }()
     
     private var warpSpriteNode: SKSpriteNode
@@ -39,78 +32,128 @@ class WarpView: UIView {
     init(spriteNode node: SKSpriteNode) {
         self.warpSpriteNode = node
         super.init(frame: .zero)
-        scene.addChild(node)
-        skView.presentScene(scene)
     }
     
-    override func layoutSubviews() {
-        warpSpriteNode.size = self.frame.size
+    lazy var scene: SKScene = {
+        let scene: SKScene = .init(size: self.frame.size)
+        scene.backgroundColor = .clear
+        
+        return scene
+    }()
+    
+ 
+    override func updateConstraints() {
+        super.updateConstraints()
+        _ = skView
     }
+    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        warpSpriteNode.size = self.frame.size
+        warpSpriteNode.position = CGPoint(x:scene.frame.midX, y:scene.frame.midY)
+        scene.addChild(self.warpSpriteNode)
+        skView.presentScene(scene)
+        
+    }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     func warpAnimation(withDelay delay: TimeInterval = 0.0,
-              warpGrids: [WarpGrid],
-              timings: [TimeInterval],
+              warpings: [Warping],
               fadeOutDuration: TimeInterval,
               completion: @escaping () -> Void = {}) {
-        
-        guard let unwrappedWarp: SKAction = .animate(withWarps: warpGrids,
-                                                     times: timings as [NSNumber]),
-            let lastTime: TimeInterval = timings.last else {
-            return
+
+        guard let firstWarp: Warping = warpings.first else {
+                return
         }
+        let lastTime: TimeInterval = warpings.reduce(delay) {(result, warping) in result + warping.duration }
         
-        let warpSequence: SKAction = {
-            let delayAction: SKAction = .wait(forDuration: delay)
-            return SKAction.sequence([delayAction, unwrappedWarp])
-        }()
+         warpSpriteNode.warpGeometry = firstWarp.sourceGrid
+         
+         let grupe: SKAction = {
+             let fadeOutDelay: SKAction = .wait(forDuration: lastTime - fadeOutDuration)
+             let fadeOutAction: SKAction = .fadeOut(withDuration: fadeOutDuration)
+             fadeOutAction.timingMode = .easeInEaseOut
+             let sequence: SKAction = SKAction.sequence([fadeOutDelay, fadeOutAction])
+             let warpAction: SKAction = {
+                 let warpActions: [SKAction] = warpings.map {$0.warpAction}
+                 let warpSequenceAction: SKAction = .sequence(warpActions)
+                 warpSequenceAction.timingMode = .easeInEaseOut
+                 return warpSequenceAction
+             }()
+             let groupe = SKAction.group([warpAction, sequence])
+             return groupe
+         }()
         
-        let fadeOutAction: SKAction = {
-            let fadeOutDelay: SKAction = .wait(forDuration: lastTime - fadeOutDuration)
-            let fadeOutAction: SKAction = .fadeOut(withDuration: fadeOutDuration)
-            return SKAction.sequence([fadeOutDelay, fadeOutAction])
-        }()
-        
-        let animationGroup: SKAction = .group([warpSequence, fadeOutAction])
-        animationGroup.timingMode = .easeInEaseOut
-        warpSpriteNode.run(animationGroup){
+        self.warpSpriteNode.run(grupe) {
             completion()
         }
     }
     
     func warpTransitionAnimation(withDelay delay: TimeInterval = 0.0,
-                                 fromWarpGrids: [WarpGrid],
-                                 fromTimings: [TimeInterval],
+                                 fromWarpings: [Warping],
                                  fadeOutDuration: TimeInterval,
-                                 to toView: WarpView,
+                                 to toView: UIImage,
                                  transitionStartTime: TimeInterval,
                                  fadeInDuration: TimeInterval,
-                                 toWarpGrids: [WarpGrid],
-                                 toTimings: [TimeInterval],
-                                 completion: @escaping () -> Void) {
-        guard let unwrappedBackWarp: SKAction = .animate(withWarps: toWarpGrids,
-                                                     times: toTimings as [NSNumber]) else {
-                                                        return
+                                 toWarpings: [Warping],
+                                 completion: @escaping () -> Void = {}) {
+        guard let _ = fromWarpings.first,
+            let toFirst: Warping = toWarpings.first else {
+                return
         }
-        let animationGroup: SKAction = {
-            let waitAction: SKAction = .wait(forDuration: transitionStartTime)
+        
+        let actionBack: SKAction = {
+            let waitAction = SKAction.wait(forDuration: transitionStartTime)
             let fadeInAction = SKAction.fadeIn(withDuration: fadeInDuration)
-            let group = SKAction.group([unwrappedBackWarp, fadeInAction])
-            let sequenceAction = SKAction.sequence([waitAction, group])
-            sequenceAction.timingMode = .easeInEaseOut
-            return sequenceAction
+            fadeInAction.timingMode = .easeInEaseOut
+            let warpAction: SKAction = {
+                let warpActions: [SKAction] = toWarpings.map {$0.warpBackAction}
+                let warpSequenceAction: SKAction = .sequence(warpActions)
+                warpSequenceAction.timingMode = .easeInEaseOut
+                return warpSequenceAction
+            }()
+            let group = SKAction.group([warpAction, fadeInAction])
+            let sequenceActionBack = SKAction.sequence([waitAction, group])
+            return sequenceActionBack
         }()
         
-        warpAnimation(withDelay: delay,
-                      warpGrids: fromWarpGrids,
-                      timings: fromTimings,
-                      fadeOutDuration: fadeOutDuration)
-        toView.warpSpriteNode.run( animationGroup, completion: {
-            self.warpSpriteNode = toView.warpSpriteNode
+        let toSprite: SKSpriteNode = {
+                        let texture: SKTexture = SKTexture(image: toView)
+                        let sprite: SKSpriteNode = SKSpriteNode(texture: texture)
+                        sprite.position = CGPoint(x:scene.frame.midX, y:scene.frame.midY)
+                        sprite.size = scene.size
+                        sprite.alpha = 0.0
+                        sprite.warpGeometry = toFirst.backSourceGrid
+                        return sprite
+                    }()
+        
+        scene.addChild(toSprite)
+        let fromLastTime: TimeInterval = fromWarpings.reduce(delay) {(result, warping) in result + warping.duration }
+        let toLastTime: TimeInterval = toWarpings.reduce(transitionStartTime) {(result, warping) in result + warping.duration }
+        let completion: ()->() = {
+            self.warpSpriteNode.removeFromParent()
+            self.warpSpriteNode = toSprite
             completion()
-        })
+        }
+        if fromLastTime < toLastTime {
+            warpAnimation(withDelay: delay,
+                          warpings: fromWarpings,
+                          fadeOutDuration: fadeOutDuration)
+            toSprite.run(actionBack) {
+                completion()
+            }
+        } else {
+            warpAnimation(withDelay: delay,
+                          warpings: fromWarpings,
+                          fadeOutDuration: fadeOutDuration,
+                          completion:{completion()})
+            toSprite.run(actionBack)
+        }
+        
     }
 }

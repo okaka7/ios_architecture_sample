@@ -21,7 +21,7 @@ struct TopPhotoUIOutputData {
     let currentUserCollections: [String?]
     let user: UnsplashUserEntity?
     var photoURL: URL {
-        return URL(string: urls.small)!
+        return URL(string: urls.raw + "&w=1500&dpi=2&fit=max")!
     }
     var downloadURL: URL {
         return URL(string: links.download)!
@@ -47,4 +47,3 @@ struct TopPhotoUIOutputData {
         self.user = photo.user
     }
 }
-

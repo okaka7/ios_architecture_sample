@@ -39,9 +39,10 @@
 		E56D001623339FE700148BA5 /* WarpView.h in Headers */ = {isa = PBXBuildFile; fileRef = E56D001423339FE700148BA5 /* WarpView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E56D001923339FE700148BA5 /* WarpView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E56D001223339FE700148BA5 /* WarpView.framework */; };
 		E56D001A23339FE700148BA5 /* WarpView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E56D001223339FE700148BA5 /* WarpView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E56D001F2333A00400148BA5 /* WarpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D001E2333A00400148BA5 /* WarpView.swift */; };
-		E56D00212333A01600148BA5 /* WarpImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D00202333A01600148BA5 /* WarpImageView.swift */; };
 		E56D4017232B98C6005D5A3D /* PhotoUIEntityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D4016232B98C6005D5A3D /* PhotoUIEntityList.swift */; };
+		E56DFD6F2336A53000C502C8 /* Warping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DFD6D2336A53000C502C8 /* Warping.swift */; };
+		E56DFD702336A53000C502C8 /* WarpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DFD6E2336A53000C502C8 /* WarpView.swift */; };
+		E56DFD722336A59E00C502C8 /* WarpImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56DFD712336A59D00C502C8 /* WarpImageView.swift */; };
 		E56FD68422B28B8400AE6940 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68322B28B8400AE6940 /* Coordinator.swift */; };
 		E56FD68622B28BC400AE6940 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FD68522B28BC400AE6940 /* AppCoordinator.swift */; };
 		E570C076232CC9940059C5DF /* SectionOfTopImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E570C075232CC9940059C5DF /* SectionOfTopImages.swift */; };
@@ -233,9 +234,10 @@
 		E56D001223339FE700148BA5 /* WarpView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WarpView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E56D001423339FE700148BA5 /* WarpView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WarpView.h; sourceTree = "<group>"; };
 		E56D001523339FE700148BA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E56D001E2333A00400148BA5 /* WarpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarpView.swift; sourceTree = "<group>"; };
-		E56D00202333A01600148BA5 /* WarpImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarpImageView.swift; sourceTree = "<group>"; };
 		E56D4016232B98C6005D5A3D /* PhotoUIEntityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUIEntityList.swift; sourceTree = "<group>"; };
+		E56DFD6D2336A53000C502C8 /* Warping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Warping.swift; sourceTree = "<group>"; };
+		E56DFD6E2336A53000C502C8 /* WarpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarpView.swift; sourceTree = "<group>"; };
+		E56DFD712336A59D00C502C8 /* WarpImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarpImageView.swift; sourceTree = "<group>"; };
 		E56FD68322B28B8400AE6940 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E56FD68522B28BC400AE6940 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E570C075232CC9940059C5DF /* SectionOfTopImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfTopImages.swift; sourceTree = "<group>"; };
@@ -452,8 +454,9 @@
 			isa = PBXGroup;
 			children = (
 				E56D001423339FE700148BA5 /* WarpView.h */,
-				E56D001E2333A00400148BA5 /* WarpView.swift */,
-				E56D00202333A01600148BA5 /* WarpImageView.swift */,
+				E56DFD6D2336A53000C502C8 /* Warping.swift */,
+				E56DFD6E2336A53000C502C8 /* WarpView.swift */,
+				E56DFD712336A59D00C502C8 /* WarpImageView.swift */,
 				E56D001523339FE700148BA5 /* Info.plist */,
 			);
 			path = WarpView;
@@ -1140,7 +1143,7 @@
 				TargetAttributes = {
 					E56D001123339FE700148BA5 = {
 						CreatedOnToolsVersion = 10.3;
-						LastSwiftMigration = 1030;
+						LastSwiftMigration = 1100;
 					};
 					E574B8582327C3660076C078 = {
 						CreatedOnToolsVersion = 10.3;
@@ -1420,8 +1423,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E56D00212333A01600148BA5 /* WarpImageView.swift in Sources */,
-				E56D001F2333A00400148BA5 /* WarpView.swift in Sources */,
+				E56DFD702336A53000C502C8 /* WarpView.swift in Sources */,
+				E56DFD722336A59E00C502C8 /* WarpImageView.swift in Sources */,
+				E56DFD6F2336A53000C502C8 /* Warping.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

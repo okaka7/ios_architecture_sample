@@ -39,7 +39,6 @@ class CollectionPhotoViewCell: UICollectionViewCell {
         }
     }
     
-    
     lazy private(set) var imageView: UIImageView = {
         let imageView: UIImageView = .init(frame: .zero)
         self.addSubview(imageView)

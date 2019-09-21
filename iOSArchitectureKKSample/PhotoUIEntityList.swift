@@ -11,6 +11,7 @@ import Foundation
 struct PhotoUIList {
     let list: [PhotoUIOutputData]
     var count: Int { return list.count }
+
     
     init() {
         self.list = [PhotoUIOutputData]()
