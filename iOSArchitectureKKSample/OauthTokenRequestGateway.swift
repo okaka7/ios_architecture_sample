@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Result
 
 protocol CodeGettable {
     func getCode(from components: URLComponents) -> String?

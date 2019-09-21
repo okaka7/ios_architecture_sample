@@ -12,7 +12,7 @@ import RxSwift
 import RxMoya
 
 struct UnsplashOauthAPIProvider {
-    static let provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true)])
+    static let provider = MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin()])
     
     static private func request<R>(_ target: R) -> Single<R.Response> where R: UnsplashOauthTargetType {
         let target = MultiTarget(target)

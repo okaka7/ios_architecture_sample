@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Result
 
 protocol TokenRequestProtocol {
     func request(code: String,
