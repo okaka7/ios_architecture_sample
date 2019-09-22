@@ -41,6 +41,7 @@
 		E570C2E82317D9C700F12208 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = E570C2E72317D9C700F12208 /* Pagination.swift */; };
 		E5713F21230B0FF20033AF21 /* UserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5713F20230B0FF20033AF21 /* UserProtocol.swift */; };
 		E571E6F822B8325B0032A748 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E571E6F722B8325B0032A748 /* SwiftyBeaver.framework */; };
+		E571F9BC2337E50C002354D2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E571F9BB2337E50C002354D2 /* RxSwift */; };
 		E5733067232BB7DB003B8AFA /* AccountUIEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5733066232BB7DB003B8AFA /* AccountUIEntity.swift */; };
 		E573D65D2333023000FB0841 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E581FBA422D346B400754098 /* KeychainAccess.framework */; };
 		E573FA37232FF0BF002EFE47 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573FA36232FF0BF002EFE47 /* Const.swift */; };
@@ -117,10 +118,8 @@
 		E592E73222FF026300AECEC4 /* UnsplashCollectionPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73122FF026300AECEC4 /* UnsplashCollectionPhotos.swift */; };
 		E592E73422FF02E500AECEC4 /* UnsplashRelatedCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73322FF02E500AECEC4 /* UnsplashRelatedCollections.swift */; };
 		E592E73622FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E592E73522FF037100AECEC4 /* UnsplashEditPhotoInCollectionTarget.swift */; };
-		E597C84D2336C30500E3D58F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = E597C84C2336C30500E3D58F /* RxSwift */; settings = {ATTRIBUTES = (Required, ); }; };
 		E597C8512336CA6B00E3D58F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E597C8502336CA6B00E3D58F /* RxCocoa */; };
 		E597C8532336CA7F00E3D58F /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = E597C8522336CA7F00E3D58F /* RxRelay */; };
-		E597C8552336CA8500E3D58F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E597C8542336CA8500E3D58F /* RxSwift */; };
 		E597C8572336CA8A00E3D58F /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = E597C8562336CA8A00E3D58F /* Differentiator */; };
 		E597C8592336CA9000E3D58F /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = E597C8582336CA9000E3D58F /* RxDataSources */; };
 		E597C85B2336CA9700E3D58F /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E597C85A2336CA9700E3D58F /* Moya */; };
@@ -358,7 +357,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E597C84D2336C30500E3D58F /* RxSwift in Frameworks */,
 				E574B8652327C3BC0076C078 /* KeychainAccess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,12 +366,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E597C85D2336CA9D00E3D58F /* RxMoya in Frameworks */,
-				E597C8552336CA8500E3D58F /* RxSwift in Frameworks */,
 				E573D65D2333023000FB0841 /* KeychainAccess.framework in Frameworks */,
 				E597C85B2336CA9700E3D58F /* Moya in Frameworks */,
 				E59A789023326382009B163B /* UIFontComplete.framework in Frameworks */,
 				E56D001923339FE700148BA5 /* WarpView.framework in Frameworks */,
 				E597C8512336CA6B00E3D58F /* RxCocoa in Frameworks */,
+				E571F9BC2337E50C002354D2 /* RxSwift in Frameworks */,
 				E597C8592336CA9000E3D58F /* RxDataSources in Frameworks */,
 				E574B8602327C3660076C078 /* DataCache.framework in Frameworks */,
 				E597C8602336CAF300E3D58F /* RxNuke in Frameworks */,
@@ -1058,7 +1056,6 @@
 			);
 			name = DataCache;
 			packageProductDependencies = (
-				E597C84C2336C30500E3D58F /* RxSwift */,
 			);
 			productName = DataCache;
 			productReference = E574B8592327C3660076C078 /* DataCache.framework */;
@@ -1088,12 +1085,12 @@
 			packageProductDependencies = (
 				E597C8502336CA6B00E3D58F /* RxCocoa */,
 				E597C8522336CA7F00E3D58F /* RxRelay */,
-				E597C8542336CA8500E3D58F /* RxSwift */,
 				E597C8562336CA8A00E3D58F /* Differentiator */,
 				E597C8582336CA9000E3D58F /* RxDataSources */,
 				E597C85A2336CA9700E3D58F /* Moya */,
 				E597C85C2336CA9D00E3D58F /* RxMoya */,
 				E597C85F2336CAF300E3D58F /* RxNuke */,
+				E571F9BB2337E50C002354D2 /* RxSwift */,
 			);
 			productName = iOSArchitectureKKSample;
 			productReference = E592297822AE65E8003EC30C /* iOSArchitectureKKSample.app */;
@@ -2123,7 +2120,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E597C84C2336C30500E3D58F /* RxSwift */ = {
+		E571F9BB2337E50C002354D2 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E597C8302336BF2F00E3D58F /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
@@ -2137,11 +2134,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E597C8302336BF2F00E3D58F /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
-		};
-		E597C8542336CA8500E3D58F /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E597C8302336BF2F00E3D58F /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
 		};
 		E597C8562336CA8A00E3D58F /* Differentiator */ = {
 			isa = XCSwiftPackageProductDependency;
