@@ -2,11 +2,11 @@
 //  WarpView.h
 //  WarpView
 //
-//  Created by Kota Kawanishi on 2019/09/19.
+//  Created by Kota Kawanishi on 2019/10/02.
 //  Copyright © 2019 Kota Kawanishi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for WarpView.
 FOUNDATION_EXPORT double WarpViewVersionNumber;
