@@ -43,6 +43,19 @@
 		E57254E02343B89B00E46D90 /* Warping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57254DD2343B89A00E46D90 /* Warping.swift */; };
 		E57254E12343B89B00E46D90 /* WarpImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57254DE2343B89A00E46D90 /* WarpImageView.swift */; };
 		E57254E22343B89B00E46D90 /* WarpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57254DF2343B89B00E46D90 /* WarpView.swift */; };
+		E57263582344A1FF00FFE595 /* UIFontComplete.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57263572344A1FF00FFE595 /* UIFontComplete.framework */; };
+		E57263672344A2D300FFE595 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = E57263662344A2D300FFE595 /* Differentiator */; };
+		E57263692344A2D300FFE595 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = E57263682344A2D300FFE595 /* RxDataSources */; };
+		E572636B2344A2EB00FFE595 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E572636A2344A2EB00FFE595 /* RxCocoa */; };
+		E572636D2344A2EB00FFE595 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = E572636C2344A2EB00FFE595 /* RxRelay */; };
+		E572636F2344A2EB00FFE595 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E572636E2344A2EB00FFE595 /* RxSwift */; };
+		E57263722344A31A00FFE595 /* RxNuke in Frameworks */ = {isa = PBXBuildFile; productRef = E57263712344A31A00FFE595 /* RxNuke */; };
+		E57263752344A36200FFE595 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E57263742344A36200FFE595 /* Moya */; };
+		E57263772344A36200FFE595 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = E57263762344A36200FFE595 /* RxMoya */; };
+		E572637D2344A3C300FFE595 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = E572637C2344A3C300FFE595 /* KeychainAccess */; };
+		E572637F2344A3D100FFE595 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = E572637E2344A3D100FFE595 /* SwiftyBeaver */; };
+		E57263822344A4A000FFE595 /* Umbrella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57254C02343B83500E46D90 /* Umbrella.framework */; };
+		E57263832344A67200FFE595 /* Umbrella.framework in Embedded Frameworks */ = {isa = PBXBuildFile; fileRef = E57254C02343B83500E46D90 /* Umbrella.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E5733067232BB7DB003B8AFA /* AccountUIEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5733066232BB7DB003B8AFA /* AccountUIEntity.swift */; };
 		E573FA37232FF0BF002EFE47 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573FA36232FF0BF002EFE47 /* Const.swift */; };
 		E573FA39232FF107002EFE47 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E573FA38232FF107002EFE47 /* Size.swift */; };
@@ -175,6 +188,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		E57263802344A40200FFE595 /* Embedded Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E57263832344A67200FFE595 /* Umbrella.framework in Embedded Frameworks */,
+			);
+			name = "Embedded Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E574B7F12327B9E60076C078 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -233,6 +257,7 @@
 		E57254DD2343B89A00E46D90 /* Warping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Warping.swift; sourceTree = "<group>"; };
 		E57254DE2343B89A00E46D90 /* WarpImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarpImageView.swift; sourceTree = "<group>"; };
 		E57254DF2343B89B00E46D90 /* WarpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarpView.swift; sourceTree = "<group>"; };
+		E57263572344A1FF00FFE595 /* UIFontComplete.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIFontComplete.framework; path = Carthage/Build/iOS/UIFontComplete.framework; sourceTree = "<group>"; };
 		E5733066232BB7DB003B8AFA /* AccountUIEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUIEntity.swift; sourceTree = "<group>"; };
 		E573FA36232FF0BF002EFE47 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E573FA38232FF107002EFE47 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
@@ -337,6 +362,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E572636B2344A2EB00FFE595 /* RxCocoa in Frameworks */,
+				E57263722344A31A00FFE595 /* RxNuke in Frameworks */,
+				E572637D2344A3C300FFE595 /* KeychainAccess in Frameworks */,
+				E57263672344A2D300FFE595 /* Differentiator in Frameworks */,
+				E572636F2344A2EB00FFE595 /* RxSwift in Frameworks */,
+				E572636D2344A2EB00FFE595 /* RxRelay in Frameworks */,
+				E57263752344A36200FFE595 /* Moya in Frameworks */,
+				E572637F2344A3D100FFE595 /* SwiftyBeaver in Frameworks */,
+				E57263772344A36200FFE595 /* RxMoya in Frameworks */,
+				E57263692344A2D300FFE595 /* RxDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +386,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E57263822344A4A000FFE595 /* Umbrella.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +394,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E57263582344A1FF00FFE595 /* UIFontComplete.framework in Frameworks */,
 				E574B8602327C3660076C078 /* DataCache.framework in Frameworks */,
 				E57254C72343B83500E46D90 /* Umbrella.framework in Frameworks */,
 				8A1F7E0788CD9A59C843E655 /* Pods_iOSArchitectureKKSample.framework in Frameworks */,
@@ -451,6 +488,7 @@
 		E571E6F422B8324B0032A748 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E57263572344A1FF00FFE595 /* UIFontComplete.framework */,
 				77D9BDEBD800FC2B27475793 /* Pods_iOSArchitectureKKSample.framework */,
 				50B059DBC24F5F99CC619BD3 /* Pods_iOSArchitectureKKSampleTests.framework */,
 				E545EC3CCE7B0B70E34174AC /* Pods_iOSArchitectureKKSampleUITests.framework */,
@@ -1023,6 +1061,18 @@
 			dependencies = (
 			);
 			name = Umbrella;
+			packageProductDependencies = (
+				E57263662344A2D300FFE595 /* Differentiator */,
+				E57263682344A2D300FFE595 /* RxDataSources */,
+				E572636A2344A2EB00FFE595 /* RxCocoa */,
+				E572636C2344A2EB00FFE595 /* RxRelay */,
+				E572636E2344A2EB00FFE595 /* RxSwift */,
+				E57263712344A31A00FFE595 /* RxNuke */,
+				E57263742344A36200FFE595 /* Moya */,
+				E57263762344A36200FFE595 /* RxMoya */,
+				E572637C2344A3C300FFE595 /* KeychainAccess */,
+				E572637E2344A3D100FFE595 /* SwiftyBeaver */,
+			);
 			productName = Umbrella;
 			productReference = E57254C02343B83500E46D90 /* Umbrella.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1053,7 +1103,7 @@
 				E574B8552327C3660076C078 /* Sources */,
 				E574B8562327C3660076C078 /* Frameworks */,
 				E574B8572327C3660076C078 /* Resources */,
-				E574B8682327C4020076C078 /* Carthage Script */,
+				E57263802344A40200FFE595 /* Embedded Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1074,6 +1124,7 @@
 				E571E6FA22B833370032A748 /* R.swift Script */,
 				E592297422AE65E8003EC30C /* Sources */,
 				E592297522AE65E8003EC30C /* Frameworks */,
+				E57263592344A23000FFE595 /* Carthage Script */,
 				E592297622AE65E8003EC30C /* Resources */,
 				E5F1FC0722AFD70A003432E1 /* Swift lint Script */,
 				8CE482475AE3984B892EE298 /* [CP] Embed Pods Frameworks */,
@@ -1176,6 +1227,12 @@
 			);
 			mainGroup = E592296F22AE65E8003EC30C;
 			packageReferences = (
+				E572635A2344A2B500FFE595 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				E57263652344A2D300FFE595 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				E57263702344A31A00FFE595 /* XCRemoteSwiftPackageReference "RxNuke" */,
+				E57263732344A36200FFE595 /* XCRemoteSwiftPackageReference "Moya" */,
+				E57263782344A37C00FFE595 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
+				E572637B2344A3C300FFE595 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = E592297922AE65E8003EC30C /* Products */;
 			projectDirPath = "";
@@ -1360,7 +1417,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
-		E574B8682327C4020076C078 /* Carthage Script */ = {
+		E57263592344A23000FFE595 /* Carthage Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1368,7 +1425,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/UIFontComplete.framework",
 			);
 			name = "Carthage Script";
 			outputFileListPaths = (
@@ -2145,6 +2202,110 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E572635A2344A2B500FFE595 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		E57263652344A2D300FFE595 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+		E57263702344A31A00FFE595 /* XCRemoteSwiftPackageReference "RxNuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/RxNuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.11.0;
+			};
+		};
+		E57263732344A36200FFE595 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = exactVersion;
+				version = "14.0.0-beta.3";
+			};
+		};
+		E57263782344A37C00FFE595 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.2;
+			};
+		};
+		E572637B2344A3C300FFE595 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E57263662344A2D300FFE595 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E57263652344A2D300FFE595 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		E57263682344A2D300FFE595 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E57263652344A2D300FFE595 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+		E572636A2344A2EB00FFE595 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E572635A2344A2B500FFE595 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		E572636C2344A2EB00FFE595 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E572635A2344A2B500FFE595 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		E572636E2344A2EB00FFE595 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E572635A2344A2B500FFE595 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		E57263712344A31A00FFE595 /* RxNuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E57263702344A31A00FFE595 /* XCRemoteSwiftPackageReference "RxNuke" */;
+			productName = RxNuke;
+		};
+		E57263742344A36200FFE595 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E57263732344A36200FFE595 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		E57263762344A36200FFE595 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E57263732344A36200FFE595 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		E572637C2344A3C300FFE595 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E572637B2344A3C300FFE595 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		E572637E2344A3D100FFE595 /* SwiftyBeaver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E57263782344A37C00FFE595 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
+			productName = SwiftyBeaver;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E592297022AE65E8003EC30C /* Project object */;
 }
